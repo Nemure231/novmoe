@@ -18,7 +18,7 @@
     <nav class="bg-indigo-500 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <div class="absolute inset-y-0 left-0 flex items-center block lg:hidden md:hidden">
                     <!-- Mobile menu button-->
                     <button type="button"
                         class="inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -50,85 +50,233 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex-1 flex items-center justify-center lg:justify-start md:justify-start items-stretch">
                     <div class="flex-shrink-0 flex items-center">
-                        <img class="block lg:hidden h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
-                        <img class="hidden lg:block h-8 w-auto"
+                        <img class="hidden lg:block md:block h-8 w-auto"
                             src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                             alt="Workflow">
+
+                        <div class="block lg:hidden md:hidden h-8 w-auto text-white">
+                            <i class="fas fa-2x fa-rainbow"></i>
+
+                        </div>
+
+                        <!-- <img class="block lg:hidden md:hidden h-8 w-auto bg-white"
+                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                            alt="Workflow"> -->
                     </div>
-                    <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
+                    <div class="hidden md:block lg:block md:ml-6 lg:ml-6">
+                        <div class="flex relative space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-indigo-700 " -->
-                            <a href="#" class="text-white bg-indigo-900 px-3 py-2 rounded-md text-sm font-medium"
-                                aria-current="page">Dashboard</a>
 
-                            <a href="#"
-                                class="text-white hover:bg-indigo-700  px-3 py-2 rounded-md text-sm font-medium">Team</a>
 
-                            <a href="#"
-                                class="text-white hover:bg-indigo-700  px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                            <div class="bg-indigo-900 rounded-md">
 
-                            <a href="#"
-                                class="text-white hover:bg-indigo-700  px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                                <div class="px-2 py-2">
+
+                                    <a href="#" class="text-white text-sm font-medium" aria-current="page">Beranda</a>
+
+                                </div>
+                            </div>
+
+                            <div @click.away="open = false" class=" relative hover:bg-indigo-700 rounded-md px-2 py-2"
+                                x-data="navbar">
+
+                                <button @click="pencet_navbar" class="text-white text-sm font-medium">
+                                    <span>Genre</span>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" id="dropdown-navbar"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="hidden absolute left-0 md:max-w-xl md:w-screen lg:max-w-screen-sm lg:w-screen mt-2 origin-top-left">
+
+                                    <div class="p-2 bg-white rounded-md shadow-lg">
+                                        <div class="grid grid-cols-4 grid-rows-max gap-4">
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-3 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-1x fa-hat-wizard"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Fantasy</div>
+
+                                                </div>
+                                            </a>
+
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-1x fa-cog"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Sci-fi</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-1x fa-grin-squint"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Comedy</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-1x fa-heart"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Romance</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-1x fa-ghost"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Supernatural</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-1x fa-hand-rock"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Action</div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="hover:bg-indigo-700 rounded-md">
+
+                                <div class="px-3 py-2 ">
+                                    <a href="#" class="text-white text-sm font-medium">Projects</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="hover:bg-indigo-700 rounded-md">
+
+                                <div class="px-3 py-2">
+
+                                    <a href="#" class="text-white text-sm font-medium">Calendar</a>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button type="button"
-                        class="bg-blue-500 p-1 rounded-full text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                        <span class="sr-only">View notifications</span>
-                        <!-- Heroicon name: outline/bell -->
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                    </button>
+                    <div class="relative" @click.away="open = false" x-data="notif">
+                        <span class="flex h-3 w-3 absolute top-0 right-0">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                        </span>
+                        <button type="button" @click="pencet_notif"
+                            class="p-1 rounded-full text-white  focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white">
+                            <span class="sr-only">View notifications</span>
+
+                            <!-- Heroicon name: outline/bell -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+
+                        </button>
+
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100" id="dropdown-notif"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-t-lg hover:bg-indigo-200"
+                                role="menuitem" tabindex="-1" id="user-menu-item-0">@c</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-none hover:bg-indigo-200"
+                                role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200"
+                                role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
+                        </div>
+
+
+                    </div>
+
 
                     <!-- Profile dropdown -->
-                    <div class="ml-3 relative">
+                    <div class="ml-3 relative" @click.away="open = false" x-data="profil">
                         <div>
-                            <button type="button"
-                                class="bg-blue-500 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            <button type="button" @click="pencet_profil"
+                                class="bg-blue-500 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="h-8 w-8 rounded-full"
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     alt="">
+
                             </button>
+
                         </div>
 
-                        <!--
-              Dropdown menu, show/hide based on menu state.
-  
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
-                        <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        <div id="dropdown-profil" x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-2">Sign out</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-t-lg hover:bg-indigo-200"
+                                role="menuitem" tabindex="-1" id="user-menu-item-0">@Nc</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-none hover:bg-indigo-200"
+                                role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200"
+                                role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
 
+
+
+
+
         <!-- Mobile menu, show/hide based on menu state. -->
         <div class="hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-indigo-700 " -->
+                <!-- Current: " bg-gray-900 text-white", Default: "text-gray-300 hover:bg-indigo-700" -->
                 <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
                     aria-current="page">Dashboard</a>
 
@@ -154,18 +302,31 @@
     <div class="my-16 container flex flex-warp mx-auto mt-16 relative">
         <!-- <div class="absolute inset-0 transform bg-black mx-auto w-2/3 rounded-3xl"></div> -->
 
-
         <div class="h-auto w-full mx-6 md:w-3/4 lg:w-3/4 p-8 bg-white rounded-xl relative shadow-2xl">
 
 
-
             <div class="overflow-visible relative">
-                <div
+                <!-- <div
                     class="-mt-12 font-bold flex text-md items-center justify-center text-white w-auto text-sm bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
                     Cerita Terbaru
-                </div>
+                </div> -->
+
+                <select name="" id=""
+                    class="-mt-12 font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                    <option value="" data-filter="">
+                        Cerita Terbaru
+                    </option>
+                    <option value="" data-filter="">
+                        Cerita Trending
+                    </option>
+                    <option value="" data-filter="">
+                        Cerita Populer
+                    </option>
+
+                </select>
 
             </div>
+
 
 
 
@@ -177,30 +338,45 @@
 
 
 
-            
-            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8">
 
-                <div class="flex h-80 w-52 p-1 mx-auto">
+            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8 relative">
+
+
+
+                <div class="absolute inset-0 opacity-50">
+
+                    <div class="overflow-visible">
+                        <i class="-ml-64 fas text-indigo-500 fa-arrow-circle-up text-9xl" style="font-size: 40rem;
+                        line-height: 1;">
+                            <div class="text-8xl">Hot</div>
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+                <div class="flex relative h-80 w-52 p-1 mx-auto">
                     <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
 
                 </div>
-                <div class="flex h-80 w-52 p-1 mx-auto">
+                <div class="flex relative h-80 w-52 p-1 mx-auto">
                     <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
 
                 </div>
-                <div class="flex h-80 w-52 p-1 mx-auto">
+                <div class="flex relative h-80 w-52 p-1 mx-auto">
                     <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
 
                 </div>
-                <div class="flex h-80 w-52 p-1 mx-auto">
+                <div class="flex relative h-80 w-52 p-1 mx-auto">
                     <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
 
                 </div>
-                <div class="flex h-80 w-52 p-1 mx-auto">
+                <div class="flex relative h-80 w-52 p-1 mx-auto">
                     <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
 
                 </div>
-                <div class="flex h-80 w-52 p-1 mx-auto">
+                <div class="flex relative h-80 w-52 p-1 mx-auto">
                     <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
 
                 </div>
@@ -301,5 +477,50 @@
 
 </body>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script>
+    // Event dropdown profil
+    const dropdownProfil = document.getElementById('dropdown-profil');
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('profil', () => ({
+            open: false,
+            pencet_profil() {
+                if (dropdownProfil.classList.contains('hidden')) {
+                    dropdownProfil.classList.remove('hidden');
+                } 
+                this.open = !this.open
+            }
+        }));
+    });
+
+    // Event dropdown notif
+    const dropdownNotif = document.getElementById('dropdown-notif');
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('notif', () => ({
+            open: false,
+            pencet_notif() {
+                if (dropdownNotif.classList.contains('hidden')) {
+                    dropdownNotif.classList.remove('hidden');
+                } 
+                this.open = !this.open
+            }
+        }));
+    });
+
+    // Event dropdown navbar
+    const dropdownNavbar = document.getElementById('dropdown-navbar');
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('navbar', () => ({
+            open: false,
+            pencet_navbar() {
+                if (dropdownNavbar.classList.contains('hidden')) {
+                    dropdownNavbar.classList.remove('hidden');
+                } 
+                this.open = !this.open
+            }
+        }));
+    });
+</script>
+
 
 </html>
