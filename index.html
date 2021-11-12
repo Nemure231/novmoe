@@ -61,15 +61,12 @@
 
                         </div>
 
-                        <!-- <img class="block lg:hidden md:hidden h-8 w-auto bg-white"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                            alt="Workflow"> -->
                     </div>
                     <div class="hidden md:block lg:block md:ml-6 lg:ml-6">
                         <div class="flex relative space-x-4">
-                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-indigo-700 " -->
+                           
 
-
+                            <!-- NAVBAR BERANDA-->
                             <div class="bg-indigo-900 rounded-md">
 
                                 <div class="px-2 py-2">
@@ -78,11 +75,13 @@
 
                                 </div>
                             </div>
+                            <!-- END NAVBAR BERENADA -->
 
+                            <!-- NAVBAR GENRE -->
                             <div @click.away="open = false" class=" relative hover:bg-indigo-700 rounded-md px-2 py-2"
-                                x-data="navbar">
+                                x-data="navbar_genre">
 
-                                <button @click="pencet_navbar" class="text-white text-sm font-medium">
+                                <button @click="pencet_navbar_genre" class="text-white text-sm font-medium">
                                     <span>Genre</span>
                                     <svg fill="currentColor" viewBox="0 0 20 20"
                                         :class="{'rotate-180': open, 'rotate-0': !open}"
@@ -92,20 +91,21 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </button>
-                                <div x-show="open" x-transition:enter="transition ease-out duration-100" id="dropdown-navbar"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                <!-- DROPDOWN GENRE -->
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                    id="dropdown-navbar-genre" x-transition:enter-start="transform opacity-0 scale-95"
                                     x-transition:enter-end="transform opacity-100 scale-100"
                                     x-transition:leave="transition ease-in duration-75"
                                     x-transition:leave-start="transform opacity-100 scale-100"
                                     x-transition:leave-end="transform opacity-0 scale-95"
-                                    class="hidden absolute left-0 md:max-w-xl md:w-screen lg:max-w-screen-sm lg:w-screen mt-2 origin-top-left">
+                                    class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
 
                                     <div class="p-2 bg-white rounded-md shadow-lg">
-                                        <div class="grid grid-cols-4 grid-rows-max gap-4">
+                                        <div class="grid grid-cols-2 grid-rows-max gap-4">
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-3 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
                                                 <div class="rounded-lg">
-                                                    <i class="fas fa-1x fa-hat-wizard"></i>
+                                                    <i class="fas  fa-hat-wizard"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Fantasy</div>
@@ -116,7 +116,7 @@
                                             <a href=""
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
                                                 <div class="rounded-lg">
-                                                    <i class="fas fa-1x fa-cog"></i>
+                                                    <i class="fas  fa-cog"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Sci-fi</div>
@@ -126,7 +126,7 @@
                                             <a href=""
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
                                                 <div class="rounded-lg">
-                                                    <i class="fas fa-1x fa-grin-squint"></i>
+                                                    <i class="fas  fa-grin-squint"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Comedy</div>
@@ -136,7 +136,7 @@
                                             <a href=""
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
                                                 <div class="rounded-lg">
-                                                    <i class="fas fa-1x fa-heart"></i>
+                                                    <i class="fas  fa-heart"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Romance</div>
@@ -146,7 +146,7 @@
                                             <a href=""
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
                                                 <div class="rounded-lg">
-                                                    <i class="fas fa-1x fa-ghost"></i>
+                                                    <i class="fas  fa-ghost"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Supernatural</div>
@@ -156,7 +156,7 @@
                                             <a href=""
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
                                                 <div class="rounded-lg">
-                                                    <i class="fas fa-1x fa-hand-rock"></i>
+                                                    <i class="fas  fa-hand-rock"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Action</div>
@@ -166,27 +166,103 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- END DROPDOWN GENRE -->
                             </div>
+                            <!-- END NAVBAR GENRE -->
 
 
+                            <!-- NAVBAR KATEGORI -->
+                            <div @click.away="open = false" class=" relative hover:bg-indigo-700 rounded-md px-2 py-2"
+                                x-data="navbar_kategori">
 
-                            <div class="hover:bg-indigo-700 rounded-md">
+                                <button @click="pencet_navbar_kategori" class="text-white text-sm font-medium">
+                                    <span>Kategori</span>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- DROPDOWN KATEGORI -->
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                    id="dropdown-navbar-kategori" x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
 
-                                <div class="px-3 py-2 ">
-                                    <a href="#" class="text-white text-sm font-medium">Projects</a>
+                                    <div class="p-2 bg-white rounded-md shadow-lg">
+                                        <div class="grid grid-cols-2 grid-rows-max gap-4">
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-hourglass-half"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Berlangsung</div>
 
+                                                </div>
+                                            </a>
+
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-hourglass-end"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Tamat</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-star"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Populer</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-fire"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Trending</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                            class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                            <div class="rounded-lg">
+                                                <i class="fas  fa-arrow-up"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="font-semibold text-sm">Terbaru</div>
+
+                                            </div>
+                                        </a>
+                                            
+                                        </div>
+                                    </div>
                                 </div>
-
+                                <!-- END DROPDOWN KATEGORI -->
                             </div>
+                            <!-- END NAVBAR KATEGORI -->
 
-                            <div class="hover:bg-indigo-700 rounded-md">
+                            <!-- <div class="hover:bg-indigo-700 rounded-md">
 
                                 <div class="px-3 py-2">
 
                                     <a href="#" class="text-white text-sm font-medium">Calendar</a>
                                 </div>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -197,11 +273,11 @@
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                         </span>
+                        <!-- TOMBOL NOTIF -->
                         <button type="button" @click="pencet_notif"
                             class="p-1 rounded-full text-white  focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white">
                             <span class="sr-only">View notifications</span>
 
-                            <!-- Heroicon name: outline/bell -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -209,31 +285,115 @@
                             </svg>
 
                         </button>
-
+                        <!-- END TOMBOL NOTIF -->
+                        <!-- DROPDOWN NOTIF -->
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" id="dropdown-notif"
                             x-transition:enter-start="transform opacity-0 scale-95"
                             x-transition:enter-end="transform opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
                             x-transition:leave-end="transform opacity-0 scale-95"
-                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            class="hidden origin-top-right absolute right-0 mt-2 w-96 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-t-lg hover:bg-indigo-200"
-                                role="menuitem" tabindex="-1" id="user-menu-item-0">@c</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-none hover:bg-indigo-200"
-                                role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200"
-                                role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
+                          
+
+                            <ul class="list-none ">
+                                <li
+                                    class="block flex justify-between px-4 py-2 text-sm text-gray-900 rounded-t-lg hover:bg-indigo-200">
+                                    <div Class="m-1">
+
+                                        <div class="flex item-center max-w-max">
+
+
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-3 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b>
+                                                Mengomentari "Bab 3 Funny" di<b> Fumo </b>kamu.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                    <div class="ml-8 text-xs text-center text-gray-500">
+                                        1 jam lalu
+
+                                    </div>
+                                </li>
+                                <li
+                                    class="block flex justify-between px-4 py-2 text-sm text-gray-900 rounded-none hover:bg-indigo-200">
+                                    <div Class="m-1">
+
+                                        <div class="flex item-center max-w-max">
+
+
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-3 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b>
+                                                Mengomentari "Bab 1 Fumba" di<b> Fumo </b>kamu.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-2x fa-thumbs-up text-green-400">
+
+                                        </i>
+                                    </div>
+                                    <div class="ml-8 text-xs text-center text-gray-500">
+                                        Kemarin
+
+                                    </div>
+                                </li>
+                                <li
+                                    class="block flex justify-between px-4 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200">
+                                    <div Class="m-1">
+
+                                        <div class="flex item-center max-w-max">
+
+
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-3 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b>
+                                                Mengomentari "Bab 0 Funky" di<b> Fumo </b>kamu.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-2x fa-thumbs-down text-red-400">
+
+                                        </i>
+                                    </div>
+                                    <div class="ml-8 text-xs text-center text-gray-500">
+                                        20 Des 2021
+
+                                    </div>
+                                </li>
+                            </ul>
+
+
                         </div>
+                        <!-- END DROPDOWN NOTIF -->
 
 
                     </div>
 
 
-                    <!-- Profile dropdown -->
+                
                     <div class="ml-3 relative" @click.away="open = false" x-data="profil">
                         <div>
+                            <!-- TOMBOL PROFIL -->
                             <button type="button" @click="pencet_profil"
                                 class="bg-blue-500 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -243,9 +403,10 @@
                                     alt="">
 
                             </button>
+                            <!-- END TOMBOL PROFIL -->
 
                         </div>
-
+                        <!-- DROPDOWN PROFIL -->
                         <div id="dropdown-profil" x-show="open" x-transition:enter="transition ease-out duration-100"
                             x-transition:enter-start="transform opacity-0 scale-95"
                             x-transition:enter-end="transform opacity-100 scale-100"
@@ -262,6 +423,7 @@
                             <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200"
                                 role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
                         </div>
+                        <!-- END DROPDOWN PROFIL -->
 
 
                     </div>
@@ -299,20 +461,15 @@
 
 
 
-    <div class="my-16 container flex flex-warp mx-auto mt-16 relative">
-        <!-- <div class="absolute inset-0 transform bg-black mx-auto w-2/3 rounded-3xl"></div> -->
+    <div class="my-16 container flex flex-warp mx-auto mt-16 relative ">
 
-        <div class="h-auto w-full mx-6 md:w-3/4 lg:w-3/4 p-8 bg-white rounded-xl relative shadow-2xl">
+        <div class="h-auto w-full mx-6 md:w-3/4 lg:w-3/4 p-8 rounded-xl bg-white  relative">
 
 
             <div class="overflow-visible relative">
-                <!-- <div
-                    class="-mt-12 font-bold flex text-md items-center justify-center text-white w-auto text-sm bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
-                    Cerita Terbaru
-                </div> -->
-
+            
                 <select name="" id=""
-                    class="-mt-12 font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                    class="-mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
                     <option value="" data-filter="">
                         Cerita Terbaru
                     </option>
@@ -328,56 +485,73 @@
             </div>
 
 
-
-
             <a href="#"
                 class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                 Selengkapnya
                 <i class="fas fa-arrow-right"></i>
             </a>
 
+            <div class="absolute bottom-0 right-0 opacity-50">
+
+                <div class="text-center">
+                    <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
+                        <div class="text-3xl">New!</div>
+                    </i>
+
+                </div>
 
 
+            </div>
 
-            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8 relative">
+            <!-- CERITA TERBARU -->
+            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-0 p-6 relative">
+                
+                <div class="relative overflow-visible border-2 border-gray-300 rounded-xl h-80 w-52 mx-auto shadow-xl h-auto">
+                    <img class="rounded-xl" src="./assets/img/cover.png" alt="">
+                    <div class="-mt-3 p-6 bg-white rounded-b-xl">
+                        <div class="text-sm truncate font-bold">
+                                Outcast Desire
+                        </div>
+                        <p class="text-xs truncate mt-2">
+                            Militer swasta bernama Aegis yang ingin
+                        </p>
+                        <div class="text-center flex justify-between mt-4">
+                            <div>
 
+                            </div>
+                            <div>
 
+                            </div>
+                            <div>
 
-                <div class="absolute inset-0 opacity-50">
-
-                    <div class="overflow-visible">
-                        <i class="-ml-64 fas text-indigo-500 fa-arrow-circle-up text-9xl" style="font-size: 40rem;
-                        line-height: 1;">
-                            <div class="text-8xl">Hot</div>
-                        </i>
-
+                            </div>
+                           
+                        </div>
                     </div>
 
-
                 </div>
 
+
                 <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
+                    <img class="rounded-xl border-2 border-indigo-200" src="./assets/img/cover_2.jpg" alt="">
 
                 </div>
+            </div>
+
+            <!-- CERITA TRENDING -->
+            <div class="hidden overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8 relative">
+
                 <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
+                    <img class="rounded-xl border-2 border-indigo-200" src="./assets/img/cover.png" alt="">
 
                 </div>
-                <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
+            </div>
 
-                </div>
-                <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
+            <!-- CERITA POPULER -->
+            <div class="hidden overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8 relative">
 
-                </div>
                 <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
-
-                </div>
-                <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./img/cover.png" alt="">
+                    <img class="rounded-xl border-2 border-indigo-200" src="./assets/img/cover_2.jpg" alt="">
 
                 </div>
             </div>
@@ -387,6 +561,8 @@
 
 
         </div>
+
+
         <div class="md:w-1/4 lg:w-1/4 hidden md:block mx-auto h-auto lg:block">
 
 
@@ -398,50 +574,123 @@
                     <i class="fas fa-arrow-right"></i>
                 </a>
 
-                <div class="overflow-visible relative">
-                    <div
-                        class="-mt-12 font-bold flex text-md items-center justify-center text-white w-auto text-sm bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
-                        Penulis Populer
+
+                <div class="absolute bottom-0 right-0 opacity-50">
+
+                    <div class="">
+                        <i class="fas fa-medal text-indigo-500 text-7xl">
+                        
+                        </i>
+
                     </div>
 
-                    <!-- <div class="grid grid-cols-1 divide-y divide-indigo-500">
-                        <div class="mb-6">
-                            <img src="./img/profile.png" class="h-16 w-16 border-2 border-indigo-500 rounded-full" alt="">
-                        </div>
-                        <div class="mb-6">2</div>
-                        <div class="mb-6">3</div>
-                    </div> -->
 
+                </div>
 
-                    <ul class="list-none">
-                        <li class="flex items-center mb-3">
-                            <img src="./img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
+                <div class="overflow-visible relative">
+                    <select name="" id=""
+                        class="-mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                        <option value="" data-filter="">
+                            Apresiator
+                        </option>
+                        <option value="" data-filter="">
+                        Penulis Populer
+                        </option>
+                       
+                    </select>
+
+                    <div class="grid grid-cols-1 divide-y divide-indigo-500">
+                        <a href="" class="flex py-2">
+                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
                                 alt="">
-                            <div>Nemure</div>
+                            <div class="item-center overflow-hidden">
+                                <p class="font-bold">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate">
+                                    Hello, nice to meet you! 
+                                </p>
+
+                            </div>
+                            
+                        </a>
+                        <a href="" class="flex py-2">
+                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div class="item-center overflow-hidden">
+                                <p class="font-bold">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate">
+                                    Hello, nice to meet you! 
+                                </p>
+
+                            </div>
+                            
+                        </a>
+                        <a href="" class="flex py-2">
+                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div class="item-center overflow-hidden">
+                                <p class="font-bold">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate">
+                                    Hello, nice to meet you! 
+                                </p>
+
+                            </div>
+                            
+                        </a>
+                        <a href="" class="flex py-2">
+                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div class="item-center overflow-hidden">
+                                <p class="font-bold">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate">
+                                    Hello, nice to meet you! 
+                                </p>
+
+                            </div>
+                            
+                        </a>
+                        <a href="" class="flex py-2">
+                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div class="item-center overflow-hidden">
+                                <p class="font-bold">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate">
+                                    Hello, nice to meet you! 
+                                </p>
+
+                            </div>
+                            
+                        </a>
+                      </div>
+
+                    <!-- <ul class="list-none">
+                        <a href="" class="flex items-center mb-3">
+                            <img src="./assets/img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div>Angelica</div>
+                        </a>
+
+
+                        <li class="flex items-center mb-3">
+                            <img src="./assets/img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div>Angelica</div>
+                        </li>
+
+                        <li class="flex items-center mb-3">
+                            <img src="./assets/img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
+                                alt="">
+                            <div>Angelica</div>
                         </li>
 
 
-                        <li class="flex items-center mb-3">
-                            <img src="./img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
-                                alt="">
-                            <div>Nemure</div>
-                        </li>
-
-                        <li class="flex items-center mb-3">
-                            <img src="./img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
-                                alt="">
-                            <div>Nemure</div>
-                        </li>
-
-
-                    </ul>
+                    </ul> -->
                 </div>
 
 
 
             </div>
 
-            <div class="p-8 bg-white rounded-xl relative h-auto shadow-2xl">
+            <!-- <div class="p-8 bg-white rounded-xl relative h-auto shadow-2xl">
 
                 <div class="overflow-visible relative">
                     <div
@@ -461,7 +710,7 @@
                     mmmm
                 </div>
 
-            </div>
+            </div> -->
 
 
         </div>
@@ -478,49 +727,7 @@
 </body>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script>
-    // Event dropdown profil
-    const dropdownProfil = document.getElementById('dropdown-profil');
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('profil', () => ({
-            open: false,
-            pencet_profil() {
-                if (dropdownProfil.classList.contains('hidden')) {
-                    dropdownProfil.classList.remove('hidden');
-                } 
-                this.open = !this.open
-            }
-        }));
-    });
 
-    // Event dropdown notif
-    const dropdownNotif = document.getElementById('dropdown-notif');
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('notif', () => ({
-            open: false,
-            pencet_notif() {
-                if (dropdownNotif.classList.contains('hidden')) {
-                    dropdownNotif.classList.remove('hidden');
-                } 
-                this.open = !this.open
-            }
-        }));
-    });
-
-    // Event dropdown navbar
-    const dropdownNavbar = document.getElementById('dropdown-navbar');
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('navbar', () => ({
-            open: false,
-            pencet_navbar() {
-                if (dropdownNavbar.classList.contains('hidden')) {
-                    dropdownNavbar.classList.remove('hidden');
-                } 
-                this.open = !this.open
-            }
-        }));
-    });
-</script>
-
+<script src="./assets/custom/script/index.js"></script>
 
 </html>
