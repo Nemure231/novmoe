@@ -64,7 +64,7 @@
                     </div>
                     <div class="hidden md:block lg:block md:ml-6 lg:ml-6">
                         <div class="flex relative space-x-4">
-                           
+
 
                             <!-- NAVBAR BERANDA-->
                             <div class="bg-indigo-900 rounded-md">
@@ -187,7 +187,8 @@
                                 </button>
                                 <!-- DROPDOWN KATEGORI -->
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                                    id="dropdown-navbar-kategori" x-transition:enter-start="transform opacity-0 scale-95"
+                                    id="dropdown-navbar-kategori"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
                                     x-transition:enter-end="transform opacity-100 scale-100"
                                     x-transition:leave="transition ease-in duration-75"
                                     x-transition:leave-start="transform opacity-100 scale-100"
@@ -238,16 +239,16 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                            class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
-                                            <div class="rounded-lg">
-                                                <i class="fas  fa-arrow-up"></i>
-                                            </div>
-                                            <div class="ml-3">
-                                                <div class="font-semibold text-sm">Terbaru</div>
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-arrow-up"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Terbaru</div>
 
-                                            </div>
-                                        </a>
-                                            
+                                                </div>
+                                            </a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -295,7 +296,7 @@
                             x-transition:leave-end="transform opacity-0 scale-95"
                             class="hidden origin-top-right absolute right-0 mt-2 w-96 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                          
+
 
                             <ul class="list-none ">
                                 <li
@@ -311,7 +312,7 @@
 
                                             <p class="text-xs">
                                                 <b>Angelica </b>
-                                                Mengomentari "Bab 3 Funny" di<b> Fumo </b>kamu.
+                                                Mengomentari "[2]" di<b> Outcast Desire </b>kamu.
                                             </p>
                                         </div>
 
@@ -337,7 +338,7 @@
 
                                             <p class="text-xs">
                                                 <b>Angelica </b>
-                                                Mengomentari "Bab 1 Fumba" di<b> Fumo </b>kamu.
+                                                Mengomentari "[1]" di<b> Outcast Desire </b>kamu.
                                             </p>
                                         </div>
 
@@ -365,7 +366,7 @@
 
                                             <p class="text-xs">
                                                 <b>Angelica </b>
-                                                Mengomentari "Bab 0 Funky" di<b> Fumo </b>kamu.
+                                                Mengomentari "[0]" di<b> Outcast Desire </b>kamu.
                                             </p>
                                         </div>
 
@@ -390,7 +391,7 @@
                     </div>
 
 
-                
+
                     <div class="ml-3 relative" @click.away="open = false" x-data="profil">
                         <div>
                             <!-- TOMBOL PROFIL -->
@@ -461,13 +462,13 @@
 
 
 
-    <div class="my-16 container flex flex-warp mx-auto mt-16 relative ">
+    <div class="my-16 container flex flex-warp mx-auto mt-16 relative">
 
         <div class="h-auto w-full mx-6 md:w-3/4 lg:w-3/4 p-8 rounded-xl bg-white  relative">
 
 
             <div class="overflow-visible relative">
-            
+
                 <select name="" id=""
                     class="-mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
                     <option value="" data-filter="">
@@ -504,38 +505,149 @@
             </div>
 
             <!-- CERITA TERBARU -->
-            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-0 p-6 relative">
-                
-                <div class="relative overflow-visible border-2 border-gray-300 rounded-xl h-80 w-52 mx-auto shadow-xl h-auto">
-                    <img class="rounded-xl" src="./assets/img/cover.png" alt="">
-                    <div class="-mt-3 p-6 bg-white rounded-b-xl">
-                        <div class="text-sm truncate font-bold">
-                                Outcast Desire
+            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
+
+
+                <div
+                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png" alt="">
+                    <div class="bg-white rounded-xl">
+                        <div class="inset-x-0 top-0 flex">
+                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                            </div>
+                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                            </div>
+
                         </div>
-                        <p class="text-xs truncate mt-2">
-                            Militer swasta bernama Aegis yang ingin
-                        </p>
-                        <div class="text-center flex justify-between mt-4">
-                            <div>
+                        <div class="p-4">
+
+
+                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                <a href="#">
+                                    Outcast Desire
+
+                                </a>
 
                             </div>
-                            <div>
+
+                            <div class="text-xs text-left inline">By
+                                <a href="#">
+                                    <div class="text-indigo-700 inline"> Karol.Y</div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="mt-2">
+
+                                <p class="text-xs mt-2 inline hidden">
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman
+                                    utara.
+                                </p>
+                                <p class="text-xs mt-2 inline blurb-pendek">
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman
+                                utara.
+                                </p>
+                                <button
+                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                    id="tm">Show
+                                    more</button>
+
+                                    
 
                             </div>
-                            <div>
+                            
 
-                            </div>
-                           
+
                         </div>
+                    </div>
+
+                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
+                        <div class="text-xs text-white">
+                            <button
+                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                <i class="fas fa-plus"></i> Bacaan
+                            </button>
+                        </div>
+
+
                     </div>
 
                 </div>
 
+                <div
+                class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg" alt="">
+                <div class="bg-white rounded-xl">
+                    <div class="inset-x-0 top-0 flex">
 
-                <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./assets/img/cover_2.jpg" alt="">
+                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                        </div>
+
+                    </div>
+                    <div class="p-4">
+
+
+                        <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                            <a href="#">
+                                Distant Memory
+
+                            </a>
+
+                        </div>
+
+                        <div class="text-xs text-left inline">By
+                            <a href="#">
+                                <div class="text-indigo-700 inline"> Karol.Y</div>
+                            </a>
+                        </div>
+
+
+
+                        <div class="mt-2">
+
+                            <p class="text-xs mt-2 inline hidden">
+                                Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                            </p>
+                            <p class="text-xs mt-2 inline blurb-pendek">
+                                Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                            </p>
+                            <button
+                                class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                id="tm">Show
+                                more</button>
+
+                                
+
+                        </div>
+                        
+
+
+                    </div>
+                </div>
+
+                <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
+                    <div class="text-xs text-white">
+                        <button
+                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                            <i class="fas fa-plus"></i> Bacaan
+                        </button>
+                    </div>
+
 
                 </div>
+
+            </div>
+
+
+
+
+
             </div>
 
             <!-- CERITA TRENDING -->
@@ -579,7 +691,7 @@
 
                     <div class="">
                         <i class="fas fa-medal text-indigo-500 text-7xl">
-                        
+
                         </i>
 
                     </div>
@@ -594,73 +706,73 @@
                             Apresiator
                         </option>
                         <option value="" data-filter="">
-                        Penulis Populer
+                            Penulis Populer
                         </option>
-                       
+
                     </select>
 
                     <div class="grid grid-cols-1 divide-y divide-indigo-500">
                         <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
-                                alt="">
+                            <img src="./assets/img/profile.png"
+                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
                                 <p class="font-bold">Angelica</p>
                                 <p class="text-xs text-gray-500 truncate">
-                                    Hello, nice to meet you! 
+                                    Hello, nice to meet you!
                                 </p>
 
                             </div>
-                            
+
                         </a>
                         <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
-                                alt="">
+                            <img src="./assets/img/profile.png"
+                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
                                 <p class="font-bold">Angelica</p>
                                 <p class="text-xs text-gray-500 truncate">
-                                    Hello, nice to meet you! 
+                                    Hello, nice to meet you!
                                 </p>
 
                             </div>
-                            
+
                         </a>
                         <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
-                                alt="">
+                            <img src="./assets/img/profile.png"
+                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
                                 <p class="font-bold">Angelica</p>
                                 <p class="text-xs text-gray-500 truncate">
-                                    Hello, nice to meet you! 
+                                    Hello, nice to meet you!
                                 </p>
 
                             </div>
-                            
+
                         </a>
                         <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
-                                alt="">
+                            <img src="./assets/img/profile.png"
+                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
                                 <p class="font-bold">Angelica</p>
                                 <p class="text-xs text-gray-500 truncate">
-                                    Hello, nice to meet you! 
+                                    Hello, nice to meet you!
                                 </p>
 
                             </div>
-                            
+
                         </a>
                         <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png" class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full"
-                                alt="">
+                            <img src="./assets/img/profile.png"
+                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
                                 <p class="font-bold">Angelica</p>
                                 <p class="text-xs text-gray-500 truncate">
-                                    Hello, nice to meet you! 
+                                    Hello, nice to meet you!
                                 </p>
 
                             </div>
-                            
+
                         </a>
-                      </div>
+                    </div>
 
                     <!-- <ul class="list-none">
                         <a href="" class="flex items-center mb-3">
