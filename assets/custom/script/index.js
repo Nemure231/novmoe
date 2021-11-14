@@ -1,3 +1,22 @@
+
+ var blurbPendek = document.getElementsByClassName('blurb-pendek');
+ var num = 7;
+
+ for (var i = 0; i < blurbPendek.length; i++) {
+
+     if (blurbPendek[i].innerText.split(" ").length > num) {
+         var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
+         blurbPendek[i].innerText = mk;
+
+     } else {
+         blurbPendek[i].innerText = blurbPendek[i].innerText;
+         blurbPendek[i].nextElementSibling.remove();
+
+     }
+
+ }
+
+
 // Event dropdown profil
 const dropdownProfil = document.getElementById('dropdown-profil');
 document.addEventListener('alpine:init', () => {
@@ -107,26 +126,6 @@ ready(function () {
         });
     });
 
-
-
-    var blurbPendek = document.getElementsByClassName('blurb-pendek');
-    var num = 7;
-
-    for (var i = 0; i < blurbPendek.length; i++) {
-
-
-
-        if (blurbPendek[i].innerText.split(" ").length > num) {
-            var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
-            blurbPendek[i].innerText = mk;
-
-        } else {
-            blurbPendek[i].innerText = blurbPendek[i].innerText;
-            blurbPendek[i].nextElementSibling.remove();
-
-        }
-
-    }
 
 
 
