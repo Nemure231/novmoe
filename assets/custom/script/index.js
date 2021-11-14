@@ -54,6 +54,17 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
+// document.addEventListener('alpine:init', () => {
+//     Alpine.data('kategori', (e) => ({
+//         open: false,
+//         pencet_kategori() {
+
+//             this.open = this.value
+//             console.log(e);
+//         }
+//     }));
+// });
+
 
 function ready(fn) {
     if (document.readyState != 'loading') {
@@ -65,28 +76,37 @@ function ready(fn) {
 
 ready(function () {
 
-   
-        var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
-        Array.prototype.forEach.call(tombolBlurb, function (element) {
-            element.addEventListener('click', function () {
+    window.onload = (event) => {
+        document.getElementById("kategori-pertama").style.display = null;
+      };
 
-               var blurbPendek = element.previousElementSibling;
-               var blurbPendekHidden = blurbPendek.previousElementSibling;
+    document.querySelector('.pencet-kategori').addEventListener('change', () => {
 
-               if (blurbPendekHidden.classList.contains('hidden')) {
-                   blurbPendek.classList.add('hidden');
-                   blurbPendekHidden.classList.remove('hidden');
-                   element.innerText = 'Show less';
-               }else{
+        document.getElementById("kategori-pertama").style.display = 'none';
+
+    });
+
+    var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
+    Array.prototype.forEach.call(tombolBlurb, function (element) {
+        element.addEventListener('click', function () {
+
+            var blurbPendek = element.previousElementSibling;
+            var blurbPendekHidden = blurbPendek.previousElementSibling;
+
+            if (blurbPendekHidden.classList.contains('hidden')) {
+                blurbPendek.classList.add('hidden');
+                blurbPendekHidden.classList.remove('hidden');
+                element.innerText = 'Show less';
+            } else {
                 blurbPendek.classList.remove('hidden');
                 blurbPendekHidden.classList.add('hidden');
                 element.innerText = 'Show more';
-               }
-                
-    
-            });
+            }
+
+
         });
-    
+    });
+
 
 
     var blurbPendek = document.getElementsByClassName('blurb-pendek');
@@ -94,7 +114,7 @@ ready(function () {
 
     for (var i = 0; i < blurbPendek.length; i++) {
 
-    
+
 
         if (blurbPendek[i].innerText.split(" ").length > num) {
             var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';

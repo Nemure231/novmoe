@@ -462,29 +462,31 @@
 
 
 
+
     <div class="my-16 container flex flex-warp mx-auto mt-16 relative">
 
-        <div class="h-auto w-full mx-6 md:w-3/4 lg:w-3/4 p-8 rounded-xl bg-white  relative">
+        <div class="h-screen w-full mx-6 md:w-3/4 lg:w-3/4 p-8 rounded-xl bg-white relative" x-data="{open: true}">
 
 
             <div class="overflow-visible relative">
-
-                <select name="" id=""
-                    class="-mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
-                    <option value="" data-filter="">
+                <select name="" id="" x-on:change="open = $event.target.value"
+                    class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                    <!-- <option></option> -->
+                    <option value="baru">
                         Cerita Terbaru
                     </option>
-                    <option value="" data-filter="">
+                    <option value="tren">
                         Cerita Trending
                     </option>
-                    <option value="" data-filter="">
+                    <option value="populer">
                         Cerita Populer
                     </option>
 
                 </select>
 
-            </div>
 
+
+            </div>
 
             <a href="#"
                 class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
@@ -504,8 +506,162 @@
 
             </div>
 
-            <!-- CERITA TERBARU -->
-            <div class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
+
+
+            <div x-show="open == 'baru'"
+                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3" id="kategori-pertama">
+                
+                <div
+                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png" alt="">
+                    <div class="bg-white rounded-xl">
+                        <div class="inset-x-0 top-0 flex">
+                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                            </div>
+                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                            </div>
+
+                        </div>
+                        <div class="p-4">
+
+
+                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                <a href="#">
+                                    Outcast Desire
+
+                                </a>
+
+                            </div>
+
+                            <div class="text-xs text-left inline">By
+                                <a href="#">
+                                    <div class="text-indigo-700 inline"> Karol.Y</div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="mt-2">
+
+                                <p class="text-xs mt-2 inline hidden">
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                    Jerman
+                                    utara.
+                                </p>
+                                <p class="text-xs mt-2 inline blurb-pendek">
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                    Jerman
+                                    utara.
+                                </p>
+                                <button
+                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                    id="tm">Show
+                                    more</button>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
+                        <div class="text-xs text-white">
+                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                <i class="fas fa-plus"></i> Bacaan
+                            </button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg" alt="">
+                    <div class="bg-white rounded-xl">
+                        <div class="inset-x-0 top-0 flex">
+
+                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                            </div>
+
+                        </div>
+                        <div class="p-4">
+
+
+                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                <a href="#">
+                                    Distant Memory
+
+                                </a>
+
+                            </div>
+
+                            <div class="text-xs text-left inline">By
+                                <a href="#">
+                                    <div class="text-indigo-700 inline"> Karol.Y</div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="mt-2">
+
+                                <p class="text-xs mt-2 inline hidden">
+                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                                </p>
+                                <p class="text-xs mt-2 inline blurb-pendek">
+                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                                </p>
+                                <button
+                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                    id="tm">Show
+                                    more</button>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
+                        <div class="text-xs text-white">
+                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                <i class="fas fa-plus"></i> Bacaan
+                            </button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div x-show="open == 'tren'"
+                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
 
 
                 <div
@@ -543,22 +699,24 @@
                             <div class="mt-2">
 
                                 <p class="text-xs mt-2 inline hidden">
-                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                    Jerman
                                     utara.
                                 </p>
                                 <p class="text-xs mt-2 inline blurb-pendek">
-                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman
-                                utara.
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                    Jerman
+                                    utara.
                                 </p>
                                 <button
                                     class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
                                     id="tm">Show
                                     more</button>
 
-                                    
+
 
                             </div>
-                            
+
 
 
                         </div>
@@ -566,8 +724,7 @@
 
                     <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
                         <div class="text-xs text-white">
-                            <button
-                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
                                 <i class="fas fa-plus"></i> Bacaan
                             </button>
                         </div>
@@ -577,96 +734,110 @@
 
                 </div>
 
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div x-show="open == 'populer'"
+                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
+
+
+
+
                 <div
-                class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
-                <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg" alt="">
-                <div class="bg-white rounded-xl">
-                    <div class="inset-x-0 top-0 flex">
+                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg" alt="">
+                    <div class="bg-white rounded-xl">
+                        <div class="inset-x-0 top-0 flex">
 
-                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
 
-                        </div>
-
-                    </div>
-                    <div class="p-4">
-
-
-                        <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
-                            <a href="#">
-                                Distant Memory
-
-                            </a>
+                            </div>
 
                         </div>
+                        <div class="p-4">
 
-                        <div class="text-xs text-left inline">By
-                            <a href="#">
-                                <div class="text-indigo-700 inline"> Karol.Y</div>
-                            </a>
+
+                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                <a href="#">
+                                    Distant Memory
+
+                                </a>
+
+                            </div>
+
+                            <div class="text-xs text-left inline">By
+                                <a href="#">
+                                    <div class="text-indigo-700 inline"> Karol.Y</div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="mt-2">
+
+                                <p class="text-xs mt-2 inline hidden">
+                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                                </p>
+                                <p class="text-xs mt-2 inline blurb-pendek">
+                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                                </p>
+                                <button
+                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                    id="tm">Show
+                                    more</button>
+
+
+
+                            </div>
+
+
+
                         </div>
-
-
-
-                        <div class="mt-2">
-
-                            <p class="text-xs mt-2 inline hidden">
-                                Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
-                            </p>
-                            <p class="text-xs mt-2 inline blurb-pendek">
-                                Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
-                            </p>
-                            <button
-                                class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                id="tm">Show
-                                more</button>
-
-                                
-
-                        </div>
-                        
-
-
-                    </div>
-                </div>
-
-                <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
-                    <div class="text-xs text-white">
-                        <button
-                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                            <i class="fas fa-plus"></i> Bacaan
-                        </button>
                     </div>
 
+                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
+                        <div class="text-xs text-white">
+                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                <i class="fas fa-plus"></i> Bacaan
+                            </button>
+                        </div>
+
+
+                    </div>
 
                 </div>
 
+
+
+
+
             </div>
 
 
 
 
 
-            </div>
 
-            <!-- CERITA TRENDING -->
-            <div class="hidden overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8 relative">
 
-                <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./assets/img/cover.png" alt="">
 
-                </div>
-            </div>
 
-            <!-- CERITA POPULER -->
-            <div class="hidden overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 p-8 relative">
-
-                <div class="flex relative h-80 w-52 p-1 mx-auto">
-                    <img class="rounded-xl border-2 border-indigo-200" src="./assets/img/cover_2.jpg" alt="">
-
-                </div>
-            </div>
 
 
 
