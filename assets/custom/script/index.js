@@ -1,25 +1,25 @@
+// function blurbPendek() {
+//     var blurbPendek = document.getElementsByClassName('blurb-pendek');
+//     var num = 7;
+
+//     for (var i = 0; i < blurbPendek.length; i++) {
+
+//         if (blurbPendek[i].innerText.split(" ").length > num) {
+//             var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
+//             blurbPendek[i].innerText = mk;
+
+//         } else {
+//             blurbPendek[i].innerText = blurbPendek[i].innerText;
+//             blurbPendek[i].nextElementSibling.remove();
+
+//         }
+
+//     }
+// }
+
+// blurbPendek();
 
 
-function blurbPendek() {
-    var blurbPendek = document.getElementsByClassName('blurb-pendek');
-    var num = 7;
-
-    for (var i = 0; i < blurbPendek.length; i++) {
-
-        if (blurbPendek[i].innerText.split(" ").length > num) {
-            var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
-            blurbPendek[i].innerText = mk;
-
-        } else {
-            blurbPendek[i].innerText = blurbPendek[i].innerText;
-            blurbPendek[i].nextElementSibling.remove();
-
-        }
-
-    }
-}
-
-blurbPendek();
 
 
 // Event dropdown profil
@@ -79,6 +79,26 @@ document.addEventListener('alpine:init', () => {
 });
 
 
+// const mySiema = new Siema({
+//     perPage: 1,
+//     loop: true,
+//     startIndex: 0,
+// });
+// document.querySelector('.prev-carousel').addEventListener('click', () => mySiema.prev());
+// document.querySelector('.next-carousel').addEventListener('click', () => mySiema.next());
+
+var swiper = new Swiper(".myswiper", {
+    slidesPerView: 2,
+    spaceBetween: 40,
+    loop: true,
+    freeMode: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
 function ready(fn) {
     if (document.readyState != 'loading') {
         fn();
@@ -87,17 +107,21 @@ function ready(fn) {
     }
 }
 
+
 ready(function () {
 
-   
 
     window.onload = (event) => {
+
         document.getElementById("kategori-pertama").style.display = null;
         document.getElementById("pilihan-kategori-pertama").selected = "true";
 
+        document.getElementById("kategori-pertama-mobile").style.display = null;
+
         document.getElementById("penulis-pertama").style.display = null;
         document.getElementById("pilihan-penulis-pertama").selected = "true";
-       
+
+    
     };
 
     document.querySelector('.pencet-kategori').addEventListener('change', () => {
@@ -121,9 +145,9 @@ ready(function () {
 
         const bgDefaultKategori = document.getElementById("bg-default-kategori");
         bgDefaultKategori.classList.add('hidden');
-        
 
-        
+
+
 
     });
 
@@ -141,7 +165,7 @@ ready(function () {
 
         const bgDefaultPenulis = document.getElementById("bg-default-penulis");
         bgDefaultPenulis.classList.add('hidden');
-        
+
 
 
     });
