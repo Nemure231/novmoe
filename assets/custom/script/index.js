@@ -1,20 +1,25 @@
 
- var blurbPendek = document.getElementsByClassName('blurb-pendek');
- var num = 7;
 
- for (var i = 0; i < blurbPendek.length; i++) {
+function blurbPendek() {
+    var blurbPendek = document.getElementsByClassName('blurb-pendek');
+    var num = 7;
 
-     if (blurbPendek[i].innerText.split(" ").length > num) {
-         var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
-         blurbPendek[i].innerText = mk;
+    for (var i = 0; i < blurbPendek.length; i++) {
 
-     } else {
-         blurbPendek[i].innerText = blurbPendek[i].innerText;
-         blurbPendek[i].nextElementSibling.remove();
+        if (blurbPendek[i].innerText.split(" ").length > num) {
+            var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
+            blurbPendek[i].innerText = mk;
 
-     }
+        } else {
+            blurbPendek[i].innerText = blurbPendek[i].innerText;
+            blurbPendek[i].nextElementSibling.remove();
 
- }
+        }
+
+    }
+}
+
+blurbPendek();
 
 
 // Event dropdown profil
@@ -84,14 +89,60 @@ function ready(fn) {
 
 ready(function () {
 
+   
+
     window.onload = (event) => {
         document.getElementById("kategori-pertama").style.display = null;
         document.getElementById("pilihan-kategori-pertama").selected = "true";
-      };
+
+        document.getElementById("penulis-pertama").style.display = null;
+        document.getElementById("pilihan-penulis-pertama").selected = "true";
+       
+    };
 
     document.querySelector('.pencet-kategori').addEventListener('change', () => {
 
         document.getElementById("kategori-pertama").style.display = 'none';
+
+        // const kategoriKedua = document.getElementById("kategori-kedua");
+        // const kategoriKetiga = document.getElementById("kategori-ketiga");
+
+        // if (kategoriKedua.classList.contains('hidden')) {
+        //     kategoriKedua.classList.remove('hidden');
+        // } else {
+        //     // kategoriKedua.classList.add('hidden');
+        // }
+
+        // if (kategoriKetiga.classList.contains('hidden')) {
+        //     kategoriKetiga.classList.remove('hidden');
+        // } else {
+        //     // kategoriKetiga.classList.add('hidden');
+        // }
+
+        const bgDefaultKategori = document.getElementById("bg-default-kategori");
+        bgDefaultKategori.classList.add('hidden');
+        
+
+        
+
+    });
+
+    document.querySelector('.pencet-penulis').addEventListener('change', () => {
+
+        document.getElementById("penulis-pertama").style.display = 'none';
+
+        const penulisKedua = document.getElementById("penulis-kedua");
+
+        if (penulisKedua.classList.contains('hidden')) {
+            penulisKedua.classList.remove('hidden');
+        } else {
+            penulisKedua.classList.add('hidden');
+        }
+
+        const bgDefaultPenulis = document.getElementById("bg-default-penulis");
+        bgDefaultPenulis.classList.add('hidden');
+        
+
 
     });
 
