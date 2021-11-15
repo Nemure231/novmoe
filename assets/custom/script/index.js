@@ -73,17 +73,6 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
-// document.addEventListener('alpine:init', () => {
-//     Alpine.data('kategori', (e) => ({
-//         open: false,
-//         pencet_kategori() {
-
-//             this.open = this.value
-//             console.log(e);
-//         }
-//     }));
-// });
-
 
 function ready(fn) {
     if (document.readyState != 'loading') {
@@ -97,6 +86,7 @@ ready(function () {
 
     window.onload = (event) => {
         document.getElementById("kategori-pertama").style.display = null;
+        document.getElementById("pilihan-kategori-pertama").selected = "true";
       };
 
     document.querySelector('.pencet-kategori').addEventListener('change', () => {

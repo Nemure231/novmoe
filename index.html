@@ -92,12 +92,13 @@
                                     </svg>
                                 </button>
                                 <!-- DROPDOWN GENRE -->
-                                <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                                    id="dropdown-navbar-genre" x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                <div x-show="open" id="dropdown-navbar-genre"
+                                    x-transition:enter="transition ease-out duration-100 "
+                                    x-transition:enter-start="transform opacity-0 -translate-y-7"
+                                    x-transition:enter-end="transform opacity-100 translate-y-0"
                                     x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    x-transition:leave-start="transform opacity-100 translate-y-0"
+                                    x-transition:leave-end="transform opacity-0 -translate-y-7"
                                     class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
 
                                     <div class="p-2 bg-white rounded-md shadow-lg">
@@ -186,13 +187,13 @@
                                     </svg>
                                 </button>
                                 <!-- DROPDOWN KATEGORI -->
-                                <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                                    id="dropdown-navbar-kategori"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                <div x-show="open" id="dropdown-navbar-kategori"
+                                    x-transition:enter="transition ease-out duration-100 "
+                                    x-transition:enter-start="transform opacity-0 -translate-y-7"
+                                    x-transition:enter-end="transform opacity-100 translate-y-0"
                                     x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    x-transition:leave-start="transform opacity-100 translate-y-0"
+                                    x-transition:leave-end="transform opacity-0 -translate-y-7"
                                     class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
 
                                     <div class="p-2 bg-white rounded-md shadow-lg">
@@ -288,12 +289,12 @@
                         </button>
                         <!-- END TOMBOL NOTIF -->
                         <!-- DROPDOWN NOTIF -->
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100" id="dropdown-notif"
-                            x-transition:enter-start="transform opacity-0 scale-95"
-                            x-transition:enter-end="transform opacity-100 scale-100"
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100 "
+                            x-transition:enter-start="transform opacity-0 -translate-y-7"
+                            x-transition:enter-end="transform opacity-100 translate-y-0"
                             x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
+                            x-transition:leave-start="transform opacity-100 translate-y-0"
+                            x-transition:leave-end="transform opacity-0 -translate-y-7" id="dropdown-notif"
                             class="hidden origin-top-right absolute right-0 mt-2 w-96 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
 
@@ -399,21 +400,19 @@
                                 class="bg-blue-500 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="">
+                                <img class="h-8 w-8 rounded-full" src="./assets/img/profile_me.png" alt="">
 
                             </button>
                             <!-- END TOMBOL PROFIL -->
 
                         </div>
                         <!-- DROPDOWN PROFIL -->
-                        <div id="dropdown-profil" x-show="open" x-transition:enter="transition ease-out duration-100"
-                            x-transition:enter-start="transform opacity-0 scale-95"
-                            x-transition:enter-end="transform opacity-100 scale-100"
+                        <div id="dropdown-profil" x-show="open" x-transition:enter="transition ease-out duration-100 "
+                            x-transition:enter-start="transform opacity-0 -translate-y-7"
+                            x-transition:enter-end="transform opacity-100 translate-y-0"
                             x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
+                            x-transition:leave-start="transform opacity-100 translate-y-0"
+                            x-transition:leave-end="transform opacity-0 -translate-y-7"
                             class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
@@ -472,7 +471,7 @@
                 <select name="" id="" x-on:change="open = $event.target.value"
                     class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
                     <!-- <option></option> -->
-                    <option value="baru">
+                    <option id="pilihan-kategori-pertama" value="baru">
                         Cerita Terbaru
                     </option>
                     <option value="tren">
@@ -488,13 +487,40 @@
 
             </div>
 
-            <a href="#"
+            <a href="./baru.html"
+            class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+            Selengkapnya
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+
+            <template x-if="open == 'baru'">
+                <a href="./baru.html"
                 class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                 Selengkapnya
                 <i class="fas fa-arrow-right"></i>
             </a>
+            </template>
 
-            <div class="absolute bottom-0 right-0 opacity-50">
+            <template x-if="open == 'tren'">
+                <a href="./tren.html"
+                class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                Selengkapnya
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            </template>
+
+            <template x-if="open == 'populer'">
+                <a href="./populer.html"
+                class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                Selengkapnya
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            </template>
+
+           
+
+            <!-- <div class="absolute bottom-0 right-0 opacity-50">
 
                 <div class="text-center">
                     <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
@@ -504,164 +530,29 @@
                 </div>
 
 
-            </div>
+            </div> -->
 
 
 
-            <div x-show="open == 'baru'"
-                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3" id="kategori-pertama">
-                
-                <div
-                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
-                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png" alt="">
-                    <div class="bg-white rounded-xl">
-                        <div class="inset-x-0 top-0 flex">
-                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+            <div x-show="open == 'baru'" x-transition:enter="transition ease-in duration-200"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-out duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3"
+                id="kategori-pertama">
+                <div class="absolute bottom-0 right-0 opacity-50">
 
-                            </div>
-                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                            </div>
-
-                        </div>
-                        <div class="p-4">
-
-
-                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
-                                <a href="#">
-                                    Outcast Desire
-
-                                </a>
-
-                            </div>
-
-                            <div class="text-xs text-left inline">By
-                                <a href="#">
-                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                </a>
-                            </div>
-
-
-
-                            <div class="mt-2">
-
-                                <p class="text-xs mt-2 inline hidden">
-                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
-                                    Jerman
-                                    utara.
-                                </p>
-                                <p class="text-xs mt-2 inline blurb-pendek">
-                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
-                                    Jerman
-                                    utara.
-                                </p>
-                                <button
-                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                    id="tm">Show
-                                    more</button>
-
-
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
-                        <div class="text-xs text-white">
-                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                <i class="fas fa-plus"></i> Bacaan
-                            </button>
-                        </div>
-
+                    <div class="text-center">
+                        <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
+                            <div class="text-3xl">New!</div>
+                        </i>
 
                     </div>
+
 
                 </div>
-
-                <div
-                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
-                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg" alt="">
-                    <div class="bg-white rounded-xl">
-                        <div class="inset-x-0 top-0 flex">
-
-                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                            </div>
-
-                        </div>
-                        <div class="p-4">
-
-
-                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
-                                <a href="#">
-                                    Distant Memory
-
-                                </a>
-
-                            </div>
-
-                            <div class="text-xs text-left inline">By
-                                <a href="#">
-                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                </a>
-                            </div>
-
-
-
-                            <div class="mt-2">
-
-                                <p class="text-xs mt-2 inline hidden">
-                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
-                                </p>
-                                <p class="text-xs mt-2 inline blurb-pendek">
-                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
-                                </p>
-                                <button
-                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                    id="tm">Show
-                                    more</button>
-
-
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
-                        <div class="text-xs text-white">
-                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                <i class="fas fa-plus"></i> Bacaan
-                            </button>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-            <div x-show="open == 'tren'"
-                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
 
 
                 <div
@@ -716,21 +607,197 @@
 
 
                             </div>
+                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                <div class="text-xs text-white">
+                                    <button
+                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                        <i class="fas fa-plus"></i> Bacaan
+                                    </button>
+                                </div>
+
+
+                            </div>
 
 
 
                         </div>
                     </div>
 
-                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
-                        <div class="text-xs text-white">
-                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                <i class="fas fa-plus"></i> Bacaan
-                            </button>
-                        </div>
 
+                </div>
+
+                <div
+                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg" alt="">
+                    <div class="bg-white rounded-xl">
+                        <div class="inset-x-0 top-0 flex">
+
+                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                            </div>
+
+                        </div>
+                        <div class="p-4">
+
+
+                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                <a href="#">
+                                    Distant Memory
+
+                                </a>
+
+                            </div>
+
+                            <div class="text-xs text-left inline">By
+                                <a href="#">
+                                    <div class="text-indigo-700 inline"> Karol.Y</div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="mt-2">
+
+                                <p class="text-xs mt-2 inline hidden">
+                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama
+                                    Amberness.
+                                </p>
+                                <p class="text-xs mt-2 inline blurb-pendek">
+                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama
+                                    Amberness.
+                                </p>
+                                <button
+                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                    id="tm">Show
+                                    more</button>
+
+
+
+                            </div>
+                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                <div class="text-xs text-white">
+                                    <button
+                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                        <i class="fas fa-plus"></i> Bacaan
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div x-show="open == 'tren'" x-transition:enter="transition ease-in duration-200"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-out duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
+                <div class="absolute bottom-0 right-0 opacity-50">
+
+                    <div class="text-center">
+                        <i class="fas text-indigo-500 fa-fire text-7xl">
+                            <div class="text-3xl">Trending!</div>
+                        </i>
 
                     </div>
+
+
+                </div>
+
+
+                <div
+                    class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                    <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png" alt="">
+                    <div class="bg-white rounded-xl">
+                        <div class="inset-x-0 top-0 flex">
+                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                            </div>
+                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                            </div>
+
+                        </div>
+                        <div class="p-4">
+
+
+                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                <a href="#">
+                                    Outcast Desire
+
+                                </a>
+
+                            </div>
+
+                            <div class="text-xs text-left inline">By
+                                <a href="#">
+                                    <div class="text-indigo-700 inline"> Karol.Y</div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="mt-2">
+
+                                <p class="text-xs mt-2 inline hidden">
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                    Jerman
+                                    utara.
+                                </p>
+                                <p class="text-xs mt-2 inline blurb-pendek">
+                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                    Jerman
+                                    utara.
+                                </p>
+                                <button
+                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                    id="tm">Show
+                                    more</button>
+
+
+
+                            </div>
+                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                <div class="text-xs text-white">
+                                    <button
+                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                        <i class="fas fa-plus"></i> Bacaan
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
 
                 </div>
 
@@ -752,8 +819,24 @@
 
 
 
-            <div x-show="open == 'populer'"
+            <div x-show="open == 'populer'" x-transition:enter="transition ease-in duration-200"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-out duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
                 class="overflow-hidden grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 relative p-3">
+                <div class="absolute bottom-0 right-0 opacity-50">
+
+                    <div class="text-center">
+                        <i class="fas text-indigo-500 fa-star text-7xl">
+                            <div class="text-3xl">Popular!</div>
+                        </i>
+
+                    </div>
+
+
+                </div>
 
 
 
@@ -792,11 +875,13 @@
 
                                 <p class="text-xs mt-2 inline hidden">
                                     Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama
+                                    Amberness.
                                 </p>
                                 <p class="text-xs mt-2 inline blurb-pendek">
                                     Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                    wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.
+                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama
+                                    Amberness.
                                 </p>
                                 <button
                                     class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
@@ -806,21 +891,23 @@
 
 
                             </div>
+                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                <div class="text-xs text-white">
+                                    <button
+                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                        <i class="fas fa-plus"></i> Bacaan
+                                    </button>
+                                </div>
+
+
+                            </div>
 
 
 
                         </div>
                     </div>
 
-                    <div class="text-center flex justify-end mt-4 bottom-0 right-0 mr-4 mb-4">
-                        <div class="text-xs text-white">
-                            <button class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                <i class="fas fa-plus"></i> Bacaan
-                            </button>
-                        </div>
 
-
-                    </div>
 
                 </div>
 
@@ -851,11 +938,11 @@
 
 
             <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl">
-                <a href="#"
+                <!-- <a href="#"
                     class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
-                </a>
+                </a> -->
 
 
                 <div class="absolute bottom-0 right-0 opacity-50">
