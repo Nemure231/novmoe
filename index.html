@@ -910,28 +910,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- CERITA TRAN TAMPILAN KOMPUTER -->
+            <!-- CERITA TREN TAMPILAN KOMPUTER -->
             <div class="lg:block md:hidden hidden">
                 <div x-show="open == 'tren'" x-transition:enter="transition ease-in duration-200"
                     x-transition:enter-start="transform opacity-0 scale-95"
@@ -945,6 +924,173 @@
 
                     <div
                         class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                        <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_3.jpg"
+                            alt="">
+                        <div class="bg-white rounded-xl">
+                            <div class="inset-x-0 top-0 flex">
+
+                                <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                </div>
+
+                            </div>
+                            <div class="p-4">
+
+
+                                <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <a href="#">
+                                        Distant Memory 2
+
+                                    </a>
+
+                                </div>
+
+                                <div class="text-xs text-left inline">By
+                                    <a href="#">
+                                        <div class="text-indigo-700 inline"> Karol.Y</div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="mt-2" x-data="
+                        {
+                            blurb: 'Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.'
+                        }">
+
+                                    <p class="text-xs mt-2 inline hidden">
+                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
+                                        terbesar bernama
+                                        Amberness.
+                                    </p>
+                                    <p class="text-xs mt-2 inline"
+                                        x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
+
+                                    </p>
+                                    <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
+                                        class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                        id="tm">
+                                        Show more
+                                    </button>
+                                </div>
+                                <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                    <div class="text-xs text-white">
+                                        <button
+                                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                            <i class="fas fa-plus"></i> Bacaan
+                                        </button>
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div
+                        class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
+                        <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_4.png"
+                            alt="">
+                        <div class="bg-white rounded-xl">
+                            <div class="inset-x-0 top-0 flex">
+
+                                <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                </div>
+
+                            </div>
+                            <div class="p-4">
+
+
+                                <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <a href="#">
+                                        Distant Journey
+
+                                    </a>
+
+                                </div>
+
+                                <div class="text-xs text-left inline">By
+                                    <a href="#">
+                                        <div class="text-indigo-700 inline"> Karol.Y</div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="mt-2" x-data="
+                        {
+                            blurb: 'Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah akan peperangan membuatnya lari dari garis depan demi menepati janji adiknya--Namesa-- untuk tetap hidup.'
+                        }">
+
+                                    <p class="text-xs mt-2 inline hidden">
+                                        Eiril adalah salah satu pejuang elf dalam perang. Rasa benci,
+                                        muak,
+                                        gelisah akan
+                                        peperangan membuatnya lari dari garis depan demi menepati janji
+                                        adiknya--Namesa-- untuk
+                                        teta hidup.
+                                    </p>
+                                    <p class="text-xs mt-2 inline"
+                                        x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
+
+                                    </p>
+                                    <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
+                                        class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                        id="tm">
+                                        Show more
+                                    </button>
+                                </div>
+                                <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                    <div class="text-xs text-white">
+                                        <button
+                                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                            <i class="fas fa-plus"></i> Bacaan
+                                        </button>
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- END CERITA TRAN TAMPILAN KOMPUTER -->
+
+            <!-- CERITA POPULER TAMPILAN KOMPUTER -->
+            <div class="lg:block md:hidden hidden">
+                <div x-show="open == 'populer'" x-transition:enter="transition ease-in duration-200"
+                    x-transition:enter-start="transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-out duration-75"
+                    x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95"
+                    class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 relative p-3  ">
+
+
+                    <div
+                        class="relative overflow-visible ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
                         <img class="-mb-3 relative rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png"
                             alt="">
                         <div class="bg-white rounded-xl">
@@ -976,23 +1122,26 @@
 
 
 
-                                <div class="mt-2">
+                                <div class="mt-2" x-data="
+                                    {
+                                        blurb: 'Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman utara.'
+                                    }">
 
                                     <p class="text-xs mt-2 inline hidden">
-                                        Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                        Aegis, militer swasta yang mencegah monster tumbuhan bernama
+                                        Caltanepent di
                                         Jerman
                                         utara.
                                     </p>
-                                    <p class="text-xs mt-2 inline blurb-pendek">
-                                        Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
-                                        Jerman
-                                        utara.
-                                    </p>
-                                    <button
-                                        class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                        id="tm">Show
-                                        more</button>
+                                    <p class="text-xs mt-2 inline"
+                                        x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
 
+                                    </p>
+                                    <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
+                                        class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
+                                        id="tm">
+                                        Show more
+                                    </button>
                                 </div>
                                 <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                     <div class="text-xs text-white">
@@ -1005,38 +1154,14 @@
 
                                 </div>
 
+
+
                             </div>
                         </div>
 
+
                     </div>
 
-                </div>
-            </div>
-            <!-- END CERITA TRAN TAMPILAN KOMPUTER -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- CERITA POPULER TAMPILAN KOMPUTER -->
-            <div class="lg:block md:hidden hidden">
-                <div x-show="open == 'populer'" x-transition:enter="transition ease-in duration-200"
-                    x-transition:enter-start="transform opacity-0 scale-95"
-                    x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-out duration-75"
-                    x-transition:leave-start="transform opacity-100 scale-100"
-                    x-transition:leave-end="transform opacity-0 scale-95"
-                    class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 relative p-3  ">
 
                     <div
                         class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-64 w-48 mx-auto shadow-lg h-auto">
@@ -1069,27 +1194,26 @@
 
 
 
-                                <div class="mt-2">
+                                <div class="mt-2" x-data="
+                                    {
+                                        blurb: 'Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.'
+                                    }">
 
                                     <p class="text-xs mt-2 inline hidden">
                                         Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
+                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
+                                        terbesar bernama
                                         Amberness.
                                     </p>
-                                    <p class="text-xs mt-2 inline blurb-pendek">
-                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
-                                        Amberness.
+                                    <p class="text-xs mt-2 inline"
+                                        x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
+
                                     </p>
-                                    <button
+                                    <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
                                         class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                        id="tm">Show
-                                        more</button>
-
-
-
+                                        id="tm">
+                                        Show more
+                                    </button>
                                 </div>
                                 <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                     <div class="text-xs text-white">
@@ -1113,6 +1237,7 @@
 
 
 
+
                 </div>
             </div>
             <!-- END CERITA POPULER TAMPILAN KOMPUTER -->
@@ -1129,23 +1254,7 @@
 
 
             <!-- TAMPILAN MOBILE -->
-            <!-- <div x-data="{open_mobile : true}"> -->
-            <!-- CERITA BARU TAMPILAN MOBILE DAN TABLET -->
-            <!-- <div class="lg:hidden block overflow-visible relative">
-                    <select name="" id="" x-on:change="open_mobile = $event.target.value"
-                        class="pencet-kategori-mobile -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
-                        <option id="pilihan-kategori-pertama-mobile" value="baru">
-                            Cerita Terbaru
-                        </option>
-                        <option value="tren">
-                            Cerita Trending
-                        </option>
-                        <option value="populer">
-                            Cerita Populer
-                        </option>
-
-                    </select>
-                </div> -->
+            <!-- CERITA TERBARU TAMPILAN MOBILE -->
             <div class="lg:hidden md:block block">
                 <div x-show="open == 'baru'" x-transition:enter="transition ease-in duration-200"
                     x-transition:enter-start="transform opacity-0 scale-95"
@@ -1641,8 +1750,6 @@
 
             <!-- CERITA POPULER TAMPILAN MOBILE DAN TABLET -->
 
-
-
             <div class="lg:hidden md:block block">
                 <div x-show="open == 'populer'" x-transition:enter="transition ease-in duration-200"
                     x-transition:enter-start="transform opacity-0 scale-95"
@@ -1823,7 +1930,7 @@
 
 
 
-            <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl" x-data="{open: true}">
+            <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl" x-data="{open_penulis: true}">
                 <!-- <a href="#"
                     class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
@@ -1840,41 +1947,34 @@
                     </div>
                 </div>
 
-                <template x-if="open == 'apresiator'">
-                    <div class="absolute bottom-0 right-0 opacity-50">
 
-                        <div class="">
-                            <i class="fas fa-medal text-indigo-500 text-7xl">
+                <div :class="open_penulis == 'apresiator' ? '' : 'hidden'" class="absolute bottom-0 right-0 opacity-50">
 
-                            </i>
+                    <div class="">
+                        <i class="fas fa-medal text-indigo-500 text-7xl">
 
-                        </div>
-
+                        </i>
 
                     </div>
-                </template>
 
-                <template x-if="open == 'populer'">
-                    <div class="absolute bottom-0 right-0 opacity-50">
 
-                        <div class="">
-                            <i class="fas fa-star text-indigo-500 text-7xl">
+                </div>
 
-                            </i>
 
-                        </div>
 
+                <div :class="open_penulis == 'populer' ? '' : 'hidden'" class="absolute bottom-0 right-0 opacity-50">
+
+                    <div class="">
+                        <i class="fas fa-star text-indigo-500 text-7xl">
+
+                        </i>
 
                     </div>
-                </template>
-
-
-
-
+                </div>
 
 
                 <div class="overflow-visible relative">
-                    <select name="" id="" x-on:change="open = $event.target.value"
+                    <select name="" id="" x-on:change="open_penulis = $event.target.value"
                         class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
                         <option id="pilihan-penulis-pertama" value="apresiator">
                             Apresiator
@@ -1885,7 +1985,7 @@
 
                     </select>
 
-                    <div x-show="open == 'apresiator'" x-transition:enter="transition ease-in duration-200"
+                    <div x-show="open_penulis == 'apresiator'" x-transition:enter="transition ease-in duration-200"
                         x-transition:enter-start="transform opacity-0 scale-95"
                         x-transition:enter-end="transform opacity-100 scale-100"
                         x-transition:leave="transition ease-out duration-75"
@@ -1919,7 +2019,7 @@
 
                     </div>
 
-                    <div x-show="open == 'populer'" x-transition:enter="transition ease-in duration-200"
+                    <div x-show="open_penulis == 'populer'" x-transition:enter="transition ease-in duration-200"
                         x-transition:enter-start="transform opacity-0 scale-95"
                         x-transition:enter-end="transform opacity-100 scale-100"
                         x-transition:leave="transition ease-out duration-75"
@@ -1950,31 +2050,6 @@
                         </a>
 
                     </div>
-
-
-
-                    <!-- <ul class="list-none">
-                        <a href="" class="flex items-center mb-3">
-                            <img src="./assets/img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
-                                alt="">
-                            <div>Angelica</div>
-                        </a>
-
-
-                        <li class="flex items-center mb-3">
-                            <img src="./assets/img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
-                                alt="">
-                            <div>Angelica</div>
-                        </li>
-
-                        <li class="flex items-center mb-3">
-                            <img src="./assets/img/profile.png" class="mx-3 h-16 w-16 border-2 border-indigo-500 rounded-full"
-                                alt="">
-                            <div>Angelica</div>
-                        </li>
-
-
-                    </ul> -->
                 </div>
 
 
@@ -2007,7 +2082,6 @@
         </div>
 
     </div>
-
 
 
 
