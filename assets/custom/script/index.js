@@ -116,7 +116,8 @@ ready(function () {
         document.getElementById("kategori-pertama").style.display = null;
         document.getElementById("pilihan-kategori-pertama").selected = "true";
 
-        document.getElementById("kategori-pertama-mobile").style.display = null;
+        // document.getElementById("kategori-pertama-mobile").style.display = null;
+        // document.getElementById("pilihan-kategori-pertama-mobile").selected = "true";
 
         document.getElementById("penulis-pertama").style.display = null;
         document.getElementById("pilihan-penulis-pertama").selected = "true";
@@ -124,30 +125,22 @@ ready(function () {
     
     };
 
+    // document.querySelector('.pencet-kategori-mobile').addEventListener('change', () => {
+
+    //     document.getElementById("kategori-pertama-mobile").style.display = 'none';
+
+    //     const bgDefaultKategori = document.getElementById("bg-default-kategori-mobile");
+    //     bgDefaultKategori.classList.add('hidden');
+
+    // });
+
     document.querySelector('.pencet-kategori').addEventListener('change', () => {
 
         document.getElementById("kategori-pertama").style.display = 'none';
-
-        // const kategoriKedua = document.getElementById("kategori-kedua");
-        // const kategoriKetiga = document.getElementById("kategori-ketiga");
-
-        // if (kategoriKedua.classList.contains('hidden')) {
-        //     kategoriKedua.classList.remove('hidden');
-        // } else {
-        //     // kategoriKedua.classList.add('hidden');
-        // }
-
-        // if (kategoriKetiga.classList.contains('hidden')) {
-        //     kategoriKetiga.classList.remove('hidden');
-        // } else {
-        //     // kategoriKetiga.classList.add('hidden');
-        // }
+        document.getElementById("kategori-pertama-mobile").style.display = 'none';
 
         const bgDefaultKategori = document.getElementById("bg-default-kategori");
         bgDefaultKategori.classList.add('hidden');
-
-
-
 
     });
 
