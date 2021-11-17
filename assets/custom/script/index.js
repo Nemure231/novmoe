@@ -87,16 +87,7 @@ document.addEventListener('alpine:init', () => {
 // document.querySelector('.prev-carousel').addEventListener('click', () => mySiema.prev());
 // document.querySelector('.next-carousel').addEventListener('click', () => mySiema.next());
 
-var swiper = new Swiper(".myswiper", {
-    slidesPerView: 2,
-    spaceBetween: 100,
-    loop: true,
-    freeMode: true,
-    // navigation: {
-    //     nextEl: ".swiper-button-next",
-    //     prevEl: ".swiper-button-prev",
-    // },
-});
+
 
 
 function ready(fn) {
@@ -110,6 +101,34 @@ function ready(fn) {
 
 ready(function () {
 
+//     const mediaQuerySm = window.matchMedia('(min-width: 640px)');
+// const mediaQueryMd = window.matchMedia('(min-width: 768px)');
+// // const mediaQueryLg = window.matchMedia('(min-width: 1024px)');
+
+// if (mediaQuerySm.matches) {
+//     var space = 2;
+// }
+
+// if (mediaQueryMd.matches) {
+//     var space = 3;
+
+// }
+// // if (mediaQueryLg.matches) {
+// //     var pd = 100;
+// // }
+
+var swiper_mobile = new Swiper(".myswiper-mobile", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    freeMode: true,
+    // navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    // },
+});
+
+
 
     window.onload = (event) => {
 
@@ -121,7 +140,7 @@ ready(function () {
         document.getElementById("penulis-pertama").style.display = null;
         document.getElementById("pilihan-penulis-pertama").selected = "true";
 
-    
+
     };
 
 
