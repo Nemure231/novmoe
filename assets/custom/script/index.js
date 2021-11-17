@@ -119,7 +119,7 @@ ready(function () {
 
 var swiper_mobile = new Swiper(".myswiper-mobile", {
     slidesPerView: 3,
-    spaceBetween: 158,
+    spaceBetween: 160,
     loop: true,
     freeMode: true,
     // navigation: {
