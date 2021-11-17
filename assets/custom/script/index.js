@@ -120,7 +120,7 @@ ready(function () {
 var swiper_mobile = new Swiper(".myswiper-mobile", {
     slidesPerView: 3,
     spaceBetween: 165,
-    loop: true,
+    // loop: true,
     freeMode: true,
     // navigation: {
     //     nextEl: ".swiper-button-next",
