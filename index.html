@@ -1266,11 +1266,29 @@
                     <div class="swiper myswiper-mobile">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide ">
-                                <div
+                                <div x-data="{opacity_blurb: false}"
                                     class="relative overflow-visible ring-2 ring-gray-200 rounded-xl h-56 w-40  shadow-lg h-auto">
-                                    <img class="-mb-3 relative rounded-xl h-60 w-40 object-fill"
-                                        src="./assets/img/cover.png" alt="">
-                                    <div class="bg-white rounded-xl">
+                                    <div class="relative" @click.away="opacity_blurb = false" @click="opacity_blurb = !opacity_blurb">
+
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                        rounded-xl bg-white opacity-80 h-full w-full">
+                                        <div class="p-6 text-xs mx-auto">
+                                            Aegis, militer swasta yang mencegah monster tumbuhan bernama
+                                            Caltanepent di Jerman utara.
+                                        </div>
+
+                                        </div>
+                                        
+                                        <div class="">
+                                            <img class=" -mb-3 rounded-xl h-60 w-40 object-fill"
+                                            src="./assets/img/cover.png" alt="">
+                                        </div>
+
+                                    </div>
+                                    
+                                    
+                                    
+                                        <div class="bg-white rounded-xl">
                                         <div class="inset-x-0 top-0 flex">
                                             <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -1299,27 +1317,7 @@
 
 
 
-                                            <div class="mt-2" x-data="
-                                            {
-                                                blurb: 'Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman utara.'
-                                            }">
-
-                                                <p class="text-xs mt-2 inline hidden">
-                                                    Aegis, militer swasta yang mencegah monster tumbuhan bernama
-                                                    Caltanepent di
-                                                    Jerman
-                                                    utara.
-                                                </p>
-                                                <p class="text-xs mt-2 inline"
-                                                    x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
-
-                                                </p>
-                                                <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
-                                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                                    id="tm">
-                                                    Show more
-                                                </button>
-                                            </div>
+                                            
                                             <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                                 <div class="text-xs text-white">
                                                     <button
@@ -1340,10 +1338,27 @@
                                 </div>
                             </div>
                             <div class="swiper-slide ">
-                                <div
+                                <div x-data="{opacity_blurb: false}"
                                     class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-56 w-40  shadow-lg h-auto">
-                                    <img class="-mb-3 relative rounded-xl h-60 w-40 object-fill"
-                                        src="./assets/img/cover_2.jpg" alt="">
+                                    <div class="relative" @click.away="opacity_blurb = false" @click="opacity_blurb = !opacity_blurb">
+
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                        rounded-xl bg-white opacity-80 h-full w-full">
+                                        <div class="p-6 text-xs mx-auto">
+                                            Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
+                                                    terbesar bernama
+                                                    Amberness.
+                                        </div>
+
+                                        </div>
+                                        
+                                        <div class="">
+                                            <img class=" -mb-3 rounded-xl h-60 w-40 object-fill"
+                                            src="./assets/img/cover_2.jpg" alt="">
+                                        </div>
+
+                                    </div>
                                     <div class="bg-white rounded-xl">
                                         <div class="inset-x-0 top-0 flex">
 
@@ -1371,27 +1386,7 @@
 
 
 
-                                            <div class="mt-2" x-data="
-                                            {
-                                                blurb: 'Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.'
-                                            }">
-
-                                                <p class="text-xs mt-2 inline hidden">
-                                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
-                                                    terbesar bernama
-                                                    Amberness.
-                                                </p>
-                                                <p class="text-xs mt-2 inline"
-                                                    x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
-
-                                                </p>
-                                                <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
-                                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                                    id="tm">
-                                                    Show more
-                                                </button>
-                                            </div>
+                                           
                                             <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                                 <div class="text-xs text-white">
                                                     <button
@@ -1412,11 +1407,28 @@
 
                                 </div>
                             </div>
-                            <div class="swiper-slide ">
-                                <div
+                            <div class="swiper-slide">
+                                <div x-data="{opacity_blurb: false}"
                                     class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-56 w-40  shadow-lg h-auto">
-                                    <img class="-mb-3 relative rounded-xl h-60 w-40 object-fill"
-                                        src="./assets/img/cover_3.jpg" alt="">
+                                    <div class="relative" @click.away="opacity_blurb = false" @click="opacity_blurb = !opacity_blurb">
+
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                        rounded-xl bg-white opacity-80 h-full w-full">
+                                        <div class="p-6 text-xs mx-auto">
+                                            Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
+                                                    terbesar bernama
+                                                    Amberness.
+                                        </div>
+
+                                        </div>
+                                        
+                                        <div class="">
+                                            <img class=" -mb-3 rounded-xl h-60 w-40 object-fill"
+                                            src="./assets/img/cover_3.jpg" alt="">
+                                        </div>
+
+                                    </div>
                                     <div class="bg-white rounded-xl">
                                         <div class="inset-x-0 top-0 flex">
 
@@ -1444,27 +1456,7 @@
 
 
 
-                                            <div class="mt-2" x-data="
-                                {
-                                    blurb: 'Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.'
-                                }">
-
-                                                <p class="text-xs mt-2 inline hidden">
-                                                    Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                                    Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
-                                                    terbesar bernama
-                                                    Amberness.
-                                                </p>
-                                                <p class="text-xs mt-2 inline"
-                                                    x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
-
-                                                </p>
-                                                <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
-                                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                                    id="tm">
-                                                    Show more
-                                                </button>
-                                            </div>
+                                            
                                             <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                                 <div class="text-xs text-white">
                                                     <button
@@ -1486,10 +1478,29 @@
                                 </div>
                             </div>
                             <div class="swiper-slide ">
-                                <div
+                                <div x-data="{opacity_blurb: false}"
                                     class="relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-56 w-40  shadow-lg h-auto">
-                                    <img class="-mb-3 relative rounded-xl h-60 w-40 object-fill"
-                                        src="./assets/img/cover_4.png" alt="">
+                                    <div class="relative" @click.away="opacity_blurb = false" @click="opacity_blurb = !opacity_blurb">
+
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                        rounded-xl bg-white opacity-80 h-full w-full">
+                                        <div class="p-6 text-xs mx-auto">
+                                            Eiril adalah salah satu pejuang elf dalam perang. Rasa benci,
+                                            muak,
+                                            gelisah akan
+                                            peperangan membuatnya lari dari garis depan demi menepati janji
+                                            adiknya--Namesa-- untuk
+                                            teta hidup.
+                                        </div>
+
+                                        </div>
+                                        
+                                        <div class="">
+                                            <img class=" -mb-3 rounded-xl h-60 w-40 object-fill"
+                                            src="./assets/img/cover_4.png" alt="">
+                                        </div>
+
+                                    </div>
                                     <div class="bg-white rounded-xl">
                                         <div class="inset-x-0 top-0 flex">
 
@@ -1517,29 +1528,7 @@
 
 
 
-                                            <div class="mt-2" x-data="
-                                {
-                                    blurb: 'Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah akan peperangan membuatnya lari dari garis depan demi menepati janji adiknya--Namesa-- untuk tetap hidup.'
-                                }">
-
-                                                <p class="text-xs mt-2 inline hidden">
-                                                    Eiril adalah salah satu pejuang elf dalam perang. Rasa benci,
-                                                    muak,
-                                                    gelisah akan
-                                                    peperangan membuatnya lari dari garis depan demi menepati janji
-                                                    adiknya--Namesa-- untuk
-                                                    teta hidup.
-                                                </p>
-                                                <p class="text-xs mt-2 inline"
-                                                    x-text="blurb.split(' ').length > 7 ? blurb.split(' ').splice(0, 7).join(' ') + ' ....' : blurb">
-
-                                                </p>
-                                                <button :class="blurb.split(' ').length > 7 ? '' : 'hidden' "
-                                                    class="text-xs bg-indigo-500 text-white p-0.5 rounded-lg inline tombol-blurb-pendek"
-                                                    id="tm">
-                                                    Show more
-                                                </button>
-                                            </div>
+                                           
                                             <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                                 <div class="text-xs text-white">
                                                     <button
