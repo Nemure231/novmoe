@@ -164,11 +164,11 @@ ready(function () {
             if (blurbPendekHidden.classList.contains('hidden')) {
                 blurbPendek.classList.add('hidden');
                 blurbPendekHidden.classList.remove('hidden');
-                element.innerText = 'Show less';
+                element.innerText = 'Less';
             } else {
                 blurbPendek.classList.remove('hidden');
                 blurbPendekHidden.classList.add('hidden');
-                element.innerText = 'Show more';
+                element.innerText = 'More';
             }
 
 
