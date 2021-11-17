@@ -89,7 +89,7 @@ document.addEventListener('alpine:init', () => {
 
 var swiper = new Swiper(".myswiper", {
     slidesPerView: 2,
-    spaceBetween: 40,
+    spaceBetween: 100,
     loop: true,
     freeMode: true,
     navigation: {
