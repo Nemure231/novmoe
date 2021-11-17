@@ -92,10 +92,10 @@ var swiper = new Swiper(".myswiper", {
     spaceBetween: 100,
     loop: true,
     freeMode: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+    // navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    // },
 });
 
 
