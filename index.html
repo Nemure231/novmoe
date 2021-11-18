@@ -504,8 +504,7 @@
                                 open == 'baru'    ? 'Baru!'     : '' || 
                                 open == 'tren'    ? 'Trending!' : '' ||
                                 open == 'populer' ? 'Populer!'  : '' 
-                            ]" 
-                            class="text-3xl"></div>
+                            ]" class="text-3xl"></div>
                         </i>
 
                     </div>
@@ -513,8 +512,8 @@
 
                 </div>
                 <!-- END KONDISI BG IKON -->
-                
-            
+
+
                 <!-- KONDISI LINK SELENGKAPNYA -->
                 <a :href="
                     [
@@ -522,14 +521,14 @@
                         open == 'baru'    ? 'baru.html'     : '' || 
                         open == 'tren'    ? 'trending.html' : '' ||
                         open == 'populer' ? 'populer.html'  : '' 
-                    ]" 
+                    ]"
                     class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
                 <!-- END KONDISI LINK SELENGKAPNYA -->
 
-               
+
 
                 <!-- CERITA BARU TAMPILAN KOMPUTERS -->
                 <div class="lg:block md:block hidden">
@@ -539,17 +538,19 @@
                         x-transition:leave="transition ease-out duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3 " id="kategori-pertama"
-                        >
+                        class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3 "
+                        id="kategori-pertama">
 
                         <div x-data="{opacity_blurb: false}"
                             class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
                                         Jerman utara.
                                     </div>
@@ -557,8 +558,8 @@
                                 </div>
 
                                 <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png"
-                                        alt="">
+                                    <img class="filter blur-50 -mb-3 rounded-xl h-72 w-48 object-fill"
+                                        src="./assets/img/cover.png" alt="">
                                 </div>
 
                             </div>
@@ -616,9 +617,10 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                         Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
                                         bernama
@@ -687,9 +689,9 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                         Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
                                         bernama
@@ -757,9 +759,10 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto text-justify">
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
                                         akan
                                         peperangan membuatnya lari dari garis depan demi menepati janji
@@ -848,8 +851,7 @@
                             open == 'tren' ? 'block' : 'hidden' 
                         ]
                     
-                    "
-                        >
+                    ">
 
 
 
@@ -858,9 +860,10 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                         Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
                                         bernama
@@ -928,9 +931,11 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                         Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
                                         bernama
@@ -1001,9 +1006,11 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
                                         Jerman
                                         utara.
@@ -1097,8 +1104,7 @@
                             open == 'populer' ? 'block' : 'hidden' 
                         ]
                     
-                    "
-                        >
+                    ">
 
 
                         <div x-data="{opacity_blurb: false}"
@@ -1106,9 +1112,11 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                         Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
                                         bernama
@@ -1176,17 +1184,20 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
                                         akan
                                         peperangan membuatnya lari dari garis depan demi menepati janji
-                                        adiknya--Namesa-- untuk
-                                        teta hidup.
+                                        adiknya--Namesa--untuk
+                                        tetap hidup.
                                     </div>
 
                                 </div>
+
 
                                 <div class="">
                                     <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_4.png"
@@ -1248,9 +1259,11 @@
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 bottom-0 h-1/2 w-full">
-                                    <div class="p-3 text-xs mx-auto">
+
+
+                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
                                         Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
                                         Jerman
                                         utara.
@@ -1380,7 +1393,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Aegis, militer swasta yang mencegah monster tumbuhan bernama
                                                 Caltanepent di Jerman utara.
                                             </div>
@@ -1453,7 +1466,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                                 Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
                                                 terbesar bernama
@@ -1524,7 +1537,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                                 Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
                                                 terbesar bernama
@@ -1595,13 +1608,13 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Eiril adalah salah satu pejuang elf dalam perang. Rasa benci,
                                                 muak,
                                                 gelisah akan
                                                 peperangan membuatnya lari dari garis depan demi menepati janji
                                                 adiknya--Namesa-- untuk
-                                                teta hidup.
+                                                tetap hidup.
                                             </div>
 
                                         </div>
@@ -1762,7 +1775,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                                 Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
                                                 terbesar bernama
@@ -1833,7 +1846,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                         rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                                 Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
                                                 terbesar bernama
@@ -1904,7 +1917,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Aegis, militer swasta yang mencegah monster tumbuhan bernama
                                                 Caltanepent di Jerman utara.
                                             </div>
@@ -2030,7 +2043,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
                                                 Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
                                                 terbesar bernama
@@ -2101,13 +2114,13 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Eiril adalah salah satu pejuang elf dalam perang. Rasa benci,
                                                 muak,
                                                 gelisah akan
                                                 peperangan membuatnya lari dari garis depan demi menepati janji
                                                 adiknya--Namesa-- untuk
-                                                teta hidup.
+                                                tetap hidup.
                                             </div>
 
                                         </div>
@@ -2180,7 +2193,7 @@
 
                                         <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto">
+                                            <div class="p-3 text-xs mx-auto font-medium">
                                                 Aegis, militer swasta yang mencegah monster tumbuhan bernama
                                                 Caltanepent di Jerman utara.
                                             </div>
@@ -2279,15 +2292,13 @@
                 <!-- KONDISI BG IKON PENULIS -->
                 <div class="absolute bottom-0 right-0 opacity-50">
                     <div class="">
-                        <i class="text-indigo-500 text-7xl" 
-                            :class="
+                        <i class="text-indigo-500 text-7xl" :class="
                             [
                                 open == true      ? 'fas fa-medal'     : '' ||
                                 open == 'apresiator'   ? 'fas fa-medal'     : '' || 
                                 open == 'populer'   ? 'fas fa-star' : '' ||
                                 open == 'naik_daun' ? 'fa-arrow-circle-up'  : '' 
-                            ]"
-                        >
+                            ]">
 
                         </i>
 
@@ -2296,7 +2307,7 @@
                 <!-- END KONDISI BG IKON PENULIS -->
 
 
-        
+
 
                 <div class="overflow-visible relative">
                     <select name="" id="" x-on:change="open_penulis = $event.target.value"
@@ -2320,9 +2331,7 @@
                         x-transition:leave="transition ease-out duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-pertama"
-                        
-                        >
+                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-pertama">
 
 
                         <a href="" class="flex py-2">
@@ -2358,15 +2367,13 @@
                         x-transition:leave="transition ease-out duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500"
-                        :class="
+                        class="grid grid-cols-1 divide-y divide-indigo-500" :class="
                             [
                             open_penulis == true ? 'hidden' : '' ||
                                 open_penulis == 'naik_daun' ? 'block' : 'hidden' 
                             ]
                         
-                        "
-                        >
+                        ">
 
 
                         <a href="" class="flex py-2">
@@ -2402,15 +2409,13 @@
                         x-transition:leave="transition ease-out duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-kedua"
-                        :class="
+                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-kedua" :class="
                             [
                                 open_penulis == true ? 'hidden' : '' ||
                                 open_penulis == 'populer' ? 'block' : 'hidden' 
                             ]
                         
-                        "
-                        >
+                        ">
                         <a href="" class="flex py-2">
                             <img src="./assets/img/profile.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
@@ -2444,12 +2449,23 @@
 
         </div>
 
+
+        <!-- MENU BAWAH MOBILE -->
+        <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50">
+            <div class="h-20 border-opacity-50 border-t-4 border-indigo-500 bg-white rounded-t-xl">
+                
+
+            </div>
+
+        </div>
+        <!-- END MENU BAWAH MOBILE -->
+
     </main>
 
 
-    <footer class="text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0">
-        <div
-            class="container px-5 py-12 mx-auto flex md:items-center lg:items-start flex-row flex-nowrap"> <!-- sm flex-wrap flex-col -->
+    <footer class="hidden md:block lg:block text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0">
+        <div class="container px-5 py-12 mx-auto flex md:items-center lg:items-start flex-row flex-nowrap">
+            <!-- sm flex-wrap flex-col -->
             <div class="w-64 my-auto flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                 <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                     <div class="flex items-center justify-center w-16 h-16 text-indigo-500 p-2 bg-white rounded-full">
@@ -2487,8 +2503,7 @@
         <div class="bg-indigo-700">
             <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                 <p class="text-white text-sm text-center sm:text-left">© 2021 NRM —
-                    <a href="" rel="noopener noreferrer" class="ml-1"
-                        target="_blank">NovelRinganMoe</a>
+                    <a href="" rel="noopener noreferrer" class="ml-1" target="_blank">NovelRinganMoe</a>
                 </p>
 
                 <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
