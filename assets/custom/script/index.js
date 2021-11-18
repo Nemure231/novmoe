@@ -135,8 +135,6 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
         document.getElementById("kategori-pertama").style.display = null;
         document.getElementById("pilihan-kategori-pertama").selected = "true";
 
-        document.getElementById("kategori-pertama-mobile").style.display = null;
-
         document.getElementById("penulis-pertama").style.display = null;
         document.getElementById("pilihan-penulis-pertama").selected = "true";
 
@@ -147,30 +145,12 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
     document.querySelector('.pencet-kategori').addEventListener('change', () => {
 
         document.getElementById("kategori-pertama").style.display = 'none';
-        document.getElementById("kategori-pertama-mobile").style.display = 'none';
-
-        const bgDefaultKategori = document.getElementById("bg-default-kategori");
-        bgDefaultKategori.classList.add('hidden');
 
     });
 
     document.querySelector('.pencet-penulis').addEventListener('change', () => {
 
         document.getElementById("penulis-pertama").style.display = 'none';
-
-        const penulisKedua = document.getElementById("penulis-kedua");
-
-        if (penulisKedua.classList.contains('hidden')) {
-            penulisKedua.classList.remove('hidden');
-        } else {
-            penulisKedua.classList.add('hidden');
-        }
-
-        const bgDefaultPenulis = document.getElementById("bg-default-penulis");
-        bgDefaultPenulis.classList.add('hidden');
-
-
-
     });
 
     var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
