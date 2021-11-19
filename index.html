@@ -2451,43 +2451,58 @@
 
 
         <!-- MENU BAWAH MOBILE -->
-        <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50">
-            <div class="justify-around h-14 border-opacity-50 border-t-4 border-indigo-500 bg-white rounded-t-xl flex">
+
+
+        <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: false}" @click.away="menu_mobile = false">
+
+
+            <div x-show="menu_mobile"  class="bg-white h-40 rounded-t-xl border-opacity-50 border-t-4 border-indigo-500"
+                x-transition:enter="transition ease-out duration-200 "
+                x-transition:enter-start="transform opacity-0 scale-y-0"
+                x-transition:enter-end="transform opacity-100  scale-y-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="transform opacity-100  scale-y-100"
+                x-transition:leave-end="transform opacity-0 scale-y-0"
+            >
+
+            </div>
+
+            <div  class="justify-around h-14 border-opacity-50 border-t-2 border-indigo-500 bg-white rounded-t-xl flex">
 
                 <div class="py-3">
-                    <button class="
-                    flex items-center justify-center text-indigo-500">
-                        <i class="fas text-3xl fa-home"></i>
-                   </button>
+                    <a href="./index.html" class="
+                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-home"></i>
+                    </a>
                     
                 </div>
                 <div class="py-3">
-                    <button class="
-                    flex items-center justify-center text-indigo-500">
-                        <i class="fas text-3xl fa-book"></i>
+                    <button  @click="menu_mobile = ! menu_mobile" class="
+                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-book"></i>
                    </button>
                     
                 </div>
 
-                <div class="overflow-visible">
-                   <button class="-mt-5 h-12 w-12 rounded-full border-b-4 border-indigo-700
+                <div class="overflow-visible z-50">
+                   <button  class="-mt-5 h-12 w-12 rounded-full border-b-4 border-indigo-700
                     flex items-center justify-center bg-indigo-500 text-white">
                         <i class="fas text-xl fa-plus"></i>
                    </button>
 
                 </div>
                 <div class="py-3">
-                    <button class="
-                    flex items-center justify-center text-indigo-500">
-                        <i class="fas text-3xl fa-tags"></i>
+                    <button @click="menu_mobile = ! menu_mobile"  class="
+                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-tags"></i>
                    </button>
                     
                 </div>
 
                 <div class="py-3">
-                    <button class="
-                    flex items-center justify-center text-indigo-500">
-                        <i class="fas text-3xl fa-user"></i>
+                    <button @click="menu_mobile = ! menu_mobile" class="
+                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-cog"></i>
                    </button>
                     
                 </div>
