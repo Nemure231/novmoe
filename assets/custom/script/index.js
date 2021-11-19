@@ -138,6 +138,8 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
         document.getElementById("penulis-pertama").style.display = null;
         document.getElementById("pilihan-penulis-pertama").selected = "true";
 
+        document.getElementById("genre-mobile-pertama").style.display = null;
+
 
     };
 
@@ -151,6 +153,11 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
     document.querySelector('.pencet-penulis').addEventListener('change', () => {
 
         document.getElementById("penulis-pertama").style.display = 'none';
+    });
+
+    document.querySelector('.pencet-kategori-mobile-pertama').addEventListener('click', () => {
+
+        document.getElementById("genre-mobile-pertama").style.display = 'none';
     });
 
     var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
