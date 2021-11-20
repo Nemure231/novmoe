@@ -140,6 +140,8 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
 
         document.getElementById("genre-mobile-pertama").style.display = null;
 
+        // document.getElementById("tml").style.display = null;
+
 
     };
 
@@ -159,6 +161,12 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
 
         document.getElementById("genre-mobile-pertama").style.display = 'none';
     });
+
+    // document.getElementById('buku').addEventListener('click', () => {
+
+    //     document.getElementById("mobile-menu-buku").style.display = null ;
+    // });
+
 
     var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
     Array.prototype.forEach.call(tombolBlurb, function (element) {
