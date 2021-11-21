@@ -2573,7 +2573,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
             <div x-show="menu_mobile == 'pengaturan'" 
-                class="bg-white h-56 rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
+                class="bg-white h-56 rounded-t-xl border-opacity-50 border-t-4 border-indigo-500"
                 x-transition:enter="transition ease-out duration-200 "
                 x-transition:enter-start="transform opacity-0 scale-y-0"
                 x-transition:enter-end="transform opacity-100  scale-y-100"
@@ -2581,12 +2581,9 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                 x-transition:leave-start=" transform opacity-100  scale-y-100"
                 x-transition:leave-end="transform opacity-0 scale-y-0">
           
-                <div class="p-2">
+                <div class="p-2" :class="$store.darkMode && 'bg-black'">
 
-                   <button @click="darkMode = !darkMode">
-                    mkmk
-                   </button>
-                    
+                    <button @click="$store.darkMode = ! $store.darkMode">Toggle Dark Mode</button>
                 
                 
                 </div>

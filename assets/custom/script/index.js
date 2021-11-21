@@ -1,3 +1,6 @@
+document.addEventListener('alpine:init', () => {
+    Alpine.store('darkMode', false)
+})
 // function blurbPendek() {
 //     var blurbPendek = document.getElementsByClassName('blurb-pendek');
 //     var num = 7;
