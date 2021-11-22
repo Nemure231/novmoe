@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./tailwind.css" rel="stylesheet">
     <link href="./tailwind-dark.css" rel="stylesheet">
-    <script src="./tailwind.config.js"></script>
 
 
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
@@ -23,7 +22,7 @@
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900">
 
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-indigo-500 sticky top-0 z-50">
+    <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center block lg:hidden md:hidden">
@@ -32,26 +31,26 @@
                         class="inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white"
                         aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span> -->
-                        <!--
+                    <!--
               Icon when menu is closed.
   
               Heroicon name: outline/menu
   
               Menu open: "hidden", Menu closed: "block"
             -->
-                        <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg> -->
-                        <!--
+                    <!--
               Icon when menu is open.
   
               Heroicon name: outline/x
   
               Menu open: "block", Menu closed: "hidden"
             -->
-                        <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12" />
@@ -75,7 +74,7 @@
 
 
                             <!-- NAVBAR BERANDA-->
-                            <div class="bg-indigo-900 rounded-md">
+                            <div class="bg-indigo-900 dark:bg-indigo-700 rounded-md">
 
                                 <div class="px-2 py-2">
 
@@ -86,7 +85,8 @@
                             <!-- END NAVBAR BERENADA -->
 
                             <!-- NAVBAR GENRE -->
-                            <div @click.away="open = false" class=" relative hover:bg-indigo-700 rounded-md px-2 py-2"
+                            <div @click.away="open = false"
+                                class=" relative hover:bg-indigo-700 dark:hover:bg-indigo-500 rounded-md px-2 py-2"
                                 x-data="navbar_genre">
 
                                 <button @click="pencet_navbar_genre" class="text-white text-sm font-medium">
@@ -109,10 +109,10 @@
                                     x-transition:leave-end="transform opacity-0 -translate-y-7"
                                     class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
 
-                                    <div class="p-2 bg-white rounded-md shadow-lg">
+                                    <div class="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
                                         <div class="grid grid-cols-2 grid-rows-max gap-4">
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-hat-wizard"></i>
                                                 </div>
@@ -123,7 +123,7 @@
                                             </a>
 
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-cog"></i>
                                                 </div>
@@ -133,7 +133,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-grin-squint"></i>
                                                 </div>
@@ -143,7 +143,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-heart"></i>
                                                 </div>
@@ -153,7 +153,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-ghost"></i>
                                                 </div>
@@ -163,7 +163,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-hand-rock"></i>
                                                 </div>
@@ -181,7 +181,8 @@
 
 
                             <!-- NAVBAR KATEGORI -->
-                            <div @click.away="open = false" class=" relative hover:bg-indigo-700 rounded-md px-2 py-2"
+                            <div @click.away="open = false"
+                                class=" relative hover:bg-indigo-700 dark:hover:bg-indigo-500  rounded-md px-2 py-2"
                                 x-data="navbar_kategori">
 
                                 <button @click="pencet_navbar_kategori" class="text-white text-sm font-medium">
@@ -204,10 +205,10 @@
                                     x-transition:leave-end="transform opacity-0 -translate-y-7"
                                     class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
 
-                                    <div class="p-2 bg-white rounded-md shadow-lg">
+                                    <div class="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
                                         <div class="grid grid-cols-2 grid-rows-max gap-4">
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas fa-hourglass-half"></i>
                                                 </div>
@@ -218,7 +219,7 @@
                                             </a>
 
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas fa-hourglass-end"></i>
                                                 </div>
@@ -228,7 +229,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-star"></i>
                                                 </div>
@@ -238,7 +239,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-fire"></i>
                                                 </div>
@@ -248,7 +249,7 @@
                                                 </div>
                                             </a>
                                             <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200">
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-arrow-up"></i>
                                                 </div>
@@ -302,14 +303,15 @@
                             x-transition:enter-end="transform opacity-100 translate-y-0"
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 translate-y-0"
-                            x-transition:leave-end="transform opacity-0 -translate-y-7" id="dropdown-notif"
-                            class="hidden origin-top-right absolute right-0 mt-2 w-72 md:w-96 lg:w-96 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            x-transition:leave-end="transform opacity-0 -translate-y-7" id="dropdown-notif" class="hidden origin-top-right absolute right-0 mt-2 w-72 md:w-96 lg:w-96 rounded-lg 
+                            shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none
+                            dark:bg-gray-800" role="menu" aria-orientation="vertical"
+                            aria-labelledby="user-menu-button" tabindex="-1">
 
 
                             <ul class="list-none ">
                                 <li
-                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 rounded-t-lg hover:bg-indigo-200">
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:text-white rounded-t-lg hover:bg-indigo-200">
                                     <div Class="m-1">
 
                                         <div class="flex item-center max-w-max">
@@ -330,13 +332,13 @@
                                         <!-- ikon -->
                                     </div>
 
-                                    <div class="ml-3 text-xs text-center text-gray-500">
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
                                         1 jam lalu
 
                                     </div>
                                 </li>
                                 <li
-                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 rounded-none hover:bg-indigo-200">
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-none hover:bg-indigo-200">
                                     <div Class="m-1">
 
                                         <div class="flex item-center max-w-max">
@@ -357,13 +359,13 @@
 
                                         </i>
                                     </div>
-                                    <div class="ml-3 text-xs text-center text-gray-500">
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
                                         Kemarin
 
                                     </div>
                                 </li>
                                 <li
-                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200">
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-b-lg hover:bg-indigo-200">
                                     <div Class="m-1">
 
                                         <div class="flex item-center max-w-max">
@@ -385,7 +387,7 @@
 
                                         </i>
                                     </div>
-                                    <div class="ml-3 text-xs text-center text-gray-500">
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
                                         20 Des 2021
 
                                     </div>
@@ -421,14 +423,17 @@
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 translate-y-0"
                             x-transition:leave-end="transform opacity-0 -translate-y-7"
-                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none  dark:bg-gray-800 "
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-t-lg hover:bg-indigo-200"
+                            <a href="#"
+                                class="block px-4 py-2 text-sm dark:text-white rounded-t-lg dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-0">@Nc</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-none hover:bg-indigo-200"
+                            <a href="#"
+                                class="block px-4 py-2 text-sm dark:text-white rounded-none dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-900 rounded-b-lg hover:bg-indigo-200"
+                            <a href="#"
+                                class="block px-4 py-2 text-sm dark:text-white rounded-b-lg dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
                         </div>
                         <!-- END DROPDOWN PROFIL -->
@@ -478,7 +483,7 @@
                 class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8 dark:bg-gray-800">
                 <div class="lg:block md:block hidden overflow-visible relative">
                     <select name="" id="" x-on:change="open = $event.target.value"
-                        class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                        class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
                         <!-- <option></option> -->
                         <option id="pilihan-kategori-pertama" value="baru">
                             Cerita Terbaru
@@ -529,7 +534,7 @@
                         open == 'tren'    ? 'trending.html' : '' ||
                         open == 'populer' ? 'populer.html'  : '' 
                     ]"
-                    class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -549,7 +554,7 @@
                         id="kategori-pertama">
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -583,7 +588,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Outcast Desire
 
@@ -619,7 +625,7 @@
                         </div>
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -652,7 +658,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Memory
 
@@ -690,7 +697,7 @@
                         </div>
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -722,7 +729,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Memory 2
 
@@ -759,7 +767,7 @@
 
                         </div>
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -793,7 +801,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Journey
 
@@ -859,7 +868,7 @@
 
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -892,7 +901,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Memory 2
 
@@ -929,7 +939,7 @@
 
                         </div>
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -963,7 +973,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Memory
 
@@ -1003,7 +1014,7 @@
 
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1038,7 +1049,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Outcast Desire
 
@@ -1108,7 +1120,7 @@
 
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1142,7 +1154,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Memory 2
 
@@ -1179,7 +1192,7 @@
 
                         </div>
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1215,7 +1228,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Distant Journey
 
@@ -1253,7 +1267,7 @@
                         </div>
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto ring-gray-900">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1288,7 +1302,8 @@
                                 <div class="p-4">
 
 
-                                    <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                    <div
+                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                         <a href="#">
                                             Outcast Desire
 
@@ -1367,14 +1382,14 @@
                 <!-- END BG IKON BARU TAMPILAN MOBILE  -->
                 <div class="overflow-visible relative">
                     <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
 
                         Cerita Terbaru
                     </div>
                 </div>
 
                 <a href="./baru.html"
-                    class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -1384,7 +1399,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1419,7 +1434,7 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center"
+                                            <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
                                                 :class="$store.darkMode && 'text-indigo-200'">
                                                 <a href="#">
                                                     Outcast Desire
@@ -1458,7 +1473,7 @@
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1490,7 +1505,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Memory
 
@@ -1528,7 +1544,7 @@
                             </div>
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class=" mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class=" mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1560,7 +1576,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Memory 2
 
@@ -1598,7 +1615,7 @@
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1632,7 +1649,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Journey
 
@@ -1747,14 +1765,14 @@
                 <!-- END BG IKON TRENDING TAMPILAN MOBILE  -->
                 <div class="overflow-visible relative">
                     <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
 
                         Cerita Terending
                     </div>
                 </div>
 
                 <a href="./trending.html"
-                    class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -1764,7 +1782,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class=" mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class=" mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1796,7 +1814,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Memory 2
 
@@ -1834,7 +1853,7 @@
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1866,7 +1885,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Memory
 
@@ -1904,7 +1924,7 @@
                             </div>
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1939,7 +1959,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Outcast Desire
 
@@ -2012,14 +2033,14 @@
                 <!-- END BG IKON POPULER TAMPILAN MOBILE  -->
                 <div class="overflow-visible relative">
                     <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
 
                         Cerita Populer
                     </div>
                 </div>
 
                 <a href="./populer.html"
-                    class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -2029,7 +2050,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -2061,7 +2082,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Memory 2
 
@@ -2099,7 +2121,7 @@
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -2133,7 +2155,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Distant Journey
 
@@ -2177,7 +2200,7 @@
 
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -2212,7 +2235,8 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#">
                                                     Outcast Desire
 
@@ -2275,7 +2299,7 @@
                 x-data="{open_penulis: true}">
 
                 <!-- <a href="#"
-                    class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a> -->
@@ -2302,7 +2326,7 @@
 
                 <div class="overflow-visible relative">
                     <select name="" id="" x-on:change="open_penulis = $event.target.value"
-                        class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
+                        class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
                         <option id="pilihan-penulis-pertama" value="apresiator">
                             Apresiator
                         </option>
@@ -2458,10 +2482,7 @@
                 class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
                 x-transition:enter="transition ease-out duration-200 "
                 x-transition:enter-start="transform opacity-0 scale-y-0"
-                x-transition:enter-end="transform opacity-100  scale-y-100"
-                x-transition:leave="absolute transition ease-in duration-200"
-                x-transition:leave-start=" transform opacity-100  scale-y-100"
-                x-transition:leave-end="transform opacity-0 scale-y-0">
+                x-transition:enter-end="transform opacity-100  scale-y-100">
 
                 <div class="pb-9" x-data="{buku: true}">
 
@@ -2505,22 +2526,22 @@
                         x-transition:leave-end="transform opacity-0 -translate-x-7">
 
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Fantasy</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Fantasy</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Sci-Fi</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Sci-Fi</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Comedy</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Comedy</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Romance</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Romance</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Supernatural</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Supernatural</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Action</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Action</a>
                         </div>
                     </div>
                     <!-- END TAB MENU MOBILE GENRE-->
@@ -2537,19 +2558,19 @@
                             buku == 'kategori' ? 'block' : 'hidden' 
                         ]" class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm">
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Berlangsung</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Berlangsung</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Tamat</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Tamat</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Populer</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Populer</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Trending</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Trending</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Terbaru</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Terbaru</a>
                         </div>
                     </div>
                     <!-- END TAB MENU MOBILE KATEGORI-->
@@ -2568,16 +2589,33 @@
                 class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
                 x-transition:enter="transition ease-out duration-200 "
                 x-transition:enter-start="transform opacity-0 scale-y-0"
-                x-transition:enter-end="transform opacity-100  scale-y-100"
-                x-transition:leave="absolute transition ease-in duration-200"
-                x-transition:leave-start=" transform opacity-100  scale-y-100"
-                x-transition:leave-end="transform opacity-0 scale-y-0">
+                x-transition:enter-end="transform opacity-100  scale-y-100">
 
                 <div class="pb-9">
 
-                    <button @click="darkMode = !darkMode">
-                        Toggle Theme
-                    </button>
+                    <!-- @click="darkMode = !darkMode" -->
+
+
+                    <div x-data="{toggle: false}">
+                        <div class="flex items-center justify-center mt-8">
+                            <i class="mr-3 text-2xl far fa-sun text-black dark:text-white"></i>
+                            <div class="relative w-12 h-6 transition duration-200 ease-linear rounded-full"
+                                :class="[toggle ? 'bg-indigo-400' : 'bg-gray-300']">
+                                <label for="toggle" class="absolute left-0 w-6 h-6 transition duration-100 ease-linear
+                                        transform bg-gray-100 rounded-full cursor-pointer"
+                                    :class="[toggle ? 'left-0 translate-x-full border-gray-400': 'right-0 translate-x-0 border-green-400']">
+                                </label>
+
+                                <!-- x-data="{ darkMode: localStorage.getItem('dark') === 'true'} "
+                                x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" -->
+
+                                <input type="checkbox" id="toggle" name="toggle" x-model="toggle"
+                                    class="w-full h-full appearance-none focus:outline-none" @click="darkMode = !darkMode"/>
+                            </div>
+                            <i class="ml-3 text-2xl far fa-moon text-black dark:text-white"></i>
+                        </div>
+                    </div>
+
 
 
                 </div>
@@ -2591,14 +2629,16 @@
                 dark:bg-gray-800">
 
                 <div class="py-3">
-                    <a href="./index.html" class="
+                    <a href="./index.html"
+                        class="
                     flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700 ">
                         <i class="fas text-2xl fa-home"></i>
                     </a>
 
                 </div>
                 <div class="py-3">
-                    <button id="buku" @click="menu_mobile = 'buku'" class="
+                    <button id="buku" @click="menu_mobile = 'buku'"
+                        class="
                     flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                         <i class="fas text-2xl fa-book"></i>
                     </button>
@@ -2613,7 +2653,8 @@
 
                 </div>
                 <div class="py-3">
-                    <button id="pengaturan" @click="menu_mobile = 'pengaturan'" class="
+                    <button id="pengaturan" @click="menu_mobile = 'pengaturan'"
+                        class="
                     flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                         <i class="fas text-2xl fa-cog"></i>
                     </button>
@@ -2621,7 +2662,8 @@
                 </div>
 
                 <div class="py-3">
-                    <a href="./pengguna.html" class="
+                    <a href="./pengguna.html"
+                        class="
                     flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                         <i class="fas text-2xl fa-user"></i>
                     </a>
