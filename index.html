@@ -1,12 +1,15 @@
 <!doctype html>
-<html  x-data="{ darkMode: localStorage.getItem('dark') === 'true'} "
-x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
-:class="{ 'dark': darkMode }">
+<html x-data="{ darkMode: localStorage.getItem('dark') === 'true'} "
+    x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" :class="{ 'dark': darkMode }">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./tailwind.css" rel="stylesheet">
+    <link href="./tailwind-dark.css" rel="stylesheet">
+    <script src="./tailwind.config.js"></script>
+
+
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -17,7 +20,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 </head>
 
-<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200">
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900">
 
     <!-- This example requires Tailwind CSS v2.0+ -->
     <nav class="bg-indigo-500 sticky top-0 z-50">
@@ -25,10 +28,10 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center block lg:hidden md:hidden">
                     <!-- Mobile menu button-->
-                    <button type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    <!-- <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white"
                         aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
+                        <span class="sr-only">Open main menu</span> -->
                         <!--
               Icon when menu is closed.
   
@@ -36,11 +39,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
   
               Menu open: "hidden", Menu closed: "block"
             -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                        </svg> -->
                         <!--
               Icon when menu is open.
   
@@ -48,12 +51,12 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
   
               Menu open: "block", Menu closed: "hidden"
             -->
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+                        </svg> -->
+                    <!-- </button> -->
                 </div>
                 <div class="flex-1 flex items-center justify-center lg:justify-start md:justify-start items-stretch">
                     <div class="flex-shrink-0 flex items-center">
@@ -459,8 +462,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
         </div>
     </nav>
 
-    <div class="text-red-500 md:text-blue-500 lg:text-black">
-        LAYAR MERAH: sm, BIRU: md, HITAM: lg
+    <div class="text-green-500 sm:text-red-500 md:text-blue-500 lg:text-black">
+        LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
     </div>
 
 
@@ -471,7 +474,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
     <main class="my-16 container flex flex-warp mx-auto mt-16 relative">
 
         <div class="w-full md:mx-4 lg:mx-4 mx-auto md:w-full lg:w-3/4" x-data="{open: true}">
-            <div class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8">
+            <div
+                class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8 dark:bg-gray-800">
                 <div class="lg:block md:block hidden overflow-visible relative">
                     <select name="" id="" x-on:change="open = $event.target.value"
                         class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 p-2 rounded-lg  absolute top-0 left-0">
@@ -545,7 +549,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         id="kategori-pertama">
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -566,7 +570,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
                                     <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -587,12 +591,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -616,7 +619,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         </div>
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -638,7 +641,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -657,12 +660,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -688,7 +690,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         </div>
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -709,7 +711,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -728,12 +730,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -758,7 +759,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                         </div>
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -781,7 +782,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -800,12 +801,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -859,7 +859,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -881,7 +881,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -900,12 +900,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -930,7 +929,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                         </div>
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -953,7 +952,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -972,12 +971,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -1005,7 +1003,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1027,7 +1025,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
                                     <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -1048,12 +1046,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -1111,7 +1108,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1134,7 +1131,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1153,12 +1150,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -1183,7 +1179,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                         </div>
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1208,7 +1204,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
 
                                     <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1227,12 +1223,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -1258,7 +1253,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         </div>
 
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -1280,7 +1275,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                 </div>
 
                             </div>
-                            <div class="bg-white rounded-xl">
+                            <div class="bg-white rounded-xl dark:bg-gray-700">
                                 <div class="inset-x-0 top-0 flex">
                                     <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -1301,12 +1296,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                     </div>
 
-                                    <div class="text-xs text-left inline">By
-                                        <a href="#">
-                                            <div class="text-indigo-700 inline"> Karol.Y</div>
-                                        </a>
-                                    </div>
+                                    <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                    </div>
+                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                    </a>
 
 
 
@@ -1357,7 +1351,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
             <!-- CERITA BARU TAMPILAN MOBILE -->
             <div
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative">
+                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
                 <!-- BG IKON BARU TAMPILAN MOBILE -->
                 <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -1390,7 +1384,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         <div class="swiper-wrapper">
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1412,7 +1406,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
 
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
                                             <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -1425,7 +1419,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center">
+                                            <div class="mb-2 text-sm text-indigo-500 truncate font-bold text-center"
+                                                :class="$store.darkMode && 'text-indigo-200'">
                                                 <a href="#">
                                                     Outcast Desire
 
@@ -1433,11 +1428,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
+
                                             </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -1463,7 +1458,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1484,7 +1479,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1503,12 +1498,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -1534,7 +1528,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             </div>
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class=" mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class=" mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1555,7 +1549,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1574,12 +1568,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -1605,7 +1598,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1628,7 +1621,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1647,12 +1640,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -1739,7 +1731,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
             <!-- CERITA TRENDING TAMPILAN MOBILE -->
             <div
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative">
+                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
                 <!-- BG IKON TRENDING TAMPILAN MOBILE -->
                 <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -1772,7 +1764,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         <div class="swiper-wrapper">
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class=" mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class=" mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1793,7 +1785,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1812,12 +1804,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -1843,7 +1834,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1864,7 +1855,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -1883,12 +1874,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -1914,7 +1904,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             </div>
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -1936,7 +1926,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
 
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
                                             <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -1957,12 +1947,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -2007,7 +1996,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
             <!-- CERITA POPULER TAMPILAN MOBILE -->
             <div
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative">
+                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
                 <!-- BG IKON POPULER TAMPILAN MOBILE -->
                 <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -2040,7 +2029,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         <div class="swiper-wrapper">
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -2061,7 +2050,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -2080,12 +2069,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -2111,7 +2099,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             </div>
                             <div class="swiper-slide mt-1 ">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible  ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -2134,7 +2122,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                                         </div>
 
                                     </div>
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
 
                                             <div class="w-full h-5 bg-red-400 rounded-b-xl">
@@ -2153,12 +2141,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -2190,7 +2177,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                             <div class="swiper-slide mt-1">
                                 <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-2 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto">
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
 
@@ -2212,7 +2199,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
 
-                                    <div class="bg-white rounded-xl">
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
                                             <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
@@ -2233,12 +2220,11 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                                             </div>
 
-                                            <div class="text-xs text-left inline">By
-                                                <a href="#">
-                                                    <div class="text-indigo-700 inline"> Karol.Y</div>
-                                                </a>
-                                            </div>
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                            </a>
 
 
 
@@ -2285,7 +2271,9 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
         <div class="md:w-1/3 lg:w-1/4 hidden md:hidden mx-auto h-auto lg:block">
 
-            <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl" x-data="{open_penulis: true}">
+            <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl dark:bg-gray-800"
+                x-data="{open_penulis: true}">
+
                 <!-- <a href="#"
                     class="flex items-center justify-center text-white w-auto text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
@@ -2341,8 +2329,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             <img src="./assets/img/profile_me.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
-                                <p class="font-bold">Karol. Y</p>
-                                <p class="text-xs text-gray-500 truncate">
+                                <p class="font-bold dark:text-white">Karol. Y</p>
+                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
                                     Haro haro, terima kasih sudah mampir!
                                 </p>
                             </div>
@@ -2352,8 +2340,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             <img src="./assets/img/profile.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
-                                <p class="font-bold">Angelica</p>
-                                <p class="text-xs text-gray-500 truncate">
+                                <p class="font-bold dark:text-white">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
                                     Hello, nice to meet you!
                                 </p>
                             </div>
@@ -2383,8 +2371,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             <img src="./assets/img/profile_2.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
-                                <p class="font-bold">A02</p>
-                                <p class="text-xs text-gray-500 truncate">
+                                <p class="font-bold dark:text-white">A02</p>
+                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
                                     Enakan baca komik.
                                 </p>
                             </div>
@@ -2394,8 +2382,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             <img src="./assets/img/profile.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
-                                <p class="font-bold">Angelica</p>
-                                <p class="text-xs text-gray-500 truncate">
+                                <p class="font-bold dark:text-white">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
                                     Hello, nice to meet you!
                                 </p>
                             </div>
@@ -2423,8 +2411,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             <img src="./assets/img/profile.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
-                                <p class="font-bold">Angelica</p>
-                                <p class="text-xs text-gray-500 truncate">
+                                <p class="font-bold dark:text-white">Angelica</p>
+                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
                                     Hello, nice to meet you!
                                 </p>
                             </div>
@@ -2434,8 +2422,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                             <img src="./assets/img/profile_me.png"
                                 class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                             <div class="item-center overflow-hidden">
-                                <p class="font-bold">Karol. Y</p>
-                                <p class="text-xs text-gray-500 truncate">
+                                <p class="font-bold dark:text-white">Karol. Y</p>
+                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
                                     Haro haro, terima kasih sudah mampir!
                                 </p>
                             </div>
@@ -2454,7 +2442,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
         <!-- MENU BAWAH MOBILE -->
-<!-- 
+        <!-- 
         <style>
             [x-cloak] { display: none !important; }
         </style> -->
@@ -2466,9 +2454,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
             'buku',
             'pengaturan'
         }}-->
-            <div  x-show="menu_mobile == 'buku'"
-            id="mobile-menu-buku" 
-                class="bg-white h-56 rounded-t-xl border-opacity-50 border-t-4 border-indigo-500"
+            <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
+                class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
                 x-transition:enter="transition ease-out duration-200 "
                 x-transition:enter-start="transform opacity-0 scale-y-0"
                 x-transition:enter-end="transform opacity-100  scale-y-100"
@@ -2476,26 +2463,31 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                 x-transition:leave-start=" transform opacity-100  scale-y-100"
                 x-transition:leave-end="transform opacity-0 scale-y-0">
 
-                <div class="p-2" x-data="{buku: true}">
+                <div class="pb-9" x-data="{buku: true}">
 
                     <ul class="flex">
                         <li class="flex-1 mr-2">
                             <a @click="buku = $event.target.dataset.buku,
-                                $refs.genre.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white'),
-                                $refs.genre.classList.remove('hover:bg-gray-200', 'text-indigo-500'),
-                                $refs.kategori.classList.add('text-indigo-500', 'hover:bg-gray-200'),
-                                $refs.kategori.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white')
-                            " data-buku="genre" class="text-center block rounded
-                             py-2 px-4 bg-indigo-500 hover:bg-indigo-700 text-white" x-ref="genre" href="#">Genre</a>
+                                $refs.genre.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                                'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                $refs.genre.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
+                                $refs.kategori.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                $refs.kategori.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
+                            " data-buku="genre"
+                                class="text-center block rounded
+                             py-2 px-4 bg-indigo-500 dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
+                                x-ref="genre" href="#">Genre</a>
                         </li>
                         <li class="flex-1 mr-2">
                             <a @click="buku = $event.target.dataset.buku,
-                                $refs.genre.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white'),
-                                $refs.genre.classList.add('hover:bg-gray-200', 'text-indigo-500'),
-                                $refs.kategori.classList.remove('text-indigo-500', 'hover:bg-gray-200'),
-                                $refs.kategori.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white')
+                            $refs.genre.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                            'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                            $refs.genre.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                            $refs.kategori.classList.remove('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                            $refs.kategori.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
                             " data-buku="kategori" class="pencet-kategori-mobile-pertama text-center block rounded
-                           text-indigo-500 hover:bg-gray-200 py-2 px-4" x-ref="kategori" href="#">Kategori</a>
+                           text-indigo-500 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
+                                x-ref="kategori" href="#">Kategori</a>
                         </li>
 
                     </ul>
@@ -2503,7 +2495,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
 
                     <!-- TAB MENU MOBILE GENRE -->
-                    <div  x-show="buku == 'genre'"
+                    <div x-show="buku == 'genre'"
                         class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm"
                         id="genre-mobile-pertama" x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="transform opacity-0 -translate-x-7"
@@ -2513,22 +2505,22 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
                         x-transition:leave-end="transform opacity-0 -translate-x-7">
 
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Fantasy</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Fantasy</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Sci-Fi</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Sci-Fi</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Comedy</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Comedy</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Romance</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Romance</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Supernatural</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Supernatural</a>
                         </div>
                         <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white">Action</a>
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:border-indigo-400">Action</a>
                         </div>
                     </div>
                     <!-- END TAB MENU MOBILE GENRE-->
@@ -2572,42 +2564,42 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
             <!-- END MENU BUKA MOBILE BUKU -->
 
 
-            <div x-show="menu_mobile == 'pengaturan'" 
-                class="bg-white h-56 rounded-t-xl border-opacity-50 border-t-4 border-indigo-500"
+            <div x-show="menu_mobile == 'pengaturan'"
+                class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
                 x-transition:enter="transition ease-out duration-200 "
                 x-transition:enter-start="transform opacity-0 scale-y-0"
                 x-transition:enter-end="transform opacity-100  scale-y-100"
                 x-transition:leave="absolute transition ease-in duration-200"
                 x-transition:leave-start=" transform opacity-100  scale-y-100"
                 x-transition:leave-end="transform opacity-0 scale-y-0">
-          
-                <div class="p-2" :class="$store.darkMode && 'bg-black'">
 
-                    <button @click="$store.darkMode = ! $store.darkMode">Toggle Dark Mode</button>
-                
-                
+                <div class="pb-9">
+
+                    <button @click="darkMode = !darkMode">
+                        Toggle Theme
+                    </button>
+
+
                 </div>
-
-                    
-
             </div>
             <!-- END MENU BUKA MOBILE BUKU -->
 
 
 
 
-            <div class="justify-around h-14 border-opacity-50 border-t-2 border-indigo-500 bg-white rounded-t-xl flex">
+            <div class="py-2 justify-around h-auto border-opacity-50 border-t-2 border-indigo-500 rounded-t-xl bg-white flex
+                dark:bg-gray-800">
 
                 <div class="py-3">
                     <a href="./index.html" class="
-                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700 ">
                         <i class="fas text-2xl fa-home"></i>
                     </a>
 
                 </div>
                 <div class="py-3">
-                    <button id="buku"  @click="menu_mobile = 'buku'" class="
-                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                    <button id="buku" @click="menu_mobile = 'buku'" class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                         <i class="fas text-2xl fa-book"></i>
                     </button>
 
@@ -2621,9 +2613,8 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                 </div>
                 <div class="py-3">
-                    <button id="pengaturan" @click="menu_mobile = 'pengaturan'"
-                        class="
-                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                    <button id="pengaturan" @click="menu_mobile = 'pengaturan'" class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                         <i class="fas text-2xl fa-cog"></i>
                     </button>
 
@@ -2631,7 +2622,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 
                 <div class="py-3">
                     <a href="./pengguna.html" class="
-                    flex items-center justify-center text-gray-500 hover:text-indigo-500 focus:text-indigo-700">
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                         <i class="fas text-2xl fa-user"></i>
                     </a>
 
@@ -2745,6 +2736,7 @@ x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
 </body>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 <!-- <script src="./assets/base/siema/siema.min.js"></script> -->
 <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
 
