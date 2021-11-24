@@ -726,7 +726,8 @@
             <div
                 class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8 dark:bg-gray-800">
                 <div class="lg:block md:block hidden overflow-visible relative">
-                    <select name="" id="" x-on:change="open = $event.target.value"
+                    <select name="" id=""
+                        x-on:change="open = $event.target.value, $refs.kategori_pertama.style.display = 'none'"
                         class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
                         <!-- <option></option> -->
                         <option id="pilihan-kategori-pertama" value="baru">
@@ -788,14 +789,14 @@
 
                 <!-- CERITA BARU TAMPILAN KOMPUTERS -->
                 <div class="lg:block md:block hidden">
-                    <div x-show="open == 'baru'" x-transition:enter="transition ease-in duration-200"
+                    <div x-show="open == 'baru'" x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="transform opacity-0 scale-95"
                         x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-75"
+                        x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
                         class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3 "
-                        id="kategori-pertama">
+                        id="kategori-pertama" x-ref="kategori_pertama">
 
                         <div x-data="{opacity_blurb: false}"
                             class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
@@ -1094,10 +1095,10 @@
 
                 <!-- CERITA TREN TAMPILAN KOMPUTER -->
                 <div class="lg:block md:block hidden">
-                    <div x-show="open == 'tren'" x-transition:enter="transition ease-in duration-200"
+                    <div x-show="open == 'tren'" x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="transform opacity-0 scale-95"
                         x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-75"
+                        x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
                         class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3  "
@@ -1347,10 +1348,10 @@
 
                 <!-- CERITA POPULER TAMPILAN KOMPUTER -->
                 <div class="lg:block md:block hidden">
-                    <div x-show="open == 'populer'" x-transition:enter="transition ease-in duration-200"
+                    <div x-show="open == 'populer'" x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="transform opacity-0 scale-95"
                         x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-75"
+                        x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
                         class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3  "
@@ -1965,50 +1966,60 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- CERITA PENULIS NAIK DAUN TAMPILAN MOBILE -->
-            <div
+            <!-- PENULIS TAMPILAN MOBILE -->
+            <div x-data="{open_penulis_mobile: true}"
                 class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
-                <!-- BG IKON TRENDING TAMPILAN MOBILE -->
-                <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
-                    <div class="text-center">
-                        <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
-                            <!-- <div class="text-3xl"></div> -->
+
+                <!-- KONDISI BG IKON PENULIS -->
+                <div class="absolute bottom-0 right-0 opacity-50">
+                    <div class="">
+                        <i class="text-indigo-500 text-7xl" :class="
+                            [
+                                open_penulis_mobile == true      ? 'fas fa-medal'     : '' ||
+                                open_penulis_mobile == 'apresiator'   ? 'fas fa-medal'     : '' || 
+                                open_penulis_mobile == 'populer'   ? 'fas fa-star' : '' ||
+                                open_penulis_mobile == 'naik_daun' ? 'fas fa-arrow-circle-up'  : '' 
+                            ]">
                         </i>
 
                     </div>
-
-
                 </div>
-                <!-- END BG IKON TRENDING TAMPILAN MOBILE  -->
+                <!-- END KONDISI BG IKON PENULIS MOBILE -->
+                <!-- MENU SELECT PENULIS MOBILE -->
                 <div class="overflow-visible relative">
-                    <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                    <select name="" id=""
+                        x-on:change="open_penulis_mobile = $event.target.value, $refs.apresiator_pertama_mobile.style.display = 'none'"
+                        class="ml-3 -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                        <option value="apresiator">
+                            Apresiator
+                        </option>
+                        <option value="naik_daun">
+                            Penulis Naik Daun
+                        </option>
+                        <option value="populer">
+                            Penulis Populer
+                        </option>
 
-                        Apresiator
-                    </div>
+
+                    </select>
                 </div>
+                <!-- END MENU SELECT PENULIS MOBILE -->
 
-
-                <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
+                <!-- PENULIS APRESIATOR TAMPILAN MOBILE -->
+                <div x-ref="apresiator_pertama_mobile" x-show="open_penulis_mobile == 'apresiator'"
+                    class="overflow-hidden relative py-3" id="apresiator_pertama_mobile"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75"
+                    x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95">
                     <div class="swiper myswiper-mobile">
                         <div class="swiper-wrapper">
+
                             <div class="swiper-slide mt-1">
-                                <div class="bg-red-600 w-28 h-28 p-3">
+                                <div class="w-28 h-28 p-3">
                                     <div class="flex items-center justify-center">
 
                                         <img src="./assets/img/profile.png"
@@ -2016,13 +2027,13 @@
                                     </div>
                                     <div class="text-center mb-2">
                                         <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
+
                                     </div>
-        
+
                                 </div>
 
-                            
-                                
+
+
                             </div>
                             <div class="swiper-slide mt-1">
                                 <div class="w-28 h-28 p-3">
@@ -2033,13 +2044,13 @@
                                     </div>
                                     <div class="text-center mb-2">
                                         <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
+
                                     </div>
-        
+
                                 </div>
 
-                            
-                                
+
+
                             </div>
                             <div class="swiper-slide mt-1">
                                 <div class="w-28 h-28 p-3">
@@ -2050,174 +2061,182 @@
                                     </div>
                                     <div class="text-center mb-2">
                                         <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
+
                                     </div>
-        
+
                                 </div>
 
-                            
-                                
+
+
                             </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
 
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div class="w-28 h-28 p-3">
-                                    <div class="flex items-center justify-center">
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
-                                    </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
-                                    
-                                    </div>
-        
-                                </div>
-
-                            
-                                
-                            </div>
                         </div>
                     </div>
 
                 </div>
+                 <!-- END PENULIS APRESIATOR TAMPILAN MOBILE -->
+
+
+
+                 <!-- PENULIS NAIK DAUN TAMPILAN MOBILE -->
+                <div x-show="open_penulis_mobile == 'naik_daun'" class="overflow-hidden relative py-3"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75"
+                    x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95" :class="
+                            [
+                            open_penulis_mobile == true ? 'hidden' : '' ||
+                                open_penulis_mobile == 'naik_daun' ? 'block' : 'hidden' 
+                            ]
+                        
+                        ">
+                    <div class="swiper myswiper-mobile">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide mt-1">
+                                <div class="w-28 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile_me.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Karol.Y</p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-28 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile_me.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Karol.Y</p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-28 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile_me.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Karol.Y</p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                 <!-- END PENULIS NAIK DAUN TAMPILAN MOBILE -->
+
+                 <!-- PENULIS POPULER TAMPILAN MOBILE -->
+                <div x-show="open_penulis_mobile == 'populer'" class="overflow-hidden relative py-3"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75"
+                    x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95" :class="
+                            [
+                            open_penulis_mobile == true ? 'hidden' : '' ||
+                                open_penulis_mobile == 'populer' ? 'block' : 'hidden' 
+                            ]
+                        
+                        ">
+                    <div class="swiper myswiper-mobile">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide mt-1">
+                                <div class="w-28 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile_2.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">A02</p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-28 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile_2.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">A02</p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-28 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile_2.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">A02</p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                 <!-- END PENULIS POPULER TAMPILAN MOBILE -->
+
+
+
+
+
+
+
 
             </div>
-            <!-- END CERITA PENULIS NAIK DAUN TAMPILAN MOBILE -->
+            <!-- END PENULIS  TAMPILAN MOBILE -->
 
 
 
@@ -2828,7 +2847,8 @@
 
 
                 <div class="overflow-visible relative">
-                    <select name="" id="" x-on:change="open_penulis = $event.target.value"
+                    <select name="" id=""
+                        x-on:change="open_penulis = $event.target.value, $refs.penulis_pertama.style.display = 'none'"
                         class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
                         <option id="pilihan-penulis-pertama" value="apresiator">
                             Apresiator
@@ -2849,7 +2869,8 @@
                         x-transition:leave="transition ease-out duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-pertama">
+                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-pertama"
+                        x-ref="penulis_pertama">
 
 
                         <a href="" class="flex py-2">
@@ -3018,6 +3039,7 @@
                         x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 translate-x-0"
                         x-transition:leave-end="transform opacity-0 -translate-x-7">
+
 
                         <div><a href="#"
                                 class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Fantasy</a>

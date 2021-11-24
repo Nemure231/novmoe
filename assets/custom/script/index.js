@@ -79,8 +79,8 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
 });
 
 var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
-    slidesPerView: 8,
-    spaceBetween: 1,
+    slidesPerView: 3,
+    // spaceBetween: 1,
     loop: true,
     freeMode: true,
   
@@ -89,29 +89,22 @@ var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
     window.onload = (event) => {
 
         document.getElementById("kategori-pertama").style.display = null;
+
         document.getElementById("pilihan-kategori-pertama").selected = "true";
+
 
         document.getElementById("penulis-pertama").style.display = null;
         document.getElementById("pilihan-penulis-pertama").selected = "true";
 
         document.getElementById("genre-mobile-pertama").style.display = null;
 
+        document.getElementById("apresiator_pertama_mobile").style.display = null;
+
       
 
 
     };
 
-
-    document.querySelector('.pencet-kategori').addEventListener('change', () => {
-
-        document.getElementById("kategori-pertama").style.display = 'none';
-
-    });
-
-    document.querySelector('.pencet-penulis').addEventListener('change', () => {
-
-        document.getElementById("penulis-pertama").style.display = 'none';
-    });
 
     document.querySelector('.pencet-kategori-mobile-pertama').addEventListener('click', () => {
 
