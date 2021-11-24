@@ -1,29 +1,3 @@
-document.addEventListener('alpine:init', () => {
-    Alpine.store('darkMode', false)
-})
-// function blurbPendek() {
-//     var blurbPendek = document.getElementsByClassName('blurb-pendek');
-//     var num = 7;
-
-//     for (var i = 0; i < blurbPendek.length; i++) {
-
-//         if (blurbPendek[i].innerText.split(" ").length > num) {
-//             var mk = blurbPendek[i].innerText.split(" ").splice(0, num).join(" ") + ' ....';
-//             blurbPendek[i].innerText = mk;
-
-//         } else {
-//             blurbPendek[i].innerText = blurbPendek[i].innerText;
-//             blurbPendek[i].nextElementSibling.remove();
-
-//         }
-
-//     }
-// }
-
-// blurbPendek();
-
-
-
 
 // Event dropdown profil
 const dropdownProfil = document.getElementById('dropdown-profil');
@@ -82,15 +56,6 @@ document.addEventListener('alpine:init', () => {
 });
 
 
-// const mySiema = new Siema({
-//     perPage: 1,
-//     loop: true,
-//     startIndex: 0,
-// });
-// document.querySelector('.prev-carousel').addEventListener('click', () => mySiema.prev());
-// document.querySelector('.next-carousel').addEventListener('click', () => mySiema.next());
-
-
 
 
 function ready(fn) {
@@ -104,31 +69,13 @@ function ready(fn) {
 
 ready(function () {
 
-//     const mediaQuerySm = window.matchMedia('(min-width: 640px)');
-// const mediaQueryMd = window.matchMedia('(min-width: 768px)');
-// // const mediaQueryLg = window.matchMedia('(min-width: 1024px)');
-
-// if (mediaQuerySm.matches) {
-//     var space = 2;
-// }
-
-// if (mediaQueryMd.matches) {
-//     var space = 3;
-
-// }
-// // if (mediaQueryLg.matches) {
-// //     var pd = 100;
-// // }
 
 var swiper_mobile = new Swiper(".myswiper-mobile", {
     slidesPerView: 3,
     spaceBetween: 150,
     loop: true,
     freeMode: true,
-    // navigation: {
-    //     nextEl: ".swiper-button-next",
-    //     prevEl: ".swiper-button-prev",
-    // },
+  
 });
 
 
@@ -143,7 +90,7 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
 
         document.getElementById("genre-mobile-pertama").style.display = null;
 
-        // document.getElementById("tml").style.display = null;
+      
 
 
     };
@@ -165,11 +112,7 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
         document.getElementById("genre-mobile-pertama").style.display = 'none';
     });
 
-    // document.getElementById('buku').addEventListener('click', () => {
-
-    //     document.getElementById("mobile-menu-buku").style.display = null ;
-    // });
-
+   
 
     var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
     Array.prototype.forEach.call(tombolBlurb, function (element) {
