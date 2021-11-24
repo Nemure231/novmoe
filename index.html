@@ -19,7 +19,7 @@
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900"
     x-data="{modal_auth: false}">
 
-   
+
     <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
@@ -276,22 +276,22 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
 
                     <!-- NAVBAR WARNA -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div  class=" ml-3 relative hidden lg:block md:block">
+                    <div class=" ml-3 relative hidden lg:block md:block">
                         <button class="js-change-theme focus:outline-none h-8 w-8" @click="darkMode = !darkMode">
                             <i class="mr-3 text-2xl fas fa-moon text-yellow-200"
-                               :class="[darkMode ? 'fas fa-sun' : 'fas fa-moon',
+                                :class="[darkMode ? 'fas fa-sun' : 'fas fa-moon',
                                darkMode ? $el.classList.remove('fas', 'fa-moon', 'text-yellow-200') : $el.classList.remove('fas', 'fa-sun', 'text-yellow-500'),
                                darkMode ? $el.classList.add('fas', 'fa-sun', 'text-yellow-500') : $el.classList.add('fas', 'fa-moon', 'text-yellow-200')]">
                             </i>
                         </button>
-                    
+
 
                     </div>
                     <!-- NAVBAR PROFIL -->
@@ -455,7 +455,7 @@
                             x-transition:leave-end="transform opacity-0 -translate-y-7"
                             class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none  dark:bg-gray-800 "
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                           
+
                             <a href="#"
                                 class="block px-4 py-2 text-sm dark:text-white rounded-t-lg dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-0">@Nc</a>
@@ -486,7 +486,7 @@
                                 <span class="sr-only">Open modal</span>
                             </button>
                             <!-- END TOMBOL AUTH -->
-                           
+
 
                         </div>
 
@@ -1979,6 +1979,270 @@
 
 
 
+            <!-- CERITA PENULIS NAIK DAUN TAMPILAN MOBILE -->
+            <div
+                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                <!-- BG IKON TRENDING TAMPILAN MOBILE -->
+                <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
+
+                    <div class="text-center">
+                        <i class="fas text-indigo-500 fa-fire text-7xl">
+                            <div class="text-3xl">Trending!</div>
+                        </i>
+
+                    </div>
+
+
+                </div>
+                <!-- END BG IKON TRENDING TAMPILAN MOBILE  -->
+                <div class="overflow-visible relative">
+                    <div
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+
+                        Cerita Terending
+                    </div>
+                </div>
+
+                <!-- <a href="./trending.html"
+                 class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                 Selengkapnya
+                 <i class="fas fa-arrow-right"></i>
+             </a> -->
+
+                <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
+                    <div class="swiper myswiper-mobile">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="swiper-slide mt-1">
+                                <div class="w-32 h-28 p-3">
+                                    <div class="flex items-center justify-center">
+
+                                        <img src="./assets/img/profile.png"
+                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                    </div>
+                                    <div class="text-center mb-2">
+                                        <p class="font-bold text-sm dark:text-white truncate">Angelica</p>
+                                    
+                                    </div>
+        
+                                </div>
+
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- END CERITA PENULIS NAIK DAUN TAMPILAN MOBILE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2710,7 +2974,7 @@
 
 
         <!-- MENU BAWAH MOBILE -->
-      
+
         <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: true}
         " @click.away="menu_mobile = false">
             <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
@@ -2859,7 +3123,7 @@
                         </div>
                     </div>
 
-                  
+
                 </div>
             </div>
             <!-- END MENU BUKA MOBILE BUKU -->

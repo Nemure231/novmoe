@@ -78,7 +78,13 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
   
 });
 
-
+var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
+    slidesPerView: 8,
+    spaceBetween: 3,
+    loop: true,
+    freeMode: true,
+  
+});
 
     window.onload = (event) => {
 
