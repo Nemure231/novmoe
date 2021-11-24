@@ -72,7 +72,7 @@ ready(function () {
 
 var swiper_mobile = new Swiper(".myswiper-mobile", {
     slidesPerView: 3,
-    spaceBetween: 150,
+    spaceBetween: 147,
     loop: true,
     freeMode: true,
   
@@ -80,7 +80,7 @@ var swiper_mobile = new Swiper(".myswiper-mobile", {
 
 var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
     slidesPerView: 8,
-    spaceBetween: 3,
+    spaceBetween: 1,
     loop: true,
     freeMode: true,
   
