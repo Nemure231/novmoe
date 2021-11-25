@@ -1,0 +1,1139 @@
+<!doctype html>
+<html x-data="{ darkMode: localStorage.getItem('dark') === 'true'} "
+    x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" :class="{ 'dark': darkMode }">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./tailwind.css" rel="stylesheet">
+    <link href="./tailwind-dark.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+</head>
+
+<body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900 flex flex-col min-h-screen"
+    x-data="{modal_auth: false}">
+
+    <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="absolute inset-y-0 left-0 flex items-center block lg:hidden md:hidden">
+                    <!-- Mobile menu button-->
+                    <!-- <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span> -->
+                    <!--
+              Icon when menu is closed.
+  
+              Heroicon name: outline/menu
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+                    <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg> -->
+                    <!--
+              Icon when menu is open.
+  
+              Heroicon name: outline/x
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+                    <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg> -->
+                    <!-- </button> -->
+                </div>
+                <div class="flex-1 flex items-center justify-center lg:justify-start md:justify-start items-stretch">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="hidden lg:block md:block h-8 w-auto"
+                            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                            alt="Workflow">
+
+                        <div class="block lg:hidden md:hidden h-8 w-auto text-white">
+                            <i class="fas fa-2x fa-rainbow"></i>
+
+                        </div>
+
+                    </div>
+                    <div class="hidden md:block lg:block md:ml-6 lg:ml-6">
+                        <div class="flex relative space-x-4">
+
+
+                            <!-- NAVBAR BERANDA-->
+                            <div class="bg-indigo-900 dark:bg-indigo-700 rounded-md">
+
+                                <div class="px-2 py-2">
+
+                                    <a href="#" class="text-white text-sm font-medium" aria-current="page">Beranda</a>
+
+                                </div>
+                            </div>
+                            <!-- END NAVBAR BERENADA -->
+
+                            <!-- NAVBAR GENRE -->
+                            <div @click.away="open = false"
+                                class=" relative hover:bg-indigo-700 dark:hover:bg-indigo-500 rounded-md px-2 py-2"
+                                x-data="navbar_genre">
+
+                                <button @click="pencet_navbar_genre" class="text-white text-sm font-medium">
+                                    <span>Genre</span>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- DROPDOWN GENRE -->
+                                <div x-show="open" id="dropdown-navbar-genre"
+                                    x-transition:enter="transition ease-out duration-100 "
+                                    x-transition:enter-start="transform opacity-0 -translate-y-7"
+                                    x-transition:enter-end="transform opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 translate-y-0"
+                                    x-transition:leave-end="transform opacity-0 -translate-y-7"
+                                    class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
+
+                                    <div class="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
+                                        <div class="grid grid-cols-2 grid-rows-max gap-4">
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-hat-wizard"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Fantasy</div>
+
+                                                </div>
+                                            </a>
+
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-cog"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Sci-fi</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-grin-squint"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Comedy</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-heart"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Romance</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-ghost"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Supernatural</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-hand-rock"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Action</div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END DROPDOWN GENRE -->
+                            </div>
+                            <!-- END NAVBAR GENRE -->
+
+
+                            <!-- NAVBAR KATEGORI -->
+                            <div @click.away="open = false"
+                                class=" relative hover:bg-indigo-700 dark:hover:bg-indigo-500  rounded-md px-2 py-2"
+                                x-data="navbar_kategori">
+
+                                <button @click="pencet_navbar_kategori" class="text-white text-sm font-medium">
+                                    <span>Kategori</span>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- DROPDOWN KATEGORI -->
+                                <div x-show="open" id="dropdown-navbar-kategori"
+                                    x-transition:enter="transition ease-out duration-100 "
+                                    x-transition:enter-start="transform opacity-0 -translate-y-7"
+                                    x-transition:enter-end="transform opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 translate-y-0"
+                                    x-transition:leave-end="transform opacity-0 -translate-y-7"
+                                    class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
+
+                                    <div class="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
+                                        <div class="grid grid-cols-2 grid-rows-max gap-4">
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-hourglass-half"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Berlangsung</div>
+
+                                                </div>
+                                            </a>
+
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas fa-hourglass-end"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Tamat</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-star"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Populer</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-fire"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Trending</div>
+
+                                                </div>
+                                            </a>
+                                            <a href=""
+                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
+                                                <div class="rounded-lg">
+                                                    <i class="fas  fa-arrow-up"></i>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="font-semibold text-sm">Terbaru</div>
+
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END DROPDOWN KATEGORI -->
+                            </div>
+                            <!-- END NAVBAR KATEGORI -->
+
+                            <!-- <div class="hover:bg-indigo-700 rounded-md">
+
+                                <div class="px-3 py-2">
+
+                                    <a href="#" class="text-white text-sm font-medium">Calendar</a>
+                                </div>
+
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+
+                    <!-- NAVBAR WARNA -->
+                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
+                    <div class=" ml-3 relative hidden lg:block md:block">
+                        <button class="js-change-theme focus:outline-none h-8 w-8" @click="darkMode = !darkMode">
+                            <i class="mr-3 text-2xl fas fa-moon text-yellow-200"
+                                :class="[darkMode ? 'fas fa-sun' : 'fas fa-moon',
+                               darkMode ? $el.classList.remove('fas', 'fa-moon', 'text-yellow-200') : $el.classList.remove('fas', 'fa-sun', 'text-yellow-500'),
+                               darkMode ? $el.classList.add('fas', 'fa-sun', 'text-yellow-500') : $el.classList.add('fas', 'fa-moon', 'text-yellow-200')]">
+                            </i>
+                        </button>
+
+
+                    </div>
+                    <!-- NAVBAR PROFIL -->
+
+
+
+
+
+
+
+
+
+                    <!-- NAVBAR NOTIF -->
+                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
+                    <div x-ref="tombol_notif" class=" relative" @click.away="open = false" x-data="notif">
+                        <span class="flex h-3 w-3 absolute top-0 right-0">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                        </span>
+                        <!-- TOMBOL NOTIF -->
+                        <button type="button" @click="pencet_notif"
+                            class="p-1 rounded-full text-white  focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white">
+                            <span class="sr-only">View notifications</span>
+
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+
+                        </button>
+                        <!-- END TOMBOL NOTIF -->
+                        <!-- DROPDOWN NOTIF -->
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100 "
+                            x-transition:enter-start="transform opacity-0 -translate-y-7"
+                            x-transition:enter-end="transform opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 translate-y-0"
+                            x-transition:leave-end="transform opacity-0 -translate-y-7" id="dropdown-notif" class="hidden origin-top-right absolute right-0 mt-2 w-72 md:w-96 lg:w-96 rounded-lg 
+                            shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none
+                            dark:bg-gray-800" role="menu" aria-orientation="vertical"
+                            aria-labelledby="user-menu-button" tabindex="-1">
+
+
+                            <ul class="list-none ">
+                                <li
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:text-white rounded-t-lg hover:bg-indigo-200">
+                                    <div Class="m-1">
+
+                                        <div class="flex item-center max-w-max">
+
+
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b>
+                                                Mengomentari "[2]" di<b> Outcast Desire </b>kamu.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <!-- ikon -->
+                                    </div>
+
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
+                                        1 jam lalu
+
+                                    </div>
+                                </li>
+                                <li
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-none hover:bg-indigo-200">
+                                    <div Class="m-1">
+
+                                        <div class="flex item-center max-w-max">
+
+
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b> Mengomentari "[1]" di<b> Outcast Desire </b>kamu.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <i class="fas text-xl md:text-2xl lg:text-2xl fa-thumbs-up text-green-400">
+
+                                        </i>
+                                    </div>
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
+                                        Kemarin
+
+                                    </div>
+                                </li>
+                                <li
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-b-lg hover:bg-indigo-200">
+                                    <div Class="m-1">
+
+                                        <div class="flex item-center max-w-max">
+
+
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b>
+                                                Mengomentari "[0]" di<b> Outcast Desire </b>kamu.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <i class="fas text-xl md:text-2xl lg:text-2xl fa-thumbs-down text-red-400">
+
+                                        </i>
+                                    </div>
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
+                                        20 Des 2021
+
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                        <!-- END DROPDOWN NOTIF -->
+
+
+                    </div>
+                    <!-- END NAVBAR NOTIF -->
+
+
+                    <!-- NAVBAR PROFIL -->
+                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
+                    <div x-ref="tombol_profil" class=" ml-3 relative" @click.away="open = false" x-data="profil">
+                        <div>
+                            <!-- TOMBOL PROFIL -->
+                            <button type="button" @click="pencet_profil"
+                                class="bg-blue-500 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white"
+                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="h-8 w-8 rounded-full" src="./assets/img/profile_me.png" alt="">
+
+                            </button>
+                            <!-- END TOMBOL PROFIL -->
+
+                        </div>
+                        <!-- DROPDOWN PROFIL -->
+                        <div id="dropdown-profil" x-show="open" x-transition:enter="transition ease-out duration-100 "
+                            x-transition:enter-start="transform opacity-0 -translate-y-7"
+                            x-transition:enter-end="transform opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 translate-y-0"
+                            x-transition:leave-end="transform opacity-0 -translate-y-7"
+                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none  dark:bg-gray-800 "
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+
+                            <a href="#"
+                                class="block px-4 py-2 text-sm dark:text-white rounded-t-lg dark:hover:bg-gray-700"
+                                role="menuitem" tabindex="-1" id="user-menu-item-0">@Nc</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm dark:text-white rounded-none dark:hover:bg-gray-700"
+                                role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
+
+
+                            <a href="#"
+                                class="block px-4 py-2 text-sm dark:text-white rounded-b-lg dark:hover:bg-gray-700"
+                                role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
+                        </div>
+                        <!-- END DROPDOWN PROFIL -->
+
+
+                    </div>
+                    <!-- END NAVBAR PROFIL -->
+
+                    <!-- NAVABR AUTH  -->
+                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIAN -->
+                    <div x-ref="tombol_auth" class="hidden ml-3 relative">
+                        <div>
+                            <!-- TOMBOL AUTH -->
+                            <button type="button" @click="modal_auth = !modal_auth"
+                                class="bg-white hover:bg-gray-200 text-indigo-500 font-bold  lg:p-2.5 md:p-2.5 sm:p-2 p-2 flex text-sm rounded-lg "
+                                aria-expanded="false" aria-haspopup="true">
+                                Login/Regist
+                                <span class="sr-only">Open modal</span>
+                            </button>
+                            <!-- END TOMBOL AUTH -->
+
+
+                        </div>
+
+                    </div>
+                    <!-- END NAVBAR AUTH -->
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <!-- Current: " bg-gray-900 text-white", Default: "text-gray-300 hover:bg-indigo-700" -->
+                <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                    aria-current="page">Dashboard</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-indigo-700  block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-indigo-700  block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-indigo-700  block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MODAL LOGIN This example requires Tailwind CSS v2.0+ -->
+    <div x-show="modal_auth" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 sm:pb-20 pb-40 text-center sm:block sm:p-0">
+
+            <div x-show="modal_auth" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" aria-hidden="true"></div>
+
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div x-show="modal_auth" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                class="overflow-visible inline-block align-bottom bg-white dark:bg-gray-800  rounded text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+
+
+                <div x-data="{auth_menu : true}">
+
+                    <div class="dark:bg-gray-800 rounded">
+                        <div class="relative">
+                            <div class="absolute -right-4 top-0">
+                                <button type="button"
+                                    class="-mt-3 flex justify-center item-center text-white h-8 w-8 rounded-full bg-red-500 "
+                                    @click="modal_auth = false">
+                                    <i class=" fas fa-2x fa-times justify-center item-center"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+                        <ul class="flex">
+                            <li class="flex-1">
+                                <a @click="auth_menu = true,
+                                    $refs.login.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                                    'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                    $refs.login.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
+                                    $refs.regist.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                    $refs.regist.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
+                                " class="text-center block rounded-tl
+                                 py-2 px-4 bg-indigo-500 font-semibold dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
+                                    x-ref="login" href="#">Login</a>
+                            </li>
+                            <li class="flex-1">
+                                <a @click="auth_menu = 'regist',
+                                $refs.login.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                                'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                $refs.login.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                $refs.regist.classList.remove('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                $refs.regist.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
+                                " class="text-center block rounded-tr
+                               text-indigo-500 font-semibold dark:text-white  hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
+                                    x-ref="regist" href="#">Regist</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                    <div x-show="auth_menu == true">
+
+                        <div class="pt-5 pb-4 p-6 sm:pb-4">
+
+
+
+                            <div class="mt-3 sm:ml-4 text-left">
+                                <label class="font-medium dark:text-white">Surel</label>
+                                <input type="text"
+                                    class="block appearance-none border 
+                            border-indigo-400 rounded-md w-full sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                            </div>
+                            <div class="relative mt-3 sm:ml-4 text-left" x-data="{lihat_sandi: false}">
+                                <label class="font-medium dark:text-white">Sandi</label>
+                                <span class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
+                                    <button @click="lihat_sandi = !lihat_sandi"
+                                        class="p-1 focus:outline-none focus:shadow-outline">
+                                        <i class="text-xl dark:text-white "
+                                            :class="lihat_sandi ? 'far fa-eye' : 'far fa-eye-slash'"></i>
+                                    </button>
+                                </span>
+                                <input :type="lihat_sandi ? 'text' : 'password'"
+                                    class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
+                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                            </div>
+
+                        </div>
+                        <div class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
+                            <div
+                                class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
+                                <label class="inline-flex items-center mt-3">
+                                    <a href="./lupa-sandi.html"
+                                        class="sm:text-sm font-medium text-xs text-indigo-400 dark:font-semibold">Lupa
+                                        sandi?</a>
+                                </label>
+                            </div>
+                            <button type="button" @click="
+                                                            $refs.tombol_auth.classList.add('hidden')" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
+                                bg-indigo-500 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none 
+                                focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
+                                dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
+                                Login
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div x-show="auth_menu == 'regist'">
+
+                        <div class="pt-3 pb-4 p-6 ">
+
+
+                            <div class="sm:flex sm:mt-3">
+                                <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
+                                    <label class="font-medium dark:text-white">Surel</label>
+                                    <input type="text"
+                                        class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
+                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900 dark:placeholder-gray-400"
+                                        placeholder="angelica@example.com">
+                                </div>
+
+                                <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
+                                    <label class="font-medium dark:text-white">Username</label>
+                                    <input type="text"
+                                        class=" block appearance-none placeholder-gray-500 border 
+                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                                </div>
+
+                            </div>
+
+
+                            <div class="relative mt-3 sm:ml-4 text-left" x-data="{lihat_sandi: false}">
+                                <label class="font-medium dark:text-white">Sandi</label>
+                                <span class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
+                                    <button @click="lihat_sandi = !lihat_sandi"
+                                        class="p-1 focus:outline-none focus:shadow-outline">
+                                        <i class="text-xl  dark:text-white"
+                                            :class="lihat_sandi ? 'far fa-eye' : 'far fa-eye-slash'"></i>
+                                    </button>
+                                </span>
+                                <input :type="lihat_sandi ? 'text' : 'password'"
+                                    class="block appearance-none border 
+                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                            </div>
+
+                        </div>
+                        <div class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
+
+                            <div
+                                class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-500">
+                                    <a href="#"
+                                        class="ml-2 sm:text-sm text-xs text-indigo-500 dark:font-semibold">Syarat dan
+                                        Ketentuan.</a>
+                                </label>
+                            </div>
+
+
+
+                            <button type="button" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
+                                bg-indigo-500 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none
+                                 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
+                                 dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
+                                Regist
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="text-green-500 sm:text-red-500 md:text-blue-500 lg:text-black">
+        LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
+    </div> -->
+
+
+    <main class="my-16 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
+
+        <div class="w-full lg:mx-auto" x-data="{open: true}">
+            <div class="rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8 dark:bg-gray-800">
+
+                <div class="bg-no-repeat bg-bottom mx-auto rounded-xl w-full h-96 bg-cover bg-center ..."
+                    style="background-image: url(./assets/img/cover_me.png)">
+
+                </div>
+                <div class="flex mb-6">
+                    <div class="w-1/5 -mt-28">
+                        <img class="h-52 w-52 rounded-full mx-auto" src="./assets/img/profile_me.png" alt="" srcset="">
+                        <h2 class="text-3xl font-medium text-center mb-3">Karol.Y</h2>
+
+                        <div class="flex justify-around">
+                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
+								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+									<i class="fab fa-facebook-f"></i>
+								</div>
+							</a>
+                        
+                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
+								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+									<i class="fab fa-twitter"></i>
+								</div>
+							</a>
+
+                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
+								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+									<i class="fab fa-instagram"></i>
+								</div>
+							</a>
+                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
+								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+									<i class="fab fa-linkedin-in"></i>
+								</div>
+							</a>
+
+                        </div>
+
+                    </div>
+                    <div class="w-4/5 bg-white rounded-xl border-1 border-gray-300 p-3">
+                        Haro haro, terima kasih sudah mapir! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sit voluptatum, eligendi vel deserunt blanditiis fuga eveniet dignissimos facere mollitia,
+                        maiores rem perspiciatis quisquam doloribus! Saepe ratione magni facere eos, consequatur rerum
+                        natus assumenda deleniti odio quae dolorem nisi impedit eius rem repudiandae quo. Asperiores
+                        excepturi
+                        voluptates eos aut?
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <ul class="flex border-b-2 border-gray-300">
+                        <li class="flex-1">
+                          <a class="font-medium text-center block border-b-2 border-indigo-500 py-2 px-4 text-black hover:bg-indigo-200 rounded-t" href="#">
+                              Karya
+                          </a>
+                        </li>
+                        <li class="flex-1">
+                            <a class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t" href="#">
+                                Rak Buku
+                            </a>
+                          </li>
+                       
+                        <li class="flex-1">
+                            <a class="font-medium text-center block py-2 px-4 rounded-t text-gray-400 cursor-not-allowed" href="#">
+                                Tab tidak aktif
+                            </a>
+                          </li>
+                      </ul>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <!-- MENU BAWAH MOBILE -->
+
+        <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: true}
+        " @click.away="menu_mobile = false">
+            <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
+                class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
+                x-transition:enter="transition ease-out duration-200 "
+                x-transition:enter-start="transform opacity-0 scale-y-0"
+                x-transition:enter-end="transform opacity-100  scale-y-100">
+
+                <div class="pb-9" x-data="{buku: true}">
+
+                    <ul class="flex">
+                        <li class="flex-1 mr-2">
+                            <a @click="buku = $event.target.dataset.buku,
+                                $refs.genre.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                                'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                $refs.genre.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
+                                $refs.kategori.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                $refs.kategori.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
+                            " data-buku="genre"
+                                class="text-center block rounded
+                             py-2 px-4 bg-indigo-500 dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
+                                x-ref="genre" href="#">Genre</a>
+                        </li>
+                        <li class="flex-1 mr-2">
+                            <a @click="buku = $event.target.dataset.buku,
+                            $refs.genre.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                            'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                            $refs.genre.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                            $refs.kategori.classList.remove('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                            $refs.kategori.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
+                            " data-buku="kategori" class="pencet-kategori-mobile-pertama text-center block rounded
+                           text-indigo-500 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
+                                x-ref="kategori" href="#">Kategori</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <!-- TAB MENU MOBILE GENRE -->
+                    <div x-show="buku == 'genre'"
+                        class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm"
+                        id="genre-mobile-pertama" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="transform opacity-0 -translate-x-7"
+                        x-transition:enter-end="transform opacity-100 translate-x-0"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 translate-x-0"
+                        x-transition:leave-end="transform opacity-0 -translate-x-7">
+
+
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Fantasy</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Sci-Fi</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Comedy</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Romance</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Supernatural</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Action</a>
+                        </div>
+                    </div>
+                    <!-- END TAB MENU MOBILE GENRE-->
+
+                    <!-- TAB MENU MOBILE KATEGORI -->
+                    <div x-show="buku == 'kategori'" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="transform opacity-0 translate-x-7"
+                        x-transition:enter-end="transform opacity-100 translate-x-0"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 translate-x-0"
+                        x-transition:leave-end="transform opacity-0 translate-x-7" :class="
+                        [
+                            buku == true ? 'hidden' : '' ||
+                            buku == 'kategori' ? 'block' : 'hidden' 
+                        ]" class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm">
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Berlangsung</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Tamat</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Populer</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Trending</a>
+                        </div>
+                        <div><a href="#"
+                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Terbaru</a>
+                        </div>
+                    </div>
+                    <!-- END TAB MENU MOBILE KATEGORI-->
+
+
+
+
+
+                </div>
+
+            </div>
+            <!-- END MENU BUKA MOBILE BUKU -->
+
+
+            <div x-show="menu_mobile == 'pengaturan'"
+                class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
+                x-transition:enter="transition ease-linear duration-200 "
+                x-transition:enter-start="transform opacity-0 scale-y-0"
+                x-transition:enter-end="transform opacity-100  scale-y-100">
+
+                <div class=" pb-9">
+                    <div class="text-center grid grid-cols-1 grid-flow-row auto-rows-auto gap-4 text-sm">
+                        <div class="block pt-3">
+                            <div x-data="{toggle: false}">
+                                <div class="flex items-center justify-center">
+                                    <i class="mr-3 text-2xl far fa-sun text-yellow-500 dark:text-gray-600"></i>
+                                    <div class="relative w-12 h-6 transition duration-200 ease-linear rounded-full"
+                                        :class="[
+                                    
+                                            darkMode ? 'bg-indigo-400' : 'bg-gray-300']">
+                                        <label for="toggle" class="absolute w-6 h-6 transition duration-100 ease-linear
+                                            transform bg-gray-100 left-0 rounded-full cursor-pointer"
+                                            :class="[
+                                        darkMode ? 'right-0' : 'left-0',
+                                        darkMode ? $el.classList.remove('left-0', 'translate-x-0') : $el.classList.remove('right-0', 'translate-x-0.5'),
+                                        darkMode ? $el.classList.add('right-0', 'translate-x-0.5') : $el.classList.add('left-0', 'translate-x-0')]">
+                                        </label>
+
+                                        <input type="checkbox" id="toggle" name="toggle" x-model="toggle"
+                                            class="w-full h-full appearance-none focus:outline-none"
+                                            @click="darkMode = !darkMode" />
+                                    </div>
+                                    <i class="ml-3 text-2xl far fa-moon text-gray-600 dark:text-yellow-200"></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="block">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- END MENU BUKA MOBILE BUKU -->
+
+
+
+
+            <div class="py-2 justify-around h-auto border-opacity-50 border-t-2 border-indigo-500 rounded-t-xl bg-white flex
+                dark:bg-gray-800">
+
+                <div class="py-3">
+                    <a href="./index.html"
+                        class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700 ">
+                        <i class="fas text-2xl fa-home"></i>
+                    </a>
+
+                </div>
+                <div class="py-3">
+                    <button id="buku" @click="menu_mobile = 'buku'"
+                        class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-book"></i>
+                    </button>
+
+                </div>
+
+                <div class="overflow-visible z-50">
+                    <button class="-mt-5 h-12 w-12 rounded-full border-b-4 border-indigo-700
+                    flex items-center justify-center bg-indigo-500 text-white">
+                        <i class="fas text-xl fa-plus"></i>
+                    </button>
+
+                </div>
+                <div class="py-3">
+                    <button id="pengaturan" @click="menu_mobile = 'pengaturan'"
+                        class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-cog"></i>
+                    </button>
+
+                </div>
+
+                <div class="py-3">
+                    <a href="./pengguna.html"
+                        class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
+                        <i class="fas text-2xl fa-user"></i>
+                    </a>
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <!-- END MENU BAWAH MOBILE -->
+
+    </main>
+
+
+    <footer class="hidden md:block lg:block text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0">
+        <div class="container px-5 py-12 mx-auto flex md:items-center lg:items-start flex-row flex-nowrap">
+            <!-- sm flex-wrap flex-col -->
+            <div class="w-64 my-auto flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <div class="flex items-center justify-center w-16 h-16 text-indigo-500 p-2 bg-white rounded-full">
+
+                        <i class=" fas fa-2x fa-rainbow"></i>
+                    </div>
+
+
+                    <span class="ml-3 text-xl text-white">NRM</span>
+                </a>
+                <p class="mt-2 text-sm text-white">Novelringan.moe adalah .... lupa kalimatnya apaan lagi.</p>
+            </div>
+
+
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-bold text-white tracking-widest text-md mb-3">List</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-white hover:text-red-300" href="#">Satu</a>
+                        </li>
+                        <li>
+                            <a class="text-white hover:text-red-300" href="#">Dua</a>
+                        </li>
+                        <li>
+                            <a class="text-white hover:text-red-300" href="#">Tiga</a>
+                        </li>
+                        <li>
+                            <a class="text-white hover:text-red-300" href="#">Empat</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-indigo-700">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-white text-sm text-center sm:text-left">© 2021 NRM —
+                    <a href="" rel="noopener noreferrer" class="ml-1" target="_blank">NovelRinganMoe</a>
+                </p>
+
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <!-- ikon facebook -->
+                    <a href="#" class="text-gray-200">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <!-- END IKON FACEBOOK -->
+                    <!-- IKON TWITTER -->
+                    <a href="#" class="ml-3 text-gray-200">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- END IKON TWITTER -->
+                    <!-- IKON INSTAGRAM -->
+                    <a href="#" class="ml-3 text-gray-200">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <!-- END IKON INSTAGRAM -->
+                    <!-- IKON LINKEDID -->
+                    <a href="#" class="ml-3 text-gray-200">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                    <!-- END IKON LINKEDID -->
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+</body>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- <script src="./assets/base/siema/siema.min.js"></script> -->
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+
+<script src="./assets/custom/script/index.js"></script>
+
+</html>
