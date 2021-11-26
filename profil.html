@@ -456,15 +456,15 @@
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
 
                             <a href="#"
-                                class="block px-4 py-2 text-sm dark:text-white rounded-t-lg dark:hover:bg-gray-700"
+                                class="block px-4 py-2 text-sm hover:bg-indigo-200 dark:text-white rounded-t-lg dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-0">@Nc</a>
                             <a href="#"
-                                class="block px-4 py-2 text-sm dark:text-white rounded-none dark:hover:bg-gray-700"
+                                class="block px-4 py-2 text-sm hover:bg-indigo-200 dark:text-white rounded-none dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
 
 
                             <a href="#"
-                                class="block px-4 py-2 text-sm dark:text-white rounded-b-lg dark:hover:bg-gray-700"
+                                class="block px-4 py-2 text-sm hover:bg-indigo-200 dark:text-white rounded-b-lg dark:hover:bg-gray-700"
                                 role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
                         </div>
                         <!-- END DROPDOWN PROFIL -->
@@ -714,53 +714,94 @@
 
 
 
-    <!-- <div class="text-green-500 sm:text-red-500 md:text-blue-500 lg:text-black">
+    <div class="text-green-500 sm:text-red-500 md:text-blue-500 lg:text-black">
         LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
-    </div> -->
+    </div>
 
 
     <main class="my-16 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
-        <div class="w-full lg:mx-auto" x-data="{open: true}">
-            <div class="rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8 dark:bg-gray-800">
+        <div class="w-full mx-auto" x-data="{open: true}">
+            <div class="rounded-xl bg-white relative mb-12 p-0 dark:bg-gray-800">
 
                 <div class="bg-no-repeat bg-bottom mx-auto rounded-xl w-full h-96 bg-cover bg-center ..."
                     style="background-image: url(./assets/img/cover_me.png)">
 
                 </div>
-                <div class="flex mb-6">
-                    <div class="w-1/5 -mt-28">
-                        <img class="h-52 w-52 rounded-full mx-auto" src="./assets/img/profile_me.png" alt="" srcset="">
-                        <h2 class="text-3xl font-medium text-center mb-3">Karol.Y</h2>
-
-                        <div class="flex justify-around">
-                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
-								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
-									<i class="fab fa-facebook-f"></i>
-								</div>
-							</a>
+                <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col mb-3">
+                    <div class="lg:w-1/5 md:w-1/4 w-full -mt-24">
+                        <img class="sm:hidden hidden lg:block md:block lg:h-48 lg:w-48 w-44 h-44 rounded-full mx-auto" src="./assets/img/profile_me.png" alt="" srcset="">
                         
-                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
-								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
-									<i class="fab fa-twitter"></i>
-								</div>
-							</a>
+                        <div class="lg:hidden md:hidden sm:flex flex">
 
-                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
-								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
-									<i class="fab fa-instagram"></i>
-								</div>
-							</a>
-                            <a href="#" class="flex items-center justify-center rounded-full bg-black"> 
-								<div class="text-white text-xl h-9 w-9 flex items-center justify-center">
-									<i class="fab fa-linkedin-in"></i>
-								</div>
-							</a>
+                            <figure class="flex-shink-0">
+                                <img class="lg:h-48 lg:w-48 w-44 h-44 rounded-full mx-8" src="./assets/img/profile_me.png" alt="" srcset="">
+                                <figcaption class="text-3xl font-medium text-center">Karol.Y</figcaption>
+                            </figure>
+                            
+                            <div class="flex-grow flex items-center w-auto -mt-6">
+                                <div class="lg:hidden md:hidden flex flex-grow justify-around">
+                                    <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                        <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </div>
+                                    </a>
+        
+                                    <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                        <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                            <i class="fab fa-twitter"></i>
+                                        </div>
+                                    </a>
+        
+                                    <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                        <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                            <i class="fab fa-instagram"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                        <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </div>
+                                    </a>
+                                    
+        
+                                </div>
+                                
+
+                            </div>
+                        </div>
+
+                        
+                        <h2 class="lg:block md:block sm:hidden hidden text-3xl font-medium text-center mb-3">Karol.Y</h2>
+
+                        <div class="lg:flex md:flex sm:hidden hidden justify-around">
+                            <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600">
+                                <div class="text-white text-xl h-9 w-9 flex items-center justify-center">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                            </a>
 
                         </div>
 
                     </div>
-                    <div class="w-4/5 bg-white rounded-xl border-1 border-gray-300 p-3">
+                    <div class="lg:w-4/5 md:w-3/4 w-full bg-white rounded-xl border-1 border-gray-300 p-6">
                         Haro haro, terima kasih sudah mapir! Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sit voluptatum, eligendi vel deserunt blanditiis fuga eveniet dignissimos facere mollitia,
                         maiores rem perspiciatis quisquam doloribus! Saepe ratione magni facere eos, consequatur rerum
@@ -770,27 +811,562 @@
                     </div>
                 </div>
 
-
-
-                <div>
-                    <ul class="flex border-b-2 border-gray-300">
+                <div x-data="{tab_penulis: true}">
+                    <ul class="flex border-b-2 border-gray-300 mb-3">
                         <li class="flex-1">
-                          <a class="font-medium text-center block border-b-2 border-indigo-500 py-2 px-4 text-black hover:bg-indigo-200 rounded-t" href="#">
-                              Karya
-                          </a>
+                            <a href="javascript:void(0)" @click="tab_penulis = true"
+                                :class="tab_penulis == true ? 'border-b-2 border-indigo-500' : ''"
+                                class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t"
+                                >
+                                Karya
+                            </a>
                         </li>
                         <li class="flex-1">
-                            <a class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t" href="#">
-                                Rak Buku
-                            </a>
-                          </li>
-                       
+                            <a href="javascript:void(0)" @click="tab_penulis = 'rak', $refs.tab_pertama.style.display = 'none'"
+                            class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t"
+                            :class="tab_penulis == 'rak' ? 'border-b-2 border-indigo-500' : ''"
+                            >
+                            Rak Buku
+                        </a>
+                        </li>
                         <li class="flex-1">
-                            <a class="font-medium text-center block py-2 px-4 rounded-t text-gray-400 cursor-not-allowed" href="#">
+                            <a href="javascript:void(0)"
+                                class="font-medium text-center block py-2 px-4 rounded-t text-gray-400 cursor-not-allowed"
+                                >
                                 Tab tidak aktif
                             </a>
-                          </li>
-                      </ul>
+                        </li>
+                    </ul>
+
+
+
+                    <div>
+                        <div x-show="tab_penulis == true" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="overflow-hidden grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 relative"
+                            id="kategori-pertama" x-ref="tab_pertama">
+
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                            Jerman utara.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class="filter blur-50 -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover.png" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                        </div>
+                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Outcast Desire
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                            Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
+                                            bernama
+                                            Amberness.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class=" -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover_2.jpg" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+
+                                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Distant Memory
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                            Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
+                                            bernama
+                                            Amberness.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class=" -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover_3.jpg" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+
+                                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Distant Memory 2
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+
+
+
+                                        
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
+                                            akan
+                                            peperangan membuatnya lari dari garis depan demi menepati janji
+                                            adiknya--Namesa--untuk
+                                            tetap hidup.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class=" -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover_4.png" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+
+                                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Distant Journey
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+
+
+
+                                        
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+
+                        <div x-show="tab_penulis == 'rak'" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="overflow-hidden grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 relative"
+                    
+                            :class="
+                            [
+                            open == true ? 'hidden' : '' ||
+                                open == 'rak' ? 'block' : 'hidden'" 
+                            ]
+                            >
+
+
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                            Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
+                                            bernama
+                                            Amberness.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class=" -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover_2.jpg" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+
+                                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Distant Memory
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
+                                            Jerman utara.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class="filter blur-50 -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover.png" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                        </div>
+                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Outcast Desire
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        
+
+                            
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
+                                            akan
+                                            peperangan membuatnya lari dari garis depan demi menepati janji
+                                            adiknya--Namesa--untuk
+                                            tetap hidup.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class=" -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover_4.png" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+
+                                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Distant Journey
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+
+
+
+                                        
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
+                                            Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
+                                            Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
+                                            bernama
+                                            Amberness.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <img class=" -mb-3 rounded-xl h-72 w-48 object-fill"
+                                            src="./assets/img/cover_3.jpg" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+
+                                        <div class="w-full h-5 bg-red-400 rounded-b-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
+
+
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#">
+                                                Distant Memory 2
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
+                                        </a>
+
+
+
+
+                                        
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
                 </div>
 
 
@@ -1128,12 +1704,12 @@
 
 
 </body>
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <!-- <script src="./assets/base/siema/siema.min.js"></script> -->
 <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
 
-<script src="./assets/custom/script/index.js"></script>
+<script src="./assets/custom/script/profil.js"></script>
 
 </html>
