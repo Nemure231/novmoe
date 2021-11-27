@@ -714,12 +714,7 @@
 
 
 
-    <div class="text-green-500 sm:text-red-500 md:text-blue-500 lg:text-black">
-        LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
-    </div>
-
-
-    <main class="my-16 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
+    <main class="lg:my-16 md:my-16 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
         <div class="w-full mx-auto">
             <div class="rounded-xl bg-white relative mb-12 pb-8 dark:bg-gray-800">
@@ -730,15 +725,15 @@
                 </div>
                 <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col mb-3">
                     <div class="lg:w-1/5 md:w-1/4 w-full -mt-24">
-                        <img class="sm:hidden hidden lg:block md:block lg:h-48 lg:w-48 w-44 h-44 rounded-full mx-auto"
+                        <img class="sm:hidden hidden lg:block md:block border-4 border-white dark:border-gray-800 lg:h-48 lg:w-48 w-44 h-44 rounded-full mx-auto"
                             src="./assets/img/profile_me.png" alt="">
 
                         <div class="lg:hidden md:hidden sm:flex flex">
 
                             <figure class="flex-shink-0">
-                                <img class="lg:h-48 lg:w-48 w-44 h-44 rounded-full sm:mx-8 mx-3"
+                                <img class="lg:h-48 lg:w-48 w-44 h-44 border-4 border-white dark:border-gray-800  rounded-full sm:mx-8 mx-3"
                                     src="./assets/img/profile_me.png" alt="" srcset="">
-                                <figcaption class="text-3xl font-medium text-center">Karol.Y</figcaption>
+                                <figcaption class="text-3xl font-medium text-center dark:text-white">Karol.Y</figcaption>
                             </figure>
 
                             <div class="flex-grow flex items-center w-auto -mt-6">
@@ -778,7 +773,7 @@
                         </div>
 
 
-                        <h2 class="lg:block md:block sm:hidden hidden text-3xl font-medium text-center mb-3">Karol.Y
+                        <h2 class="lg:block md:block sm:hidden hidden text-3xl font-medium text-center mb-3 dark:text-white">Karol.Y
                         </h2>
 
                         <div class="lg:flex md:flex sm:hidden hidden justify-around">
@@ -812,7 +807,7 @@
                         </div>
 
                     </div>
-                    <div class="lg:w-4/5 md:w-3/4 w-full bg-white rounded-xl border-1 border-gray-300 p-6">
+                    <div class="lg:w-4/5 md:w-3/4 w-full rounded-xl border-1 border-gray-300 p-6 dark:text-white">
                         Haro haro, terima kasih sudah mapir! Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sit voluptatum, eligendi vel deserunt blanditiis fuga eveniet dignissimos facere mollitia,
                         maiores rem perspiciatis quisquam doloribus! Saepe ratione magni facere eos, consequatur rerum
@@ -823,26 +818,26 @@
                 </div>
 
                 <div x-data="{tab_penulis: true}">
-                    <ul class="flex border-b-2 border-gray-300 mb-3">
+                    <ul class="flex border-b-2 border-gray-300 dark:border-gray-700 mb-3">
                         <li class="flex-1">
                             <a href="javascript:void(0)" @click="tab_penulis = true"
                                 :class="tab_penulis == true ? 'border-b-2 border-indigo-500' : ''"
-                                class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t">
+                                class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t dark:text-white dark:hover:bg-gray-700">
                                 Karya
                             </a>
                         </li>
                         <li class="flex-1">
                             <a href="javascript:void(0)"
                                 @click="tab_penulis = 'rak', $refs.tab_pertama.style.display = 'none'"
-                                class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t"
+                                class="font-medium text-center block py-2 px-4 text-black hover:bg-indigo-200 rounded-t dark:text-white dark:hover:bg-gray-700"
                                 :class="tab_penulis == 'rak' ? 'border-b-2 border-indigo-500' : ''">
                                 Rak Buku
                             </a>
                         </li>
                         <li class="flex-1">
                             <a href="javascript:void(0)"
-                                class="font-medium text-center block py-2 px-4 rounded-t text-gray-400 cursor-not-allowed">
-                                Tab tidak aktif
+                                class="font-medium text-center block py-2 px-4 rounded-t text-gray-400 cursor-not-allowed dark:text-gray-400">
+                                Non-aktif
                             </a>
                         </li>
                     </ul>
