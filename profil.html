@@ -1139,65 +1139,97 @@
                             :class="[tab_penulis == true ? 'hidden' : '' ||
                             tab_penulis == 'dinding' ? 'block' : 'hidden']">
 
-                            <div class="flex flex-row overflow-y-auto h-auto max-h-96" x-data="komen">
-                                <div class="w-1/4 mr-6 sticky top-0 ml-1 mb-3">
+                            <div class="flex flex-row" x-data="komen">
+                                <div class="w-1/4 mr-6 ml-1 mb-3">
                                     <!-- <label for="">Komentar</label> -->
-                                    <textarea x-ref="teks_komen" class="p-3 mb-3 block rounded-lg border-2 
+                                    <div class=" sticky top-20">
+                                        <textarea x-ref="teks_komen" class="p-3 mb-3 block rounded-lg border-2 
                                     border-indigo-500 focus:outline-none focus:ring-2 
-                                    focus:ring-indigo-300" cols="30" rows="5"></textarea>
+                                    focus:ring-indigo-300" cols="30" rows="5"
+                                            placeholder="Tulis komentar ...."></textarea>
 
-                                    <button
-                                        class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
-                                        Kirim
-                                    </button>
+                                        <button
+                                            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
+                                            Kirim
+                                        </button>
+                                    </div>
 
 
                                 </div>
                                 <div class="w-3/4 ml-6 mb-3">
-                                    <div class="p-3 rounded-lg h-auto bg-white  flex flex-row">
-                                        <div class="mr-3 flex-shrink-0 text-center">
-                                            <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
-                                                src="./assets/img/profile.png" alt="">
-                                            <button @click="pencet_komen()"
-                                                class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
-                                                <i class="fas fa-reply"></i>
-                                            </button>
-                                        </div>
-                                        <div class="ml-3 flex-grow">
-                                            <div class="font-medium text-base">Angelica
-                                                <div class="inline text-sm text-gray-500">(@Ange)</div>
-                                            </div>
-                                            <small class="text-gray-400 text-xs">Kemarin</small>
-                                            <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-                                                blanditiis obcaecati natus minus qui eaque exercitationem doloremque
-                                                quae nostrum? Dolorum veniam repellendus adipisci repellat deserunt!
-                                                Dolor, asperiores voluptatibus. Perferendis exercitationem officia vitae
-                                                vel nostrum odit incidunt necessitatibus possimus, recusandae dicta eos
-                                                quasi, voluptates asperiores placeat minima harum! Eum eos perferendis
-                                                atque veritatis nobis.
-                                            </div>
+                                    <template x-for="[id, value] in Object.entries(komen)" :key="id">
 
-                                            <!-- balasan -->
+                                        <div class="p-3 rounded-lg h-auto bg-white  flex flex-row">
+                                            <div class="mr-3 flex-shrink-0 text-center">
+                                                <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
+                                                    :src="value.foto" alt="Foto">
+                                                <button @click="open_komen = value.open_komen"
+                                                    class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
+                                                    <i class="fas fa-reply"></i>
+                                                </button>
+                                            </div>
+                                            <div class="ml-3 flex-grow" x-ref="value.open_komen">
+                                                <div class="font-medium text-base inline" x-text="value.nama">
 
-                                            <div x-show="open_komen" x-ref="html_komen">
-                                                <textarea x-ref="teks_balasan_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
+                                                </div>
+                                                <div class="inline text-sm text-gray-500" x-text="value.username"></div>
+
+                                                <small class="text-gray-400 text-xs block"
+                                                    x-text="value.tanggal"></small>
+                                                <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75"
+                                                    x-text="value.komentar">
+
+                                                </div>
+
+                                                <!-- balasan -->
+
+                                                <div x-show="open_komen == value.open_komen">
+                                                    <textarea x-ref="teks_balasan_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
                                                     border-indigo-500 focus:outline-none focus:ring-2 
-                                                    focus:ring-indigo-300" cols="30" rows="5" placeholder="Tulis balasan ...."></textarea>
-                                            <button @click="tombol_balasan_komen"
-                                                class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
-                                                Kirim
-                                            </button>
+                                                    focus:ring-indigo-300" rows="2"
+                                                        placeholder="Tulis balasan ...."></textarea>
 
-                                            </div>
-                                            <div x-show="open_balasan" x-ref="html_balasan">
-                                                
+
+                                                    <button @click="open_balasan = value.open_komen; open_komen = false;
+
+                                                    appendHtml($refs[`value.open_komen`], balasan);
+                                                    
+
+                                                   
+                                                    "
+                                                        class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
+                                                        Kirim
+                                                    </button>
+
+                                                </div>
+
+                                                <div x-show="open_balasan == value.open_komen">
+                                    
+
+                                                </div>
+
+                                                <!-- <template x-if="open_balasan == value.open_komen">
+                                                    <div :class="open_balasan == value.open_komen ? 'block' : '' " x-ref="value.open_komen">
+
+                                                    </div>
+
+                                                   
+                                                </template>  -->
+
+                                                <!-- <template x-if="value.open_komen == 'balas_komen_2'">
+                                                    <div :class="open_balasan == value.open_komen ? 'block' : '' " x-ref="html_balasan_2">
+
+                                                    </div>
+
+                                                   
+                                                </template>  -->
 
                                             </div>
 
                                         </div>
 
-                                    </div>
+                                    </template>
+
 
 
 
@@ -1208,99 +1240,6 @@
 
 
                             </div>
-
-                            <script>
-
-                                document.addEventListener('alpine:init', () => {
-                                    Alpine.data('komen', () => ({
-                                        open_komen: false,
-                                        open_balasan: false,
-                                        pencet_komen() {
-
-                                            this.open_komen = !this.open_komen;
-                                            // this.$refs.html_komen.innerHTML = `
-                                            
-                                            // <textarea x-ref="teks_balasan_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
-                                            //         border-indigo-500 focus:outline-none focus:ring-2 
-                                            //         focus:ring-indigo-300" cols="30" rows="5" placeholder="Tulis balasan ...."></textarea>
-                                            // <button @click="tombol_balasan_komen"
-                                            //     class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
-                                            //     Kirim
-                                            // </button>
-                                            // `;
-                                        },
-                                        tombol_balasan_komen() {
-
-                                            this.open_komen = false;
-                                            this.open_balasan = true;
-                                            // alert(this.$refs.teks_balasan_komen.value);
-                                            this.$refs.html_balasan.append(`
-
-                                            <div class="mb-3">
-                                                <div
-                                                    class="p-3 h-auto bg-white flex flex-row">
-                                                    <div class="mr-3 flex-shrink-0 text-center">
-                                                        <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
-                                                            src="./assets/img/profile_me.png" alt="">
-
-                                                    </div>
-                                                    <div class="ml-3 flex-grow">
-                                                        <div class="font-medium text-base">Karol.Y
-                                                            <div class="inline text-sm text-gray-500">(@Nc)</div>
-                                                        </div>
-                                                        <small class="text-gray-400 text-xs">Baru saja</small>
-                                                        <div class="mt-3 text-sm border-b border-gray-400 border-opacity-75"
-                                                  
-                                                        >
-                                                        `+this.$refs.teks_balasan_komen.value+`
-                                                        
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>`);
-                                        }
-                                    }));
-                                });
-                                // function tambahKomen(){
-                                //     return {
-                                //         mk: `<div class="mb-3">
-                                //                 <div
-                                //                     class="p-3 h-auto bg-white flex flex-row">
-                                //                     <div class="mr-3 flex-shrink-0 text-center">
-                                //                         <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
-                                //                             src="./assets/img/profile_me.png" alt="">
-
-                                //                     </div>
-                                //                     <div class="ml-3 flex-grow">
-                                //                         <div class="font-medium text-base">Karol.Y
-                                //                             <div class="inline text-sm text-gray-500">(@Nc)</div>
-                                //                         </div>
-                                //                         <small class="text-gray-400 text-xs">Baru saja</small>
-                                //                         <div class="mt-3 text-sm border-b border-gray-400 border-opacity-75">
-                                //                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                //                             Atque
-                                //                             blanditiis obcaecati natus minus qui eaque exercitationem
-                                //                             doloremque
-
-                                //                         </div>
-
-                                //                     </div>
-
-                                //                 </div>
-
-                                //             </div>`
-                                //     }
-                                // }
-
-
-                            </script>
-
-
-
-
 
 
                         </div>

@@ -1,4 +1,6 @@
 
+
+
 // Event dropdown profil
 const dropdownProfil = document.getElementById('dropdown-profil');
 document.addEventListener('alpine:init', () => {
@@ -70,21 +72,21 @@ function ready(fn) {
 ready(function () {
 
 
-var swiper_mobile = new Swiper(".myswiper-mobile", {
-    slidesPerView: 3,
-    spaceBetween: 147,
-    loop: true,
-    freeMode: true,
-  
-});
+    var swiper_mobile = new Swiper(".myswiper-mobile", {
+        slidesPerView: 3,
+        spaceBetween: 147,
+        loop: true,
+        freeMode: true,
 
-var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
-    slidesPerView: 3,
-    // spaceBetween: 1,
-    loop: true,
-    freeMode: true,
-  
-});
+    });
+
+    var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
+        slidesPerView: 3,
+        // spaceBetween: 1,
+        loop: true,
+        freeMode: true,
+
+    });
 
     window.onload = (event) => {
 
@@ -100,7 +102,7 @@ var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
 
         document.getElementById("apresiator_pertama_mobile").style.display = null;
 
-      
+
 
 
     };
@@ -111,7 +113,7 @@ var swiper_mobile = new Swiper(".myswiper-penulis-mobile", {
         document.getElementById("genre-mobile-pertama").style.display = 'none';
     });
 
-   
+
 
     var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
     Array.prototype.forEach.call(tombolBlurb, function (element) {
