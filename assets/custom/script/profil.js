@@ -57,13 +57,13 @@ document.addEventListener('alpine:init', () => {
 
 
 
-function komens(){
+function komens() {
     return {
         open_komen: false,
         open_balasan: false,
         komen: {
             1: {
-                id: 1, 
+                id: 1,
                 nama: 'Angelica',
                 username: '@Ange',
                 foto: './assets/img/profile.png',
@@ -71,8 +71,8 @@ function komens(){
                 tanggal: 'kemarin',
                 open_komen: 'balas_komen_1'
             },
-            2: { 
-                id: 2, 
+            2: {
+                id: 2,
                 nama: 'A02',
                 username: '@Nine',
                 foto: './assets/img/profile_2.png',
@@ -92,76 +92,54 @@ function appendHtml(el, str) {
     }
 }
 
-
 document.addEventListener('alpine:init', () => {
     Alpine.data('komen', () => ({
-        open_komen: false,
-        open_balasan: false,
-        balasan: `<div class="mb-3">
-        <div class="p-3 h-auto bg-white flex flex-row">
-            <div class="mr-3 flex-shrink-0 text-center">
-                <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
-                    src="./assets/img/profile_me.png" alt="">
-            </div>
-            <div class="ml-3 flex-grow">
-                <div class="font-medium text-base">Karol.Y
-                    <div class="inline text-sm text-gray-500">(@Nc)</div>
-                </div>
-                <small class="text-gray-400 text-xs">Baru saja</small>
-                <div class="mt-3 text-sm border-b border-gray-400 border-opacity-75">
-
-                
-                </div>
-            </div>
-        </div>
-    </div>`,
+        open_balas: false,
         komen: {
             1: {
-                id: 1, 
+                id: 1,
                 nama: 'Angelica',
                 username: '@Ange',
                 foto: './assets/img/profile.png',
-                komentar: 'Haloooooooooooo',
+                komentar: 'Halo!',
                 tanggal: 'kemarin',
-                open_komen: 'balas_komen_1'
+                balas_komen: 'balas_komen_1'
             },
-            2: { 
-                id: 2, 
+            2: {
+                id: 2,
                 nama: 'A02',
                 username: '@Nine',
                 foto: './assets/img/profile_2.png',
-                komentar: 'Hiiiiiiiiiiiiiiiii',
+                komentar: 'If i eat my own hand does it turn me into cannibal?',
                 tanggal: 'Hari ini',
-                open_komen: 'balas_komen_2'
+                balas_komen: 'balas_komen_2'
             },
-      
-        }
-       
-       
-        // tombol_balasan_komen() {
-        //     this.open_komen = false;
-        //     this.open_balasan = true;
-        //     var pesan = `<div class="mb-3">
-        //                     <div class="p-3 h-auto bg-white flex flex-row">
-        //                         <div class="mr-3 flex-shrink-0 text-center">
-        //                             <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
-        //                                 src="./assets/img/profile_me.png" alt="">
-        //                         </div>
-        //                         <div class="ml-3 flex-grow">
-        //                             <div class="font-medium text-base">Karol.Y
-        //                                 <div class="inline text-sm text-gray-500">(@Nc)</div>
-        //                             </div>
-        //                             <small class="text-gray-400 text-xs">Baru saja</small>
-        //                             <div class="mt-3 text-sm border-b border-gray-400 border-opacity-75">
-        //                                 `+this.$refs.teks_balasan_komen.value+`
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //                 </div>`;
-        //     appendHtml(this.$refs.html_balasan, pesan);
-        //     this.$refs.teks_balasan_komen.value = '';
 
-        // }
+        },
+
+        tekan() {
+            var pesan = `
+            <div class="mb-3">
+                <div class="p-3 h-auto bg-white dark:bg-gray-800 flex flex-row">
+                    <div class="mr-3 flex-shrink-0 text-center">
+                        <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
+                            src="./assets/img/profile_me.png" alt="">
+                    </div>
+                    <div class="ml-3 flex-grow">
+                        <div class="font-medium text-base dark:text-white">Karol.Y
+                            <div class="inline text-sm text-gray-500 dark:text-gray-400">(@Nc)</div>
+                        </div>
+                        <small class="text-gray-400 text-xs dark:text-gray-300 ">Baru saja</small>
+                        <div class="mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500">
+                        `+ document.getElementById(this.id).value + `
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+            appendHtml(document.getElementById(this.open_balas), pesan);
+            this.open_balas = false;
+            document.getElementById(this.id).value = '';
+        }
     }));
 });
 
@@ -181,30 +159,17 @@ function ready(fn) {
 ready(function () {
 
 
+
+
     window.onload = (event) => {
 
-       
-
         document.getElementById("genre-mobile-pertama").style.display = null;
-
-
-      
-
-
     };
-
 
     document.querySelector('.pencet-kategori-mobile-pertama').addEventListener('click', () => {
 
         document.getElementById("genre-mobile-pertama").style.display = 'none';
     });
-
-   
-
-
-
-
-
 
 
 

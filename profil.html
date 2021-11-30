@@ -1143,13 +1143,15 @@
                                 <div class="w-1/4 mr-6 ml-1 mb-3">
                                     <!-- <label for="">Komentar</label> -->
                                     <div class=" sticky top-20">
-                                        <textarea x-ref="teks_komen" class="p-3 mb-3 block rounded-lg border-2 
-                                    border-indigo-500 focus:outline-none focus:ring-2 
-                                    focus:ring-indigo-300" cols="30" rows="5"
+                                        <textarea  x-ref="teks_komen" class="p-3 mb-3 block rounded-lg border-2 
+                                        text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
+                                    focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900" cols="30" rows="5"
                                             placeholder="Tulis komentar ...."></textarea>
 
                                         <button
-                                            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
+                                            class="bg-indigo-500 text-white px-4 py-2 rounded-lg 
+                                            hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                            dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                             Kirim
                                         </button>
                                     </div>
@@ -1159,70 +1161,57 @@
                                 <div class="w-3/4 ml-6 mb-3">
                                     <template x-for="[id, value] in Object.entries(komen)" :key="id">
 
-                                        <div class="p-3 rounded-lg h-auto bg-white  flex flex-row">
+                                        <div class="p-3 h-auto bg-white dark:bg-gray-800 flex flex-row">
                                             <div class="mr-3 flex-shrink-0 text-center">
                                                 <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
                                                     :src="value.foto" alt="Foto">
-                                                <button @click="open_komen = value.open_komen"
-                                                    class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
+                                                <button @click="open_balas = value.balas_komen;
+                                                    $nextTick(() => { document.getElementById(value.id).focus() })"
+                                                   
+                                                    class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white 
+                                                    hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                                    dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                                     <i class="fas fa-reply"></i>
                                                 </button>
                                             </div>
-                                            <div class="ml-3 flex-grow" x-ref="value.open_komen">
-                                                <div class="font-medium text-base inline" x-text="value.nama">
+                                            <div class="ml-3 flex-grow" :id="value.balas_komen">
+
+                                                <div class="font-medium text-base inline dark:text-white" x-text="value.nama">
 
                                                 </div>
-                                                <div class="inline text-sm text-gray-500" x-text="value.username"></div>
+                                                <div class="inline text-sm text-gray-500 dark:text-gray-400 " x-text="`(`+value.username+`)`"></div>
 
-                                                <small class="text-gray-400 text-xs block"
+                                                <small class="text-gray-400 dark:text-gray-300 text-xs block"
                                                     x-text="value.tanggal"></small>
-                                                <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75"
+                                                <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500"
                                                     x-text="value.komentar">
 
                                                 </div>
 
                                                 <!-- balasan -->
 
-                                                <div x-show="open_komen == value.open_komen">
-                                                    <textarea x-ref="teks_balasan_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
+                                                <div x-show="open_balas == value.balas_komen"
+                                                    x-transition:enter="transition ease-out duration-200"
+                                                    x-transition:enter-start="transform opacity-0 -translate-y-3"
+                                                    x-transition:enter-end="transform opacity-100 translate-y-0"
+                                                  
+                                                
+                                                >
+                                                    <textarea @click.away="open_balas = false"  :id="value.id" class="p-3 mb-3 w-full block rounded-lg border-2 
                                                     border-indigo-500 focus:outline-none focus:ring-2 
-                                                    focus:ring-indigo-300" rows="2"
-                                                        placeholder="Tulis balasan ...."></textarea>
+                                                    text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900" rows="2"
+                                                    placeholder="Tulis balasan ...."></textarea>
 
-
-                                                    <button @click="open_balasan = value.open_komen; open_komen = false;
-
-                                                    appendHtml($refs[`value.open_komen`], balasan);
-                                                    
-
-                                                   
-                                                    "
-                                                        class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-200">
+                                                    <button @click="tekan()" 
+                                                        class="bg-indigo-500 text-white px-4 py-2 rounded-lg 
+                                                        hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                                         Kirim
                                                     </button>
 
                                                 </div>
 
-                                                <div x-show="open_balasan == value.open_komen">
-                                    
-
-                                                </div>
-
-                                                <!-- <template x-if="open_balasan == value.open_komen">
-                                                    <div :class="open_balasan == value.open_komen ? 'block' : '' " x-ref="value.open_komen">
-
-                                                    </div>
-
-                                                   
-                                                </template>  -->
-
-                                                <!-- <template x-if="value.open_komen == 'balas_komen_2'">
-                                                    <div :class="open_balasan == value.open_komen ? 'block' : '' " x-ref="html_balasan_2">
-
-                                                    </div>
-
-                                                   
-                                                </template>  -->
+                                                
 
                                             </div>
 
@@ -1569,8 +1558,9 @@
             <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
                 class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
                 x-transition:enter="transition ease-out duration-200 "
-                x-transition:enter-start="transform opacity-0 scale-y-0"
-                x-transition:enter-end="transform opacity-100  scale-y-100">
+                x-transition:enter-start="transform opacity-0 -tranlate-y-0"
+                x-transition:enter-end="transform opacity-100  translate-y-0">
+                
 
                 <div class="pb-9" x-data="{buku: true}">
 
@@ -1676,9 +1666,9 @@
 
             <div x-show="menu_mobile == 'pengaturan'"
                 class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
-                x-transition:enter="transition ease-linear duration-200 "
-                x-transition:enter-start="transform opacity-0 scale-y-0"
-                x-transition:enter-end="transform opacity-100  scale-y-100">
+                x-transition:enter="transition ease-out duration-200 "
+                x-transition:enter-start="transform opacity-0 -tranlate-y-0"
+                x-transition:enter-end="transform opacity-100  translate-y-0">
 
                 <div class=" pb-9">
                     <div class="text-center grid grid-cols-1 grid-flow-row auto-rows-auto gap-4 text-sm">
