@@ -1139,11 +1139,11 @@
                             :class="[tab_penulis == true ? 'hidden' : '' ||
                             tab_penulis == 'dinding' ? 'block' : 'hidden']">
 
-                            <div class="flex flex-row" x-data="komen">
-                                <div class="w-1/4 mr-6 ml-1 mb-3">
+                            <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col" x-data="komen">
+                                <div class="lg:w-1/4 md:w-1/3 sm:w-full w-full mr-6 ml-1 mb-3">
                                     <!-- <label for="">Komentar</label> -->
                                     <div class=" sticky top-20">
-                                        <textarea  x-ref="teks_komen" class="p-3 mb-3 block rounded-lg border-2 
+                                        <textarea  x-ref="teks_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
                                         text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
                                     focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900" cols="30" rows="5"
                                             placeholder="Tulis komentar ...."></textarea>
@@ -1158,7 +1158,7 @@
 
 
                                 </div>
-                                <div class="w-3/4 ml-6 mb-3">
+                                <div class="lg:w-3/4 md:w-2/3 sm:w-full w-full ml-6 mb-3">
                                     <template x-for="[id, value] in Object.entries(komen)" :key="id">
 
                                         <div class="p-3 h-auto bg-white dark:bg-gray-800 flex flex-row">

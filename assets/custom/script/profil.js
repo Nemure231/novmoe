@@ -119,17 +119,18 @@ document.addEventListener('alpine:init', () => {
 
         tekan() {
             var pesan = `
-            <div class="mb-3">
+            <div class="">
                 <div class="p-3 h-auto bg-white dark:bg-gray-800 flex flex-row">
                     <div class="mr-3 flex-shrink-0 text-center">
                         <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
                             src="./assets/img/profile_me.png" alt="">
                     </div>
                     <div class="ml-3 flex-grow">
-                        <div class="font-medium text-base dark:text-white">Karol.Y
-                            <div class="inline text-sm text-gray-500 dark:text-gray-400">(@Nc)</div>
+                        <div class="font-medium text-base inline dark:text-white"> Karol.Y
+
                         </div>
-                        <small class="text-gray-400 text-xs dark:text-gray-300 ">Baru saja</small>
+                        <div class="inline text-sm text-gray-500 dark:text-gray-400">(@Nc)</div>
+                        <small class="text-gray-400 dark:text-gray-300 text-xs block">Baru saja</small>
                         <div class="mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500">
                         `+ document.getElementById(this.id).value + `
                         </div>
