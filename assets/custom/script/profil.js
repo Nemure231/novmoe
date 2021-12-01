@@ -119,7 +119,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         tekan() {
-            
+            //Tag <p> di sini perlu break all, karena setiap diappend pasti teksnya keluar dari layar
             var pesan = `
                 <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
                     <div class="flex-shrink-0 text-center">
@@ -141,7 +141,7 @@ document.addEventListener('alpine:init', () => {
                 </div>`;
             appendHtml(document.getElementById(this.open_balas), pesan);
             this.open_balas = false;
-            document.getElementById(this.id).value = '';
+            document.getElementById('balas_'+this.id).value = '';
         }
     }));
 });

@@ -1140,12 +1140,10 @@
                             tab_penulis == 'dinding' ? 'block' : 'hidden']">
 
                             <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col" x-data="komen">
+                                <!-- ISIAN KOMENTAR DINDING -->
                                 <div class="lg:w-1/4 md:w-1/3 sm:w-full w-full lg:mr-3 md:mr-3 sm:mr-0 mr-0 mb-3">
-                                    <!-- <label for="">Komentar</label> -->
                                     <div class="sticky top-20">
-                                        <textarea 
-                                        
-                                        x-ref="teks_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
+                                        <textarea x-ref="teks_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
                                         text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
                                     focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
                                             cols="30" rows="5" placeholder="Tulis komentar ...."></textarea>
@@ -1157,24 +1155,27 @@
                                             Kirim
                                         </button>
                                     </div>
-
-
                                 </div>
+                                <!-- END ISIAN KOMENTAR DINDING -->
+                                <!-- LIST KOMEN DINDING, CONTOH PAKE LOOP FOR -->
                                 <div class="lg:w-3/4 md:w-2/3 sm:w-full w-full lg:ml-3 md:ml-3 sm:ml-0 ml-0 mb-3">
                                     <template x-for="[id, value] in Object.entries(komen)" :key="id">
 
                                         <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
+                                            <!-- PROFIL KOMENTAR -->
                                             <div class=" flex-shrink-0 text-center">
                                                 <img class="mb-3 lg:h-16 lg:w-16 md:w-16 md:h-16 sm:w-12 sm:h-12 w-12 h-12 rounded-full border-2 border-indigo-500"
                                                     :src="value.foto" alt="Foto">
                                                 <button @click="open_balas = value.balas_komen;
-                                                    $nextTick(() => { document.getElementById(value.id).focus() })"
+                                                    $nextTick(() => { document.getElementById(`balas_` + id).focus() })"
                                                     class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white 
                                                     hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
                                                     dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                                     <i class="fas fa-reply"></i>
                                                 </button>
                                             </div>
+                                            <!-- END PROFIL KOMENTAR -->
+                                            <!-- TEKS BALASAN KOMENTAR -->
                                             <div class="ml-3 flex-grow" :id="value.balas_komen">
 
                                                 <div class="font-medium text-base inline dark:text-white"
@@ -1188,11 +1189,10 @@
                                                     x-text="value.tanggal"></small>
                                                 <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500"
                                                     x-text="value.komentar">
-
                                                 </div>
 
-                                                <!-- balasan -->
-
+                                            
+                                                <!-- ISIAN BALASAN -->
                                                 <div class="mb-3" x-show="open_balas == value.balas_komen"
                                                     x-transition:enter="transition ease-out duration-200"
                                                     x-transition:enter-start="transform opacity-0 -translate-y-3"
@@ -1200,8 +1200,8 @@
                                                     <textarea @click.away="open_balas = false" :id="`balas_` + id"
                                                         class="p-3 mb-3 w-full block rounded-lg border-2 
                                                     border-indigo-500 focus:outline-none focus:ring-2 
-                                                    text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900" rows="2"
-                                                        placeholder="Tulis balasan ...."></textarea>
+                                                    text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
+                                                        rows="2" placeholder="Tulis balasan ...."></textarea>
 
                                                     <button @click="tekan()" class="bg-indigo-500 text-white rounded-lg 
                                                     lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1 
@@ -1211,25 +1211,51 @@
                                                     </button>
 
                                                 </div>
+                                                <!-- END ISIAN BALASAN  -->
 
+                                                <!-- BALASAN -->
+                                                <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
+                                                    <!-- PROFIL BALASAN -->
+                                                    <div class="flex-shrink-0 text-center">
+                                                        <img class="mb-3 lg:h-16 lg:w-16 md:w-16 md:h-16 sm:w-12 sm:h-12 w-12 h-12 rounded-full border-2 border-indigo-500"
+                                                            src="./assets/img/profile_me.png" alt="">
+                                                    </div>
+                                                    <!-- END PROFIL BALASAN -->
+                                                    <!-- TEKS BALASAN -->
+                                                    <div class="ml-3 flex-grow">
+                                                        <div class="font-medium text-base inline dark:text-white">
+                                                            Karol.Y
 
-
-
-
+                                                        </div>
+                                                        <div class="inline text-sm text-gray-500 dark:text-gray-400">
+                                                            (@Nc)</div>
+                                                        <small
+                                                            class="text-gray-400 dark:text-gray-300 text-xs block">Baru
+                                                            saja</small>
+                                                        <div
+                                                            class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
+                                                            <p class="text-sm dark:text-white">
+                                                                Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                                elit. Quidem, autem provident? Hic nostrum aliquid
+                                                                dolore eveniet voluptatum fugit commodi rerum sint
+                                                                blanditiis minima eaque nam, explicabo voluptatem earum
+                                                                quam sed.
+                                                            </p>
+                                                        </div>
+                                                        <!-- END TEKS BALASAN -->
+                                                    </div>
+                                                </div>
+                                                <!-- END BALASAN -->
 
                                             </div>
+                                            <!-- END TEKS BALASAN KOMENTAR -->
 
                                         </div>
 
                                     </template>
 
-
-
-
-
-
-
                                 </div>
+                                <!-- END LIST KOMEN DINDING -->
 
 
                             </div>
