@@ -1143,7 +1143,11 @@
                                 <div class="lg:w-1/4 md:w-1/3 sm:w-full w-full lg:mr-3 md:mr-3 sm:mr-0 mr-0 mb-3">
                                     <!-- <label for="">Komentar</label> -->
                                     <div class="sticky top-20">
-                                        <textarea x-ref="teks_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
+                                        <textarea 
+                                        @focus="document.getElementById('menu_mobile').classList.add('invisible')" 
+                                        @click.away="document.getElementById('menu_mobile').classList.remove('invisible')"
+                                        x-on:mouseout="document.getElementById('menu_mobile').classList.remove('invisible')"
+                                        x-ref="teks_komen" class="p-3 mb-3 w-full block rounded-lg border-2 
                                         text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
                                     focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
                                             cols="30" rows="5" placeholder="Tulis komentar ...."></textarea>
@@ -1713,7 +1717,7 @@
 
 
 
-            <div class="py-2 justify-around h-auto border-opacity-50 border-t-2 border-indigo-500 rounded-t-xl bg-white flex
+            <div id="menu_mobile" class="py-2 justify-around h-auto border-opacity-50 border-t-2 border-indigo-500 rounded-t-xl bg-white flex
                 dark:bg-gray-800">
 
                 <div class="py-3">
