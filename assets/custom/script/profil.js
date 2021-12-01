@@ -119,30 +119,24 @@ document.addEventListener('alpine:init', () => {
 
         tekan() {
             var pesan = `
+                <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
+                    <div class="flex-shrink-0 text-center">
+                        <img class="mb-3 lg:h-16 lg:w-16 md:w-16 md:h-16 sm:w-12 sm:h-12 w-12 h-12 rounded-full border-2 border-indigo-500"
+                            src="./assets/img/profile_me.png" alt="">
+                    </div>
+                    <div class="ml-3 flex-grow">
+                        <div class="font-medium text-base inline dark:text-white"> Karol.Y
 
-            
-        <div class="p-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
-            <div class="mr-3 flex-shrink-0 text-center">
-                <img class="mb-3 h-16 w-16 rounded-full border-2 border-indigo-500"
-                    src="./assets/img/profile_me.png" alt="">
-            </div>
-            <div class="ml-3 flex-grow">
-                <div class="font-medium text-base inline dark:text-white"> Karol.Y
-
-                </div>
-                <div class="inline text-sm text-gray-500 dark:text-gray-400">(@Nc)</div>
-                <small class="text-gray-400 dark:text-gray-300 text-xs block">Baru saja</small>
-                <div class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
-                    <p class="break-all text-sm dark:text-white">
-                    `+ document.getElementById(this.id).value + `
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-
-
-          `;
+                        </div>
+                        <div class="inline text-sm text-gray-500 dark:text-gray-400">(@Nc)</div>
+                        <small class="text-gray-400 dark:text-gray-300 text-xs block">Baru saja</small>
+                        <div class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
+                            <p class="break-all text-sm dark:text-white">
+                            `+ document.getElementById(this.id).value + `
+                            </p>
+                        </div>
+                    </div>
+                </div>`;
             appendHtml(document.getElementById(this.open_balas), pesan);
             this.open_balas = false;
             document.getElementById(this.id).value = '';
