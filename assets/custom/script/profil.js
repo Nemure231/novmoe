@@ -95,6 +95,7 @@ function appendHtml(el, str) {
 document.addEventListener('alpine:init', () => {
     Alpine.data('komen', () => ({
         open_balas: false,
+        // id: $id('teks_balas'),
         komen: {
             1: {
                 id: 1,
@@ -118,6 +119,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         tekan() {
+            
             var pesan = `
                 <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
                     <div class="flex-shrink-0 text-center">
@@ -132,7 +134,7 @@ document.addEventListener('alpine:init', () => {
                         <small class="text-gray-400 dark:text-gray-300 text-xs block">Baru saja</small>
                         <div class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
                             <p class="break-all text-sm dark:text-white">
-                            `+ document.getElementById(this.id).value + `
+                            `+ document.getElementById('balas_'+this.id).value + `
                             </p>
                         </div>
                     </div>
