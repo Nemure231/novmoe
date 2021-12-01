@@ -15,7 +15,8 @@
 
 </head>
 
-<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900 flex flex-col min-h-screen"
+<body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900 flex flex-col min-h-screen"
     x-data="{modal_auth: false}">
 
 
@@ -75,7 +76,8 @@
 
                                 <div class="px-2 py-2">
 
-                                    <a href="./index.html" class="text-white text-sm font-medium" aria-current="page">Beranda</a>
+                                    <a href="./index.html" class="text-white text-sm font-medium"
+                                        aria-current="page">Beranda</a>
 
                                 </div>
                             </div>
@@ -362,33 +364,33 @@
                                 </li>
 
                                 <li
-                                class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-none hover:bg-indigo-200">
-                                <div Class="m-1">
+                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-none hover:bg-indigo-200">
+                                    <div Class="m-1">
 
-                                    <div class="flex item-center max-w-max">
-
-
-                                        <img src="./assets/img/profile.png"
-                                            class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+                                        <div class="flex item-center max-w-max">
 
 
-                                        <p class="text-xs">
-                                            <b>Angelica </b> Mengomentari "[1]" di<b> Outcast Desire </b>kamu.
-                                        </p>
+                                            <img src="./assets/img/profile.png"
+                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
+
+
+                                            <p class="text-xs">
+                                                <b>Angelica </b> Mengomentari "[1]" di<b> Outcast Desire </b>kamu.
+                                            </p>
+                                        </div>
+
                                     </div>
+                                    <div>
+                                        <i class="fas text-xl md:text-2xl lg:text-2xl fa-thumbs-up text-green-400">
 
-                                </div>
-                                <div>
-                                    <i class="fas text-xl md:text-2xl lg:text-2xl fa-thumbs-up text-green-400">
+                                        </i>
+                                    </div>
+                                    <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
+                                        Kemarin
 
-                                    </i>
-                                </div>
-                                <div class="ml-3 text-xs text-center text-gray-500 dark:text-gray-400">
-                                    Kemarin
+                                    </div>
+                                </li>
 
-                                </div>
-                            </li>
-                                
                                 <li
                                     class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-b-lg hover:bg-indigo-200">
                                     <div Class="m-1">
@@ -719,7 +721,7 @@
 
     <main class="lg:my-16 md:my-16 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
-        <div class="w-full md:mx-auto lg:mx-4 mx-auto md:w-full lg:w-3/4" x-data="{open: true}">
+        <div class="w-full md:mx-auto lg:mx-4 mx-auto md:w-full lg:w-3/4" x-data="cerita">
             <div
                 class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:p-8 md:p-8 py-8 dark:bg-gray-800">
                 <div class="lg:block md:block hidden overflow-visible relative">
@@ -727,13 +729,16 @@
                         x-on:change="open = $event.target.value, $refs.kategori_pertama.style.display = 'none'"
                         class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
                         <!-- <option></option> -->
-                        <option id="pilihan-kategori-pertama" value="baru" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option id="pilihan-kategori-pertama" value="baru"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Cerita Terbaru
                         </option>
-                        <option value="tren" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="tren"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Cerita Trending
                         </option>
-                        <option value="populer" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="populer"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Cerita Populer
                         </option>
 
@@ -795,296 +800,78 @@
                         class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3 "
                         id="kategori-pertama" x-ref="kategori_pertama">
 
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                        <!-- CONTOH LOOPING CERITA TERBARU TAMPILAN KOMPUTER -->
+                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
                                 rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
-                                        Jerman utara.
-                                    </div>
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                            x-text="value.blurb">
 
-                                </div>
-
-                                <div class="">
-                                    <img class="-mb-3 rounded-xl h-72 w-48 object-fill"
-                                        src="./assets/img/cover.png" alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-                                    <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                    </div>
-                                    <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+                                        </div>
 
                                     </div>
 
+                                    <div class="">
+                                        <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul" alt="">
+                                    </div>
+
                                 </div>
-                                <div class="p-4">
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                        </div>
+                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
 
 
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Outcast Desire
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#" x-text="value.judul">
 
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                            x-text="value.penulis">
                                         </a>
 
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
 
 
+                                        <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                            <div class="text-xs text-white">
+                                                <button
+                                                    class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                    <i class="fas fa-plus"></i> Bacaan
+                                                </button>
+                                            </div>
 
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
+
                                         </div>
 
 
+
                                     </div>
-
-
-
                                 </div>
+
+
                             </div>
 
 
-                        </div>
-
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
-                                        Amberness.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Memory
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                    rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
-                                        Amberness.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_3.jpg"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Memory 2
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
-                                        akan
-                                        peperangan membuatnya lari dari garis depan demi menepati janji
-                                        adiknya--Namesa--untuk
-                                        tetap hidup.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_4.png"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Journey
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-
-
-
-
+                        </template>
+                        <!-- END CONTOH LOOPING CERITA TERBARU TAMPILAN KOMPUTER -->
                     </div>
                 </div>
 
@@ -1106,237 +893,78 @@
                         ]
                     
                     ">
+                        <!-- CONTOH LOOPING CERITA TREN TAMPILAN KOMPUTER -->
+                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                            rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                            x-text="value.blurb">
 
-
-
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
-                                        Amberness.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_3.jpg"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
+                                        </div>
 
                                     </div>
 
+                                    <div class="">
+                                        <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul" alt="">
+                                    </div>
+
                                 </div>
-                                <div class="p-4">
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                        </div>
+                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
 
 
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Memory 2
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#" x-text="value.judul">
 
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                            x-text="value.penulis">
                                         </a>
 
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
 
 
+                                        <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                            <div class="text-xs text-white">
+                                                <button
+                                                    class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                    <i class="fas fa-plus"></i> Bacaan
+                                                </button>
+                                            </div>
 
 
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
                                         </div>
 
 
+
                                     </div>
-
-
-
                                 </div>
+
+
                             </div>
 
 
-
-                        </div>
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
-                                        Amberness.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_2.jpg"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Memory
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-
-
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
-                                        Jerman
-                                        utara.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-                                    <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                    </div>
-                                    <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Outcast Desire
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
+                        </template>
+                        <!-- END CONTOH LOOPING CERITA TREN TAMPILAN KOMPUTER -->
 
 
                     </div>
@@ -1360,225 +988,78 @@
                     
                     ">
 
+                        <!-- CONTOH LOOPING CERITA POPULER TAMPILAN KOMPUTER -->
+                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                            <div x-data="{opacity_blurb: false}"
+                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
+                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                    @click="opacity_blurb = !opacity_blurb">
+                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                            rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                            x-text="value.blurb">
 
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                        Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar
-                                        bernama
-                                        Amberness.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_3.jpg"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
+                                        </div>
 
                                     </div>
 
+                                    <div class="">
+                                        <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul" alt="">
+                                    </div>
+
                                 </div>
-                                <div class="p-4">
+                                <div class="bg-white rounded-xl dark:bg-gray-700">
+                                    <div class="inset-x-0 top-0 flex">
+                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                        </div>
+                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="p-4">
 
 
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Memory 2
+                                        <div
+                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                            <a href="#" x-text="value.judul">
 
+                                            </a>
+
+                                        </div>
+
+                                        <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                        </div>
+                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                            x-text="value.penulis">
                                         </a>
 
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
 
 
+                                        <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                            <div class="text-xs text-white">
+                                                <button
+                                                    class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                    <i class="fas fa-plus"></i> Bacaan
+                                                </button>
+                                            </div>
 
 
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
                                         </div>
 
 
+
                                     </div>
-
-
-
                                 </div>
+
+
                             </div>
 
 
-
-                        </div>
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible  ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48  shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
-                                        akan
-                                        peperangan membuatnya lari dari garis depan demi menepati janji
-                                        adiknya--Namesa--untuk
-                                        tetap hidup.
-                                    </div>
-
-                                </div>
-
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover_4.png"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-
-                                    <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Distant Journey
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto h-64 w-48 shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                    <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased">
-                                        Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di
-                                        Jerman
-                                        utara.
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class=" -mb-3 rounded-xl h-72 w-48 object-fill" src="./assets/img/cover.png"
-                                        alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-                                    <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                    </div>
-                                    <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#">
-                                            Outcast Desire
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                    </a>
-
-
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-                        </div>
+                        </template>
+                        <!-- END CONTOH LOOPING CERITA POPULER TAMPILAN KOMPUTER -->
 
 
 
@@ -1587,23 +1068,6 @@
                 </div>
                 <!-- END CERITA POPULER TAMPILAN KOMPUTER -->
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <!-- CERITA BARU TAMPILAN MOBILE -->
@@ -1639,300 +1103,83 @@
                 <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
                     <div class="swiper myswiper-mobile">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide mt-1">
-                                <div x-data="{opacity_blurb: false}"
-                                    class="ml-3.5 mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div class="swiper-slide mt-1">
+                                    <div x-data="{opacity_blurb: false}"
+                                        class="ml-3.5 mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl h-52 w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
+                                        <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                            @click="opacity_blurb = !opacity_blurb">
 
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                            <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                     rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium">
-                                                Aegis, militer swasta yang mencegah monster tumbuhan bernama
-                                                Caltanepent di Jerman utara.
+                                                <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="">
+                                                <img class=" -mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
+                                                    :src="value.sampul" alt="">
                                             </div>
 
                                         </div>
 
-                                        <div class="">
-                                            <img class=" -mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                src="./assets/img/cover.png" alt="">
-                                        </div>
-
-                                    </div>
 
 
+                                        <div class="bg-white rounded-xl dark:bg-gray-700">
+                                            <div class="inset-x-0 top-0 flex">
+                                                <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-                                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+                                                </div>
+                                                <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                                </div>
 
                                             </div>
-                                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="p-4">
+                                            <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
-                                                :class="$store.darkMode && 'text-indigo-200'">
-                                                <a href="#">
-                                                    Outcast Desire
+                                                <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
+                                                    :class="$store.darkMode && 'text-indigo-200'">
+                                                    <a href="#" x-text="value.judul">
 
+
+                                                    </a>
+
+                                                </div>
+
+                                                <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                                </div>
+                                                <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                    x-text="value.penulis">
                                                 </a>
 
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                            </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                            </a>
 
 
 
+                                                <div class="text-center flex justify-end mt-4  bottom-0 right-0">
+                                                    <div class="text-xs text-white">
+                                                        <button
+                                                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                            <i class="fas fa-plus"></i> Bacaan
+                                                        </button>
+                                                    </div>
 
-                                            <div class="text-center flex justify-end mt-4  bottom-0 right-0">
-                                                <div class="text-xs text-white">
-                                                    <button
-                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                        <i class="fas fa-plus"></i> Bacaan
-                                                    </button>
+
                                                 </div>
 
 
+
                                             </div>
-
-
-
                                         </div>
+
+
                                     </div>
-
-
                                 </div>
-                            </div>
-                            <div class="swiper-slide mt-1 ">
-                                <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative ml-3.5 overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
+                            </template>
 
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium">
-                                                Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                                Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
-                                                terbesar bernama
-                                                Amberness.
-                                            </div>
-
-                                        </div>
-
-                                        <div class="">
-                                            <img class=" -mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                src="./assets/img/cover_2.jpg" alt="">
-                                        </div>
-
-                                    </div>
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-
-                                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="p-4">
-
-
-                                            <div
-                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                                <a href="#">
-                                                    Distant Memory
-
-                                                </a>
-
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                            </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                            </a>
-
-
-
-                                            <div class="text-center flex justify-end mt-4  bottom-0 right-0">
-                                                <div class="text-xs text-white">
-                                                    <button
-                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                        <i class="fas fa-plus"></i> Bacaan
-                                                    </button>
-                                                </div>
-
-
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                            <div class="swiper-slide mt-1">
-                                <div x-data="{opacity_blurb: false}"
-                                    class=" mb-1 relative ml-3.5 overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
-
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium">
-                                                Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh
-                                                Eldia Amberness, wanita bangsawan pemilik tempat pandai besi
-                                                terbesar bernama
-                                                Amberness.
-                                            </div>
-
-                                        </div>
-
-                                        <div class="">
-                                            <img class=" -mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                src="./assets/img/cover_3.jpg" alt="">
-                                        </div>
-
-                                    </div>
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-
-                                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="p-4">
-
-
-                                            <div
-                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                                <a href="#">
-                                                    Distant Memory 2
-
-                                                </a>
-
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                            </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                            </a>
-
-
-
-                                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                                <div class="text-xs text-white">
-                                                    <button
-                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                        <i class="fas fa-plus"></i> Bacaan
-                                                    </button>
-                                                </div>
-
-
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                            <div class="swiper-slide mt-1 ">
-                                <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative ml-3.5 overflow-visible  ring-1 ring-gray-200 rounded-xl h-52 w-36  shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
-
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                    rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium">
-                                                Eiril adalah salah satu pejuang elf dalam perang. Rasa benci,
-                                                muak,
-                                                gelisah akan
-                                                peperangan membuatnya lari dari garis depan demi menepati janji
-                                                adiknya--Namesa-- untuk
-                                                tetap hidup.
-                                            </div>
-
-                                        </div>
-
-                                        <div class="">
-                                            <img class=" -mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                src="./assets/img/cover_4.png" alt="">
-                                        </div>
-
-                                    </div>
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-
-                                            <div class="w-full h-5 bg-red-400 rounded-b-xl">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="p-4">
-
-
-                                            <div
-                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                                <a href="#">
-                                                    Distant Journey
-
-                                                </a>
-
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                            </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"> Karol.Y
-                                            </a>
-
-
-
-                                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                                <div class="text-xs text-white">
-                                                    <button
-                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                        <i class="fas fa-plus"></i> Bacaan
-                                                    </button>
-                                                </div>
-
-
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-
-
-
-
-                            </div>
 
                         </div>
                     </div>
@@ -1988,13 +1235,16 @@
                     <select name="" id=""
                         x-on:change="open_penulis_mobile = $event.target.value, $refs.apresiator_pertama_mobile.style.display = 'none'"
                         class="ml-3 -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
-                        <option value="apresiator" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="apresiator"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Apresiator
                         </option>
-                        <option value="naik_daun" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="naik_daun"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Penulis Naik Daun
                         </option>
-                        <option value="populer" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="populer"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Penulis Populer
                         </option>
 
@@ -2071,11 +1321,11 @@
                     </div>
 
                 </div>
-                 <!-- END PENULIS APRESIATOR TAMPILAN MOBILE -->
+                <!-- END PENULIS APRESIATOR TAMPILAN MOBILE -->
 
 
 
-                 <!-- PENULIS NAIK DAUN TAMPILAN MOBILE -->
+                <!-- PENULIS NAIK DAUN TAMPILAN MOBILE -->
                 <div x-show="open_penulis_mobile == 'naik_daun'" class="overflow-hidden relative py-3"
                     x-transition:enter="transition ease-out duration-200"
                     x-transition:enter-start="transform opacity-0 scale-95"
@@ -2148,9 +1398,9 @@
                     </div>
 
                 </div>
-                 <!-- END PENULIS NAIK DAUN TAMPILAN MOBILE -->
+                <!-- END PENULIS NAIK DAUN TAMPILAN MOBILE -->
 
-                 <!-- PENULIS POPULER TAMPILAN MOBILE -->
+                <!-- PENULIS POPULER TAMPILAN MOBILE -->
                 <div x-show="open_penulis_mobile == 'populer'" class="overflow-hidden relative py-3"
                     x-transition:enter="transition ease-out duration-200"
                     x-transition:enter-start="transform opacity-0 scale-95"
@@ -2223,7 +1473,7 @@
                     </div>
 
                 </div>
-                 <!-- END PENULIS POPULER TAMPILAN MOBILE -->
+                <!-- END PENULIS POPULER TAMPILAN MOBILE -->
 
 
 
@@ -2847,13 +2097,16 @@
                     <select name="" id=""
                         x-on:change="open_penulis = $event.target.value, $refs.penulis_pertama.style.display = 'none'"
                         class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
-                        <option id="pilihan-penulis-pertama" value="apresiator" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option id="pilihan-penulis-pertama" value="apresiator"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Apresiator
                         </option>
-                        <option value="naik_daun" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="naik_daun"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Penulis Naik Daun
                         </option>
-                        <option value="populer" class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                        <option value="populer"
+                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Penulis Populer
                         </option>
 
@@ -3100,7 +2353,7 @@
 
             <div x-show="menu_mobile == 'pengaturan'"
                 class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
-                 x-transition:enter="transition ease-out duration-200 "
+                x-transition:enter="transition ease-out duration-200 "
                 x-transition:enter-start="transform opacity-0 -tranlate-y-0"
                 x-transition:enter-end="transform opacity-100  translate-y-0">
 
