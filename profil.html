@@ -1135,7 +1135,7 @@
                             x-transition:enter-end="transform opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95" class="overflow-visible relative p-8"
+                            x-transition:leave-end="transform opacity-0 scale-95" class="overflow-visible relative p-3"
                             :class="[tab_penulis == true ? 'hidden' : '' ||
                             tab_penulis == 'dinding' ? 'block' : 'hidden']">
 
@@ -1148,7 +1148,8 @@
                                     focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
                                             cols="30" rows="5" placeholder="Tulis komentar ...."></textarea>
 
-                                        <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg 
+                                        <button class="bg-indigo-500 text-white lg:px-4 lg:py-2 
+                                            rounded-lg md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1    
                                             hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
                                             dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                             Kirim
@@ -1200,7 +1201,8 @@
                                                     text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900" rows="2"
                                                         placeholder="Tulis balasan ...."></textarea>
 
-                                                    <button @click="tekan()" class="bg-indigo-500 text-white px-4 py-2 rounded-lg 
+                                                    <button @click="tekan()" class="bg-indigo-500 text-white rounded-lg 
+                                                    lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1 
                                                         hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
                                                         dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                                         Kirim
