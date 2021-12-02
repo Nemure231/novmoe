@@ -117,9 +117,24 @@ ready(function () {
 
     var swiper_mobile= new Swiper(".myswiper-mobile", {
         slidesPerView: 3,
-        spaceBetween: 147,
-        loop: true,
-        // freeMode: true,
+        // spaceBetween: 147,
+        // loop: true,
+        preloadImages: false,
+  // Enable lazy loading
+        lazy: true,
+        freeMode: true,
+        // breakpoints: {
+        //     // when MD
+        //     768: {
+        //       slidesPerView: 3,
+        //       spaceBetween: 40
+        //     },
+        //     // when SM
+        //     640: {
+        //       slidesPerView: 2,
+        //       spaceBetween: 20
+        //     }
+        // }
     
     });
     
