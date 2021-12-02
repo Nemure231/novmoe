@@ -115,13 +115,14 @@ function ready(fn) {
 ready(function () {
 
 
-    var swiper_mobile= new Swiper(".myswiper-mobile", {
+    var swiper_mobile = new Swiper(".myswiper-mobile", {
         slidesPerView: 3,
-        // spaceBetween: 147,
+        spaceBetween: 40,
         // loop: true,
         // preloadImages: false,
   // Enable lazy loading
         // lazy: true,
+        // centeredSlides: true,
         freeMode: true,
         // breakpoints: {
         //     // when MD
