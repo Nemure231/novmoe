@@ -114,30 +114,15 @@ function ready(fn) {
 
 ready(function () {
 
-
-    var swiper_mobile = new Swiper(".myswiper-mobile", {
+    var swiper_mobile= new Swiper(".myswiper-mobile", {
         slidesPerView: 3,
-        spaceBetween: 40,
-        // loop: true,
-        // preloadImages: false,
-  // Enable lazy loading
-        // lazy: true,
-        // centeredSlides: true,
+        spaceBetween: 147,
         freeMode: true,
-        // breakpoints: {
-        //     // when MD
-        //     768: {
-        //       slidesPerView: 3,
-        //       spaceBetween: 40
-        //     },
-        //     // when SM
-        //     640: {
-        //       slidesPerView: 2,
-        //       spaceBetween: 20
-        //     }
-        // }
-    
+        loop: true,
+        
+
     });
+   
     
     var swiper_penulis = new Swiper(".myswiper-penulis-mobile", {
         slidesPerView: 3,
