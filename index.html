@@ -303,7 +303,7 @@
 
                     <!-- NAVBAR NOTIF -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_notif" class=" relative" @click.away="open = false" x-data="notif">
+                    <div x-ref="tombol_notif" class="hidden relative" @click.away="open = false" x-data="notif">
                         <span class="flex h-3 w-3 absolute top-0 right-0">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -432,7 +432,7 @@
 
                     <!-- NAVBAR PROFIL -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_profil" class=" ml-3 relative" @click.away="open = false" x-data="profil">
+                    <div x-ref="tombol_profil" class="hidden ml-3 relative" @click.away="open = false" x-data="profil">
                         <div>
                             <!-- TOMBOL PROFIL -->
                             <button type="button" @click="pencet_profil"
@@ -475,7 +475,7 @@
 
                     <!-- NAVABR AUTH  -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIAN -->
-                    <div x-ref="tombol_auth" class="hidden ml-3 relative">
+                    <div x-ref="tombol_auth" class="ml-3 relative">
                         <div>
                             <!-- TOMBOL AUTH -->
                             <button type="button" @click="modal_auth = !modal_auth"
@@ -593,7 +593,7 @@
                                 <label class="font-medium dark:text-white">Surel</label>
                                 <input type="text"
                                     class="block appearance-none border 
-                            border-indigo-400 rounded-md w-full sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                            border-indigo-400 rounded-md w-full sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                             focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
                             <div class="relative mt-3 sm:ml-4 text-left" x-data="{lihat_sandi: false}">
@@ -602,12 +602,12 @@
                                     <button @click="lihat_sandi = !lihat_sandi"
                                         class="p-1 focus:outline-none focus:shadow-outline">
                                         <i class="text-xl dark:text-white "
-                                            :class="lihat_sandi ? 'far fa-eye' : 'far fa-eye-slash'"></i>
+                                            :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
                                     </button>
                                 </span>
                                 <input :type="lihat_sandi ? 'text' : 'password'"
                                     class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
 
@@ -621,9 +621,9 @@
                                         sandi?</a>
                                 </label>
                             </div>
-                            <button type="button" @click="
-                                                            $refs.tombol_auth.classList.add('hidden')" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                                bg-indigo-500 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none 
+                            <button type="button" @click="$refs.tombol_auth.classList.add('hidden')" 
+                            class="justify-center rounded-md border border-transparent shadow-sm px-3 py-2 
+                                bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none 
                                 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                                 dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
                                 Login
@@ -643,7 +643,7 @@
                                     <label class="font-medium dark:text-white">Surel</label>
                                     <input type="text"
                                         class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900 dark:placeholder-gray-400"
                                         placeholder="angelica@example.com">
                                 </div>
@@ -652,7 +652,7 @@
                                     <label class="font-medium dark:text-white">Username</label>
                                     <input type="text"
                                         class=" block appearance-none placeholder-gray-500 border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                                 </div>
 
@@ -665,12 +665,12 @@
                                     <button @click="lihat_sandi = !lihat_sandi"
                                         class="p-1 focus:outline-none focus:shadow-outline">
                                         <i class="text-xl  dark:text-white"
-                                            :class="lihat_sandi ? 'far fa-eye' : 'far fa-eye-slash'"></i>
+                                            :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
                                     </button>
                                 </span>
                                 <input :type="lihat_sandi ? 'text' : 'password'"
                                     class="block appearance-none border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
 
@@ -690,7 +690,7 @@
 
 
                             <button type="button" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                                bg-indigo-500 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none
+                                bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
                                  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                                  dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
                                 Regist
@@ -1711,8 +1711,6 @@
                                             </div>
 
                                         </div>
-
-
 
                                         <div class="bg-white rounded-xl dark:bg-gray-700">
                                             <div class="inset-x-0 top-0 flex">
