@@ -119,9 +119,9 @@ ready(function () {
         slidesPerView: 3,
         // spaceBetween: 147,
         // loop: true,
-        preloadImages: false,
+        // preloadImages: false,
   // Enable lazy loading
-        lazy: true,
+        // lazy: true,
         freeMode: true,
         // breakpoints: {
         //     // when MD
