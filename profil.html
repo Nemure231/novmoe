@@ -295,15 +295,9 @@
 
 
 
-
-
-
-
-
-
                     <!-- NAVBAR NOTIF -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_notif" class=" relative" @click.away="open = false" x-data="notif">
+                    <div x-ref="tombol_notif" class="hidden relative" @click.away="open = false" x-data="notif">
                         <span class="flex h-3 w-3 absolute top-0 right-0">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -430,7 +424,7 @@
 
                     <!-- NAVBAR PROFIL -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_profil" class=" ml-3 relative" @click.away="open = false" x-data="profil">
+                    <div x-ref="tombol_profil" class="hidden ml-3 relative" @click.away="open = false" x-data="profil">
                         <div>
                             <!-- TOMBOL PROFIL -->
                             <button type="button" @click="pencet_profil"
@@ -473,7 +467,7 @@
 
                     <!-- NAVABR AUTH  -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIAN -->
-                    <div x-ref="tombol_auth" class="hidden ml-3 relative">
+                    <div x-ref="tombol_auth" class="ml-3 relative">
                         <div>
                             <!-- TOMBOL AUTH -->
                             <button type="button" @click="modal_auth = !modal_auth"
@@ -591,7 +585,7 @@
                                 <label class="font-medium dark:text-white">Surel</label>
                                 <input type="text"
                                     class="block appearance-none border 
-                            border-indigo-400 rounded-md w-full sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                            border-indigo-400 rounded-md w-full sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                             focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
                             <div class="relative mt-3 sm:ml-4 text-left" x-data="{lihat_sandi: false}">
@@ -600,12 +594,12 @@
                                     <button @click="lihat_sandi = !lihat_sandi"
                                         class="p-1 focus:outline-none focus:shadow-outline">
                                         <i class="text-xl dark:text-white "
-                                            :class="lihat_sandi ? 'far fa-eye' : 'far fa-eye-slash'"></i>
+                                            :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
                                     </button>
                                 </span>
                                 <input :type="lihat_sandi ? 'text' : 'password'"
                                     class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
 
@@ -619,9 +613,8 @@
                                         sandi?</a>
                                 </label>
                             </div>
-                            <button type="button" @click="
-                                                            $refs.tombol_auth.classList.add('hidden')" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                                bg-indigo-500 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none 
+                            <button type="button" @click="$refs.tombol_auth.classList.add('hidden')" class="justify-center rounded-md border border-transparent shadow-sm px-3 py-2 
+                                bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none 
                                 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                                 dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
                                 Login
@@ -641,7 +634,7 @@
                                     <label class="font-medium dark:text-white">Surel</label>
                                     <input type="text"
                                         class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900 dark:placeholder-gray-400"
                                         placeholder="angelica@example.com">
                                 </div>
@@ -650,25 +643,25 @@
                                     <label class="font-medium dark:text-white">Username</label>
                                     <input type="text"
                                         class=" block appearance-none placeholder-gray-500 border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                                 </div>
 
                             </div>
 
 
-                            <div class="relative mt-3 sm:ml-4 text-left" x-data="{lihat_sandi: false}">
+                            <div class="relative mt-3 sm:ml-3 text-left" x-data="{lihat_sandi: false}">
                                 <label class="font-medium dark:text-white">Sandi</label>
                                 <span class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
                                     <button @click="lihat_sandi = !lihat_sandi"
                                         class="p-1 focus:outline-none focus:shadow-outline">
                                         <i class="text-xl  dark:text-white"
-                                            :class="lihat_sandi ? 'far fa-eye' : 'far fa-eye-slash'"></i>
+                                            :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
                                     </button>
                                 </span>
                                 <input :type="lihat_sandi ? 'text' : 'password'"
                                     class="block appearance-none border 
-                                border-indigo-400 rounded-md w-full  sm:py-3 sm:px-4 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
 
@@ -688,7 +681,7 @@
 
 
                             <button type="button" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                                bg-indigo-500 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none
+                                bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
                                  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                                  dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
                                 Regist
@@ -700,9 +693,6 @@
 
 
                 </div>
-
-
-
 
 
             </div>
@@ -1159,7 +1149,7 @@
                                 <!-- END ISIAN KOMENTAR DINDING -->
                                 <!-- LIST KOMEN DINDING, CONTOH PAKE LOOP FOR -->
                                 <div class="lg:w-3/4 md:w-2/3 sm:w-full w-full lg:ml-3 md:ml-3 sm:ml-0 ml-0 mb-3">
-                                    
+
                                     <template x-for="[id, value] in Object.entries(komen)" :key="id">
 
                                         <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
@@ -1167,7 +1157,8 @@
                                             <div class=" flex-shrink-0 text-center">
                                                 <img class="mb-3 lg:h-16 lg:w-16 md:w-16 md:h-16 sm:w-12 sm:h-12 w-12 h-12 rounded-full border-2 border-indigo-500"
                                                     :src="value.foto" alt="Foto">
-                                                <button @click="open_balas = value.balas_komen;
+                                                <button
+                                                    @click="open_balas = value.balas_komen;
                                                     $nextTick(() => { document.getElementById(`balas_` + id).focus() })"
                                                     class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white 
                                                     hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
@@ -1192,7 +1183,7 @@
                                                     x-text="value.komentar">
                                                 </div>
 
-                                            
+
                                                 <!-- ISIAN BALASAN -->
                                                 <div class="mb-3" x-show="open_balas == value.balas_komen"
                                                     x-transition:enter="transition ease-out duration-200"

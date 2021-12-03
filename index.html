@@ -303,7 +303,7 @@
 
                     <!-- NAVBAR NOTIF -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_notif" class="hidden relative" @click.away="open = false" x-data="notif">
+                    <div x-ref="tombol_notif" class="relative" @click.away="open = false" x-data="notif">
                         <span class="flex h-3 w-3 absolute top-0 right-0">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -432,7 +432,7 @@
 
                     <!-- NAVBAR PROFIL -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_profil" class="hidden ml-3 relative" @click.away="open = false" x-data="profil">
+                    <div x-ref="tombol_profil" class="ml-3 relative" @click.away="open = false" x-data="profil">
                         <div>
                             <!-- TOMBOL PROFIL -->
                             <button type="button" @click="pencet_profil"
@@ -475,7 +475,7 @@
 
                     <!-- NAVABR AUTH  -->
                     <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIAN -->
-                    <div x-ref="tombol_auth" class="ml-3 relative">
+                    <div x-ref="tombol_auth" class="hidden ml-3 relative">
                         <div>
                             <!-- TOMBOL AUTH -->
                             <button type="button" @click="modal_auth = !modal_auth"
@@ -607,7 +607,7 @@
                                 </span>
                                 <input :type="lihat_sandi ? 'text' : 'password'"
                                     class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
 
@@ -659,7 +659,7 @@
                             </div>
 
 
-                            <div class="relative mt-3 sm:ml-4 text-left" x-data="{lihat_sandi: false}">
+                            <div class="relative mt-3 sm:ml-3 text-left" x-data="{lihat_sandi: false}">
                                 <label class="font-medium dark:text-white">Sandi</label>
                                 <span class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
                                     <button @click="lihat_sandi = !lihat_sandi"
@@ -670,7 +670,7 @@
                                 </span>
                                 <input :type="lihat_sandi ? 'text' : 'password'"
                                     class="block appearance-none border 
-                                border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                border-indigo-400 rounded-md w-full  sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                                 focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                             </div>
 
