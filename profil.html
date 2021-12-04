@@ -860,7 +860,7 @@
                         x-transition:leave-end="transform opacity-0 scale-95">
                         <!-- TAB KARYA -->
                         <div x-data="cerita"
-                            class="overflow-hidden grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 relative"
+                            class="overflow-hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-3 gap-3 relative"
                             id="kategori-pertama" x-ref="tab_pertama">
                             <template x-for="[id, value] in Object.entries(buku)" :key="id">
                                 <div x-data="{opacity_blurb: false}"

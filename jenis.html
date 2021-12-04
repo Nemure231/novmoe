@@ -720,7 +720,7 @@
     <main class="lg:my-11 md:my-11 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
         <div class="w-full mx-auto">
-            <div class="rounded-xl bg-white relative mb-12 p-8 dark:bg-gray-800">
+            <div class="rounded-xl bg-white relative mb-12 dark:bg-gray-800 px-5 py-8">
                 <div class="flex items-center justify-center">
                     <div class="overflow-visible relative">
                         <div class="-mt-14 font-bold text-2xl text-center
@@ -733,13 +733,13 @@
                 </div>
 
 
-                <div class="overflow-hidden grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6 relative p-3"
+                <div class=" overflow-hidden grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-6 relative"
                     x-data="cerita">
 
                     <!-- CONTOH LOOPING CERITA -->
                     <template x-for="[id, value] in Object.entries(buku)" :key="id">
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-36 shadow-lg h-auto dark:ring-gray-900">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-32 shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -754,7 +754,7 @@
                                 </div>
 
                                 <div class="">
-                                    <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 h-56 w-36 object-fill"
+                                    <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 sm:h-56 sm:w-36 h-52 w-32  object-fill"
                                         :src="value.sampul" alt="">
                                 </div>
 
@@ -895,11 +895,11 @@
                 x-transition:enter-start="transform opacity-0 -tranlate-y-0"
                 x-transition:enter-end="transform opacity-100  translate-y-0">
 
-                <div class="pb-9" x-data="{buku: false}">
+                <div class="pb-9" x-data="{buku: true}">
 
                     <ul class="flex">
                         <li class="flex-1 mr-2">
-                            <a @click="buku = true,
+                            <a @click="buku = $event.target.dataset.buku,
                                 $refs.genre.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
                                 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
                                 $refs.genre.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
@@ -927,7 +927,7 @@
 
 
                     <!-- TAB MENU MOBILE GENRE -->
-                    <div x-show="buku == true"
+                    <div x-show="buku == 'genre'"
                         class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm"
                         id="genre-mobile-pertama" x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="transform opacity-0 -translate-x-7"
