@@ -56,6 +56,47 @@ document.addEventListener('alpine:init', () => {
 });
 
 
+document.addEventListener('alpine:init', () => {
+    Alpine.data('cerita', () => ({
+        buku: {
+            1: {
+                id: 1,
+                judul: 'Outcast Desir',
+                penulis: 'Karol.Y',
+                sampul: './assets/img/cover.png',
+                blurb: 'Aegis, militer swasta yang mencegah monster tumbuhan bernama Caltanepent di Jerman utara',
+            },
+            2: {
+                id: 2,
+                judul: 'Distant Memory',
+                penulis: 'Karol.Y',
+                sampul: './assets/img/cover_2.jpg',
+                blurb: ' Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.',
+            },
+            3: {
+                id: 3,
+                judul: 'Distant Memory 2',
+                penulis: 'Karol.Y',
+                sampul: './assets/img/cover_3.jpg',
+                blurb: ' Setelah kehilangan ingatan dan tujuan hidup, Riess dipungut oleh Eldia Amberness, wanita bangsawan pemilik tempat pandai besi terbesar bernama Amberness.',
+            },
+            4: {
+                id: 4,
+                judul: 'Distant Journey',
+                penulis: 'Karol.Y',
+                sampul: './assets/img/cover_4.png',
+                blurb: `Eiril adalah salah satu pejuang elf dalam perang. Rasa benci, muak, gelisah
+                        akan peperangan membuatnya lari dari garis depan demi menepati janji
+                        adiknya--Namesa--untuk tetap hidup.`,
+            },
+           
+        }
+
+    }));
+});
+
+
+
 
 function komens() {
     return {
