@@ -851,74 +851,74 @@
                     </ul>
 
 
+                    <div>
+                        <div x-show="tab_penulis == true" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95">
+                            <!-- TAB KARYA -->
+                            <div x-data="cerita"
+                                class="overflow-hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-3 gap-3 relative"
+                                id="kategori-pertama" x-ref="tab_pertama">
+                                <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                    <div x-data="{opacity_blurb: false}"
+                                        class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-36 shadow-lg h-auto dark:ring-gray-900">
+                                        <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                            @click="opacity_blurb = !opacity_blurb">
 
-                    <div x-show="tab_penulis == true" x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95">
-                        <!-- TAB KARYA -->
-                        <div x-data="cerita"
-                            class="overflow-hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-3 gap-3 relative"
-                            id="kategori-pertama" x-ref="tab_pertama">
-                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                                <div x-data="{opacity_blurb: false}"
-                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-36 shadow-lg h-auto dark:ring-gray-900">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
-
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' "
-                                            class="absolute flex 
+                                            <div :class="opacity_blurb == false ? 'hidden' : '' "
+                                                class="absolute flex 
                                 rounded-xl bg-gradient-to-t lg:from-white md:from-white lg:bg-transparent md:bg-transparent sm:bg-white sm:opacity-80 lg:opacity-100 md:opacity-100 bg-white opacity-80 h-full w-full">
-                                            <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
-                                                x-text="value.blurb">
+                                                <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                                    x-text="value.blurb">
+
+                                                </div>
 
                                             </div>
 
-                                        </div>
-
-                                        <div class="">
-                                            <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 h-56 w-36 object-fill"
-                                                :src="value.sampul" alt="">
-                                        </div>
-
-                                    </div>
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-                                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                            </div>
-                                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
+                                            <div class="">
+                                                <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 h-56 w-36 object-fill"
+                                                    :src="value.sampul" alt="">
                                             </div>
 
                                         </div>
-                                        <div class="p-4">
+                                        <div class="bg-white rounded-xl dark:bg-gray-700">
+                                            <div class="inset-x-0 top-0 flex">
+                                                <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                                </div>
+                                                <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                                </div>
+
+                                            </div>
+                                            <div class="p-4">
 
 
-                                            <div
-                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                                <a href="#" x-text="value.judul">
+                                                <div
+                                                    class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                                    <a href="#" x-text="value.judul">
 
+                                                    </a>
+
+                                                </div>
+
+                                                <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                                </div>
+                                                <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                    x-text="value.penulis">
                                                 </a>
 
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
 
                                             </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                                x-text="value.penulis">
-                                            </a>
-
-
                                         </div>
+
+
                                     </div>
-
-
-                                </div>
-                            </template>
+                                </template>
 
 
 
@@ -926,6 +926,7 @@
 
 
 
+                            </div>
                         </div>
                         <!-- END TAB KARYA -->
 
@@ -1028,7 +1029,7 @@
                                                 <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
                                                     <!-- PROFIL BALASAN -->
                                                     <div class="flex-shrink-0 text-center">
-                                                        <img class="mb-3 lg:h-16 lg:w-16 md:w-16 md:h-16 sm:w-12 sm:h-12 w-12 h-12 rounded-full border-2 border-indigo-500"
+                                                        <img class="mb-3 lg:h-14 lg:w-14 md:w-14 md:h-14 sm:w-11 sm:h-11 w-11 h-11 rounded-full border-2 border-indigo-500"
                                                             src="./assets/img/profile_me.png" alt="">
                                                     </div>
                                                     <!-- END PROFIL BALASAN -->
