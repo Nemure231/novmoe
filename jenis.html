@@ -716,9 +716,13 @@
         LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
     </div>
 
+    <div class="absolute bg-indigo-500 h-1/2 w-full rounded-3xl">
+        
+    </div>
+
 
     <main class="lg:my-16 md:my-16 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
-        <div x-data="{filter: false}">
+        <!-- <div x-data="{filter: false}">
             <div class="inset-y-0 right-0 absolute">
                 <div class="-mr-6 border-r-2 border-indigo-500 h-1/6 bg-indigo-500 w-16 bg-white rounded-r-xl">
                     <div class="-mr-10 text-right font-medium text-lg transform rotate-90 text-white">
@@ -740,21 +744,66 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="w-full mx-auto">
             <div class="rounded-xl bg-white relative mb-12 dark:bg-gray-800 px-5 py-11">
 
                 <!-- <div class="flex items-center justify-center"> -->
                 <div class="overflow-visible relative">
                     <div class="-mt-16 font-bold text-2xl text-center
-                         text-white w-40 bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg absolute top-0 left-0">
+                         text-white w-40 bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg absolute top-0 left-0
+                         border-t-2 border-l-2 border-r-2 border-white shadow-xl">
                         Action
 
 
                     </div>
                 </div>
+
+                <div x-data="{filter: false}" class="overflow-visible relative">
+                    <div class="-mt-16 right-0 flex justify-end">
+                        <button @click="filter =! filter" class=" z-20 border-2 border-white bg-indigo-500 w-10 h-10 rounded-full"
+                        @click.away="filter = false">
+                            <div class="font-medium text-lg text-white">
+                        
+                                    <i class="fas fa-ellipsis-v"></i>
+                            
+                            </div>
+                        </button>
+                    </div>
+                    <div x-show="filter"  x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="transform  opacity-0 scale-50"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-50"
+                        class="z-10 -mt-5 right-0 absolute opacity-75 origin-top-right">
+                        <div
+                            class=" bg-white shadow-xl h-auto w-40 rounded-xl border-2 border-opacity-50 border-gray-300">
+                            <div class="px-3 py-6 space-y-1">
+                                <button class=" text-left block w-full px-4 py-2 rounded-3xl hover:bg-indigo-200">
+                                
+                                    <i class="font-medium fas fa-sort-alpha-up inline"></i>
+                                   <div class="ml-3 font-medium inline text-sm">A sampai Z</div>
+                                </button>
+                                
+                                <button class=" text-left block w-full px-4 py-2 rounded-3xl hover:bg-indigo-200">
+                                
+                                    <i class="font-medium fas fa-sort-alpha-down-alt inline"></i>
+                                   <div class="ml-3 font-medium inline text-sm">Z sampai A</div>
+                                </button>
+
+                                <button class=" text-left block w-full px-4 py-2 rounded-3xl hover:bg-indigo-200">
+                                
+                                    <i class="font-medium fas fa-history inline"></i>
+                                   <div class="ml-3 font-medium inline text-sm">Terlama</div>
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- </div> -->
-                <div>
+                <div class="overflow-hidden mt-12">
 
                     <ul class="flex">
                         <li class="mr-3">
@@ -794,7 +843,7 @@
                     <!-- CONTOH LOOPING CERITA -->
                     <template x-for="[id, value] in Object.entries(buku)" :key="id">
                         <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-32 shadow-lg h-auto dark:ring-gray-900">
+                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-36 shadow-lg h-auto dark:ring-gray-900">
                             <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                 @click="opacity_blurb = !opacity_blurb">
 
@@ -809,7 +858,7 @@
                                 </div>
 
                                 <div class="">
-                                    <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 sm:h-56 sm:w-36 h-52 w-32  object-fill"
+                                    <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 sm:h-56 sm:w-36 h-56 w-36  object-fill"
                                         :src="value.sampul" alt="">
                                 </div>
 
