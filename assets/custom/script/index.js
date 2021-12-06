@@ -98,6 +98,47 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
+document.addEventListener('alpine:init', () => {
+    Alpine.data('penulis', () => ({
+        open_penulis_mobile: true,
+        user: {
+            1: {
+                id: 1,
+                nama: 'Angelica',
+                foto: './assets/img/profile.png',
+            },
+            2: {
+                id: 2,
+                nama: 'A02',
+                foto: './assets/img/profile_2.png',
+            },
+            3: {
+                id: 3,
+                nama: 'Karol.Y',
+                foto: './assets/img/profile_me.png',
+            },
+            4: {
+                id: 4,
+                nama: 'Angelica',
+                foto: './assets/img/profile.png',
+            },
+            5: {
+                id: 5,
+                nama: 'A02',
+                foto: './assets/img/profile_2.png',
+            },
+           6: {
+                id:6,
+                nama: 'Karol.Y',
+                foto: './assets/img/profile_me.png',
+            },
+           
+           
+        }
+
+    }));
+});
+
 
 
 
@@ -114,50 +155,56 @@ function ready(fn) {
 
 ready(function () {
 
-    const slider = document.querySelector('.grab-scroll');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3; //scroll-fast
-      slider.scrollLeft = scrollLeft - walk;
-      console.log(walk);
+
+    var grabScroll = document.getElementsByClassName('grab-scroll');
+    Array.prototype.forEach.call(grabScroll, function (element) {
+
+        let isDown = false; 
+        let startX;
+        let scrollLeft;
+        
+        element.addEventListener('mousedown', (e) => {
+          isDown = true;
+          element.classList.add('active');
+          startX = e.pageX - element.offsetLeft;
+          scrollLeft = element.scrollLeft;
+        });
+        element.addEventListener('mouseleave', () => {
+          isDown = false;
+          element.classList.remove('active');
+        });
+        element.addEventListener('mouseup', () => {
+          isDown = false;
+          element.classList.remove('active');
+        });
+        element.addEventListener('mousemove', (e) => {
+          if(!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - element.offsetLeft;
+          const walk = (x - startX) * 3; //scroll-fast
+          element.scrollLeft = scrollLeft - walk;
+          console.log(walk);
+        });
     });
 
-    var swiper_mobile= new Swiper(".myswiper-mobile", {
-        slidesPerView: 3,
-        spaceBetween: 147,
-        freeMode: true,
-        loop: true,
+  
+
+    // var swiper_mobile= new Swiper(".myswiper-mobile", {
+    //     slidesPerView: 3,
+    //     spaceBetween: 147,
+    //     freeMode: true,
+    //     loop: true,
         
 
-    });
+    // });
    
     
-    var swiper_penulis = new Swiper(".myswiper-penulis-mobile", {
-        slidesPerView: 3,
-        loop: true,
-        freeMode: true,
+    // var swiper_penulis = new Swiper(".myswiper-penulis-mobile", {
+    //     slidesPerView: 3,
+    //     loop: true,
+    //     freeMode: true,
     
-    });
+    // });
 
     window.onload = (event) => {
 
