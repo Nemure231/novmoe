@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./tailwind.css" rel="stylesheet">
     <link href="./tailwind-dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/custom/style/index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -718,6 +719,11 @@
         LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
     </div>
 
+    <div class="absolute bg-indigo-500 h-1/2 w-full rounded-3xl dark:bg-indigo-400">
+
+    </div>
+
+
 
     <main class="lg:my-11 md:my-11 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
@@ -728,7 +734,9 @@
                 <div class="lg:block md:block hidden overflow-visible relative">
                     <select name="" id=""
                         x-on:change="open = $event.target.value, $refs.kategori_pertama.style.display = 'none'"
-                        class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                        class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white 
+                        w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0 
+                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
                         <!-- <option></option> -->
                         <option id="pilihan-kategori-pertama" value="baru"
                             class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
@@ -782,7 +790,10 @@
                         open == 'tren'    ? 'trending.html' : '' ||
                         open == 'populer' ? 'populer.html'  : '' 
                     ]"
-                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs 
+                    bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0
+                    border-t-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800
+                    ">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -1089,28 +1100,32 @@
                 <!-- END BG IKON BARU TAMPILAN MOBILE  -->
                 <div class="overflow-visible relative">
                     <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto 
+                        bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0 
+                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
 
                         Cerita Terbaru
                     </div>
                 </div>
 
                 <a href="./baru.html"
-                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 
+                    hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0
+                    border-t-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
 
                 <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
-                    <div class="swiper myswiper-mobile">
-                        <div class="swiper-wrapper">
+                    <div class="flex  overflow-x-auto grab-scroll">
+                        <!-- <div class="swiper-wrapper"> -->
                             <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
                              KARENA PAKAI LOOP ALPINE, FUNGSI LOOP SWIPER JADI DIKIT KACAU
                             TAPI KALAU PAKE PHP GAK APA APA-->
                             <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                                <div class="swiper-slide mt-1">
+                                <div class="mt-1">
                                     <div x-data="{opacity_blurb: false}"
-                                        class="ml-3.5 mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
+                                        class="mx-3.5 mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
                                         <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                             @click="opacity_blurb = !opacity_blurb">
 
@@ -1186,7 +1201,7 @@
                             </template>
 
 
-                        </div>
+                        <!-- </div> -->
                     </div>
 
                 </div>
@@ -1239,7 +1254,8 @@
                 <div class="overflow-visible relative">
                     <select name="" id=""
                         x-on:change="open_penulis_mobile = $event.target.value, $refs.apresiator_pertama_mobile.style.display = 'none'"
-                        class="ml-3 -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                        class="ml-3 -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto 
+                        bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
                         <option value="apresiator"
                             class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
                             Apresiator
@@ -1539,14 +1555,16 @@
                 <!-- END BG IKON TRENDING TAMPILAN MOBILE  -->
                 <div class="overflow-visible relative">
                     <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500
+                         dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
 
                         Cerita Terending
                     </div>
                 </div>
 
                 <a href="./trending.html"
-                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500
+                     hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0  shadow-xl ">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -1672,14 +1690,16 @@
                 <!-- END BG IKON POPULER TAMPILAN MOBILE  -->
                 <div class="overflow-visible relative">
                     <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto 
+                        bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
 
                         Cerita Populer
                     </div>
                 </div>
 
                 <a href="./populer.html"
-                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
+                    class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500
+                     hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0  shadow-xl ">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a>
