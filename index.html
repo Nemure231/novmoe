@@ -743,64 +743,211 @@
 
 
 
-    <main class="lg:my-11 md:my-11 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
+    <main class="lg:my-11 md:my-11 sm:my-8 my-8 container mx-auto relative">
 
-        <div class="w-full md:mx-auto lg:mx-4 mx-auto md:w-full lg:w-3/4" x-data="cerita">
-            <div class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:px-5 lg:py-8 md:py-8 sm:py-8 
+
+
+
+
+        <div class="flex flex-grow md:flex-col lg:flex-row">
+
+
+
+            <!-- HERO SATU -->
+            <div class="w-full md:mx-auto lg:mx-4 mx-auto md:w-full lg:w-3/4" x-data="cerita">
+
+                <div class="lg:block md:block hidden relative mb-8">
+
+                    <div class="h-60 rounded-xl shadow-lg bg-cover bg-right bg-no-repeat relative" style="
+                        background-image: url('./assets/img/hero.png')">
+                        <div class="rounded-xl absolute bg-gradient-to-r from-indigo-500 h-60 w-full">
+                            <div class="p-3">
+                                <div class="text-2xl font-bold text-white mb-3 w-1/2">
+                                    Selamat datang di NovelRinganMoe,
+                                </div>
+                                <div class="text-md font-semibold antialiased w-1/2 mb-3 text-gray-700">
+                                    Tempat di mana kamu bukan hanya tempat untuk menulis, tetapi juga untuk berinteraksi
+                                    bersama.
+                                </div>
+                                <div class="text-sm font-light text w-1/3 mb-4">
+                                    Kamu bisa mulai menulis atau menjelajani karya-karya di sini!
+                                </div>
+                                <div class="flex">
+                                    <a href="./jenis.html" class="mr-3 bg-white rounded-3xl px-2 py-1 text-indigo-500 font-semibold
+                                    border-r-4 border-b-4 border-indigo-800 shadow-3xl hover:bg-indigo-100">
+                                        Menulis!
+                                    </a>
+
+                                    <a href="./jenis.html" class="bg-white rounded-3xl px-2 py-1 text-indigo-500 font-semibold
+                                    border-r-4 border-b-4 border-indigo-800 shadow-3xl hover:bg-indigo-100">
+                                        Membaca!
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- END HERO SATU -->
+
+                <!-- HERO DUA-->
+
+
+                <div class="lg:block md:block hidden relative mb-8">
+
+                    <div class="h-60 rounded-xl shadow-lg bg-cover bg-left bg-no-repeat relative" style="
+                        background-image: url('./assets/img/hero_2.png')">
+                        <div class="rounded-xl absolute bg-gradient-to-l from-pink-800 h-60 w-full">
+                            <div class="flex flex-col place-items-end">
+
+                                <div class="p-3 text-2xl font-bold text-white mb-3 w-1/2 text-left">
+                                    Banyak pilihan genre dan kategori! Mulai dari ...
+                                </div>
+
+
+                                <div class="grid grid-cols-3 grid-flow-row auto-rows-auto gap-2 mr-3 cursor-default">
+                                    <div
+                                        class="bg-white p-2 rounded-lg text-center text-pink-800 opacity-80 hover:opacity-100">
+                                        Fantasy</div>
+                                    <div
+                                        class="bg-white p-2 rounded-lg text-center text-pink-800 opacity-80 hover:opacity-100">
+                                        Action</div>
+                                    <div
+                                        class="bg-white p-2 rounded-lg text-center text-pink-800 opacity-80 hover:opacity-100">
+                                        Sci-Fi</div>
+                                    <div
+                                        class="bg-white p-2 rounded-lg text-center text-pink-800 opacity-80 hover:opacity-100">
+                                        Romance</div>
+                                    <div
+                                        class="bg-white p-2 rounded-lg text-center text-pink-800 opacity-80 hover:opacity-100">
+                                        Supernatural</div>
+                                    <div
+                                        class="bg-white p-2 rounded-lg text-center text-pink-800 opacity-80 hover:opacity-100">
+                                        Comedy</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- END HERO DUA-->
+
+
+                <!-- HERO TIGA -->
+
+                <div class="lg:block md:block hidden relative mb-8">
+
+                    <div class="h-60 rounded-xl shadow-lg bg-cover bg-center bg-no-repeat relative" style="
+                        background-image: url('./assets/img/hero_3.png')">
+                        <div class="rounded-xl absolute bg-gradient-to-t from-pink-500 h-60 w-full">
+                            <div class="flex p-3 absolute inset-x-0 bottom-0">
+                                <div class="text-2xl font-bold text-white w-1/2 flex items-center">
+                                    Gabung dengan komunitas kami juga!
+                                </div>
+                                <div class="w-1/2">
+                                    <div class="flex justify-evenly">
+                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                <i class="fab fa-twitter"></i>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                <i class="fab fa-instagram"></i>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- END HERO TIGA -->
+
+
+
+
+                <div class="lg:block md:block hidden rounded-xl bg-white relative mb-12 lg:px-5 lg:py-8 md:py-8 sm:py-8 
                 py-8 dark:bg-gray-800">
-                <div class="lg:block md:block hidden overflow-visible relative">
-                    <select name="" id=""
-                        x-on:change="open = $event.target.value, $refs.kategori_pertama.style.display = 'none'"
-                        class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white 
+                    <div class="lg:block md:block hidden overflow-visible relative">
+                        <select name="" id=""
+                            x-on:change="open = $event.target.value, $refs.kategori_pertama.style.display = 'none'"
+                            class="pencet-kategori -mt-12 font-bold flex text-sm items-center justify-center text-white 
                         w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0 
                         border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
-                        <!-- <option></option> -->
-                        <option id="pilihan-kategori-pertama" value="baru"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Cerita Terbaru
-                        </option>
-                        <option value="tren"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Cerita Trending
-                        </option>
-                        <option value="populer"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Cerita Populer
-                        </option>
+                            <!-- <option></option> -->
+                            <option id="pilihan-kategori-pertama" value="baru"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Cerita Terbaru
+                            </option>
+                            <option value="tren"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Cerita Trending
+                            </option>
+                            <option value="populer"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Cerita Populer
+                            </option>
 
-                    </select>
-                </div>
+                        </select>
+                    </div>
 
 
-                <!-- KONDISI BG IKON -->
-                <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
+                    <!-- KONDISI BG IKON -->
+                    <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
-                    <div class="text-center">
-                        <i class="text-indigo-500 text-7xl" :class="
+                        <div class="text-center">
+                            <i class="text-indigo-500 text-7xl" :class="
                         [
                             open == true      ? 'fas fa-arrow-circle-up'     : '' ||
                             open == 'baru'    ? 'fas fa-arrow-circle-up'     : '' || 
                             open == 'tren'    ? 'fas fa-fire' : '' ||
                             open == 'populer' ? 'fas fa-star'  : '' 
                         ]">
-                            <div x-text="
+                                <div x-text="
                             [
                                 open == true      ? 'Baru!'     : '' ||
                                 open == 'baru'    ? 'Baru!'     : '' || 
                                 open == 'tren'    ? 'Trending!' : '' ||
                                 open == 'populer' ? 'Populer!'  : '' 
                             ]" class="text-3xl"></div>
-                        </i>
+                            </i>
+
+                        </div>
+
 
                     </div>
+                    <!-- END KONDISI BG IKON -->
 
 
-                </div>
-                <!-- END KONDISI BG IKON -->
-
-
-                <!-- KONDISI LINK SELENGKAPNYA -->
-                <a :href="
+                    <!-- KONDISI LINK SELENGKAPNYA -->
+                    <a :href="
                     [
                         open == true      ? 'baru.html'     : '' ||
                         open == 'baru'    ? 'baru.html'     : '' || 
@@ -810,357 +957,45 @@
                     bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0
                     border-t-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800
                     ">
-                    Selengkapnya
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <!-- END KONDISI LINK SELENGKAPNYA -->
-
-
-
-                <!-- CERITA BARU TAMPILAN KOMPUTERS -->
-                <div class="lg:block md:block hidden">
-                    <div x-show="open == 'baru'" x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3 "
-                        id="kategori-pertama" x-ref="kategori_pertama">
-
-                        <!-- CONTOH LOOPING CERITA TERBARU TAMPILAN KOMPUTER -->
-                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                            <div x-data="{opacity_blurb: false}"
-                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto w-48 shadow-lg h-auto dark:ring-gray-900">
-                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                    @click="opacity_blurb = !opacity_blurb">
-                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                                rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
-                                            x-text="value.blurb">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="">
-                                        <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul" alt="">
-                                    </div>
-
-                                </div>
-                                <div class="bg-white rounded-xl dark:bg-gray-700">
-                                    <div class="inset-x-0 top-0 flex">
-                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                        </div>
-                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                        </div>
-
-                                    </div>
-                                    <div class="p-4">
-
-
-                                        <div
-                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                            <a href="#" x-text="value.judul">
-
-                                            </a>
-
-                                        </div>
-
-                                        <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                        </div>
-                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                            x-text="value.penulis">
-                                        </a>
-
-
-
-                                        <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                            <div class="text-xs text-white">
-                                                <button
-                                                    class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                    <i class="fas fa-plus"></i> Bacaan
-                                                </button>
-                                            </div>
-
-
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-
-                        </template>
-                        <!-- END CONTOH LOOPING CERITA TERBARU TAMPILAN KOMPUTER -->
-                    </div>
-                </div>
-
-
-
-                <!-- CERITA TREN TAMPILAN KOMPUTER -->
-                <div class="lg:block md:block hidden">
-                    <div x-show="open == 'tren'" x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3  "
-                        :class="
-                        [
-                        open == true ? 'hidden' : '' ||
-                            open == 'tren' ? 'block' : 'hidden' 
-                        ]
-                    
-                    ">
-                        <!-- CONTOH LOOPING CERITA TREN TAMPILAN KOMPUTER -->
-                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                            <div x-data="{opacity_blurb: false}"
-                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto w-48 shadow-lg h-auto dark:ring-gray-900">
-                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                    @click="opacity_blurb = !opacity_blurb">
-                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                            rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
-                                            x-text="value.blurb">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="">
-                                        <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul" alt="">
-                                    </div>
-
-                                </div>
-                                <div class="bg-white rounded-xl dark:bg-gray-700">
-                                    <div class="inset-x-0 top-0 flex">
-                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                        </div>
-                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                        </div>
-
-                                    </div>
-                                    <div class="p-4">
-
-
-                                        <div
-                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                            <a href="#" x-text="value.judul">
-
-                                            </a>
-
-                                        </div>
-
-                                        <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                        </div>
-                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                            x-text="value.penulis">
-                                        </a>
-
-
-
-                                        <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                            <div class="text-xs text-white">
-                                                <button
-                                                    class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                    <i class="fas fa-plus"></i> Bacaan
-                                                </button>
-                                            </div>
-
-
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-
-                        </template>
-                        <!-- END CONTOH LOOPING CERITA TREN TAMPILAN KOMPUTER -->
-
-
-                    </div>
-                </div>
-                <!-- END CERITA TRAN TAMPILAN KOMPUTER -->
-
-                <!-- CERITA POPULER TAMPILAN KOMPUTER -->
-                <div class="lg:block md:block hidden">
-                    <div x-show="open == 'populer'" x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3  "
-                        :class="
-                        [
-                        open == true ? 'hidden' : '' ||
-                            open == 'populer' ? 'block' : 'hidden' 
-                        ]
-                    
-                    ">
-
-                        <!-- CONTOH LOOPING CERITA POPULER TAMPILAN KOMPUTER -->
-                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                            <div x-data="{opacity_blurb: false}"
-                                class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto w-48 shadow-lg h-auto dark:ring-gray-900">
-                                <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                    @click="opacity_blurb = !opacity_blurb">
-                                    <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                            rounded-xl bg-gradient-to-t from-white h-full w-full">
-                                        <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
-                                            x-text="value.blurb">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="">
-                                        <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul" alt="">
-                                    </div>
-
-                                </div>
-                                <div class="bg-white rounded-xl dark:bg-gray-700">
-                                    <div class="inset-x-0 top-0 flex">
-                                        <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                        </div>
-                                        <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                        </div>
-
-                                    </div>
-                                    <div class="p-4">
-
-
-                                        <div
-                                            class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                            <a href="#" x-text="value.judul">
-
-                                            </a>
-
-                                        </div>
-
-                                        <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                        </div>
-                                        <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                            x-text="value.penulis">
-                                        </a>
-
-
-
-                                        <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                            <div class="text-xs text-white">
-                                                <button
-                                                    class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                    <i class="fas fa-plus"></i> Bacaan
-                                                </button>
-                                            </div>
-
-
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-
-                        </template>
-                        <!-- END CONTOH LOOPING CERITA POPULER TAMPILAN KOMPUTER -->
-
-
-
-
-                    </div>
-                </div>
-                <!-- END CERITA POPULER TAMPILAN KOMPUTER -->
-            </div>
-
-
-            <!-- CERITA BARU TAMPILAN MOBILE -->
-            <div
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
-                <!-- BG IKON BARU TAMPILAN MOBILE -->
-                <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
-
-                    <div class="text-center">
-                        <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
-                            <div class="text-3xl">Baru!</div>
-                        </i>
-
-                    </div>
-
-
-                </div>
-                <!-- END BG IKON BARU TAMPILAN MOBILE  -->
-                <div class="overflow-visible relative">
-                    <div
-                        class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto 
-                        bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0 
-                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
-
-                        Cerita Terbaru
-                    </div>
-                </div>
-
-                <a href="./baru.html" class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 
-                    hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0
-                    border-t-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
-                    Selengkapnya
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-
-                <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
-                    <div class="flex  overflow-x-auto grab-scroll">
-                        <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
-                             KARENA PAKAI LOOP ALPINE-->
-                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                            <div class="mt-1">
-                                <div x-data="{opacity_blurb: false}" :class="[value.id == Object.entries(buku).length ? 'mr-3.5 ml-3.5' : 'ml-3.5' || 
-                                    value.id == 1 ? 'ml-3.5' : '' ]"
-                                    class=" mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
+                        Selengkapnya
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <!-- END KONDISI LINK SELENGKAPNYA -->
+
+
+
+                    <!-- CERITA BARU TAMPILAN KOMPUTERS -->
+                    <div class="lg:block md:block hidden">
+                        <div x-show="open == 'baru'" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3 "
+                            id="kategori-pertama" x-ref="kategori_pertama">
+
+                            <!-- CONTOH LOOPING CERITA TERBARU TAMPILAN KOMPUTER -->
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div x-data="{opacity_blurb: false}"
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto w-48 shadow-lg h-auto dark:ring-gray-900">
                                     <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
                                         @click="opacity_blurb = !opacity_blurb">
-
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
-                                                rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                                rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                            <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                                x-text="value.blurb">
 
                                             </div>
 
                                         </div>
 
                                         <div class="">
-                                            <img class="-mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                :src="value.sampul" alt="">
-
+                                            <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul"
+                                                alt="">
                                         </div>
 
                                     </div>
-
-
-
                                     <div class="bg-white rounded-xl dark:bg-gray-700">
                                         <div class="inset-x-0 top-0 flex">
                                             <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
@@ -1174,10 +1009,9 @@
                                         <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
-                                                :class="$store.darkMode && 'text-indigo-200'">
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
                                                 <a href="#" x-text="value.judul">
-
 
                                                 </a>
 
@@ -1192,8 +1026,7 @@
 
 
 
-
-                                            <div class="text-center flex justify-end mt-4  bottom-0 right-0">
+                                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
                                                 <div class="text-xs text-white">
                                                     <button
                                                         class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
@@ -1211,23 +1044,340 @@
 
 
                                 </div>
-                            </div>
-                        </template>
 
 
-
+                            </template>
+                            <!-- END CONTOH LOOPING CERITA TERBARU TAMPILAN KOMPUTER -->
+                        </div>
                     </div>
 
+
+
+                    <!-- CERITA TREN TAMPILAN KOMPUTER -->
+                    <div class="lg:block md:block hidden">
+                        <div x-show="open == 'tren'" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3  "
+                            :class="
+                        [
+                        open == true ? 'hidden' : '' ||
+                            open == 'tren' ? 'block' : 'hidden' 
+                        ]
+                    
+                    ">
+                            <!-- CONTOH LOOPING CERITA TREN TAMPILAN KOMPUTER -->
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div x-data="{opacity_blurb: false}"
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto w-48 shadow-lg h-auto dark:ring-gray-900">
+                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                        @click="opacity_blurb = !opacity_blurb">
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                            rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                            <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                                x-text="value.blurb">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="">
+                                            <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul"
+                                                alt="">
+                                        </div>
+
+                                    </div>
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
+                                        <div class="inset-x-0 top-0 flex">
+                                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                            </div>
+                                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="p-4">
+
+
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                                <a href="#" x-text="value.judul">
+
+                                                </a>
+
+                                            </div>
+
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                x-text="value.penulis">
+                                            </a>
+
+
+
+                                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                                <div class="text-xs text-white">
+                                                    <button
+                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                        <i class="fas fa-plus"></i> Bacaan
+                                                    </button>
+                                                </div>
+
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                            </template>
+                            <!-- END CONTOH LOOPING CERITA TREN TAMPILAN KOMPUTER -->
+
+
+                        </div>
+                    </div>
+                    <!-- END CERITA TRAN TAMPILAN KOMPUTER -->
+
+                    <!-- CERITA POPULER TAMPILAN KOMPUTER -->
+                    <div class="lg:block md:block hidden">
+                        <div x-show="open == 'populer'" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class=" overflow-hidden grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-6 relative p-3  "
+                            :class="
+                        [
+                        open == true ? 'hidden' : '' ||
+                            open == 'populer' ? 'block' : 'hidden' 
+                        ]
+                    
+                    ">
+
+                            <!-- CONTOH LOOPING CERITA POPULER TAMPILAN KOMPUTER -->
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div x-data="{opacity_blurb: false}"
+                                    class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto w-48 shadow-lg h-auto dark:ring-gray-900">
+                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                        @click="opacity_blurb = !opacity_blurb">
+                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
+                            rounded-xl bg-gradient-to-t from-white h-full w-full">
+                                            <div class="mt-auto p-3 text-xs font-medium subpixel-antialiased"
+                                                x-text="value.blurb">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="">
+                                            <img class="-mb-3 rounded-xl h-72 w-48 object-fill" :src="value.sampul"
+                                                alt="">
+                                        </div>
+
+                                    </div>
+                                    <div class="bg-white rounded-xl dark:bg-gray-700">
+                                        <div class="inset-x-0 top-0 flex">
+                                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                            </div>
+                                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="p-4">
+
+
+                                            <div
+                                                class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
+                                                <a href="#" x-text="value.judul">
+
+                                                </a>
+
+                                            </div>
+
+                                            <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                            </div>
+                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                x-text="value.penulis">
+                                            </a>
+
+
+
+                                            <div class="text-center flex justify-end mt-4 bottom-0 right-0">
+                                                <div class="text-xs text-white">
+                                                    <button
+                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                        <i class="fas fa-plus"></i> Bacaan
+                                                    </button>
+                                                </div>
+
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                            </template>
+                            <!-- END CONTOH LOOPING CERITA POPULER TAMPILAN KOMPUTER -->
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- END CERITA POPULER TAMPILAN KOMPUTER -->
                 </div>
 
 
+                <!-- CERITA BARU TAMPILAN MOBILE -->
+                <div
+                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    <!-- BG IKON BARU TAMPILAN MOBILE -->
+                    <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
+
+                        <div class="text-center">
+                            <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
+                                <div class="text-3xl">Baru!</div>
+                            </i>
+
+                        </div>
+
+
+                    </div>
+                    <!-- END BG IKON BARU TAMPILAN MOBILE  -->
+                    <div class="overflow-visible relative">
+                        <div
+                            class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto 
+                        bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0 
+                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
+
+                            Cerita Terbaru
+                        </div>
+                    </div>
+
+                    <a href="./baru.html" class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 
+                    hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0
+                    border-t-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
+                        Selengkapnya
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
+                        <div class="flex  overflow-x-auto grab-scroll">
+                            <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
+                             KARENA PAKAI LOOP ALPINE-->
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div class="mt-1">
+                                    <div x-data="{opacity_blurb: false}" :class="[value.id == Object.entries(buku).length ? 'mr-3.5 ml-3.5' : 'ml-3.5' || 
+                                    value.id == 1 ? 'ml-3.5' : '' ]"
+                                        class=" mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
+                                        <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                            @click="opacity_blurb = !opacity_blurb">
+
+                                            <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                                rounded-xl bg-white opacity-80 h-full w-full">
+                                                <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="">
+                                                <img class="-mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
+                                                    :src="value.sampul" alt="">
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="bg-white rounded-xl dark:bg-gray-700">
+                                            <div class="inset-x-0 top-0 flex">
+                                                <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+
+                                                </div>
+                                                <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                                </div>
+
+                                            </div>
+                                            <div class="p-4">
+
+
+                                                <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
+                                                    :class="$store.darkMode && 'text-indigo-200'">
+                                                    <a href="#" x-text="value.judul">
+
+
+                                                    </a>
+
+                                                </div>
+
+                                                <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                                </div>
+                                                <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                    x-text="value.penulis">
+                                                </a>
+
+
+
+
+                                                <div class="text-center flex justify-end mt-4  bottom-0 right-0">
+                                                    <div class="text-xs text-white">
+                                                        <button
+                                                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                            <i class="fas fa-plus"></i> Bacaan
+                                                        </button>
+                                                    </div>
+
+
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </template>
+
+
+
+                        </div>
+
+                    </div>
 
 
 
 
 
-            </div>
-            <!-- END CERITA BARU TAMPILAN MOBILE -->
+
+
+                </div>
+                <!-- END CERITA BARU TAMPILAN MOBILE -->
 
 
 
@@ -1244,100 +1394,100 @@
 
 
 
-            <!-- PENULIS TAMPILAN MOBILE -->
-            <div x-data="penulis"
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                <!-- PENULIS TAMPILAN MOBILE -->
+                <div x-data="penulis"
+                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
 
 
-                <!-- KONDISI BG IKON PENULIS -->
-                <div class="absolute bottom-0 right-0 opacity-50">
-                    <div class="">
-                        <i class="text-indigo-500 text-7xl" :class="
+                    <!-- KONDISI BG IKON PENULIS -->
+                    <div class="absolute bottom-0 right-0 opacity-50">
+                        <div class="">
+                            <i class="text-indigo-500 text-7xl" :class="
                             [
                                 open_penulis_mobile == true      ? 'fas fa-medal'     : '' ||
                                 open_penulis_mobile == 'apresiator'   ? 'fas fa-medal'     : '' || 
                                 open_penulis_mobile == 'populer'   ? 'fas fa-star' : '' ||
                                 open_penulis_mobile == 'naik_daun' ? 'fas fa-arrow-circle-up'  : '' 
                             ]">
-                        </i>
+                            </i>
 
+                        </div>
                     </div>
-                </div>
-                <!-- END KONDISI BG IKON PENULIS MOBILE -->
-                <!-- MENU SELECT PENULIS MOBILE -->
-                <div class="overflow-visible relative">
-                    <select name="" id=""
-                        x-on:change="open_penulis_mobile = $event.target.value, $refs.apresiator_pertama_mobile.style.display = 'none'"
-                        class="ml-3 -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto 
+                    <!-- END KONDISI BG IKON PENULIS MOBILE -->
+                    <!-- MENU SELECT PENULIS MOBILE -->
+                    <div class="overflow-visible relative">
+                        <select name="" id=""
+                            x-on:change="open_penulis_mobile = $event.target.value, $refs.apresiator_pertama_mobile.style.display = 'none'"
+                            class="ml-3 -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto 
                         bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
-                        <option value="apresiator"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Apresiator
-                        </option>
-                        <option value="naik_daun"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Penulis Naik Daun
-                        </option>
-                        <option value="populer"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Penulis Populer
-                        </option>
+                            <option value="apresiator"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Apresiator
+                            </option>
+                            <option value="naik_daun"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Penulis Naik Daun
+                            </option>
+                            <option value="populer"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Penulis Populer
+                            </option>
 
 
-                    </select>
-                </div>
-                <!-- END MENU SELECT PENULIS MOBILE -->
+                        </select>
+                    </div>
+                    <!-- END MENU SELECT PENULIS MOBILE -->
 
-                <!-- PENULIS APRESIATOR TAMPILAN MOBILE -->
-                <div x-ref="apresiator_pertama_mobile" x-show="open_penulis_mobile == 'apresiator'"
-                    class="overflow-hidden relative py-3" id="apresiator_pertama_mobile"
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="transform opacity-0 scale-95"
-                    x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75"
-                    x-transition:leave-start="transform opacity-100 scale-100"
-                    x-transition:leave-end="transform opacity-0 scale-95">
-                    <div class="flex  overflow-x-auto grab-scroll">
-                        <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
+                    <!-- PENULIS APRESIATOR TAMPILAN MOBILE -->
+                    <div x-ref="apresiator_pertama_mobile" x-show="open_penulis_mobile == 'apresiator'"
+                        class="overflow-hidden relative py-3" id="apresiator_pertama_mobile"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95">
+                        <div class="flex  overflow-x-auto grab-scroll">
+                            <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
                              KARENA PAKAI LOOP ALPINE-->
-                        <template x-for="[id, value] in Object.entries(user)" :key="id">
+                            <template x-for="[id, value] in Object.entries(user)" :key="id">
 
-                            <div class="mt-1">
-                                <div class="w-28 h-28 p-2">
-                                    <div class="flex items-center justify-center">
+                                <div class="mt-1">
+                                    <div class="w-28 h-28 p-2">
+                                        <div class="flex items-center justify-center">
 
-                                        <img :src="value.foto"
-                                            class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                            <img :src="value.foto"
+                                                class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
+                                        </div>
+                                        <div class="text-center mb-2">
+                                            <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
+
+                                            </p>
+
+                                        </div>
+
                                     </div>
-                                    <div class="text-center mb-2">
-                                        <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
 
-                                        </p>
 
-                                    </div>
 
                                 </div>
 
+                            </template>
+                        </div>
 
-
-                            </div>
-                           
-                        </template>
                     </div>
-
-                </div>
-                <!-- END PENULIS APRESIATOR TAMPILAN MOBILE -->
+                    <!-- END PENULIS APRESIATOR TAMPILAN MOBILE -->
 
 
 
-                <!-- PENULIS NAIK DAUN TAMPILAN MOBILE -->
-                <div x-show="open_penulis_mobile == 'naik_daun'" class="overflow-hidden relative py-3"
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="transform opacity-0 scale-95"
-                    x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75"
-                    x-transition:leave-start="transform opacity-100 scale-100"
-                    x-transition:leave-end="transform opacity-0 scale-95" :class="
+                    <!-- PENULIS NAIK DAUN TAMPILAN MOBILE -->
+                    <div x-show="open_penulis_mobile == 'naik_daun'" class="overflow-hidden relative py-3"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95" :class="
                             [
                             open_penulis_mobile == true ? 'hidden' : '' ||
                                 open_penulis_mobile == 'naik_daun' ? 'block' : 'hidden' 
@@ -1348,41 +1498,41 @@
                             <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
                                  KARENA PAKAI LOOP ALPINE-->
                             <template x-for="[id, value] in Object.entries(user)" :key="id">
-    
+
                                 <div class="mt-1">
                                     <div class="w-28 h-28 p-2">
                                         <div class="flex items-center justify-center">
-    
+
                                             <img :src="value.foto"
                                                 class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
                                         </div>
                                         <div class="text-center mb-2">
                                             <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
-    
+
                                             </p>
-    
+
                                         </div>
-    
+
                                     </div>
-    
-    
-    
+
+
+
                                 </div>
-                               
+
                             </template>
                         </div>
 
-                </div>
-                <!-- END PENULIS NAIK DAUN TAMPILAN MOBILE -->
+                    </div>
+                    <!-- END PENULIS NAIK DAUN TAMPILAN MOBILE -->
 
-                <!-- PENULIS POPULER TAMPILAN MOBILE -->
-                <div x-show="open_penulis_mobile == 'populer'" class="overflow-hidden relative py-3"
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="transform opacity-0 scale-95"
-                    x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75"
-                    x-transition:leave-start="transform opacity-100 scale-100"
-                    x-transition:leave-end="transform opacity-0 scale-95" :class="
+                    <!-- PENULIS POPULER TAMPILAN MOBILE -->
+                    <div x-show="open_penulis_mobile == 'populer'" class="overflow-hidden relative py-3"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95" :class="
                             [
                             open_penulis_mobile == true ? 'hidden' : '' ||
                                 open_penulis_mobile == 'populer' ? 'block' : 'hidden' 
@@ -1393,42 +1543,42 @@
                             <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
                                  KARENA PAKAI LOOP ALPINE-->
                             <template x-for="[id, value] in Object.entries(user)" :key="id">
-    
+
                                 <div class="mt-1">
                                     <div class="w-28 h-28 p-2">
                                         <div class="flex items-center justify-center">
-    
+
                                             <img :src="value.foto"
                                                 class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
                                         </div>
                                         <div class="text-center mb-2">
                                             <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
-    
+
                                             </p>
-    
+
                                         </div>
-    
+
                                     </div>
-    
-    
-    
+
+
+
                                 </div>
-                               
+
                             </template>
                         </div>
 
+                    </div>
+                    <!-- END PENULIS POPULER TAMPILAN MOBILE -->
+
+
+
+
+
+
+
+
                 </div>
-                <!-- END PENULIS POPULER TAMPILAN MOBILE -->
-
-
-
-
-
-
-
-
-            </div>
-            <!-- END PENULIS  TAMPILAN MOBILE -->
+                <!-- END PENULIS  TAMPILAN MOBILE -->
 
 
 
@@ -1461,127 +1611,127 @@
 
 
 
-            <!-- CERITA TRENDING TAMPILAN MOBILE -->
-            <div
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
-                <!-- BG IKON TRENDING TAMPILAN MOBILE -->
-                <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
+                <!-- CERITA TRENDING TAMPILAN MOBILE -->
+                <div
+                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    <!-- BG IKON TRENDING TAMPILAN MOBILE -->
+                    <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
-                    <div class="text-center">
-                        <i class="fas text-indigo-500 fa-fire text-7xl">
-                            <div class="text-3xl">Trending!</div>
-                        </i>
+                        <div class="text-center">
+                            <i class="fas text-indigo-500 fa-fire text-7xl">
+                                <div class="text-3xl">Trending!</div>
+                            </i>
+
+                        </div>
+
 
                     </div>
-
-
-                </div>
-                <!-- END BG IKON TRENDING TAMPILAN MOBILE  -->
-                <div class="overflow-visible relative">
-                    <div class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500
+                    <!-- END BG IKON TRENDING TAMPILAN MOBILE  -->
+                    <div class="overflow-visible relative">
+                        <div class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto bg-indigo-500
                          dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
 
-                        Cerita Terending
+                            Cerita Terending
+                        </div>
                     </div>
-                </div>
 
-                <a href="./trending.html" class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500
+                    <a href="./trending.html" class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500
                      hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0  shadow-xl ">
-                    Selengkapnya
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                        Selengkapnya
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
 
-                <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
-                    <div class="flex  overflow-x-auto grab-scroll">
-                        <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
+                    <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
+                        <div class="flex  overflow-x-auto grab-scroll">
+                            <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
                              KARENA PAKAI LOOP ALPINE-->
-                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                            <div class="mt-1">
-                                <div x-data="{opacity_blurb: false}" :class="[value.id == Object.entries(buku).length ? 'mr-3.5 ml-3.5' : 'ml-3.5' || 
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div class="mt-1">
+                                    <div x-data="{opacity_blurb: false}" :class="[value.id == Object.entries(buku).length ? 'mr-3.5 ml-3.5' : 'ml-3.5' || 
                                     value.id == 1 ? 'ml-3.5' : '' ]"
-                                    class=" mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
+                                        class=" mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
+                                        <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                            @click="opacity_blurb = !opacity_blurb">
 
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                            <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                                 rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+                                                <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="">
+                                                <img class="-mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
+                                                    :src="value.sampul" alt="">
 
                                             </div>
 
                                         </div>
 
-                                        <div class="">
-                                            <img class="-mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                :src="value.sampul" alt="">
-
-                                        </div>
-
-                                    </div>
 
 
+                                        <div class="bg-white rounded-xl dark:bg-gray-700">
+                                            <div class="inset-x-0 top-0 flex">
+                                                <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-                                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+                                                </div>
+                                                <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                                </div>
 
                                             </div>
-                                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="p-4">
+                                            <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
-                                                :class="$store.darkMode && 'text-indigo-200'">
-                                                <a href="#" x-text="value.judul">
+                                                <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
+                                                    :class="$store.darkMode && 'text-indigo-200'">
+                                                    <a href="#" x-text="value.judul">
 
 
+                                                    </a>
+
+                                                </div>
+
+                                                <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                                </div>
+                                                <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                    x-text="value.penulis">
                                                 </a>
 
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                            </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                                x-text="value.penulis">
-                                            </a>
 
 
 
+                                                <div class="text-center flex justify-end mt-4  bottom-0 right-0">
+                                                    <div class="text-xs text-white">
+                                                        <button
+                                                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                            <i class="fas fa-plus"></i> Bacaan
+                                                        </button>
+                                                    </div>
 
-                                            <div class="text-center flex justify-end mt-4  bottom-0 right-0">
-                                                <div class="text-xs text-white">
-                                                    <button
-                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                        <i class="fas fa-plus"></i> Bacaan
-                                                    </button>
+
                                                 </div>
 
 
+
                                             </div>
-
-
-
                                         </div>
+
+
                                     </div>
-
-
                                 </div>
-                            </div>
-                        </template>
+                            </template>
 
 
+
+                        </div>
 
                     </div>
 
                 </div>
-
-            </div>
-            <!-- END CERITA TRENDING TAMPILAN MOBILE -->
+                <!-- END CERITA TRENDING TAMPILAN MOBILE -->
 
 
 
@@ -1594,155 +1744,155 @@
 
 
 
-            <!-- CERITA POPULER TAMPILAN MOBILE -->
-            <div
-                class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
-                <!-- BG IKON POPULER TAMPILAN MOBILE -->
-                <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
+                <!-- CERITA POPULER TAMPILAN MOBILE -->
+                <div
+                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    <!-- BG IKON POPULER TAMPILAN MOBILE -->
+                    <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
-                    <div class="text-center">
-                        <i class="fas text-indigo-500 fa-star text-7xl">
-                            <div class="text-3xl">Populer!</div>
-                        </i>
+                        <div class="text-center">
+                            <i class="fas text-indigo-500 fa-star text-7xl">
+                                <div class="text-3xl">Populer!</div>
+                            </i>
+
+                        </div>
+
 
                     </div>
-
-
-                </div>
-                <!-- END BG IKON POPULER TAMPILAN MOBILE  -->
-                <div class="overflow-visible relative">
-                    <div class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto 
+                    <!-- END BG IKON POPULER TAMPILAN MOBILE  -->
+                    <div class="overflow-visible relative">
+                        <div class=" -mt-12 ml-3 font-bold flex text-sm items-center justify-center text-white w-auto 
                         bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
 
-                        Cerita Populer
+                            Cerita Populer
+                        </div>
                     </div>
-                </div>
 
-                <a href="./populer.html" class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500
+                    <a href="./populer.html" class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500
                      hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0  shadow-xl ">
-                    Selengkapnya
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                        Selengkapnya
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
 
-                <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
-                    <div class="flex  overflow-x-auto grab-scroll">
-                        <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
+                    <div class="md:hidden lg:hidden block overflow-hidden relative py-3">
+                        <div class="flex  overflow-x-auto grab-scroll">
+                            <!-- CONTOH LOOP SAJA, BISA DIGANTI PAKAI LOOP PHP
                              KARENA PAKAI LOOP ALPINE-->
-                        <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                            <div class="mt-1">
-                                <div x-data="{opacity_blurb: false}" :class="[value.id == Object.entries(buku).length ? 'mr-3.5 ml-3.5' : 'ml-3.5' || 
+                            <template x-for="[id, value] in Object.entries(buku)" :key="id">
+                                <div class="mt-1">
+                                    <div x-data="{opacity_blurb: false}" :class="[value.id == Object.entries(buku).length ? 'mr-3.5 ml-3.5' : 'ml-3.5' || 
                                     value.id == 1 ? 'ml-3.5' : '' ]"
-                                    class=" mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
-                                    <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                        @click="opacity_blurb = !opacity_blurb">
+                                        class=" mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl  w-36 shadow-lg h-auto dark:ring-gray-900 sm:ring-1 sm:ring-gray-200 sm:shadow-lg sm:h-64 sm:w-48 sm:h-auto">
+                                        <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
+                                            @click="opacity_blurb = !opacity_blurb">
 
-                                        <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
+                                            <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute 
                                                 rounded-xl bg-white opacity-80 h-full w-full">
-                                            <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+                                                <div class="p-3 text-xs mx-auto font-medium" x-text="value.blurb">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="">
+                                                <img class="-mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
+                                                    :src="value.sampul" alt="">
 
                                             </div>
 
                                         </div>
 
-                                        <div class="">
-                                            <img class="-mb-3 rounded-xl h-56 w-36 sm:h-72 sm:w-48 object-fill"
-                                                :src="value.sampul" alt="">
-
-                                        </div>
-
-                                    </div>
 
 
+                                        <div class="bg-white rounded-xl dark:bg-gray-700">
+                                            <div class="inset-x-0 top-0 flex">
+                                                <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
 
-                                    <div class="bg-white rounded-xl dark:bg-gray-700">
-                                        <div class="inset-x-0 top-0 flex">
-                                            <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
+                                                </div>
+                                                <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
+
+                                                </div>
 
                                             </div>
-                                            <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="p-4">
+                                            <div class="p-4">
 
 
-                                            <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
-                                                :class="$store.darkMode && 'text-indigo-200'">
-                                                <a href="#" x-text="value.judul">
+                                                <div class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center"
+                                                    :class="$store.darkMode && 'text-indigo-200'">
+                                                    <a href="#" x-text="value.judul">
 
 
+                                                    </a>
+
+                                                </div>
+
+                                                <div class="text-xs text-left inline dark:text-gray-400">By
+
+                                                </div>
+                                                <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
+                                                    x-text="value.penulis">
                                                 </a>
 
-                                            </div>
-
-                                            <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                            </div>
-                                            <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                                x-text="value.penulis">
-                                            </a>
 
 
 
+                                                <div class="text-center flex justify-end mt-4  bottom-0 right-0">
+                                                    <div class="text-xs text-white">
+                                                        <button
+                                                            class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
+                                                            <i class="fas fa-plus"></i> Bacaan
+                                                        </button>
+                                                    </div>
 
-                                            <div class="text-center flex justify-end mt-4  bottom-0 right-0">
-                                                <div class="text-xs text-white">
-                                                    <button
-                                                        class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                        <i class="fas fa-plus"></i> Bacaan
-                                                    </button>
+
                                                 </div>
 
 
+
                                             </div>
-
-
-
                                         </div>
+
+
                                     </div>
-
-
                                 </div>
-                            </div>
-                        </template>
+                            </template>
 
 
 
+                        </div>
                     </div>
+
+
+
+
+
+
+
                 </div>
-
-
-
-
-
-
+                <!-- END CERITA POPULER TAMPILAN MOBILE -->
 
             </div>
-            <!-- END CERITA POPULER TAMPILAN MOBILE -->
-
-        </div>
 
 
 
 
 
 
-        <div class="md:w-full lg:w-1/4 hidden md:block mx-auto h-auto lg:block">
+            <div class="md:w-full lg:w-1/4 hidden md:block mx-auto h-auto lg:block">
 
-            <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl dark:bg-gray-800"
-                x-data="{open_penulis: true}">
+                <div class="p-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl dark:bg-gray-800"
+                    x-data="{open_penulis: true}">
 
-                <!-- <a href="#"
+                    <!-- <a href="#"
                     class="flex items-center justify-center text-white w-auto dark:bg-indigo-400 text-xs bg-indigo-500 hover:bg-indigo-400 p-2 rounded-tr-xl  absolute top-0 right-0">
                     Selengkapnya
                     <i class="fas fa-arrow-right"></i>
                 </a> -->
 
-                <!-- KONDISI BG IKON PENULIS -->
-                <div class="absolute bottom-0 right-0 opacity-50">
-                    <div class="">
-                        <i class="text-indigo-500 text-7xl" :class="
+                    <!-- KONDISI BG IKON PENULIS -->
+                    <div class="absolute bottom-0 right-0 opacity-50">
+                        <div class="">
+                            <i class="text-indigo-500 text-7xl" :class="
                             [
                                 open_penulis == true      ? 'fas fa-medal'     : '' ||
                                 open_penulis == 'apresiator'   ? 'fas fa-medal'     : '' || 
@@ -1750,79 +1900,79 @@
                                 open_penulis == 'naik_daun' ? 'fas fa-arrow-circle-up'  : '' 
                             ]">
 
-                        </i>
+                            </i>
 
+                        </div>
                     </div>
-                </div>
-                <!-- END KONDISI BG IKON PENULIS -->
+                    <!-- END KONDISI BG IKON PENULIS -->
 
 
 
 
-                <div class="overflow-visible relative">
-                    <select name="" id=""
-                        x-on:change="open_penulis = $event.target.value, $refs.penulis_pertama.style.display = 'none'"
-                        class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
-                        <option id="pilihan-penulis-pertama" value="apresiator"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Apresiator
-                        </option>
-                        <option value="naik_daun"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Penulis Naik Daun
-                        </option>
-                        <option value="populer"
-                            class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
-                            Penulis Populer
-                        </option>
+                    <div class="overflow-visible relative">
+                        <select name="" id=""
+                            x-on:change="open_penulis = $event.target.value, $refs.penulis_pertama.style.display = 'none'"
+                            class="pencet-penulis -mt-12 text-sm font-bold flex text-md items-center justify-center text-white w-auto bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0">
+                            <option id="pilihan-penulis-pertama" value="apresiator"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Apresiator
+                            </option>
+                            <option value="naik_daun"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Penulis Naik Daun
+                            </option>
+                            <option value="populer"
+                                class="bg-white text-indigo-500 dark:bg-gray-800 dark:text-white rounded-md">
+                                Penulis Populer
+                            </option>
 
 
-                    </select>
-                    <!-- PENULIS APRESIATOR -->
-                    <div x-show="open_penulis == 'apresiator'" x-transition:enter="transition ease-in duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-pertama"
-                        x-ref="penulis_pertama">
+                        </select>
+                        <!-- PENULIS APRESIATOR -->
+                        <div x-show="open_penulis == 'apresiator'" x-transition:enter="transition ease-in duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-out duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-pertama"
+                            x-ref="penulis_pertama">
 
 
-                        <a href="" class="flex py-2">
-                            <img src="./assets/img/profile_me.png"
-                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                            <div class="item-center overflow-hidden">
-                                <p class="font-bold dark:text-white">Karol. Y</p>
-                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                    Haro haro, terima kasih sudah mampir!
-                                </p>
-                            </div>
+                            <a href="" class="flex py-2">
+                                <img src="./assets/img/profile_me.png"
+                                    class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                <div class="item-center overflow-hidden">
+                                    <p class="font-bold dark:text-white">Karol. Y</p>
+                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+                                        Haro haro, terima kasih sudah mampir!
+                                    </p>
+                                </div>
 
-                        </a>
-                        <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png"
-                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                            <div class="item-center overflow-hidden">
-                                <p class="font-bold dark:text-white">Angelica</p>
-                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                    Hello, nice to meet you!
-                                </p>
-                            </div>
+                            </a>
+                            <a href="" class="flex py-2">
+                                <img src="./assets/img/profile.png"
+                                    class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                <div class="item-center overflow-hidden">
+                                    <p class="font-bold dark:text-white">Angelica</p>
+                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+                                        Hello, nice to meet you!
+                                    </p>
+                                </div>
 
-                        </a>
+                            </a>
 
-                    </div>
-                    <!-- END PENULIS APRESIATOR -->
+                        </div>
+                        <!-- END PENULIS APRESIATOR -->
 
-                    <!-- PENULIS NAIK DAUN -->
-                    <div x-show="open_penulis == 'naik_daun'" x-transition:enter="transition ease-in duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500" :class="
+                        <!-- PENULIS NAIK DAUN -->
+                        <div x-show="open_penulis == 'naik_daun'" x-transition:enter="transition ease-in duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-out duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="grid grid-cols-1 divide-y divide-indigo-500" :class="
                             [
                             open_penulis == true ? 'hidden' : '' ||
                                 open_penulis == 'naik_daun' ? 'block' : 'hidden' 
@@ -1831,107 +1981,107 @@
                         ">
 
 
-                        <a href="" class="flex py-2">
-                            <img src="./assets/img/profile_2.png"
-                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                            <div class="item-center overflow-hidden">
-                                <p class="font-bold dark:text-white">A02</p>
-                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                    Enakan baca komik.
-                                </p>
-                            </div>
+                            <a href="" class="flex py-2">
+                                <img src="./assets/img/profile_2.png"
+                                    class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                <div class="item-center overflow-hidden">
+                                    <p class="font-bold dark:text-white">A02</p>
+                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+                                        Enakan baca komik.
+                                    </p>
+                                </div>
 
-                        </a>
-                        <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png"
-                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                            <div class="item-center overflow-hidden">
-                                <p class="font-bold dark:text-white">Angelica</p>
-                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                    Hello, nice to meet you!
-                                </p>
-                            </div>
+                            </a>
+                            <a href="" class="flex py-2">
+                                <img src="./assets/img/profile.png"
+                                    class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                <div class="item-center overflow-hidden">
+                                    <p class="font-bold dark:text-white">Angelica</p>
+                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+                                        Hello, nice to meet you!
+                                    </p>
+                                </div>
 
-                        </a>
+                            </a>
 
-                    </div>
-                    <!-- END PENULIS NAIK DAUN -->
+                        </div>
+                        <!-- END PENULIS NAIK DAUN -->
 
-                    <!-- PENULIS POPULER -->
-                    <div x-show="open_penulis == 'populer'" x-transition:enter="transition ease-in duration-200"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-kedua" :class="
+                        <!-- PENULIS POPULER -->
+                        <div x-show="open_penulis == 'populer'" x-transition:enter="transition ease-in duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-out duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="grid grid-cols-1 divide-y divide-indigo-500" id="penulis-kedua" :class="
                             [
                                 open_penulis == true ? 'hidden' : '' ||
                                 open_penulis == 'populer' ? 'block' : 'hidden' 
                             ]
                         
                         ">
-                        <a href="" class="flex py-2">
-                            <img src="./assets/img/profile.png"
-                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                            <div class="item-center overflow-hidden">
-                                <p class="font-bold dark:text-white">Angelica</p>
-                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                    Hello, nice to meet you!
-                                </p>
-                            </div>
+                            <a href="" class="flex py-2">
+                                <img src="./assets/img/profile.png"
+                                    class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                <div class="item-center overflow-hidden">
+                                    <p class="font-bold dark:text-white">Angelica</p>
+                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+                                        Hello, nice to meet you!
+                                    </p>
+                                </div>
 
-                        </a>
-                        <a href="" class="flex py-2">
-                            <img src="./assets/img/profile_me.png"
-                                class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                            <div class="item-center overflow-hidden">
-                                <p class="font-bold dark:text-white">Karol. Y</p>
-                                <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                    Haro haro, terima kasih sudah mampir!
-                                </p>
-                            </div>
+                            </a>
+                            <a href="" class="flex py-2">
+                                <img src="./assets/img/profile_me.png"
+                                    class=" mx-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                <div class="item-center overflow-hidden">
+                                    <p class="font-bold dark:text-white">Karol. Y</p>
+                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+                                        Haro haro, terima kasih sudah mampir!
+                                    </p>
+                                </div>
 
-                        </a>
+                            </a>
 
+                        </div>
+                        <!-- END PENULIS POPULER -->
                     </div>
-                    <!-- END PENULIS POPULER -->
+
+
+
                 </div>
-
-
 
             </div>
 
-        </div>
 
+            <!-- MENU BAWAH MOBILE -->
 
-        <!-- MENU BAWAH MOBILE -->
+            <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: true}
+            " @click.away="menu_mobile = false">
+                <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
+                    class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
+                    x-transition:enter="transition ease-out duration-200 "
+                    x-transition:enter-start="transform opacity-0 -tranlate-y-0"
+                    x-transition:enter-end="transform opacity-100  translate-y-0">
 
-        <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: true}
-        " @click.away="menu_mobile = false">
-            <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
-                class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
-                x-transition:enter="transition ease-out duration-200 "
-                x-transition:enter-start="transform opacity-0 -tranlate-y-0"
-                x-transition:enter-end="transform opacity-100  translate-y-0">
+                    <div class="pb-9" x-data="{buku: true}">
 
-                <div class="pb-9" x-data="{buku: true}">
-
-                    <ul class="flex">
-                        <li class="flex-1 mr-2">
-                            <a @click="buku = $event.target.dataset.buku,
+                        <ul class="flex">
+                            <li class="flex-1 mr-2">
+                                <a @click="buku = $event.target.dataset.buku,
                                 $refs.genre.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
                                 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
                                 $refs.genre.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
                                 $refs.kategori.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
                                 $refs.kategori.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
                             " data-buku="genre"
-                                class="text-center block rounded
+                                    class="text-center block rounded
                              py-2 px-4 bg-indigo-500 dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
-                                x-ref="genre" href="#">Genre</a>
-                        </li>
-                        <li class="flex-1 mr-2">
-                            <a @click="buku = $event.target.dataset.buku,
+                                    x-ref="genre" href="#">Genre</a>
+                            </li>
+                            <li class="flex-1 mr-2">
+                                <a @click="buku = $event.target.dataset.buku,
                             $refs.genre.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
                             'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
                             $refs.genre.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
@@ -1939,184 +2089,185 @@
                             $refs.kategori.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
                             " data-buku="kategori" class="pencet-kategori-mobile-pertama text-center block rounded
                            text-indigo-500 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
-                                x-ref="kategori" href="#">Kategori</a>
-                        </li>
+                                    x-ref="kategori" href="#">Kategori</a>
+                            </li>
 
-                    </ul>
-
-
-
-                    <!-- TAB MENU MOBILE GENRE -->
-                    <div x-show="buku == 'genre'"
-                        class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm"
-                        id="genre-mobile-pertama" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="transform opacity-0 -translate-x-7"
-                        x-transition:enter-end="transform opacity-100 translate-x-0"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 translate-x-0"
-                        x-transition:leave-end="transform opacity-0 -translate-x-7">
+                        </ul>
 
 
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Fantasy</a>
+
+                        <!-- TAB MENU MOBILE GENRE -->
+                        <div x-show="buku == 'genre'"
+                            class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm"
+                            id="genre-mobile-pertama" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="transform opacity-0 -translate-x-7"
+                            x-transition:enter-end="transform opacity-100 translate-x-0"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 translate-x-0"
+                            x-transition:leave-end="transform opacity-0 -translate-x-7">
+
+
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Fantasy</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Sci-Fi</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Comedy</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Romance</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Supernatural</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Action</a>
+                            </div>
                         </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Sci-Fi</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Comedy</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Romance</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Supernatural</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Action</a>
-                        </div>
-                    </div>
-                    <!-- END TAB MENU MOBILE GENRE-->
+                        <!-- END TAB MENU MOBILE GENRE-->
 
-                    <!-- TAB MENU MOBILE KATEGORI -->
-                    <div x-show="buku == 'kategori'" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="transform opacity-0 translate-x-7"
-                        x-transition:enter-end="transform opacity-100 translate-x-0"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 translate-x-0"
-                        x-transition:leave-end="transform opacity-0 translate-x-7" :class="
+                        <!-- TAB MENU MOBILE KATEGORI -->
+                        <div x-show="buku == 'kategori'" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="transform opacity-0 translate-x-7"
+                            x-transition:enter-end="transform opacity-100 translate-x-0"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 translate-x-0"
+                            x-transition:leave-end="transform opacity-0 translate-x-7" :class="
                         [
                             buku == true ? 'hidden' : '' ||
                             buku == 'kategori' ? 'block' : 'hidden' 
                         ]" class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm">
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Berlangsung</a>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Berlangsung</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Tamat</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Populer</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Trending</a>
+                            </div>
+                            <div><a href="#"
+                                    class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Terbaru</a>
+                            </div>
                         </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Tamat</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Populer</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Trending</a>
-                        </div>
-                        <div><a href="#"
-                                class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Terbaru</a>
-                        </div>
+                        <!-- END TAB MENU MOBILE KATEGORI-->
+
+
+
+
+
                     </div>
-                    <!-- END TAB MENU MOBILE KATEGORI-->
-
-
-
-
 
                 </div>
-
-            </div>
-            <!-- END MENU BUKA MOBILE BUKU -->
+                <!-- END MENU BUKA MOBILE BUKU -->
 
 
-            <div x-show="menu_mobile == 'pengaturan'"
-                class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
-                x-transition:enter="transition ease-out duration-200 "
-                x-transition:enter-start="transform opacity-0 -tranlate-y-0"
-                x-transition:enter-end="transform opacity-100  translate-y-0">
+                <div x-show="menu_mobile == 'pengaturan'"
+                    class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
+                    x-transition:enter="transition ease-out duration-200 "
+                    x-transition:enter-start="transform opacity-0 -tranlate-y-0"
+                    x-transition:enter-end="transform opacity-100  translate-y-0">
 
-                <div class=" pb-9">
-                    <div class="text-center grid grid-cols-1 grid-flow-row auto-rows-auto gap-4 text-sm">
-                        <div class="block pt-3">
-                            <div x-data="{toggle: false}">
-                                <div class="flex items-center justify-center">
-                                    <i class="mr-3 text-2xl far fa-sun text-yellow-500 dark:text-gray-600"></i>
-                                    <div class="relative w-12 h-6 transition duration-200 ease-linear rounded-full"
-                                        :class="[
+                    <div class=" pb-9">
+                        <div class="text-center grid grid-cols-1 grid-flow-row auto-rows-auto gap-4 text-sm">
+                            <div class="block pt-3">
+                                <div x-data="{toggle: false}">
+                                    <div class="flex items-center justify-center">
+                                        <i class="mr-3 text-2xl far fa-sun text-yellow-500 dark:text-gray-600"></i>
+                                        <div class="relative w-12 h-6 transition duration-200 ease-linear rounded-full"
+                                            :class="[
                                     
                                             darkMode ? 'bg-indigo-400' : 'bg-gray-300']">
-                                        <label for="toggle" class="absolute w-6 h-6 transition duration-100 ease-linear
+                                            <label for="toggle" class="absolute w-6 h-6 transition duration-100 ease-linear
                                             transform bg-gray-100 left-0 rounded-full cursor-pointer"
-                                            :class="[
+                                                :class="[
                                         darkMode ? 'right-0' : 'left-0',
                                         darkMode ? $el.classList.remove('left-0', 'translate-x-0') : $el.classList.remove('right-0', 'translate-x-0.5'),
                                         darkMode ? $el.classList.add('right-0', 'translate-x-0.5') : $el.classList.add('left-0', 'translate-x-0')]">
-                                        </label>
+                                            </label>
 
-                                        <input type="checkbox" id="toggle" name="toggle" x-model="toggle"
-                                            class="w-full h-full appearance-none focus:outline-none"
-                                            @click="darkMode = !darkMode" />
+                                            <input type="checkbox" id="toggle" name="toggle" x-model="toggle"
+                                                class="w-full h-full appearance-none focus:outline-none"
+                                                @click="darkMode = !darkMode" />
+                                        </div>
+                                        <i class="ml-3 text-2xl far fa-moon text-gray-600 dark:text-yellow-200"></i>
                                     </div>
-                                    <i class="ml-3 text-2xl far fa-moon text-gray-600 dark:text-yellow-200"></i>
                                 </div>
+
                             </div>
 
+                            <div class="block">
+
+                            </div>
                         </div>
 
-                        <div class="block">
 
-                        </div>
+                    </div>
+                </div>
+                <!-- END MENU BUKA MOBILE BUKU -->
+
+
+
+
+                <div class="py-2 justify-around h-auto border-opacity-50 border-t-2 border-indigo-500 rounded-t-xl bg-white flex
+                dark:bg-gray-800">
+
+                    <div class="py-3">
+                        <a href="./index.html"
+                            class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700 ">
+                            <i class="fas text-2xl fa-home"></i>
+                        </a>
+
+                    </div>
+                    <div class="py-3">
+                        <button id="buku" @click="menu_mobile = 'buku'"
+                            class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
+                            <i class="fas text-2xl fa-book"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="overflow-visible z-50">
+                        <button class="-mt-5 h-12 w-12 rounded-full border-b-4 border-indigo-700
+                    flex items-center justify-center bg-indigo-500 text-white">
+                            <i class="fas text-xl fa-plus"></i>
+                        </button>
+
+                    </div>
+                    <div class="py-3">
+                        <button id="pengaturan" @click="menu_mobile = 'pengaturan'"
+                            class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
+                            <i class="fas text-2xl fa-cog"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="py-3">
+                        <a href="./pengguna.html"
+                            class="
+                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
+                            <i class="fas text-2xl fa-user"></i>
+                        </a>
+
                     </div>
 
 
-                </div>
-            </div>
-            <!-- END MENU BUKA MOBILE BUKU -->
 
 
-
-
-            <div class="py-2 justify-around h-auto border-opacity-50 border-t-2 border-indigo-500 rounded-t-xl bg-white flex
-                dark:bg-gray-800">
-
-                <div class="py-3">
-                    <a href="./index.html"
-                        class="
-                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700 ">
-                        <i class="fas text-2xl fa-home"></i>
-                    </a>
 
                 </div>
-                <div class="py-3">
-                    <button id="buku" @click="menu_mobile = 'buku'"
-                        class="
-                    flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
-                        <i class="fas text-2xl fa-book"></i>
-                    </button>
-
-                </div>
-
-                <div class="overflow-visible z-50">
-                    <button class="-mt-5 h-12 w-12 rounded-full border-b-4 border-indigo-700
-                    flex items-center justify-center bg-indigo-500 text-white">
-                        <i class="fas text-xl fa-plus"></i>
-                    </button>
-
-                </div>
-                <div class="py-3">
-                    <button id="pengaturan" @click="menu_mobile = 'pengaturan'"
-                        class="
-                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
-                        <i class="fas text-2xl fa-cog"></i>
-                    </button>
-
-                </div>
-
-                <div class="py-3">
-                    <a href="./pengguna.html"
-                        class="
-                    flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
-                        <i class="fas text-2xl fa-user"></i>
-                    </a>
-
-                </div>
-
-
-
-
 
             </div>
-
+            <!-- END MENU BAWAH MOBILE -->
         </div>
-        <!-- END MENU BAWAH MOBILE -->
 
     </main>
 
