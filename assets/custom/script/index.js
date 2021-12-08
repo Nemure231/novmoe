@@ -187,6 +187,18 @@ ready(function () {
         });
     });
 
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+          },
+      });
+
   
 
     // var swiper_mobile= new Swiper(".myswiper-mobile", {

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="./assets/base/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="./assets/base/swiper/swiper-bundle.min.css" />
 
 </head>
 
@@ -753,148 +753,241 @@
 
 
 
-            <!-- HERO SATU -->
+
             <div class="w-full md:mx-auto lg:mx-4 mx-auto md:w-full lg:w-3/4" x-data="cerita">
 
-                <div class="lg:block md:block hidden relative mb-8">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
 
-                    <div class="h-60 rounded-xl shadow-lg bg-cover bg-right bg-no-repeat relative" style="
+                        <div class="swiper-slide">
+                            <!-- HERO SATU -->
+                            <div class="lg:block md:block hidden relative mb-8">
+
+                                <div class="h-60 rounded-xl shadow-lg bg-cover bg-right bg-no-repeat relative" style="
                         background-image: url('./assets/img/hero.png')">
-                        <div class="rounded-xl absolute bg-gradient-to-r from-indigo-500 h-60 w-full">
-                            <div class="p-3">
-                                <div class="text-2xl font-bold text-white mb-3 w-1/2">
-                                    Selamat datang di NovelRinganMoe,
-                                </div>
-                                <div class="text-md font-semibold antialiased w-1/2 mb-3 text-gray-700">
-                                    Tempat di mana kamu bukan hanya tempat untuk menulis, tetapi juga untuk berinteraksi
-                                    bersama.
-                                </div>
-                                <div class="text-sm font-light text w-1/3 mb-4">
-                                    Kamu bisa mulai menulis atau menjelajani karya-karya di sini!
-                                </div>
-                                <div class="flex">
-                                    <a href="./jenis.html" class="mr-3 bg-white rounded-3xl px-2 py-1 text-indigo-500 font-semibold
+                                    <div class="rounded-xl absolute bg-gradient-to-r from-indigo-500 h-60 w-full">
+                                        <div class="p-3">
+                                            <div
+                                                class="text-2xl font-bold mb-3 w-1/2 bg-clip-text text-transparent bg-gradient-to-l from-white to-indigo-100">
+                                                Selamat datang di NovelRinganMoe,
+                                            </div>
+                                            <div class="text-md font-semibold antialiased w-1/2 mb-3 text-gray-700">
+                                                Tempat di mana kamu bukan hanya tempat untuk menulis, tetapi juga untuk
+                                                berinteraksi
+                                                bersama.
+                                            </div>
+                                            <div class="text-sm font-light text w-1/3 mb-4">
+                                                Kamu bisa mulai menulis atau menjelajani karya-karya di sini!
+                                            </div>
+                                            <div class="flex">
+                                                <a href="./jenis.html" class="mr-3 bg-white rounded-3xl px-2 py-1 text-indigo-500 font-semibold
                                     border-r-4 border-b-4 border-indigo-800 shadow-3xl hover:bg-indigo-100">
-                                        Menulis!
-                                    </a>
+                                                    Menulis!
+                                                </a>
 
-                                    <a href="./jenis.html" class="bg-white rounded-3xl px-2 py-1 text-indigo-500 font-semibold
+                                                <a href="./jenis.html" class="bg-white rounded-3xl px-2 py-1 text-indigo-500 font-semibold
                                     border-r-4 border-b-4 border-indigo-800 shadow-3xl hover:bg-indigo-100">
-                                        Membaca!
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- END HERO SATU -->
-
-                <!-- HERO DUA-->
-
-
-                <div class="lg:block md:block hidden relative mb-8">
-
-                    <div class="h-60 rounded-xl shadow-lg bg-cover bg-left bg-no-repeat relative" style="
-                        background-image: url('./assets/img/hero_2.png')">
-                        <div class="rounded-xl absolute bg-gradient-to-l from-pink-800 h-60 w-full">
-                            <div class="flex flex-col place-items-end">
-
-                                <div class="p-3 text-2xl font-bold text-white mb-3 w-1/2 text-left">
-                                    Banyak pilihan genre dan kategori! Mulai dari ...
-                                </div>
-
-
-                                <div class="grid grid-cols-3 grid-flow-row auto-rows-auto gap-2 mr-3 cursor-default">
-                                    <div
-                                        class="bg-white p-2 rounded-tl-lg text-center text-pink-800 opacity-80
-                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
-                                        Fantasy</div>
-                                    <div
-                                        class="bg-white p-2 rounded-none text-center text-pink-800 opacity-80
-                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
-                                        Action</div>
-                                    <div
-                                        class="bg-white p-2 rounded-tr-lg text-center text-pink-800 opacity-80
-                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
-                                        Sci-Fi</div>
-                                    <div
-                                        class="bg-white p-2 rounded-bl-lg text-center text-pink-800 opacity-80
-                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
-                                        Romance</div>
-                                    <div
-                                        class="bg-white p-2 rounded-none text-center text-pink-800 opacity-80
-                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
-                                        Supernatural</div>
-                                    <div
-                                        class="bg-white p-2 rounded-br-lg text-center text-pink-800 opacity-80
-                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
-                                        Comedy</div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- END HERO DUA-->
-
-
-                <!-- HERO TIGA -->
-
-                <div class="lg:block md:block hidden relative mb-8">
-
-                    <div class="h-60 rounded-xl shadow-lg bg-cover bg-center bg-no-repeat relative" style="
-                        background-image: url('./assets/img/hero_3.png')">
-                        <div class="rounded-xl absolute bg-gradient-to-t from-pink-500 h-60 w-full">
-                            <div class="flex p-3 absolute inset-x-0 bottom-0">
-                                <div class="text-2xl font-bold text-white w-1/2 flex items-center">
-                                    Gabung dengan komunitas kami juga!
-                                </div>
-                                <div class="w-1/2">
-                                    <div class="flex justify-evenly">
-                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
-                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
-                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
-                                                <i class="fab fa-facebook-f"></i>
+                                                    Membaca!
+                                                </a>
                                             </div>
-                                        </a>
 
-                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
-                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
-                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
-                                                <i class="fab fa-twitter"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
-                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
-                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
-                                                <i class="fab fa-instagram"></i>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="flex items-center justify-center rounded-full bg-white 
-                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
-                                            <div class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
-                                                <i class="fab fa-linkedin-in"></i>
-                                            </div>
-                                        </a>
-
+                                        </div>
                                     </div>
+
                                 </div>
+
                             </div>
+                            <!-- END HERO SATU -->
+                        </div>
+                        <div class="swiper-slide">
+                            <!-- HERO DUA-->
 
 
-                            <!-- </div> -->
+                            <div class="lg:block md:block hidden relative mb-8">
+
+                                <div class="h-60 rounded-xl shadow-lg bg-cover bg-left bg-no-repeat relative" style="
+                        background-image: url('./assets/img/hero_2.png')">
+                                    <div class="rounded-xl absolute bg-gradient-to-l from-pink-800 h-60 w-full">
+                                        <div class="flex flex-col place-items-end">
+
+                                            <div
+                                                class="p-3 text-2xl font-bold mb-3 w-1/2 text-left bg-clip-text text-transparent bg-gradient-to-r from-white to-pink-300">
+                                                Banyak pilihan genre dan kategori! Mulai dari ...
+                                            </div>
+
+
+                                            <div
+                                                class="grid grid-cols-3 grid-flow-row auto-rows-auto gap-2 mr-3 cursor-default">
+                                                <div class="bg-white p-2 rounded-tl-lg text-center font-semibold text-pink-800 opacity-80
+                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
+                                                    Fantasy</div>
+                                                <div class="bg-white p-2 rounded-none text-center font-semibold text-pink-800 opacity-80
+                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
+                                                    Action</div>
+                                                <div class="bg-white p-2 rounded-tr-lg text-center font-semibold text-pink-800 opacity-80
+                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
+                                                    Sci-Fi</div>
+                                                <div class="bg-white p-2 rounded-bl-lg text-center font-semibold text-pink-800 opacity-80
+                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
+                                                    Romance</div>
+                                                <div class="bg-white p-2 rounded-none text-center font-semibold text-pink-800 opacity-80
+                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
+                                                    Supernatural</div>
+                                                <div class="bg-white p-2 rounded-br-lg text-center font-semibold text-pink-800 opacity-80
+                                        border-b-4 border-r-4 border-pink-900 shadow-3xl hover:opacity-100">
+                                                    Comedy</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- END HERO DUA-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!-- HERO TIGA -->
+
+                            <div class="lg:block md:block hidden relative mb-8">
+
+                                <div class="h-60 rounded-xl shadow-lg bg-cover bg-center bg-no-repeat relative" style="
+                        background-image: url('./assets/img/hero_3.png')">
+                                    <div class="rounded-xl absolute bg-gradient-to-t from-pink-500 h-60 w-full">
+                                        <div class="flex p-3 absolute inset-x-0 bottom-0">
+                                            <div
+                                                class="text-2xl font-bold w-1/2 flex items-center bg-clip-text text-transparent bg-gradient-to-t from-white to-pink-100">
+                                                Gabung dengan komunitas kami juga!
+                                            </div>
+                                            <div class="w-1/2">
+                                                <div class="flex justify-evenly">
+                                                    <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                                        <div
+                                                            class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                                        <div
+                                                            class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                                        <div
+                                                            class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="flex items-center justify-center rounded-full bg-white 
+                                        border-b-4 border-r-4 border-pink-600 hover:bg-pink-100">
+                                                        <div
+                                                            class="text-pink-500 text-xl h-9 w-9 flex items-center justify-center">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- </div> -->
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- END HERO TIGA -->
                         </div>
 
                     </div>
-
+                    <div class="swiper-pagination"></div>
                 </div>
-                <!-- END HERO TIGA -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2372,7 +2465,7 @@
 
 
 </body>
-<!-- <script src="./assets/base/swiper/swiper-bundle.min.js"></script> -->
+<script src="./assets/base/swiper/swiper-bundle.min.js"></script>
 <script defer src="./assets/base/alpine/alpine.min.js"></script>
 
 <!-- <script src="./assets/base/siema/siema.min.js"></script> -->
