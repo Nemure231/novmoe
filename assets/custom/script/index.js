@@ -101,43 +101,77 @@ document.addEventListener('alpine:init', () => {
 document.addEventListener('alpine:init', () => {
     Alpine.data('penulis', () => ({
         open_penulis_mobile: true,
+        open_penulis: true,
         user: {
             1: {
                 id: 1,
                 nama: 'Angelica',
+                username: '@Ange',
                 foto: './assets/img/profile.png',
+                status: ' Hello, nice to meet you!'
             },
             2: {
                 id: 2,
                 nama: 'A02',
+                username: '@Nine',
                 foto: './assets/img/profile_2.png',
+                status: 'Enakan baca komik.'
+
             },
             3: {
                 id: 3,
                 nama: 'Karol.Y',
+                username: '@Nc',
                 foto: './assets/img/profile_me.png',
+                status: 'Haro haro, terima kasih sudah mampir!',
             },
-            4: {
-                id: 4,
-                nama: 'Angelica',
-                foto: './assets/img/profile.png',
-            },
-            5: {
-                id: 5,
-                nama: 'A02',
-                foto: './assets/img/profile_2.png',
-            },
-           6: {
-                id:6,
-                nama: 'Karol.Y',
-                foto: './assets/img/profile_me.png',
-            },
+           
            
            
         }
 
     }));
 });
+
+
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('komentar_publik', () => ({
+        komen_publik: {
+            1: {
+                id: 1,
+                nama: 'Angelica',
+                username: '@Ange',
+                foto: './assets/img/profile.png',
+                komentar: 'Ini ada lanjutannya lagi gak gan?',
+                tanggal: 'hari ini',
+                cerita: 'Distant Memory'
+            },
+            2: {
+                id: 2,
+                nama: 'A02',
+                username: '@Nine',
+                foto: './assets/img/profile_2.png',
+                komentar: 'Menurutku ending di volume 1 ini agak lemah, banyak masalah yang belum kelar, yang menurutku bisa diberesin di volume ini sih.',
+                tanggal: 'kemarin',
+                cerita: 'Distant Journey'
+            },
+
+        },
+
+        
+    }));
+});
+
+function potong_komentar(komen){
+    if (komen.split(" ").length > 12) {
+        var mk = komen.split(" ").splice(0, 12).join(" ") + ' ....';
+        return komen = mk;
+    } else {
+        return komen = komen;
+
+    }
+}
 
 
 
@@ -245,26 +279,26 @@ ready(function () {
 
 
 
-    var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
-    Array.prototype.forEach.call(tombolBlurb, function (element) {
-        element.addEventListener('click', function () {
+    // var tombolBlurb = document.getElementsByClassName('tombol-blurb-pendek');
+    // Array.prototype.forEach.call(tombolBlurb, function (element) {
+    //     element.addEventListener('click', function () {
 
-            var blurbPendek = element.previousElementSibling;
-            var blurbPendekHidden = blurbPendek.previousElementSibling;
+    //         var blurbPendek = element.previousElementSibling;
+    //         var blurbPendekHidden = blurbPendek.previousElementSibling;
 
-            if (blurbPendekHidden.classList.contains('hidden')) {
-                blurbPendek.classList.add('hidden');
-                blurbPendekHidden.classList.remove('hidden');
-                element.innerText = 'Less';
-            } else {
-                blurbPendek.classList.remove('hidden');
-                blurbPendekHidden.classList.add('hidden');
-                element.innerText = 'More';
-            }
+    //         if (blurbPendekHidden.classList.contains('hidden')) {
+    //             blurbPendek.classList.add('hidden');
+    //             blurbPendekHidden.classList.remove('hidden');
+    //             element.innerText = 'Less';
+    //         } else {
+    //             blurbPendek.classList.remove('hidden');
+    //             blurbPendekHidden.classList.add('hidden');
+    //             element.innerText = 'More';
+    //         }
 
 
-        });
-    });
+    //     });
+    // });
 
 
 
