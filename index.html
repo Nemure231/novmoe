@@ -17,7 +17,7 @@
 </head>
 
 <body
-    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900 flex flex-col min-h-screen">
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider lg:bg-gray-200 md:bg-white sm:bg-white bg-white dark:bg-gray-900 flex flex-col min-h-screen">
 
 
     <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
@@ -768,10 +768,10 @@
 
             <div class="w-full md:mx-auto lg:mx-4 mx-auto md:w-full lg:w-2/3" x-data="cerita">
 
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+                <div class="swiper mySwiper ">
+                    <div class="swiper-wrapper ">
 
-                        <div class="swiper-slide">
+                        <div class="swiper-slide lg:px-0 md:px-0 sm:px-0 px-3">
                             <!-- HERO SATU -->
                             <div class="relative mb-8">
 
@@ -812,7 +812,7 @@
                             </div>
                             <!-- END HERO SATU -->
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide lg:px-0 md:px-0 sm:px-0 px-3">
                             <!-- HERO DUA-->
 
 
@@ -862,7 +862,7 @@
                             </div>
                             <!-- END HERO DUA-->
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide lg:px-0 md:px-0 sm:px-0 px-3">
                             <!-- HERO TIGA -->
 
                             <div class="relative mb-8">
@@ -921,8 +921,8 @@
 
                 <div id="tele-tags" class="tele-tags lg:hidden block"></div>
 
-                <div class="lg:block md:block hidden rounded-xl bg-white relative mb-12 px-3 lg:py-8 md:py-8 sm:py-8 
-                py-8 dark:bg-gray-800">
+                <div class="lg:block md:block hidden rounded-xl bg-white relative mb-6 px-3 lg:py-8 md:py-8 sm:py-8 
+                py-8 shadow-xl dark:bg-gray-800">
                     <div class="lg:block md:block hidden overflow-visible relative">
                         <select name="" id=""
                             x-on:change="open = $event.target.value, $refs.kategori_pertama.style.display = 'none'"
@@ -1278,9 +1278,10 @@
 
                 <!-- CERITA BARU TAMPILAN MOBILE -->
                 <div
-                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50">
                     <!-- BG IKON BARU TAMPILAN MOBILE -->
-                    <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
+                    <div class="absolute right-0 bottom-0 opacity-75" id="bg-default-kategori">
 
                         <div class="text-center">
                             <i class="fas text-indigo-500 fa-arrow-circle-up text-7xl">
@@ -1424,7 +1425,8 @@
 
                 <!-- PENULIS TAMPILAN MOBILE -->
                 <div x-data="penulis"
-                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50">
 
 
                     <!-- KONDISI BG IKON PENULIS -->
@@ -1641,7 +1643,8 @@
 
                 <!-- CERITA TRENDING TAMPILAN MOBILE -->
                 <div
-                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50">
                     <!-- BG IKON TRENDING TAMPILAN MOBILE -->
                     <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -1774,7 +1777,8 @@
 
                 <!-- CERITA POPULER TAMPILAN MOBILE -->
                 <div
-                    class="lg:hidden md:hidden block mt-6 w-full mx-auto mb-12 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800">
+                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50">
                     <!-- BG IKON POPULER TAMPILAN MOBILE -->
                     <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -1909,11 +1913,11 @@
             <div id="ukuran" class="md:w-full lg:w-1/3 hidden md:block mx-auto h-auto lg:block">
 
                 <!-- TAGS UKURAN KOMPUTER -->
-                <div class="bg-transparent rounded-xl relative h-auto mb-8" x-data="list_tags">
+                <div class="lg:block hidden bg-transparent rounded-xl relative h-auto mb-8" x-data="list_tags">
                     <div class="grid grid-cols-4 gap-1">
                         <template x-for="[id, value] in Object.entries(tags)" :key="id">
                             <a href="#" class="flex text-center text-sm font-medium text-white bg-indigo-500 rounded-3xl
-                                border-b-2 border-r-2 border-indigo-800 dark:bg-indigo-400 dark:border-indigo-900"
+                                border-b-2 border-r-2 border-indigo-800 shadow-xl dark:bg-indigo-400 dark:border-indigo-900"
                                 :class="lebar(value.nama)">
                                 <div class="bg-indigo-600 p-1 rounded-l-3xl dark:bg-indigo-500">
                                     #
@@ -1930,11 +1934,11 @@
                 <!-- END TAGS UKURAN KOMPUTER -->
                 <!-- TAGS UKURAN MOBILE DAN TABLET -->
                 <template x-teleport="#tele-tags">
-                    <div class="bg-transparent rounded-xl relative h-auto mb-8 md:px-0 sm:px-3 px-3" x-data="list_tags">
+                    <div class="bg-transparent rounded-xl relative h-auto mb-8 md:px-0 sm:px-0 px-3" x-data="list_tags">
                         <div class="grid md:grid-cols-8 sm:grid-cols-6 grid-cols-4 gap-1">
                             <template x-for="[id, value] in Object.entries(tags)" :key="id">
                                 <a href="#" class="flex text-center text-sm font-medium text-white bg-indigo-500 rounded-3xl
-                                border-b-2 border-r-2 border-indigo-800 dark:bg-indigo-400 dark:border-indigo-900"
+                                border-b-2 border-r-2 border-indigo-800 shadow-xl dark:bg-indigo-400 dark:border-indigo-900"
                                     :class="lebar(value.nama)">
                                     <div class="bg-indigo-600 p-1 rounded-l-3xl dark:bg-indigo-500">
                                         #
@@ -2108,10 +2112,15 @@
                 <div class="px-3 py-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl dark:bg-gray-800"
                     x-data="komentar_publik">
                     <div class="overflow-visible relative">
-                        <div
+                        <!-- <div
                             class=" -mt-12 ml-3 font-semibold flex text-sm items-center justify-center text-white w-auto 
                         bg-indigo-500 dark:bg-indigo-400 px-3 py-1 rounded-lg  absolute top-0 left-0 
-                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800">
+                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800"> -->
+
+                        <div  id=""
+                       
+                        class="-mt-12 text-sm font-bold flex  items-center justify-center text-white w-auto 
+                    bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
 
                             Komentar Publik
                         </div>
