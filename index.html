@@ -887,7 +887,7 @@
                                         </div>
 
 
-                                
+
                                     </div>
 
                                 </div>
@@ -1888,42 +1888,25 @@
             <div class="md:w-full lg:w-1/4 hidden md:block mx-auto h-auto lg:block">
 
 
-                <div class="bg-transparent rounded-xl relative h-auto mb-8 dark:bg-gray-800">
-                    <div class="grid grid-cols-3 gap-3">
-                        
-                        <a href="#" class="flex text-center text-sm font-medium text-white bg-indigo-500 rounded-3xl"
-                        :class="">
-                            <div class="bg-indigo-600 p-2 rounded-l-3xl">
-                                #
-                            </div>
-                            <div  class="px-2 py-1 items-center justify-center flex">Petualangan</div>
-                        </a>
-                        <a href="#" class="flex text-center  text-sm font-medium text-white bg-indigo-500 rounded-3xl">
-                            <div class="bg-indigo-600 p-2 rounded-l-3xl">
-                                #
-                            </div>
-                            <div class="px-2 py-1 items-center justify-center flex">Seni</div>
-                        </a>
-                        <a href="#" class="flex text-center  text-sm font-medium text-white bg-indigo-500 rounded-3xl">
-                            <div class="bg-indigo-600 p-2 rounded-l-3xl">
-                                #
-                            </div>
-                            <div class="px-2 py-1 items-center justify-center flex">Cinta</div>
-                        </a>
-                        <a href="#" class="flex text-center  text-sm font-medium text-white bg-indigo-500 rounded-3xl">
-                            <div class="bg-indigo-600 p-2 rounded-l-3xl">
-                                #
-                            </div>
-                            <div class="px-2 py-1 items-center justify-center flex">Geng</div>
-                        </a>
-                        <a href="#" class="flex text-center  text-sm font-medium text-white bg-indigo-500 rounded-3xl">
-                            <div class="bg-indigo-600 p-2 rounded-l-3xl">
-                                #
-                            </div>
-                            <div class="px-2 py-1 items-center justify-center flex">Bully</div>
-                        </a>
+                <div class="bg-transparent rounded-xl relative h-auto mb-8" x-data="list_tags">
+                    <div class="grid grid-cols-4 gap-1">
+                        <template x-for="[id, value] in Object.entries(tags)" :key="id">
+                            <a href="#"
+                                class="flex text-center text-sm font-medium text-white bg-indigo-500 rounded-3xl
+                                border-b-2 border-r-2 border-indigo-800 dark:bg-indigo-400 dark:border-indigo-900"
+                                :class="lebar(value.nama)">
+                                <div class="bg-indigo-600 p-1 rounded-l-3xl dark:bg-indigo-500">
+                                    #
+                                </div>
+                                <div :id="`tag_` + id" class="p-1 items-center justify-center flex"
+                                    x-text="value.nama">
+
+                                </div>
+                            </a>
+                        </template>
+
                     </div>
-                    
+
                 </div>
 
                 <div class="px-3 py-8 bg-white rounded-xl relative h-auto mb-8 shadow-2xl dark:bg-gray-800"
@@ -1974,20 +1957,21 @@
                             id="penulis-pertama" x-ref="penulis_pertama">
 
                             <template x-for="[id, value] in Object.entries(user)" :key="id">
-                        
-                                    <a href="" class="flex py-2 ">
-                                        <img :src="value.foto"
-                                            class="mr-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                                        <div class="item-center overflow-hidden">
-                                            <p class="font-bold dark:text-white">Karol. Y</p>
-                                            <p class="text-xs text-gray-500 truncate dark:text-gray-400 border-b border-indigo-500 border-opacity-50">
-                                                Haro haro, terima kasih sudah mampir!
-                                            </p>
 
-                                        </div>
+                                <a href="" class="flex py-2 ">
+                                    <img :src="value.foto"
+                                        class="mr-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                    <div class="item-center overflow-hidden">
+                                        <p class="font-bold dark:text-white">Karol. Y</p>
+                                        <p
+                                            class="text-xs text-gray-500 truncate dark:text-gray-400 border-b border-indigo-500 border-opacity-50">
+                                            Haro haro, terima kasih sudah mampir!
+                                        </p>
 
-                                    </a>
-                                
+                                    </div>
+
+                                </a>
+
                             </template>
 
 
@@ -2000,8 +1984,7 @@
                             x-transition:enter-end="transform opacity-100 scale-100"
                             x-transition:leave="transition ease-out duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
-                            class="grid grid-cols-1 " :class="
+                            x-transition:leave-end="transform opacity-0 scale-95" class="grid grid-cols-1 " :class="
                             [
                             open_penulis == true ? 'hidden' : '' ||
                                 open_penulis == 'naik_daun' ? 'block' : 'hidden' 
@@ -2010,22 +1993,23 @@
                         ">
 
 
-                        <template x-for="[id, value] in Object.entries(user)" :key="id">
-                            
+                            <template x-for="[id, value] in Object.entries(user)" :key="id">
+
                                 <a href="" class="flex py-2">
                                     <img :src="value.foto"
                                         class="mr-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
                                     <div class="item-center overflow-hidden">
                                         <p class="font-bold dark:text-white">Karol. Y</p>
-                                        <p class="text-xs text-gray-500 truncate dark:text-gray-400 border-b border-indigo-500 border-opacity-50">
+                                        <p
+                                            class="text-xs text-gray-500 truncate dark:text-gray-400 border-b border-indigo-500 border-opacity-50">
                                             Haro haro, terima kasih sudah mampir!
                                         </p>
 
                                     </div>
 
                                 </a>
-                            
-                        </template>
+
+                            </template>
 
                         </div>
                         <!-- END PENULIS NAIK DAUN -->
@@ -2036,30 +2020,31 @@
                             x-transition:enter-end="transform opacity-100 scale-100"
                             x-transition:leave="transition ease-out duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
-                            class="grid grid-cols-1" id="penulis-kedua" :class="
+                            x-transition:leave-end="transform opacity-0 scale-95" class="grid grid-cols-1"
+                            id="penulis-kedua" :class="
                             [
                                 open_penulis == true ? 'hidden' : '' ||
                                 open_penulis == 'populer' ? 'block' : 'hidden' 
                             ]
                         
                         ">
-                        <template x-for="[id, value] in Object.entries(user)" :key="id">
-                            
-                            <a href="" class="flex py-2">
-                                <img :src="value.foto"
-                                    class="mr-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
-                                <div class="item-center overflow-hidden">
-                                    <p class="font-bold dark:text-white">Karol. Y</p>
-                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400 border-b border-indigo-500 border-opacity-50">
-                                        Haro haro, terima kasih sudah mampir!
-                                    </p>
+                            <template x-for="[id, value] in Object.entries(user)" :key="id">
 
-                                </div>
+                                <a href="" class="flex py-2">
+                                    <img :src="value.foto"
+                                        class="mr-3 h-12 w-12 border-2 border-indigo-500 rounded-full" alt="">
+                                    <div class="item-center overflow-hidden">
+                                        <p class="font-bold dark:text-white">Karol. Y</p>
+                                        <p
+                                            class="text-xs text-gray-500 truncate dark:text-gray-400 border-b border-indigo-500 border-opacity-50">
+                                            Haro haro, terima kasih sudah mampir!
+                                        </p>
 
-                            </a>
-                        
-                    </template>
+                                    </div>
+
+                                </a>
+
+                            </template>
 
                         </div>
                         <!-- END PENULIS POPULER -->
@@ -2110,7 +2095,8 @@
                                     Berkomentar
                                     <div class="inline" x-text="value.tanggal"></div>
                                     di
-                                    <a href="#" class="font-semibold inline text-indigo-500 dark:text-indigo-400" x-text="value.cerita"></a>
+                                    <a href="#" class="font-semibold inline text-indigo-500 dark:text-indigo-400"
+                                        x-text="value.cerita"></a>
 
                                 </div>
                                 <div class="mb-3 mt-3 text-xs border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500"

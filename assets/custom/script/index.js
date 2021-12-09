@@ -163,6 +163,58 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('list_tags', () => ({
+        tags: {
+            1: {
+                id: 1,
+                nama: 'Petualangan'
+               
+            },
+            2: {
+                id: 2,
+                nama: 'Dunia Lain', 
+            },
+            3: {
+                id: 3,
+                nama: 'Cinta',
+            },
+            4: {
+                id: 4,
+                nama: 'Geng',
+            },
+            5: {
+                id: 5,
+                nama: 'Bully',
+            },
+            6: {
+                id: 6,
+                nama: 'Teman',
+            },
+            7: {
+                id: 7,
+                nama: 'Seni',
+            },
+            8: {
+                id: 8,
+                nama: 'Kekerasan',
+            },
+
+        },
+
+        lebar(tags){
+            if (tags.length > 6) {
+                return 'col-span-2';
+            }else{
+                return 'col-span-1';
+            }
+        }
+
+    
+    }));
+});
+
 function potong_komentar(komen){
     if (komen.split(" ").length > 12) {
         var mk = komen.split(" ").splice(0, 12).join(" ") + ' ....';
