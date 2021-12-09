@@ -469,7 +469,8 @@
                     <div class="ml-3 relative" x-data="{modal_auth: false}">
 
                         <!-- TOMBOL AUTH -->
-                        <button type="button" @click="modal_auth = !modal_auth"
+                        <button type="button" @click="modal_auth = !modal_auth; 
+                        $nextTick(() => { document.getElementById('surel-login').focus() })"
                             class="bg-white hover:bg-gray-200 text-indigo-500 font-bold  lg:p-2.5 md:p-2.5 sm:p-2 p-2 flex text-sm rounded-lg "
                             aria-expanded="false" aria-haspopup="true">
                             Login/Regist
@@ -524,24 +525,26 @@
                                                 <ul class="flex">
                                                     <li class="flex-1">
                                                         <a @click="auth_menu = true,
-                                $refs.login.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
-                                'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
-                                $refs.login.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
-                                $refs.regist.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
-                                $refs.regist.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
-                            " class="text-center block rounded-tl
-                             py-2 px-4 bg-indigo-500 font-semibold dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
+                                                            $refs.login.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                                                            'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                                            $refs.login.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
+                                                            $refs.regist.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                                            $refs.regist.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                                            $nextTick(() => { document.getElementById('surel-login').focus() })
+                                                        " class="text-center block rounded-tl
+                                                        py-2 px-4 bg-indigo-500 font-semibold dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
                                                             x-ref="login" href="#">Login</a>
                                                     </li>
                                                     <li class="flex-1">
                                                         <a @click="auth_menu = 'regist',
-                            $refs.login.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
-                            'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
-                            $refs.login.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
-                            $refs.regist.classList.remove('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
-                            $refs.regist.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500',)
-                            " class="text-center block rounded-tr
-                           text-indigo-500 font-semibold dark:text-white  hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
+                                                        $refs.login.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
+                                                        'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                                        $refs.login.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                                        $refs.regist.classList.remove('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
+                                                        $refs.regist.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
+                                                        $nextTick(() => { document.getElementById('surel-regist').focus() })
+                                                        " class="text-center block rounded-tr
+                                                    text-indigo-500 font-semibold dark:text-white  hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
                                                             x-ref="regist" href="#">Regist</a>
                                                     </li>
 
@@ -557,7 +560,7 @@
 
                                                     <div class="mt-3 sm:ml-4 text-left">
                                                         <label class="font-medium dark:text-white">Surel</label>
-                                                        <input type="text" class="block appearance-none border 
+                                                        <input id="surel-login" type="text" class="block appearance-none border 
                         border-indigo-400 rounded-md w-full sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                         focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                                                     </div>
@@ -608,7 +611,7 @@
                                                     <div class="sm:flex sm:mt-3">
                                                         <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
                                                             <label class="font-medium dark:text-white">Surel</label>
-                                                            <input type="text"
+                                                            <input id="surel-regist" type="text"
                                                                 class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
                             border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                             focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900 dark:placeholder-gray-400"
@@ -683,11 +686,6 @@
                                 </div>
                             </div>
                         </template>
-
-
-
-
-
 
                     </div>
                     <!-- END NAVBAR AUTH -->
