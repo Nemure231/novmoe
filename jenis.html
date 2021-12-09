@@ -1024,9 +1024,9 @@
         " @click.away="menu_mobile = false">
             <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
                 class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
-                x-transition:enter="transition ease-out duration-200 "
-                x-transition:enter-start="transform opacity-0 -tranlate-y-0"
-                x-transition:enter-end="transform opacity-100  translate-y-0">
+                
+                x-collapse.duration.500ms
+                >
 
                 <div class="pb-9" x-data="{buku: true}">
 
@@ -1132,9 +1132,7 @@
 
             <div x-show="menu_mobile == 'pengaturan'"
                 class="-mb-3  p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
-                x-transition:enter="transition ease-out duration-200 "
-                x-transition:enter-start="transform opacity-0 -tranlate-y-0"
-                x-transition:enter-end="transform opacity-100  translate-y-0">
+                x-collapse.duration.500ms>
 
                 <div class="pb-9">
                     <div class="text-center grid grid-cols-1 grid-flow-row auto-rows-auto gap-4 text-sm">
@@ -1328,6 +1326,7 @@
 
 
 </body>
+<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 <script defer src="./assets/base/alpine/alpine.min.js"></script>
 
 <script src="./assets/custom/script/jenis.js"></script>

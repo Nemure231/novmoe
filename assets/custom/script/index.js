@@ -1,5 +1,5 @@
 
- 
+
 
 // Event dropdown profil
 const dropdownProfil = document.getElementById('dropdown-profil');
@@ -92,7 +92,7 @@ document.addEventListener('alpine:init', () => {
                         akan peperangan membuatnya lari dari garis depan demi menepati janji
                         adiknya--Namesa--untuk tetap hidup.`,
             },
-           
+
         }
 
     }));
@@ -125,9 +125,9 @@ document.addEventListener('alpine:init', () => {
                 foto: './assets/img/profile_me.png',
                 status: 'Haro haro, terima kasih sudah mampir!',
             },
-           
-           
-           
+
+
+
         }
 
     }));
@@ -159,7 +159,7 @@ document.addEventListener('alpine:init', () => {
 
         },
 
-        
+
     }));
 });
 
@@ -170,11 +170,11 @@ document.addEventListener('alpine:init', () => {
             1: {
                 id: 1,
                 nama: 'Petualangan'
-               
+
             },
             2: {
                 id: 2,
-                nama: 'Dunia Lain', 
+                nama: 'Dunia Lain',
             },
             3: {
                 id: 3,
@@ -203,19 +203,41 @@ document.addEventListener('alpine:init', () => {
 
         },
 
-        lebar(tags){
+        lebar(tags) {
             if (tags.length > 6) {
                 return 'col-span-2';
-            }else{
+            } else {
                 return 'col-span-1';
             }
         }
 
-    
+
     }));
 });
 
-function potong_komentar(komen){
+
+
+
+// document.addEventListener('alpine:init', () => {
+//     Alpine.data('teleport_tags', () => ({
+//         open: true,
+
+//         ukuran() {
+
+//             var uk = document.getElementById('ukuran');
+//             if (uk.classList.contains('open_tele_tags')) {
+//                 return 'open';
+//             } else {
+//                 return '';
+//             }
+//         }
+
+
+//     }));
+// });
+
+
+function potong_komentar(komen) {
     if (komen.split(" ").length > 12) {
         var mk = komen.split(" ").splice(0, 12).join(" ") + ' ....';
         return komen = mk;
@@ -241,67 +263,88 @@ function ready(fn) {
 
 ready(function () {
 
+    // const mediaQueryMd = window.matchMedia('(min-width: 768px)');
+    // const cls = document.getElementById('ukuran');
+
+
+    // function reportWindowSize() {
+    //     if (mediaQueryMd.matches) {
+    //         // if (cls.classList.contains('open_tele_tags')) {
+    //         cls.classList.add('open_tele_tags');
+
+    //         // }else{
+    //         // }
+    //     } else {
+
+    //         cls.classList.remove('open_tele_tags');
+    //     }
+    // }
+
+    // window.addEventListener('resize', reportWindowSize);
+
+
+
 
     var grabScroll = document.getElementsByClassName('grab-scroll');
     Array.prototype.forEach.call(grabScroll, function (element) {
 
-        let isDown = false; 
+        let isDown = false;
         let startX;
         let scrollLeft;
-        
+
         element.addEventListener('mousedown', (e) => {
-          isDown = true;
-          element.classList.add('active');
-          startX = e.pageX - element.offsetLeft;
-          scrollLeft = element.scrollLeft;
+            isDown = true;
+            element.classList.add('active');
+            startX = e.pageX - element.offsetLeft;
+            scrollLeft = element.scrollLeft;
         });
         element.addEventListener('mouseleave', () => {
-          isDown = false;
-          element.classList.remove('active');
+            isDown = false;
+            element.classList.remove('active');
         });
         element.addEventListener('mouseup', () => {
-          isDown = false;
-          element.classList.remove('active');
+            isDown = false;
+            element.classList.remove('active');
         });
         element.addEventListener('mousemove', (e) => {
-          if(!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - element.offsetLeft;
-          const walk = (x - startX) * 3; //scroll-fast
-          element.scrollLeft = scrollLeft - walk;
-          console.log(walk);
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - element.offsetLeft;
+            const walk = (x - startX) * 3; //scroll-fast
+            element.scrollLeft = scrollLeft - walk;
+            console.log(walk);
         });
     });
 
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 20,
         pagination: {
-          el: ".swiper-pagination",
-          clickable: true
+            el: ".swiper-pagination",
+            clickable: true
         },
         autoplay: {
             delay: 3500,
             disableOnInteraction: false,
-          },
-      });
+        },
+    });
 
-  
+
 
     // var swiper_mobile= new Swiper(".myswiper-mobile", {
     //     slidesPerView: 3,
     //     spaceBetween: 147,
     //     freeMode: true,
     //     loop: true,
-        
+
 
     // });
-   
-    
+
+
     // var swiper_penulis = new Swiper(".myswiper-penulis-mobile", {
     //     slidesPerView: 3,
     //     loop: true,
     //     freeMode: true,
-    
+
     // });
 
     window.onload = (event) => {
