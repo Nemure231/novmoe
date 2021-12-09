@@ -16,8 +16,8 @@
 
 </head>
 
-<body
-    class="font-sans antialiased text-gray-900 leading-normal tracking-wider lg:bg-gray-200 md:bg-white sm:bg-white bg-white dark:bg-gray-900 flex flex-col min-h-screen">
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider lg:bg-gray-200 md:bg-white sm:bg-white bg-white 
+    lg:dark:bg-gray-900 md:dark:bg-gray-800 sm:dark:bg-gray-800 dark:bg-gray-800 flex flex-col min-h-screen">
 
 
     <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
@@ -1277,9 +1277,8 @@
 
 
                 <!-- CERITA BARU TAMPILAN MOBILE -->
-                <div
-                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
-                    border border-gray-300 border-opacity-50">
+                <div class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 pt-8 pb-2  rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50 dark:border-gray-900">
                     <!-- BG IKON BARU TAMPILAN MOBILE -->
                     <div class="absolute right-0 bottom-0 opacity-75" id="bg-default-kategori">
 
@@ -1424,9 +1423,8 @@
 
 
                 <!-- PENULIS TAMPILAN MOBILE -->
-                <div x-data="penulis"
-                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
-                    border border-gray-300 border-opacity-50">
+                <div x-data="penulis" class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 pt-8 pb-2   rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50 dark:border-gray-900">
 
 
                     <!-- KONDISI BG IKON PENULIS -->
@@ -1490,9 +1488,11 @@
                                                 class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
                                         </div>
                                         <div class="text-center mb-2">
-                                            <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
+                                            <a href="./profil.html" class="font-bold text-sm dark:text-white truncate"
+                                                x-text="value.nama">
 
-                                            </p>
+                                            </a>
+
 
                                         </div>
 
@@ -1537,9 +1537,10 @@
                                                 class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
                                         </div>
                                         <div class="text-center mb-2">
-                                            <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
+                                            <a href="./profil.html" class="font-bold text-sm dark:text-white truncate"
+                                                x-text="value.nama">
 
-                                            </p>
+                                            </a>
 
                                         </div>
 
@@ -1582,9 +1583,10 @@
                                                 class="mx-3 h-20 w-20 border-2 border-indigo-500 rounded-full" alt="">
                                         </div>
                                         <div class="text-center mb-2">
-                                            <p class="font-bold text-sm dark:text-white truncate" x-text="value.nama">
+                                            <a href="./profil.html" class="font-bold text-sm dark:text-white truncate"
+                                                x-text="value.nama">
 
-                                            </p>
+                                            </a>
 
                                         </div>
 
@@ -1642,9 +1644,8 @@
 
 
                 <!-- CERITA TRENDING TAMPILAN MOBILE -->
-                <div
-                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
-                    border border-gray-300 border-opacity-50">
+                <div class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 pt-8 pb-2   rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50 dark:border-gray-900">
                     <!-- BG IKON TRENDING TAMPILAN MOBILE -->
                     <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -1776,9 +1777,8 @@
 
 
                 <!-- CERITA POPULER TAMPILAN MOBILE -->
-                <div
-                    class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 py-8  rounded-xl bg-white relative dark:bg-gray-800 
-                    border border-gray-300 border-opacity-50">
+                <div class="lg:hidden md:hidden block w-full mx-auto mb-6 lg:p-8 md:p-8 pt-8 pb-2 rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50 dark:border-gray-900">
                     <!-- BG IKON POPULER TAMPILAN MOBILE -->
                     <div class="absolute right-0 bottom-0 opacity-50" id="bg-default-kategori">
 
@@ -1903,6 +1903,11 @@
                 </div>
                 <!-- END CERITA POPULER TAMPILAN MOBILE -->
 
+                <div id="tele-komen-publik">
+
+                </div>
+                <!-- <div id="tele-komen-publik" class="lg:hidden md:hidden block"></div> -->
+
             </div>
 
 
@@ -1917,9 +1922,9 @@
                     <div class="grid grid-cols-4 gap-1">
                         <template x-for="[id, value] in Object.entries(tags)" :key="id">
                             <a href="./jenis.html" class="flex text-center text-sm font-medium text-white bg-indigo-500 rounded-3xl
-                                border-b-2 border-r-2 border-indigo-800 shadow-xl dark:bg-indigo-400 dark:border-indigo-900"
-                                :class="lebar(value.nama)">
-                                <div class="bg-indigo-600 p-1 rounded-l-3xl dark:bg-indigo-500">
+                                border-b-2 border-r-2 border-indigo-800 shadow-xl hover:bg-indigo-700 dark:hover:bg-indigo-500
+                                dark:bg-indigo-400 dark:border-indigo-900" :class="lebar(value.nama)">
+                                <div class="bg-indigo-700 p-1 rounded-l-3xl dark:bg-indigo-500">
                                     #
                                 </div>
                                 <div :id="`tag_` + id" class="p-1 items-center justify-center flex" x-text="value.nama">
@@ -1938,9 +1943,9 @@
                         <div class="grid md:grid-cols-8 sm:grid-cols-6 grid-cols-4 gap-1">
                             <template x-for="[id, value] in Object.entries(tags)" :key="id">
                                 <a href="./jenis.html" class="flex text-center text-sm font-medium text-white bg-indigo-500 rounded-3xl
-                                border-b-2 border-r-2 border-indigo-800 shadow-xl dark:bg-indigo-400 dark:border-indigo-900"
-                                    :class="lebar(value.nama)">
-                                    <div class="bg-indigo-600 p-1 rounded-l-3xl dark:bg-indigo-500">
+                                border-b-2 border-r-2 border-indigo-800 shadow-xl hover:bg-indigo-700 dark:hover:bg-indigo-500
+                                dark:bg-indigo-400 dark:border-indigo-900" :class="lebar(value.nama)">
+                                    <div class="bg-indigo-700 p-1 rounded-l-3xl dark:bg-indigo-500">
                                         #
                                     </div>
                                     <div :id="`tag_` + id" class="p-1 items-center justify-center flex"
@@ -2008,11 +2013,14 @@
 
                             <template x-for="[id, value] in Object.entries(user)" :key="id">
 
-                                <a href="" class="flex py-2 ">
+                                <div class="flex py-2 ">
                                     <img :src="value.foto"
                                         class="mr-3 h-11 w-11 border-2 border-indigo-500 rounded-full" alt="">
                                     <div class="item-center overflow-hidden w-full">
-                                        <p class="font-bold dark:text-white" x-text="value.nama"></p>
+                                        <a href="./profil.html" class="font-medium dark:text-white"
+                                            x-text="value.nama"></a>
+                                        <div class="inline text-xs text-gray-500 dark:text-gray-400 "
+                                            x-text="`(`+value.username+`)`"></div>
                                         <p x-text="value.status"
                                             class="text-xs text-gray-600 truncate dark:text-gray-200 border-b border-indigo-500 border-opacity-50 dark:border-gray-500">
 
@@ -2020,7 +2028,7 @@
 
                                     </div>
 
-                                </a>
+                                </div>
 
                             </template>
 
@@ -2045,11 +2053,14 @@
 
                             <template x-for="[id, value] in Object.entries(user)" :key="id">
 
-                                <a href="" class="flex py-2 ">
+                                <div class="flex py-2 ">
                                     <img :src="value.foto"
                                         class="mr-3 h-11 w-11 border-2 border-indigo-500 rounded-full" alt="">
                                     <div class="item-center overflow-hidden w-full">
-                                        <p class="font-bold dark:text-white" x-text="value.nama"></p>
+                                        <a href="./profil.html" class="font-medium dark:text-white"
+                                            x-text="value.nama"></a>
+                                        <div class="inline text-xs text-gray-500 dark:text-gray-400 "
+                                            x-text="`(`+value.username+`)`"></div>
                                         <p x-text="value.status"
                                             class="text-xs text-gray-600 truncate dark:text-gray-200 border-b border-indigo-500 border-opacity-50 dark:border-gray-500">
 
@@ -2057,8 +2068,7 @@
 
                                     </div>
 
-                                </a>
-
+                                </div>
                             </template>
 
                         </div>
@@ -2080,11 +2090,14 @@
                         ">
                             <template x-for="[id, value] in Object.entries(user)" :key="id">
 
-                                <a href="" class="flex py-2 ">
+                                <div class="flex py-2 ">
                                     <img :src="value.foto"
                                         class="mr-3 h-11 w-11 border-2 border-indigo-500 rounded-full" alt="">
                                     <div class="item-center overflow-hidden w-full">
-                                        <p class="font-bold dark:text-white" x-text="value.nama"></p>
+                                        <a href="./profil.html" class="font-medium dark:text-white"
+                                            x-text="value.nama"></a>
+                                        <div class="inline text-xs text-gray-500 dark:text-gray-400 "
+                                            x-text="`(`+value.username+`)`"></div>
                                         <p x-text="value.status"
                                             class="text-xs text-gray-600 truncate dark:text-gray-200 border-b border-indigo-500 border-opacity-50 dark:border-gray-500">
 
@@ -2092,7 +2105,7 @@
 
                                     </div>
 
-                                </a>
+                                </div>
 
                             </template>
 
@@ -2107,19 +2120,14 @@
 
 
 
-                <!-- KOMENTAR PUBLIK -->
+                <!-- KOMENTAR PUBLIK TAMPILAN KOMPUTER DAN TABLET-->
 
                 <div class="px-3 py-8 bg-white rounded-xl relative h-auto mb-12 shadow-2xl dark:bg-gray-800"
                     x-data="komentar_publik">
                     <div class="overflow-visible relative">
-                        <!-- <div
-                            class=" -mt-12 ml-3 font-semibold flex text-sm items-center justify-center text-white w-auto 
-                        bg-indigo-500 dark:bg-indigo-400 px-3 py-1 rounded-lg  absolute top-0 left-0 
-                        border-t-2 border-l-2 border-r-2 border-white shadow-xl dark:bg-indigo-400 dark:border-gray-800"> -->
 
-                        <div  id=""
-                       
-                        class="-mt-12 text-sm font-bold flex  items-center justify-center text-white w-auto 
+
+                        <div class="-mt-12 text-sm font-bold flex  items-center justify-center text-white w-auto 
                     bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
 
                             Komentar Publik
@@ -2138,7 +2146,7 @@
                             <!-- TEKS KOMENTAR PUBLIK -->
                             <div class="ml-3 flex-grow" :id="value.balas_komen">
 
-                                <div class="font-medium text-sm inline dark:text-white" x-text="value.nama">
+                                <div class="font-medium inline dark:text-white" x-text="value.nama">
 
                                 </div>
                                 <div class="inline text-xs text-gray-500 dark:text-gray-400 "
@@ -2166,14 +2174,72 @@
 
                         </div>
                     </template>
-
-
-
-
                 </div>
+                <!-- END KOMENTAR PUBLIK TAMPILAN KOMPUTER DAN TABLET -->
+
+                <!-- KOMENTAR PUBLIK TAMPILAN MOBILE-->
+                <template x-teleport="#tele-komen-publik">
 
 
-                <!-- END KOMENTAR PUBLIK -->
+                    <div class="lg:hidden md:hidden block w-full mx-auto mb-12 px-3 pt-8 pb-2 rounded-xl bg-white relative dark:bg-gray-800 
+                    border border-gray-300 border-opacity-50 dark:border-gray-900"
+                        x-data="komentar_publik">
+                        <div class="overflow-visible relative">
+
+
+                            <div class="-mt-12 text-sm font-bold flex  items-center justify-center text-white w-auto 
+                                    bg-indigo-500 dark:bg-indigo-400 p-2 rounded-lg  absolute top-0 left-0  shadow-xl ">
+
+                                Komentar Publik
+                            </div>
+                        </div>
+
+                        <template x-for="[id, value] in Object.entries(komen_publik)" :key="id">
+                            <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
+                                <!-- PROFIL KOMENTER PUBLIK TAMPILAN MOBILE-->
+                                <div class="flex-shrink-0">
+                                    <img class="mb-3  lg:h-11 lg:w-11 md:w-11 md:h-11 sm:w-10 sm:h-10 w-10 h-10 rounded-full border-2 border-indigo-500"
+                                        :src="value.foto" alt="Foto">
+
+                                </div>
+                                <!-- END PROFIL KOMENTAR PUBLIK TAMPILAN MOBILE-->
+                                <!-- TEKS KOMENTAR PUBLIK TAMPILAN MOBILE-->
+                                <div class="ml-3 flex-grow" :id="value.balas_komen">
+
+                                    <div class="font-medium inline dark:text-white" x-text="value.nama">
+
+                                    </div>
+                                    <div class="inline text-xs text-gray-500 dark:text-gray-400 "
+                                        x-text="`(`+value.username+`)`"></div>
+
+
+
+                                    <div class="text-gray-500 dark:text-gray-300 text-xs">
+                                        Berkomentar
+                                        <div class="inline" x-text="value.tanggal"></div>
+                                        di
+                                        <a href="#" class="font-semibold inline text-indigo-500 dark:text-indigo-400"
+                                            x-text="value.cerita"></a>
+
+                                    </div>
+                                    <div class="mb-3 mt-3 text-xs text-gray-600 dark:text-gray-200 border-b border-indigo-500 border-opacity-75 dark:text-white dark:border-gray-500"
+                                        x-text="
+                                potong_komentar(value.komentar)
+                                ">
+                                    </div>
+
+
+                                </div>
+                                <!-- END TEKS KOMENTAR PUBLIK TAMPILAN MOBILE -->
+
+                            </div>
+                        </template>
+                    </div>
+
+
+                </template>
+                <!-- END KOMENTAR PUBLIK TAMPILAN MOBILE -->
+
 
             </div>
 
@@ -2228,22 +2294,22 @@
                             x-transition:leave-end="transform opacity-0 -translate-x-7">
 
 
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Fantasy</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Sci-Fi</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Comedy</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Romance</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Supernatural</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Action</a>
                             </div>
                         </div>
@@ -2260,19 +2326,19 @@
                             buku == true ? 'hidden' : '' ||
                             buku == 'kategori' ? 'block' : 'hidden' 
                         ]" class="text-center mt-6 grid grid-cols-3 grid-flow-row auto-rows-auto gap-4 text-sm">
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Berlangsung</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Tamat</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Populer</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Trending</a>
                             </div>
-                            <div><a href="#"
+                            <div><a href="./jenis.html"
                                     class="block p-1 border-2 rounded-xl border-indigo-500 bg-white hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white dark:bg-transparent dark:text-white dark:hover:bg-indigo-400 dark:focus:bg-indigo-500 dark:border-indigo-400">Terbaru</a>
                             </div>
                         </div>
