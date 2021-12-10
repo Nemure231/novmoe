@@ -479,7 +479,7 @@
                         <!-- END TOMBOL AUTH -->
 
 
-                        <!-- MODAL LOGIN  -->
+                        <!-- MODAL AUTH  -->
                         <template x-teleport="body">
                             <div x-show="modal_auth" class="fixed z-10 inset-0 overflow-y-auto"
                                 aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -494,7 +494,6 @@
                                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                                         aria-hidden="true"></div>
 
-                                    <!-- This element is to trick the browser into centering the modal contents. -->
                                     <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
                                         aria-hidden="true">&#8203;</span>
 
@@ -510,6 +509,7 @@
                                         <div x-data="{auth_menu : true}">
 
                                             <div class="dark:bg-gray-800 rounded">
+                                                <!-- TOMBOL TUTUP MODAL AUTH -->
                                                 <div class="relative">
                                                     <div class="absolute -right-4 top-0">
                                                         <button type="button"
@@ -522,7 +522,9 @@
                                                     </div>
 
                                                 </div>
+                                                <!-- END TOMBOL TUTUP MODAL AUTH -->
                                                 <ul class="flex">
+                                                    <!-- TOMBOL TAB LOGIN-->
                                                     <li class="flex-1">
                                                         <a @click="auth_menu = true,
                                                             $refs.login.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
@@ -535,6 +537,8 @@
                                                         py-2 px-4 bg-indigo-500 font-semibold dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
                                                             x-ref="login" href="#">Login</a>
                                                     </li>
+                                                    <!-- END TOMBOL TAB LOGIN -->
+                                                    <!-- TOMBOL TAB REGIST -->
                                                     <li class="flex-1">
                                                         <a @click="auth_menu = 'regist',
                                                         $refs.login.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
@@ -547,23 +551,26 @@
                                                     text-indigo-500 font-semibold dark:text-white  hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
                                                             x-ref="regist" href="#">Regist</a>
                                                     </li>
+                                                    <!-- END TOMBOL TAB REGIST -->
 
                                                 </ul>
                                             </div>
 
-
+                                            <!-- TAB LOGIN -->
                                             <div x-show="auth_menu == true">
 
                                                 <div class="pt-5 pb-4 p-6 sm:pb-4">
-
-
-
+                                                    <!-- SUREL LOGIN -->
                                                     <div class="mt-3 sm:ml-4 text-left">
                                                         <label class="font-medium dark:text-white">Surel</label>
-                                                        <input id="surel-login" type="text" class="block appearance-none border 
-                        border-indigo-400 rounded-md w-full sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                        focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                                                        <input id="surel-login" type="text"
+                                                            @keyup.enter="$nextTick(() => { document.getElementById('sandi-login').focus() })"
+                                                            class="block appearance-none border border-indigo-400 rounded-md w-full sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                                        focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                                                     </div>
+                                                    <!-- END SUREL LOGIN -->
+
+                                                    <!-- SANDI LOGIN -->
                                                     <div class="relative mt-3 sm:ml-4 text-left"
                                                         x-data="{lihat_sandi: false}">
                                                         <label class="font-medium dark:text-white">Sandi</label>
@@ -575,15 +582,19 @@
                                                                     :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
                                                             </button>
                                                         </span>
-                                                        <input :type="lihat_sandi ? 'text' : 'password'"
+                                                        <input id="sandi-login"
+                                                            :type="lihat_sandi ? 'text' : 'password'"
+                                                            @keyup.enter="$nextTick(() => { document.getElementById('tombol-login').focus() })"
                                                             class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                            border-indigo-400 rounded-md w-full sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                                                            border-indigo-400 rounded-md w-full sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
+                                                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
                                                     </div>
+                                                    <!-- END SANDI LOGIN -->
 
                                                 </div>
                                                 <div
                                                     class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
+                                                    <!-- TOMBOL LUPA SANDI LOGIN -->
                                                     <div
                                                         class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
                                                         <label class="inline-flex items-center mt-3">
@@ -592,158 +603,200 @@
                                                                 sandi?</a>
                                                         </label>
                                                     </div>
-                                                    <button type="button" class="justify-center rounded-md border border-transparent shadow-sm px-3 py-2 
+                                                    <!-- END TOMBOL LUPA SANDI LOGIN -->
+
+                                                    <!-- TOMBOL LOGIN -->
+                                                    <button id="tombol-login" type="button" class="justify-center rounded-md border border-transparent shadow-sm px-3 py-2 
                             bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none 
                             focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                             dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
                                                         Login
                                                     </button>
+                                                    <!-- END TOMBOL LOGIN -->
 
                                                 </div>
 
                                             </div>
-
+                                            <!-- END TAB LOGIN -->
+                                            <!-- TAB REGIST -->
                                             <div x-show="auth_menu == 'regist'">
+                                               
+                                                <div x-data="{ketentuan: false}">
+                                                     <!-- TAB KETENTUAN -->
+                                                    <div x-show="ketentuan"
+                                                        class="pt-3 pb-4 p-6 bg-white w-full h-full dark:bg-gray-800">
+                                                        <div class="overflow-y-auto h-80">
+                                                            <div
+                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
+                                                                Contoh 1</div>
+                                                            <p class="p-1 dark:text-gray-200 ">
 
-                                                <div x-data="{ketentuan: false}"> 
-                                                <div x-show="ketentuan" class="pt-3 pb-4 p-6 bg-white w-full h-full" >
-                                                    <div class="overflow-y-auto h-80">
-                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 1</div>
-                                                        <p class="p-1">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                                Consequuntur nostrum dignissimos explicabo numquam
+                                                                officia
+                                                                ullam nobis tempore placeat sequi repellat laboriosam
+                                                                ipsa
+                                                                ut quis quo deleniti, error quod id modi.
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                            </p>
+                                                            <div
+                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
+                                                                Contoh 2</div>
+                                                            <p class="p-1 dark:text-gray-200 ">
 
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                            Consequuntur nostrum dignissimos explicabo numquam officia
-                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
-                                                            ut quis quo deleniti, error quod id modi.
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        </p>
-                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 2</div>
-                                                        <p class="p-1">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                                Consequuntur nostrum dignissimos explicabo numquam
+                                                                officia
+                                                                ullam nobis tempore placeat sequi repellat laboriosam
+                                                                ipsa
+                                                                ut quis quo deleniti, error quod id modi.
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                            </p>
+                                                            <div
+                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
+                                                                Contoh 3</div>
+                                                            <p class="p-1 dark:text-gray-200 ">
 
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                            Consequuntur nostrum dignissimos explicabo numquam officia
-                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
-                                                            ut quis quo deleniti, error quod id modi.
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        </p>
-                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 3</div>
-                                                        <p class="p-1">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                                Consequuntur nostrum dignissimos explicabo numquam
+                                                                officia
+                                                                ullam nobis tempore placeat sequi repellat laboriosam
+                                                                ipsa
+                                                                ut quis quo deleniti, error quod id modi.
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                            </p>
+                                                            <div
+                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
+                                                                Contoh 4</div>
+                                                            <p class="p-1 dark:text-gray-200 ">
 
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                            Consequuntur nostrum dignissimos explicabo numquam officia
-                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
-                                                            ut quis quo deleniti, error quod id modi.
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        </p>
-                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 4</div>
-                                                        <p class="p-1">
-
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                            Consequuntur nostrum dignissimos explicabo numquam officia
-                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
-                                                            ut quis quo deleniti, error quod id modi.
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        </p>
-                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 5</div>
-                                                        <p class="p-1">
-
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                            Consequuntur nostrum dignissimos explicabo numquam officia
-                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
-                                                            ut quis quo deleniti, error quod id modi.
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        </p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                                Consequuntur nostrum dignissimos explicabo numquam
+                                                                officia
+                                                                ullam nobis tempore placeat sequi repellat laboriosam
+                                                                ipsa
+                                                                ut quis quo deleniti, error quod id modi.
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit.
+                                                            </p>
+                                                            
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                    <!-- END TAB KETENTUAN -->
 
 
 
-                                                <div x-ref="hidden_regist" class="pt-3 pb-4 p-6">
-                                                    <div class="sm:flex sm:mt-3">
-
-                                                        <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
-                                                            <label class="font-medium dark:text-white">Surel</label>
-                                                            <input id="surel-regist" type="text"
-                                                                class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
+                                                    <div x-ref="hidden_regist" class="pt-3 pb-4 p-6">
+                                                        <div class="sm:flex sm:mt-3">
+                                                            <!-- SUREL REGIST -->
+                                                            <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
+                                                                <label class="font-medium dark:text-white">Surel</label>
+                                                                <input id="surel-regist" type="text"
+                                                                    @keyup.enter="$nextTick(() => { document.getElementById('username-regist').focus() })"
+                                                                    class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
                             border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                             focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900 dark:placeholder-gray-400"
-                                                                placeholder="angelica@example.com">
-                                                        </div>
+                                                                    placeholder="angelica@example.com">
+                                                            </div>
+                                                            <!-- END SUREL REGIST -->
 
-                                                        <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
-                                                            <label class="font-medium dark:text-white">Username</label>
-                                                            <input type="text"
-                                                                class=" block appearance-none placeholder-gray-500 border 
+                                                            <!-- USERNAME REGIST -->
+                                                            <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
+                                                                <label
+                                                                    class="font-medium dark:text-white">Username</label>
+                                                                <input id="username-regist" type="text"
+                                                                    @keyup.enter="$nextTick(() => { document.getElementById('sandi-regist').focus() })"
+                                                                    class=" block appearance-none placeholder-gray-500 border 
                             border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                             focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                                                            </div>
+                                                            <!-- END USERNAME REGIST -->
+
                                                         </div>
 
-                                                    </div>
-
-
-                                                    <div class="relative mt-3 sm:ml-3 text-left"
-                                                        x-data="{lihat_sandi: false}">
-                                                        <label class="font-medium dark:text-white">Sandi</label>
-                                                        <span
-                                                            class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
-                                                            <button @click="lihat_sandi = !lihat_sandi"
-                                                                class="p-1 focus:outline-none focus:shadow-outline">
-                                                                <i class="text-xl  dark:text-white"
-                                                                    :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
-                                                            </button>
-                                                        </span>
-                                                        <input :type="lihat_sandi ? 'text' : 'password'"
-                                                            class="block appearance-none border 
+                                                        <!-- SANDI REGIST -->
+                                                        <div class="relative mt-3 sm:ml-3 text-left"
+                                                            x-data="{lihat_sandi: false}">
+                                                            <label class="font-medium dark:text-white">Sandi</label>
+                                                            <span
+                                                                class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
+                                                                <button @click="lihat_sandi = !lihat_sandi"
+                                                                    class="p-1 focus:outline-none focus:shadow-outline">
+                                                                    <i class="text-xl  dark:text-white"
+                                                                        :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+                                                                </button>
+                                                            </span>
+                                                            <input :type="lihat_sandi ? 'text' : 'password'"
+                                                                id="sandi-regist"
+                                                                @keyup.enter="$nextTick(() => { document.getElementById('ketentuan-regist').focus() })"
+                                                                class="block appearance-none border 
                             border-indigo-400 rounded-md w-full  sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
                             focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                                                        </div>
+                                                        <!-- END SANDI REGIST -->
+
                                                     </div>
-
-                                                </div>
-                                                <div
-                                                    class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
-
                                                     <div
-                                                        class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
-                                                        <label class="inline-flex items-center mt-3">
-                                                            <input type="checkbox"
-                                                                class="form-checkbox h-5 w-5 text-indigo-500">
-                                                            <a href="javascript:void(0)" @click="ketentuan =! ketentuan; 
+                                                        class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
+
+                                                        <!-- TOMBOL SYARAT DAN KETENTUAN REGIST -->
+                                                        <div
+                                                            class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
+                                                            <label class="inline-flex items-center mt-3">
+                                                                <input type="checkbox" id="ketentuan-regist"
+                                                                    @keyup.enter="$nextTick(() => { document.getElementById('tombol-regist').focus() });
+                                                            $el.checked = true;"
+                                                                    class="form-checkbox h-5 w-5 text-indigo-500">
+                                                                <a href="javascript:void(0)"
+                                                                    @click="ketentuan =! ketentuan; 
                                                             
                                                                 $refs.hidden_regist.classList.contains('hidden') ? $refs.hidden_regist.classList.remove('hidden') : $refs.hidden_regist.classList.add('hidden');
                                                                 $refs.hidden_tombol_regist.classList.contains('hidden') ? $refs.hidden_tombol_regist.classList.remove('hidden') : $refs.hidden_tombol_regist.classList.add('hidden');
                                                                 $refs.hidden_tombol_kembali.classList.contains('hidden') ? $refs.hidden_tombol_kembali.classList.remove('hidden') : $refs.hidden_tombol_kembali.classList.add('hidden');"
-                                                                class="ml-2 sm:text-sm text-xs text-indigo-500 dark:font-semibold">Syarat
-                                                                dan
-                                                                Ketentuan.</a>
-                                                        </label>
-                                                    </div>
+                                                                    class="ml-2 sm:text-sm text-xs text-indigo-500 dark:font-semibold">Syarat
+                                                                    dan
+                                                                    Ketentuan.</a>
+                                                            </label>
+                                                        </div>
+                                                        <!-- TOMBOL SYARAT DAN KETENTUAN REGIST -->
 
 
-
-                                                    <button x-ref="hidden_tombol_regist" type="button" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
+                                                        <!-- TOMBOL REGIST -->
+                                                        <button id="tombol-regist" x-ref="hidden_tombol_regist"
+                                                            type="button"
+                                                            class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
                                                         bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
                                                         focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                                                         dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
-                                                        Regist
-                                                    </button>
+                                                            Regist
+                                                        </button>
+                                                        <!-- END TOMBOL REGIST -->
 
-                                                    <button x-ref="hidden_tombol_kembali" type="button" 
-                                                    @click="ketentuan = false;
+                                                        <!-- TOMBOL KEMBALI SYARAT DAN KETENTUAN REGIST -->
+                                                        <button x-ref="hidden_tombol_kembali" type="button" @click="ketentuan = false;
                                                     $refs.hidden_regist.classList.contains('hidden') ? $refs.hidden_regist.classList.remove('hidden') : $refs.hidden_regist.classList.add('hidden');
                                                     $refs.hidden_tombol_regist.classList.contains('hidden') ? $refs.hidden_tombol_regist.classList.remove('hidden') : $refs.hidden_tombol_regist.classList.add('hidden');
                                                     $refs.hidden_tombol_kembali.classList.contains('hidden') ? $refs.hidden_tombol_kembali.classList.remove('hidden') : $refs.hidden_tombol_kembali.classList.add('hidden');
-                                                    "
-                                                    class="hidden justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
+                                                    " class="hidden justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
                                                         bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
                                                         focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
                                                         dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
-                                                        Kembali
-                                                    </button>
+                                                            Kembali
+                                                        </button>
+                                                        <!-- END TOMBOL KEMBALI KETENTUAN -->
 
-                                                </div>
+                                                    </div>
                                                 </div>
 
                                             </div>
+                                            <!-- END TAB REGIST -->
 
 
                                         </div>
@@ -756,6 +809,7 @@
                                 </div>
                             </div>
                         </template>
+                        <!-- END MODAL AUTH -->
 
                     </div>
                     <!-- END NAVBAR AUTH -->
