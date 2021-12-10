@@ -145,7 +145,8 @@ document.addEventListener('alpine:init', () => {
                 foto: './assets/img/profile.png',
                 komentar: 'Ini ada lanjutannya lagi gak gan?',
                 tanggal: 'hari ini',
-                cerita: 'Distant Memory'
+                cerita: 'Distant Memory',
+                reaksi: 'fas fa-thumbs-up text-green-400'
             },
             2: {
                 id: 2,
@@ -154,7 +155,8 @@ document.addEventListener('alpine:init', () => {
                 foto: './assets/img/profile_2.png',
                 komentar: 'Menurutku ending di volume 1 ini agak lemah, banyak masalah yang belum kelar, yang menurutku bisa diberesin di volume ini sih.',
                 tanggal: 'kemarin',
-                cerita: 'Distant Journey'
+                cerita: 'Distant Journey',
+                reaksi: 'fas fa-thumbs-down text-red-400'
             },
 
         },

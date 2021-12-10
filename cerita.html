@@ -12,7 +12,7 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="./assets/custom/style/jenis.css">
+    <link rel="stylesheet" href="./assets/custom/style/cerita.css">
 
 </head>
 
@@ -900,261 +900,12 @@
 
                     </div>
                 </div>
-                <!-- DROPDOWN FILTER -->
-                <div x-data="{filter: false}" class="overflow-visible relative" @click.away="filter = false">
-                    <div class="-mt-16 right-0 flex justify-end">
-                        <button @click="filter =! filter" class=" z-20 border-2 border-white bg-indigo-500 w-10 h-10 rounded-full
-                            dark:bg-indigo-400 dark:border-gray-800">
-                            <div class="font-medium text-lg text-white">
-
-                                <i class="fas fa-ellipsis-v"></i>
-
-                            </div>
-                        </button>
-                    </div>
-
-                    <div x-show="filter" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="transform  opacity-0 scale-50"
-                        x-transition:enter-end="transform opacity-95 scale-100"
-                        x-transition:leave="transition ease-in duration-200"
-                        x-transition:leave-start="transform opacity-95 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-50"
-                        class="z-10 -mt-5 right-0 absolute opacity-95 origin-top-right">
-
-                        <div class="bg-white shadow-xl h-auto w-40 rounded-xl border-2 border-opacity-50 border-gray-300
-                            dark:bg-gray-800 dark:border-gray-900">
-
-
-                            <div class="px-3 py-6 space-y-1 dark:text-white">
-                                <button class=" text-left block w-full px-4 py-2 rounded-3xl hover:bg-indigo-200
-                                dark:hover:bg-gray-700">
-
-                                    <i class="font-medium fas fa-sort-alpha-up inline"></i>
-                                    <div class="ml-3 font-medium inline lg:text-sm md:text-sm sm:text-sm text-xs">A
-                                        sampai Z</div>
-                                </button>
-
-                                <button class=" text-left block w-full px-4 py-2 rounded-3xl hover:bg-indigo-200
-                                dark:hover:bg-gray-700">
-
-                                    <i class="font-medium fas fa-sort-alpha-down-alt inline"></i>
-                                    <div class="ml-3 font-medium inline lg:text-sm md:text-sm sm:text-sm text-xs">Z
-                                        sampai A</div>
-                                </button>
-
-                                <button class=" text-left block w-full px-4 py-2 rounded-3xl hover:bg-indigo-200
-                                dark:hover:bg-gray-700">
-
-                                    <i class="font-medium fas fa-history inline"></i>
-                                    <div class="ml-3 font-medium inline lg:text-sm md:text-sm sm:text-sm text-xs">
-                                        Terlama</div>
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END DROPDOWN FILTER -->
-
-
-
-
-                <!-- NAV TAB PILL KATERGORI -->
-                <div class="overflow-hidden mt-12 relative">
-
-
-                    <ul class="flex overflow-x-auto grab-scroll">
-                        <li class="mr-3">
-                            <a class="inline-block lg:text-base md:text-base sm:text-base text-sm rounded-2xl py-1 px-3 bg-indigo-500 text-white
-                            dark:bg-indigo-400" href="#">Terbaru</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block lg:text-base md:text-base sm:text-base text-sm rounded-2xl text-black hover:bg-indigo-200 py-1 px-3
-                            dark:text-white dark:hover:bg-gray-700" href="#">Berlangsung</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block lg:text-base md:text-base sm:text-base text-sm rounded-2xl text-black hover:bg-indigo-200 py-1 px-3
-                            dark:text-white dark:hover:bg-gray-700" href="#">Populer</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block lg:text-base md:text-base sm:text-base text-sm rounded-2xl text-black hover:bg-indigo-200 py-1 px-3
-                            dark:text-white dark:hover:bg-gray-700" href="#">Trending</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block lg:text-base md:text-base sm:text-base text-sm rounded-2xl text-black hover:bg-indigo-200 py-1 px-3
-                            dark:text-white dark:hover:bg-gray-700" href="#">Tamat</a>
-                        </li>
-                        <!--                    
-                    <li class="mr-3">
-                        <a class="inline-block border border-white rounded-2xl hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3"
-                            href="#">
-                            FIlter <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li> -->
-                    </ul>
-                </div>
-                <!-- END NAV TAB PILL KATERGORI -->
-
-
-                <div class="mt-6 overflow-hidden grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-6 relative"
-                    x-data="cerita">
-
-                    <!-- CONTOH LOOPING CERITA -->
-                    <template x-for="[id, value] in Object.entries(buku)" :key="id">
-                        <div x-data="{opacity_blurb: false}"
-                            class="mb-1 relative overflow-visible ring-1 ring-gray-200 rounded-xl mx-auto  lg:w-48 md:w-48 sm:w-36 w-36 shadow-lg h-auto dark:ring-gray-900">
-                            <div class="relative cursor-pointer" @click.away="opacity_blurb = false"
-                                @click="opacity_blurb = !opacity_blurb">
-
-                                <div :class="opacity_blurb == false ? 'hidden' : '' " class="absolute flex 
-                        rounded-xl bg-gradient-to-t lg:from-white md:from-white lg:bg-transparent md:bg-transparent sm:bg-white 
-                        sm:opacity-80 lg:opacity-100 md:opacity-100 bg-white opacity-80 h-full w-full">
-                                    <div class="lg:mt-auto md:mt-auto sm:mx-auto mx-auto p-3 text-xs font-medium subpixel-antialiased"
-                                        x-text="value.blurb">
-
-                                    </div>
-
-                                </div>
-
-                                <div class="">
-                                    <img class="filter blur-50 -mb-3 rounded-xl lg:h-72 lg:w-48 md:h-72 md:w-48 sm:h-56 sm:w-36 h-56 w-36  object-fill"
-                                        :src="value.sampul" alt="">
-                                </div>
-
-                            </div>
-                            <div class="bg-white rounded-xl dark:bg-gray-700">
-                                <div class="inset-x-0 top-0 flex">
-                                    <div class="w-1/2 h-5 bg-green-400 rounded-bl-xl">
-
-                                    </div>
-                                    <div class="w-1/2 h-5 bg-red-400 rounded-br-xl">
-
-                                    </div>
-
-                                </div>
-                                <div class="p-4">
-
-
-                                    <div
-                                        class="mb-2 text-sm text-indigo-500 dark:text-indigo-400 truncate font-bold text-center">
-                                        <a href="#" x-text="value.judul">
-
-                                        </a>
-
-                                    </div>
-
-                                    <div class="text-xs text-left inline dark:text-gray-400">By
-
-                                    </div>
-                                    <a href="#" class="text-indigo-700 inline text-xs dark:text-white"
-                                        x-text="value.penulis">
-                                    </a>
-
-                                    <div class="text-center flex justify-end mt-4 bottom-0 right-0">
-                                        <div class="text-xs text-white">
-                                            <button
-                                                class="bg-indigo-500 rounded-lg border-r-2 p-1 border-b-2 border-indigo-700">
-                                                <i class="fas fa-plus"></i> Bacaan
-                                            </button>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </template>
-                    <!-- END CONTOH LOOP -->
-
-
-
-
-                </div>
-                <!-- PAGINASI -->
-                <div class="flex justify-center mt-3">
-                    <div>
-                        <nav class="w-full relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-                            aria-label="Pagination">
-                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-indigo-200
-                                dark:text-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600
-                                ">
-                                <span class="sr-only">Previous</span>
-                                <!-- Heroicon name: solid/chevron-left -->
-                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                            <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
-                            <a href="#" aria-current="page"
-                                class="z-10 bg-indigo-200 dark:bg-gray-700 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
-                                1
-                            </a>
-                            <a href="#"
-                                class="bg-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600 dark:text-white border-gray-300 text-gray-500 hover:bg-indigo-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
-                                2
-                            </a>
-                            <a href="#"
-                                class="bg-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600 dark:text-white border-gray-300 text-gray-500 hover:bg-indigo-200 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
-                                3
-                            </a>
-                            <span
-                                class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600 dark:text-white text-sm font-medium text-gray-700">
-                                ...
-                            </span>
-                            <a href="#"
-                                class="bg-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600 dark:text-white border-gray-300 text-gray-500 hover:bg-indigo-200 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
-                                8
-                            </a>
-                            <a href="#"
-                                class="bg-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600 dark:text-white border-gray-300 text-gray-500 hover:bg-indigo-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
-                                9
-                            </a>
-                            <a href="#"
-                                class="bg-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600 dark:text-white border-gray-300 text-gray-500 hover:bg-indigo-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
-                                10
-                            </a>
-                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-indigo-200
-                                dark:text-white dark:bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-600
-                                ">
-                                <span class="sr-only">Next</span>
-                                <!-- Heroicon name: solid/chevron-right -->
-                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </nav>
-
-                    </div>
-                </div>
-                <!-- END PAGINASI -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 
             </div>
 
         </div>
-
 
 
 
@@ -1470,6 +1221,6 @@
 <script defer src="./assets/base/alpine/collapse.min.js"></script>
 <script defer src="./assets/base/alpine/alpine.min.js"></script>
 
-<script src="./assets/custom/script/jenis.js"></script>
+<script src="./assets/custom/script/cerita.js"></script>
 
 </html>

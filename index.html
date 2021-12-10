@@ -113,7 +113,7 @@
                                             <a href="./jenis.html"
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
-                                                    <i class="fas  fa-hat-wizard"></i>
+                                                    <i class="fas  fa-hat-wizard text-indigo-500"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Fantasy</div>
@@ -164,7 +164,7 @@
                                             <a href="./jenis.html"
                                                 class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
                                                 <div class="rounded-lg">
-                                                    <i class="fas  fa-hand-rock"></i>
+                                                    <i class="fas fa-hand-rock"></i>
                                                 </div>
                                                 <div class="ml-3">
                                                     <div class="font-semibold text-sm">Action</div>
@@ -2259,9 +2259,13 @@
                     <template x-for="[id, value] in Object.entries(komen_publik)" :key="id">
                         <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
                             <!-- PROFIL KOMENTER PUBLIK -->
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 text-center">
                                 <img class="mb-3  lg:h-11 lg:w-11 md:w-11 md:h-11 sm:w-10 sm:h-10 w-10 h-10 rounded-full border-2 border-indigo-500"
                                     :src="value.foto" alt="Foto">
+
+                                    <i class="text-xl" :class="value.reaksi">
+
+                                    </i>
 
                             </div>
                             <!-- END PROFIL KOMENTAR PUBLIK -->
@@ -2280,7 +2284,7 @@
                                     Berkomentar
                                     <div class="inline" x-text="value.tanggal"></div>
                                     di
-                                    <a href="#" class="font-semibold inline text-indigo-500 dark:text-indigo-400"
+                                    <a href="./bab.html" class="font-semibold inline text-indigo-500 dark:text-indigo-400"
                                         x-text="value.cerita"></a>
 
                                 </div>
@@ -2319,9 +2323,14 @@
                         <template x-for="[id, value] in Object.entries(komen_publik)" :key="id">
                             <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
                                 <!-- PROFIL KOMENTER PUBLIK TAMPILAN MOBILE-->
-                                <div class="flex-shrink-0">
+                                <div class="flex-shrink-0 text-center">
                                     <img class="mb-3  lg:h-11 lg:w-11 md:w-11 md:h-11 sm:w-10 sm:h-10 w-10 h-10 rounded-full border-2 border-indigo-500"
                                         :src="value.foto" alt="Foto">
+                                    
+                                    
+                                    <i class="text-lg" :class="value.reaksi">
+
+                                    </i>
 
                                 </div>
                                 <!-- END PROFIL KOMENTAR PUBLIK TAMPILAN MOBILE-->
@@ -2340,7 +2349,7 @@
                                         Berkomentar
                                         <div class="inline" x-text="value.tanggal"></div>
                                         di
-                                        <a href="#" class="font-semibold inline text-indigo-500 dark:text-indigo-400"
+                                        <a href="./bab.html" class="font-semibold inline text-indigo-500 dark:text-indigo-400"
                                             x-text="value.cerita"></a>
 
                                     </div>
@@ -2558,7 +2567,7 @@
                     </div>
 
                     <div class="py-3">
-                        <a href="./pengguna.html"
+                        <a href="./profil.html"
                             class="
                     flex items-center justify-center text-gray-500 dark:text-gray-400  hover:text-indigo-500 dark:hover:text-indigo-400 dark:focus:text-indigo-500 focus:text-indigo-700">
                             <i class="fas text-2xl fa-user"></i>
