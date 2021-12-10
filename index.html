@@ -492,6 +492,7 @@
                         <template x-teleport="body">
                             <div x-show="modal_auth" class="fixed z-10 inset-0 overflow-y-auto"
                                 aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                
                                 <div
                                     class="flex items-end justify-center min-h-screen pt-4 px-4 sm:pb-20 pb-40 text-center sm:block sm:p-0">
 
@@ -614,11 +615,14 @@
 
                                             <div x-show="auth_menu == 'regist'">
 
-                                                <div class="pt-3 pb-4 p-6 ">
+                                                <div class="pt-3 pb-4 p-6">
 
 
                                                     <div class="sm:flex sm:mt-3">
+                                                       
                                                         <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
+
+                                                           
                                                             <label class="font-medium dark:text-white">Surel</label>
                                                             <input id="surel-regist" type="text"
                                                                 class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 

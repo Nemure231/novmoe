@@ -605,10 +605,62 @@
 
                                             <div x-show="auth_menu == 'regist'">
 
-                                                <div class="pt-3 pb-4 p-6 ">
+                                                <div x-data="{ketentuan: false}"> 
+                                                <div x-show="ketentuan" class="pt-3 pb-4 p-6 bg-white w-full h-full" >
+                                                    <div class="overflow-y-auto h-80">
+                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 1</div>
+                                                        <p class="p-1">
+
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Consequuntur nostrum dignissimos explicabo numquam officia
+                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
+                                                            ut quis quo deleniti, error quod id modi.
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </p>
+                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 2</div>
+                                                        <p class="p-1">
+
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Consequuntur nostrum dignissimos explicabo numquam officia
+                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
+                                                            ut quis quo deleniti, error quod id modi.
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </p>
+                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 3</div>
+                                                        <p class="p-1">
+
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Consequuntur nostrum dignissimos explicabo numquam officia
+                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
+                                                            ut quis quo deleniti, error quod id modi.
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </p>
+                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 4</div>
+                                                        <p class="p-1">
+
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Consequuntur nostrum dignissimos explicabo numquam officia
+                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
+                                                            ut quis quo deleniti, error quod id modi.
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </p>
+                                                        <div class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold">Contoh 5</div>
+                                                        <p class="p-1">
+
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                            Consequuntur nostrum dignissimos explicabo numquam officia
+                                                            ullam nobis tempore placeat sequi repellat laboriosam ipsa
+                                                            ut quis quo deleniti, error quod id modi.
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </p>
+                                                    </div>
+                                                </div>
 
 
+
+                                                <div x-ref="hidden_regist" class="pt-3 pb-4 p-6">
                                                     <div class="sm:flex sm:mt-3">
+
                                                         <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
                                                             <label class="font-medium dark:text-white">Surel</label>
                                                             <input id="surel-regist" type="text"
@@ -655,7 +707,11 @@
                                                         <label class="inline-flex items-center mt-3">
                                                             <input type="checkbox"
                                                                 class="form-checkbox h-5 w-5 text-indigo-500">
-                                                            <a href="#"
+                                                            <a href="javascript:void(0)" @click="ketentuan =! ketentuan; 
+                                                            
+                                                                $refs.hidden_regist.classList.contains('hidden') ? $refs.hidden_regist.classList.remove('hidden') : $refs.hidden_regist.classList.add('hidden');
+                                                                $refs.hidden_tombol_regist.classList.contains('hidden') ? $refs.hidden_tombol_regist.classList.remove('hidden') : $refs.hidden_tombol_regist.classList.add('hidden');
+                                                                $refs.hidden_tombol_kembali.classList.contains('hidden') ? $refs.hidden_tombol_kembali.classList.remove('hidden') : $refs.hidden_tombol_kembali.classList.add('hidden');"
                                                                 class="ml-2 sm:text-sm text-xs text-indigo-500 dark:font-semibold">Syarat
                                                                 dan
                                                                 Ketentuan.</a>
@@ -664,13 +720,27 @@
 
 
 
-                                                    <button type="button" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                            bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
-                             focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
-                             dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
+                                                    <button x-ref="hidden_tombol_regist" type="button" class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
+                                                        bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
+                                                        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
+                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
                                                         Regist
                                                     </button>
 
+                                                    <button x-ref="hidden_tombol_kembali" type="button" 
+                                                    @click="ketentuan = false;
+                                                    $refs.hidden_regist.classList.contains('hidden') ? $refs.hidden_regist.classList.remove('hidden') : $refs.hidden_regist.classList.add('hidden');
+                                                    $refs.hidden_tombol_regist.classList.contains('hidden') ? $refs.hidden_tombol_regist.classList.remove('hidden') : $refs.hidden_tombol_regist.classList.add('hidden');
+                                                    $refs.hidden_tombol_kembali.classList.contains('hidden') ? $refs.hidden_tombol_kembali.classList.remove('hidden') : $refs.hidden_tombol_kembali.classList.add('hidden');
+                                                    "
+                                                    class="hidden justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
+                                                        bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
+                                                        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
+                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
+                                                        Kembali
+                                                    </button>
+
+                                                </div>
                                                 </div>
 
                                             </div>
@@ -962,8 +1032,8 @@
                                                             <i class="fas fa-plus"></i> Bacaan
                                                         </button>
                                                     </div>
-    
-    
+
+
                                                 </div>
 
 
