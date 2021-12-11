@@ -18,7 +18,9 @@
 </head>
 
 <body
-    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-gray-200 dark:bg-gray-900 flex flex-col min-h-screen">
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider flex flex-col min-h-screen 
+    lg:bg-gray-200 md:bg-white sm:bg-white bg-white 
+    lg:dark:bg-gray-900 md:dark:bg-gray-800 sm:dark:bg-gray-800 dark:bg-gray-800">
 
 
     <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
@@ -885,9 +887,11 @@
         LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
     </div> -->
 
-    <div class=" absolute bg-center bg-cover w-full h-full bg-no-repeat" style="background-image: url(./assets/img/cover.png)">
-        <div class="h-full text-white bg-gradient-to-t from-white">
+    <div class="lg:blur-sm md:blur-sm blur-none absolute bg-center  bg-cover w-full h-1/2 bg-no-repeat" style="background-image: url(./assets/img/cover.png)">
+        <div class="lg:hidden md:hidden block h-full text-white bg-gradient-to-t from-white">
         </div>
+        <!-- <div class="h-full blur-sm">
+        </div> -->
 
     </div>
 
@@ -903,7 +907,7 @@
 
                 <div class="flex lg:flex-row md:flex-row flex-col w-full">
 
-                    <div class="flex-none overflow-visible relative bg-white rounded-t-xl p-3">
+                    <div class="flex-none overflow-visible relative rounded-t-xl">
                         <div class="flex flex-col ">
                             <div class="flex justify-center">
 
@@ -911,19 +915,47 @@
                                     src="./assets/img/cover.png" alt="">
                             </div>
 
-                            <div class="bg-white flex-none">
+                            <!-- <div class="p-3 bg-white flex-none">
                                 mmm
-                            </div>
+                            </div> -->
                         </div>
-
                     </div>
 
-
                     <div class="flex-1 relative break-words mb-6">
-                        <div class="h-1/2">
+                        <div class="p-3 h-1/2 lg:block md:block hidden bg-gradient-to-t from-white">
+                            <div class="flex">
+
+                                <div class="w-2/3">
+                                    <div class="text-3xl font-bold text-black antialiased ">Outcast Desire</div>
+
+                                    <div class="grid grid-cols-1 divide-y divide-yellow-500">
+                                        <div>01</div>
+                                        <div>02</div>
+                                        <div>03</div>
+                                      </div>
+                                </div>
+
+                                <div class="my-auto bg-red-200 w-1/3 overflow-visible">
+                                    <div class="flex lg:flex-row flex-col relative items-center">
+                                        <div class="lg:-ml-3 -ml-0 flex-none lg:absolute relative">
+                                            <img class="w-16 h-16 rounded-full border-2 border-indigo-500" 
+                                            src="./assets/img/profile_me.png" alt="" srcset="">
+                                        </div>
+
+                                        <div class="grow bg-white h-auto rounded-xl py-3 pr-3 lg:pl-20 pl-3">
+                                            Karol.Y
+                                        </div>
+
+                                    </div>
+                                   
+                                </div>
+
+                            </div>
+
+                           
 
                         </div>
-                        <div class="h-1/2 bg-white bg p-3 rounded-tr-xl">
+                        <div class="p-3 lg:h-1/2 md:h-1/2 h-auto bg-white rounded-b-xl">
                             Makan nasi enak kalo sama sama dan makan indomi lebih enak dan tidak ada duanya dan tidak
                             apa apa saya terluka saya masih bisa tahan
 
