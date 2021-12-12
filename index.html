@@ -5,8 +5,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./tailwind.css" rel="stylesheet">
-    <link href="./tailwind-dark.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="./assets/custom/style/index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -252,7 +263,7 @@
                                                 <div class="rounded-lg">
                                                     <i class="fas  fa-arrow-up"></i>
                                                 </div>
-                                                <div class="ml-3">
+                                                <div class="ml-3 shadow-lg">
                                                     <div class="font-semibold text-sm">Terbaru</div>
 
                                                 </div>
