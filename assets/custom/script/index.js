@@ -240,8 +240,8 @@ document.addEventListener('alpine:init', () => {
 
 
 function potong_komentar(komen) {
-    if (komen.split(" ").length > 12) {
-        var mk = komen.split(" ").splice(0, 12).join(" ") + ' ....';
+    if (komen.split(" ").length > 20) {
+        var mk = komen.split(" ").splice(0, 20).join(" ") + ' ....';
         return komen = mk;
     } else {
         return komen = komen;
