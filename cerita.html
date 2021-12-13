@@ -939,22 +939,6 @@
 
 
 
-                                <!-- <div class="mt-3 mx-3 my-6">
-                                    <div class="overflow-visible">
-                                        <div class="flex lg:flex-row flex-col relative items-center ">
-                                            <div class="-ml-3 flex-none lg:absolute relative">
-                                                <img class="w-16 h-16 rounded-full border-2 border-indigo-500"
-                                                    src="./assets/img/profile_me.png" alt="" srcset="">
-                                            </div>
-
-                                            <div class="grow bg-white h-auto rounded-xl py-3 pr-3 lg:pl-20 pl-3">
-                                                Karol.Y
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div> -->
                             </div>
 
                             <div class="flex-1">
@@ -973,13 +957,11 @@
                                                         <i class="fas fa-user"></i>
                                                         <a href="./profil.html" class="">Karol.Y</a>
                                                     </div>
-                                                    <div
-                                                        class="col-span-1 font-semibold border-b border-gray-600">
+                                                    <div class="col-span-1 font-semibold border-b border-gray-600">
                                                         <i class="fas fa-tag"></i>
                                                         <a href="./jenis.html" class="">Sci-Fi</a>
                                                     </div>
-                                                    <div
-                                                        class="col-span-1 font-semibold border-b border-gray-600">
+                                                    <div class="col-span-1 font-semibold border-b border-gray-600">
                                                         <i class="fas fa-history"></i>
                                                         <a href="./jenis.html" class="">Tamat</a>
                                                     </div>
@@ -988,70 +970,7 @@
                                             <div class="flex-1">
 
                                             </div>
-<!-- 
-                                            <div class="flex-1 my-auto overflow-visible p-3 bg-cover bg-center rounded-xl" style="background-image: url(./assets/img/cover_me.png)">
-                                                <div class="flex lg:flex-col md:flex-col flex-row relative items-center">
-                                                    <div class="-mr-6 lg:-mr-0 md:-mr-0 lg:-mb-6 md:-mb-6 -mb-0 flex-none absolute lg:relative md:relative">
-                                                        <img class="lg:w-14 lg:h-14 md:w-14 md:h-14 w-12 h-12  rounded-full border-2 border-indigo-500" 
-                                                        src="./assets/img/profile_me.png" alt="" srcset="">
-                                                    </div>
-                                                    <div class="lg:mt-3 md:mt-3 mt-0 grow bg-white h-auto w-32 rounded-xl pr-3 pl-14 py-1 lg:py-3 md:py-3 lg:px-3 md:px-3">
-                                                        <div class="lg:text-center md:text-center text-left">
-                                                            Karol.Y
 
-                                                        </div>
-                                                    </div>
-            
-                                                </div>
-                                               
-                                            </div> -->
-            
-                                            <!-- <div class="overflow-hidden">
-                                                <ul class="my-1 flex overflow-x-auto grab-scroll">
-                                                    <li class="mr-3">
-                                                        <a href="./jenis.html" class="flex text-center text-xs font-medium text-white bg-indigo-500 rounded-3xl
-                                                        border-b-2 border-r-2 border-indigo-800 shadow-xl hover:bg-indigo-700 dark:hover:bg-indigo-500
-                                                        dark:bg-indigo-400 dark:border-indigo-900">
-                                                            <div
-                                                                class="bg-indigo-700 p-1 rounded-l-3xl dark:bg-indigo-500">
-                                                                #
-                                                            </div>
-                                                            <div class="p-1 w-max items-center justify-center flex">
-                                                                Petualangan
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mr-3">
-                                                        <a href="./jenis.html" class="flex text-center text-xs font-medium text-white bg-indigo-500 rounded-3xl
-                                                        border-b-2 border-r-2 border-indigo-800 shadow-xl hover:bg-indigo-700 dark:hover:bg-indigo-500
-                                                        dark:bg-indigo-400 dark:border-indigo-900">
-                                                            <div
-                                                                class="bg-indigo-700 p-1 rounded-l-3xl dark:bg-indigo-500">
-                                                                #
-                                                            </div>
-                                                            <div class="p-1 w-max items-center justify-center flex">
-                                                                Kekerasan
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mr-3">
-                                                        <a href="./jenis.html" class="flex text-center text-xs font-medium text-white bg-indigo-500 rounded-3xl
-                                                        border-b-2 border-r-2 border-indigo-800 shadow-xl hover:bg-indigo-700 dark:hover:bg-indigo-500
-                                                        dark:bg-indigo-400 dark:border-indigo-900">
-                                                            <div
-                                                                class="bg-indigo-700 p-1 rounded-l-3xl dark:bg-indigo-500">
-                                                                #
-                                                            </div>
-                                                            <div class="p-1 w-max items-center justify-center">
-                                                                Senjata Api
-                                                            </div>
-                                                        </a>
-                                                    </li>
-
-
-                                                </ul>
-
-                                            </div> -->
 
                                         </div>
                                     </div>
@@ -1064,13 +983,13 @@
                                                 :class="$refs.teks_blurb.dataset.blurb.split('').length > 30 ? '' : 'hidden'"
                                                 class="lg:hidden md:hidden block z-20 absolute h-full w-full bg-gradient-to-t from-white flex items-end">
                                                 <div class="w-full flex justify-center">
-                                                    <!-- <hr class="flex-1 border-b border-solid opacity-50 border-indigo-500"> -->
+
                                                     <button @click="$refs.more.classList.add('hidden'); $refs.less.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = $refs.teks_blurb.dataset.blurb;"
                                                         class="text-xs rounded-lg bg-indigo-500 p-1 text-white">
                                                         see more
                                                     </button>
-                                                    <!-- <hr class="flex-1 border-b border-solid opacity-50 border-indigo-500"> -->
+
                                                 </div>
                                             </div>
                                             <div class="font-medium">
@@ -1085,15 +1004,30 @@
                                                 
                                                 Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas Antartika, salah satunya adalah seorang prajurit bernama Welrod dan rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah penuh Caltanepent.">
 
-                                            <p class="lg:block md:block hidden relative  h-full w-full break-words whitespace-pre-line">Caltanepent, monster tumbuhan yang merusak segala ekosistem makhluk hidup di Jerman utara, selama 2 tahun lebih pemerintah melakukan penyerangan hingga wilayah di sana rusak parah dan menjadi kota-kota mati, tetapi monster itu tidak ada habisnya.
+                                            <p
+                                                class="lg:block md:block hidden relative  h-full w-full break-words whitespace-pre-line">
+                                                Caltanepent, monster tumbuhan yang merusak segala ekosistem makhluk
+                                                hidup di Jerman utara, selama 2 tahun lebih pemerintah melakukan
+                                                penyerangan hingga wilayah di sana rusak parah dan menjadi kota-kota
+                                                mati, tetapi monster itu tidak ada habisnya.
 
-                                                Sampai akhirnya muncul PMC (Private Military Company) bernama Aegis, yang bekerja untuk mencegah penyebaran Caltanepent dan mengelola proyek E.C.R (Experiment Of Caltanepent Resource) yang telah menghasilkan sumber daya Caltanepent bernama Exceed. 7 tahun terlewat, sekarang mereka telah membangun cabang di Antartika yang dikabarkan sebagai markas khusus penelitian tersebut.
-                                            
-                                                Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas Antartika, salah satunya adalah seorang prajurit bernama Welrod dan rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah penuh Caltanepent.
+                                                Sampai akhirnya muncul PMC (Private Military Company) bernama Aegis,
+                                                yang bekerja untuk mencegah penyebaran Caltanepent dan mengelola proyek
+                                                E.C.R (Experiment Of Caltanepent Resource) yang telah menghasilkan
+                                                sumber daya Caltanepent bernama Exceed. 7 tahun terlewat, sekarang
+                                                mereka telah membangun cabang di Antartika yang dikabarkan sebagai
+                                                markas khusus penelitian tersebut.
+
+                                                Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas
+                                                Antartika, salah satunya adalah seorang prajurit bernama Welrod dan
+                                                rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter
+                                                mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama
+                                                mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah
+                                                penuh Caltanepent.
 
                                             </p>
                                             <div x-ref="less" class="w-full flex justify-center hidden">
-                                                <!-- <hr class="flex-1 border-b border-solid opacity-50 border-indigo-500"> -->
+
                                                 <button
                                                     @click="$refs.less.classList.add('hidden'); $refs.more.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = potong_komentar($refs.teks_blurb.dataset.blurb);"
@@ -1101,17 +1035,13 @@
                                                     class=" text-xs rounded-lg bg-indigo-500 p-1 text-white">
                                                     see less
                                                 </button>
-                                                <!-- <hr class="flex-1 border-b border-solid opacity-50 border-indigo-500"> -->
+
                                             </div>
 
                                         </div>
 
 
-                                        <!-- <p class="p-3 h-full w-full break-words lg:hidden md:hidden block"
-                                            x-text="potong_komentar($el.dataset.blurb)"
-                                            data-blurb="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, sapiente excepturi tenetur assumenda voluptates et repellat illo voluptas aliquid possimus quos at dolore dolorem dolorum quas eaque quia corporis praesentium corrupti earum doloremque quod accusamus nisi temporibus? Distinctiolaboriosam rem natus perspiciatis totam quisquam placeat, iure, facere numquam expedita">
 
-                                        </p> -->
 
                                     </div>
                                 </div>
@@ -1119,49 +1049,7 @@
                         </div>
                     </div>
 
-                    <!-- <div class="flex-1 relative break-words mb-6">
-                        <div class="p-3 h-1/2 lg:block md:block hidden bg-gradient-to-t from-white">
-                            <div class="flex">
 
-                                <div class="w-2/3">
-                                    <div class="text-3xl font-bold text-black antialiased ">Outcast Desire</div>
-
-                                    <div class="grid grid-cols-1 divide-y divide-yellow-500">
-                                        <div>01</div>
-                                        <div>02</div>
-                                        <div>03</div>
-                                      </div>
-                                      
-                                </div>
-
-                                <div class="my-auto bg-red-200 w-1/3 overflow-visible">
-                                    <div class="flex lg:flex-row flex-col relative items-center">
-                                        <div class="lg:-ml-3 -ml-0 flex-none lg:absolute relative">
-                                            <img class="w-16 h-16 rounded-full border-2 border-indigo-500" 
-                                            src="./assets/img/profile_me.png" alt="" srcset="">
-                                        </div>
-
-                                        <div class="grow bg-white h-auto rounded-xl py-3 pr-3 lg:pl-20 pl-3">
-                                            Karol.Y
-                                        </div>
-
-                                    </div>
-                                   
-                                </div>
-
-                            </div>
-
-                           
-
-                        </div>
-                        <div class="p-3 lg:h-1/2 md:h-1/2 h-auto bg-white rounded-b-xl">
-                            Makan nasi enak kalo sama sama dan makan indomi lebih enak dan tidak ada duanya dan tidak
-                            apa apa saya terluka saya masih bisa tahan
-
-                        </div>
-
-                    </div>
-                </div> -->
 
 
 
