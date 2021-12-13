@@ -59,8 +59,8 @@ document.addEventListener('alpine:init', () => {
 
 
 function potong_komentar(komen) {
-    if (komen.split(" ").length > 20) {
-        var mk = komen.split(" ").splice(0, 20).join(" ") + ' ....';
+    if (komen.split(" ").length > 30) {
+        var mk = komen.split(" ").splice(0, 30).join(" ") + ' ....';
         return komen = mk;
     } else {
         return komen = komen;
@@ -81,33 +81,33 @@ function ready(fn) {
 
 ready(function () {
 
-    const slider = document.querySelector('.grab-scroll');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    // const slider = document.querySelector('.grab-scroll');
+    // let isDown = false;
+    // let startX;
+    // let scrollLeft;
     
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3; //scroll-fast
-      slider.scrollLeft = scrollLeft - walk;
-      console.log(walk);
-    });
+    // slider.addEventListener('mousedown', (e) => {
+    //   isDown = true;
+    //   slider.classList.add('active');
+    //   startX = e.pageX - slider.offsetLeft;
+    //   scrollLeft = slider.scrollLeft;
+    // });
+    // slider.addEventListener('mouseleave', () => {
+    //   isDown = false;
+    //   slider.classList.remove('active');
+    // });
+    // slider.addEventListener('mouseup', () => {
+    //   isDown = false;
+    //   slider.classList.remove('active');
+    // });
+    // slider.addEventListener('mousemove', (e) => {
+    //   if(!isDown) return;
+    //   e.preventDefault();
+    //   const x = e.pageX - slider.offsetLeft;
+    //   const walk = (x - startX) * 3; //scroll-fast
+    //   slider.scrollLeft = scrollLeft - walk;
+    //   console.log(walk);
+    // });
 
 
  
