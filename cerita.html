@@ -919,18 +919,18 @@
 
                     <div class="overflow-visible relative rounded-t-xl">
                         <div class="flex flex-row lg:mx-0 md:mx-0 mx-3">
-                            <div class="flex-none justify-center">
+                            <div class="flex-none justify-center lg:bg-white md:bg-white bg-transparent rounded-t-xl">
 
                                 <img class="rounded-xl lg:h-80 lg:w-52 md:h-80 md:w-52 sm:h-60 sm:w-40 h-48 w-28 object-fill"
                                     src="./assets/img/cover.png" alt="">
 
-                                <div class="mt-3">
+                                <div class="mt-3 lg:mx-3 md:mx-3 mx-0">
                                     <button class="w-full font-medium lg:text-base md:text-base text-sm bg-indigo-500 rounded-lg lg:px-4 lg:py-2 md:px-4 md:py-2 px-2 py-1 text-white border-b-2 border-r-2 border-indigo-800 hover:bg-indigo-700 dark:hover:bg-indigo-500
                                     dark:bg-indigo-400 dark:border-indigo-900">
                                         Mulai Membaca
                                     </button>
                                 </div>
-                                <div class="mt-3">
+                                <div class="mt-3 lg:mx-3 md:mx-3 mx-0">
                                     <button class="w-full font-medium lg:text-base md:text-base text-sm bg-indigo-500 rounded-lg lg:px-4 lg:py-2 md:px-4 md:py-2 px-2 py-1 text-white border-b-2 border-r-2 border-indigo-800 hover:bg-indigo-700 dark:hover:bg-indigo-500
                                     dark:bg-indigo-400 dark:border-indigo-900">
                                         Tambah Bacaan
@@ -942,7 +942,7 @@
                             </div>
 
                             <div class="flex-1">
-                                <div class="flex flex-col px-3">
+                                <div class="flex flex-col lg:px-0 md:px-0 px-3">
 
                                     <div
                                         class="h-1/2 w-full rounded-t-xl bg-gradient-to-t lg:from-white md:from-white bg-transparent">
@@ -957,11 +957,13 @@
                                                         <i class="fas fa-user"></i>
                                                         <a href="./profil.html" class="">Karol.Y</a>
                                                     </div>
-                                                    <div class="col-span-1 font-semibold border-b border-gray-600">
+                                                    <div
+                                                        class="col-span-1 font-semibold border-b border-gray-600">
                                                         <i class="fas fa-tag"></i>
                                                         <a href="./jenis.html" class="">Sci-Fi</a>
                                                     </div>
-                                                    <div class="col-span-1 font-semibold border-b border-gray-600">
+                                                    <div
+                                                        class="col-span-1 font-semibold border-b border-gray-600">
                                                         <i class="fas fa-history"></i>
                                                         <a href="./jenis.html" class="">Tamat</a>
                                                     </div>
@@ -974,7 +976,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="lg:mt-0 md:mt-0 mt-3 h-1/2 w-full rounded-b-xl lg:bg-white md:bg-white bg-transparent"
+                                    <div class="lg:mt-0 md:mt-0 mt-3 h-1/2 w-full lg:bg-white md:bg-white bg-transparent"
                                         x-data="{blurb: true}">
 
                                         <div class="relative lg:p-3 md:p-3 p-0">
@@ -983,13 +985,13 @@
                                                 :class="$refs.teks_blurb.dataset.blurb.split('').length > 30 ? '' : 'hidden'"
                                                 class="lg:hidden md:hidden block z-20 absolute h-full w-full bg-gradient-to-t from-white flex items-end">
                                                 <div class="w-full flex justify-center">
-
+                                                 
                                                     <button @click="$refs.more.classList.add('hidden'); $refs.less.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = $refs.teks_blurb.dataset.blurb;"
                                                         class="text-xs rounded-lg bg-indigo-500 p-1 text-white">
                                                         see more
                                                     </button>
-
+                                                 
                                                 </div>
                                             </div>
                                             <div class="font-medium">
@@ -1004,30 +1006,15 @@
                                                 
                                                 Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas Antartika, salah satunya adalah seorang prajurit bernama Welrod dan rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah penuh Caltanepent.">
 
-                                            <p
-                                                class="lg:block md:block hidden relative  h-full w-full break-words whitespace-pre-line">
-                                                Caltanepent, monster tumbuhan yang merusak segala ekosistem makhluk
-                                                hidup di Jerman utara, selama 2 tahun lebih pemerintah melakukan
-                                                penyerangan hingga wilayah di sana rusak parah dan menjadi kota-kota
-                                                mati, tetapi monster itu tidak ada habisnya.
+                                            <p class="lg:block md:block hidden relative  h-full w-full break-words whitespace-pre-line">Caltanepent, monster tumbuhan yang merusak segala ekosistem makhluk hidup di Jerman utara, selama 2 tahun lebih pemerintah melakukan penyerangan hingga wilayah di sana rusak parah dan menjadi kota-kota mati, tetapi monster itu tidak ada habisnya.
 
-                                                Sampai akhirnya muncul PMC (Private Military Company) bernama Aegis,
-                                                yang bekerja untuk mencegah penyebaran Caltanepent dan mengelola proyek
-                                                E.C.R (Experiment Of Caltanepent Resource) yang telah menghasilkan
-                                                sumber daya Caltanepent bernama Exceed. 7 tahun terlewat, sekarang
-                                                mereka telah membangun cabang di Antartika yang dikabarkan sebagai
-                                                markas khusus penelitian tersebut.
-
-                                                Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas
-                                                Antartika, salah satunya adalah seorang prajurit bernama Welrod dan
-                                                rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter
-                                                mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama
-                                                mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah
-                                                penuh Caltanepent.
+                                                Sampai akhirnya muncul PMC (Private Military Company) bernama Aegis, yang bekerja untuk mencegah penyebaran Caltanepent dan mengelola proyek E.C.R (Experiment Of Caltanepent Resource) yang telah menghasilkan sumber daya Caltanepent bernama Exceed. 7 tahun terlewat, sekarang mereka telah membangun cabang di Antartika yang dikabarkan sebagai markas khusus penelitian tersebut.
+                                            
+                                                Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas Antartika, salah satunya adalah seorang prajurit bernama Welrod dan rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah penuh Caltanepent.
 
                                             </p>
                                             <div x-ref="less" class="w-full flex justify-center hidden">
-
+                                               
                                                 <button
                                                     @click="$refs.less.classList.add('hidden'); $refs.more.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = potong_komentar($refs.teks_blurb.dataset.blurb);"
@@ -1035,13 +1022,13 @@
                                                     class=" text-xs rounded-lg bg-indigo-500 p-1 text-white">
                                                     see less
                                                 </button>
-
+                                               
                                             </div>
 
                                         </div>
 
 
-
+                                       
 
                                     </div>
                                 </div>
@@ -1049,10 +1036,13 @@
                         </div>
                     </div>
 
+                  
 
 
 
-
+                </div>
+                <div class="px-3 pb-3 bg-white">
+                    mmm
                 </div>
 
             </div>
