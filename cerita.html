@@ -995,7 +995,7 @@
                                         <div class="relative lg:p-3 md:p-3 p-0">
 
                                             <div x-ref="more"
-                                                :class="$refs.teks_blurb.dataset.blurb.split('').length > 30 ? '' : 'hidden'"
+                                                :class="$refs.teks_blurb.dataset.blurb.split('').length > 98 ? '' : 'hidden'"
                                                 class="lg:hidden md:hidden block z-20 absolute h-full w-full bg-gradient-to-t from-white flex items-end dark:from-gray-800">
                                                 <div class="w-full flex justify-center">
                                                  
@@ -1031,7 +1031,7 @@
                                                 <button
                                                     @click="$refs.less.classList.add('hidden'); $refs.more.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = potong_komentar($refs.teks_blurb.dataset.blurb);"
-                                                    :class="$refs.teks_blurb.dataset.blurb.split('').length > 30 ? '' : 'hidden'"
+                                                    :class="$refs.teks_blurb.dataset.blurb.split('').length > 98 ? '' : 'hidden'"
                                                     class=" text-xs rounded-lg bg-indigo-500 p-1 text-white dark:bg-indigo-400">
                                                     see less
                                                 </button>
@@ -1082,6 +1082,179 @@
                                 x-transition:leave="transition ease-in duration-75"
                                 x-transition:leave-start="transform opacity-100 scale-100"
                                 x-transition:leave-end="transform opacity-0 scale-95">
+
+                                <div>
+                                  <!-- <style>
+                                        .table {
+                                            border-spacing: 0 15px;
+                                        }
+                                    
+                                        i {
+                                            font-size: 1rem !important;
+                                        }
+                                    
+                                        .table tr {
+                                            border-radius: 20px;
+                                        }
+                                    
+                                        tr td:nth-child(n+5),
+                                        tr th:nth-child(n+5) {
+                                            border-radius: 0 .625rem .625rem 0;
+                                        }
+                                    
+                                        tr td:nth-child(1),
+                                        tr th:nth-child(1) {
+                                            border-radius: .625rem 0 0 .625rem;
+                                        }
+                                    </style> -->
+                                      <!-- 
+                                    <table class="table text-gray-400 border-separate space-y-6 text-sm w-full">
+                                        <thead class="bg-gray-800 text-gray-500">
+                                            <tr>
+                                                <th class="p-3">Brand</th>
+                                                <th class="p-3 text-left">Category</th>
+                                                <th class="p-3 text-left">Price</th>
+                                                <th class="p-3 text-left">Status</th>
+                                                <th class="p-3 text-left">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-gray-800">
+                                                <td class="p-3">
+                                                    <div class="flex align-items-center">
+                                                        <img class="rounded-full h-12 w-12  object-cover" src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" alt="unsplash image">
+                                                        <div class="ml-3">
+                                                            <div class="">Appple</div>
+                                                            <div class="text-gray-500">mail@rgmail.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="p-3">
+                                                    Technology
+                                                </td>
+                                                <td class="p-3 font-bold">
+                                                    200.00$
+                                                </td>
+                                                <td class="p-3">
+                                                    <span class="bg-green-400 text-gray-50 rounded-md px-2">available</span>
+                                                </td>
+                                                <td class="p-3 ">
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
+                                                        <i class="material-icons-outlined text-base">visibility</i>
+                                                    </a>
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
+                                                        <i class="material-icons-outlined text-base">edit</i>
+                                                    </a>
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100  ml-2">
+                                                        <i class="material-icons-round text-base">delete_outline</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-gray-800">
+                                                <td class="p-3">
+                                                    <div class="flex align-items-center">
+                                                        <img class="rounded-full h-12 w-12   object-cover" src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="unsplash image">
+                                                        <div class="ml-3">
+                                                            <div class="">Realme</div>
+                                                            <div class="text-gray-500">mail@rgmail.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="p-3">
+                                                    Technology
+                                                </td>
+                                                <td class="p-3 font-bold">
+                                                    200.00$
+                                                </td>
+                                                <td class="p-3">
+                                                    <span class="bg-red-400 text-gray-50 rounded-md px-2">no stock</span>
+                                                </td>
+                                                <td class="p-3">
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100  mr-2">
+                                                        <i class="material-icons-outlined text-base">visibility</i>
+                                                    </a>
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 mx-2">
+                                                        <i class="material-icons-outlined text-base">edit</i>
+                                                    </a>
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 ml-2">
+                                                        <i class="material-icons-round text-base">delete_outline</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-gray-800">
+                                                <td class="p-3">
+                                                    <div class="flex align-items-center">
+                                                        <img class="rounded-full h-12 w-12   object-cover" src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2135&q=80" alt="unsplash image">
+                                                        <div class="ml-3">
+                                                            <div class="">Samsung</div>
+                                                            <div class="text-gray-500">mail@rgmail.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="p-3">
+                                                    Technology
+                                                </td>
+                                                <td class="p-3 font-bold">
+                                                    200.00$
+                                                </td>
+                                                <td class="p-3">
+                                                    <span class="bg-yellow-400 text-gray-50  rounded-md px-2">start sale</span>
+                                                </td>
+                                                <td class="p-3">
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
+                                                        <i class="material-icons-outlined text-base">visibility</i>
+                                                    </a>
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 mx-2">
+                                                        <i class="material-icons-outlined text-base">edit</i>
+                                                    </a>
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 ml-2">
+                                                        <i class="material-icons-round text-base">delete_outline</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
+                                    <style>
+                                       
+                                       
+                                    </style>
+                                    <table class="table-auto w-full lg:text-base md:text-base text-sm text-black dark:text-gray-200">
+                                        <thead class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-900">
+                                          <tr>
+                                            <th class="p-3 text-center rounded-l-xl border-t-8 border-b-8 border-white dark:border-gray-800">No</th>
+                                            <th class="p-3 text-left border-t-8 border-b-8 border-white dark:border-gray-800">Judul</th>
+                                            <th class="p-3 text-center rounded-r-xl border-t-8 border-b-8 border-white dark:border-gray-800">Jumlah Kata</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                        <th  colspan="3" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-900 p-2 rounded-xl border-t-8 boorder-b-8 border-white dark:border-gray-800">ARC 1</th>
+                                          <tr class="bg-gray-50 dark:bg-gray-500 dark:hover:bg-gray-600 hover:bg-gray-100 ">
+                                            <td class="p-3 text-center rounded-l-xl border-t-8 border-b-8 border-white dark:border-gray-800">1</td>
+                                            <td class="p-3 border-t-8 border-b-8 border-white dark:border-gray-800">
+                                                <a href="./bab.html" class="text-indigo-500 hover:text-indigo-400 dark:text-indigo-400 dark:hover:text-indigo-500">[0]</a>
+                                            </td>
+                                            <td class="p-3 text-center rounded-r-xl border-b-8 border-t-8 border-white dark:border-gray-800">1000</td>
+                                          </tr>
+                                          <th  colspan="3" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-900 p-2 rounded-xl border-t-8 boorder-b-8 border-white dark:border-gray-800">ARC 2</th>
+                                          <tr class="bg-gray-50 dark:bg-gray-500 dark:hover:bg-gray-600 hover:bg-gray-100">
+                                            <td class="p-3 text-center rounded-l-xl border-t-8 border-b-8 border-white dark:border-gray-800">2</td>
+                                            <td class="p-3 border-t-8 border-b-8 border-white dark:border-gray-800">
+                                                <a href="./bab.html" class="text-indigo-500 hover:text-indigo-400 dark:text-indigo-400 dark:hover:text-indigo-500">[1]</a>
+                                            </td>
+                                            <td class="p-3 text-center rounded-r-xl border-b-8 border-t-8 border-white dark:border-gray-800">800</td>
+                                          </tr>
+                                          <tr class="bg-gray-50 dark:bg-gray-500 dark:hover:bg-gray-600 hover:bg-gray-100">
+                                            <td class="p-3 text-center rounded-l-xl border-t-8 border-b-8 border-white dark:border-gray-800">3</td>
+                                            <td class="p-3 border-t-8 border-b-8 border-white dark:border-gray-800">
+                                                <a href="./bab.html" class="text-indigo-500 hover:text-indigo-400 dark:text-indigo-400 dark:hover:text-indigo-500">[2]</a>
+                                            </td>
+                                            <td class="p-3 text-center rounded-r-xl border-b-8 border-t-8 border-white dark:border-gray-800">2300</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+
+                                
 
                             </div>
 
