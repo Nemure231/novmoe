@@ -59,8 +59,8 @@ document.addEventListener('alpine:init', () => {
 
 
 function potong_komentar(komen) {
-    if (komen.split(" ").length > 98) {
-        var mk = komen.split(" ").splice(0, 98).join(" ") + ' ....';
+    if (komen.split(" ").length > 90) {
+        var mk = komen.split(" ").splice(0, 90).join(" ") + ' ....';
         return komen = mk;
     } else {
         return komen = komen;
