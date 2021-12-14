@@ -995,7 +995,7 @@
                                         <div class="relative lg:p-3 md:p-3 p-0">
 
                                             <div x-ref="more"
-                                                :class="$refs.teks_blurb.dataset.blurb.split('').length > 90 ? '' : 'hidden'"
+                                                :class="$refs.teks_blurb.dataset.blurb.split('').length > 80 ? '' : 'hidden'"
                                                 class="lg:hidden md:hidden block z-20 absolute h-full w-full bg-gradient-to-t from-white flex items-end dark:from-gray-800">
                                                 <div class="w-full flex justify-center">
                                                  
@@ -1031,7 +1031,7 @@
                                                 <button
                                                     @click="$refs.less.classList.add('hidden'); $refs.more.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = potong_komentar($refs.teks_blurb.dataset.blurb);"
-                                                    :class="$refs.teks_blurb.dataset.blurb.split('').length > 90 ? '' : 'hidden'"
+                                                    :class="$refs.teks_blurb.dataset.blurb.split('').length > 80 ? '' : 'hidden'"
                                                     class=" text-xs rounded-lg bg-indigo-500 p-1 text-white dark:bg-indigo-400">
                                                     see less
                                                 </button>
