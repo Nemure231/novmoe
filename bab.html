@@ -69,17 +69,17 @@
                 </div>
                 <div class="flex-1 flex items-center justify-center lg:justify-start md:justify-start items-stretch">
                     <div class="flex-shrink-0 flex items-center">
-                        <img class="hidden lg:block md:block h-8 w-auto"
+                        <img class="hidden lg:block h-8 w-auto"
                             src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                             alt="Workflow">
 
-                        <div class="block lg:hidden md:hidden h-8 w-auto text-white">
+                        <div class="block lg:hidden h-8 w-auto text-white">
                             <i class="fas fa-2x fa-rainbow"></i>
 
                         </div>
 
                     </div>
-                    <div class="hidden md:block lg:block md:ml-6 lg:ml-6">
+                    <div class="hidden lg:block md:ml-6 lg:ml-6">
                         <div class="flex relative space-x-4">
 
 
@@ -906,25 +906,239 @@
     </div>
 
 
-    <main class="lg:my-16 md:my-16 sm:my-8 my-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
+    <main
+        class="lg:mt-16 md:mt-16 mt-32 lg:mb-16 md:mb-16 mb-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
-        <div class="w-full mx-auto">
-            <div class="rounded-xl bg-white relative mb-12 relative overflow-hidden">
+        <div class="w-full lg:mx-auto md:mx-auto mx-3 h-auto flex flex-row justify-center">
+            <div class="lg:w-2/3 w-full lg:mr-2 md:mr-2 mr-0">
+                <div x-data="bab">
+                      <!-- JUDUL -->
+                    <div class="p-3 rounded-xl bg-white text-center relative mb-3 relative overflow-hidden shadow-xl">
+                        <div class="text-xl font-bold" x-text="cerita.judul"></div>
+                        <div class="inline mt-2 text-sm">
+                            By <a href="./profil.html" class="text-indigo-500 font-semibold">Karol.Y</a>
+                        </div>
+                        <div class="inline text-xs text-gray-500">
+                            20-12-2021
+                        </div>
+        
+                    </div>
+                    <!-- END JUDUL -->
+                    <!-- ISI -->
+                    <div class="rounded-xl bg-white relative mb-12 relative overflow-hidden">
+        
+                        <p class="py-6 px-14 break-words text-sm whitespace-pre-line" x-text="cerita.isi">
+                    
+                            
+        
+                        </p>
+        
+        
+                    </div>
+                    <!-- END ISI -->
+                </div>
+            </div>
+            <!-- KOMENTAR -->
+            <div class="lg:block hidden w-1/3 ml-2" :class="open_komen ? '': 'w-1/6'" x-data="komen">
+                <div class="rounded-xl bg-white relative mb-3 relative overflow-hidden shadow-xl h-auto">
+                    <div class="flex justify-end">
+                        <!-- <div class="text-sm font-semibold">Komentar</div> -->
+                        <button class="text-white bg-indigo-500 p-1 rounded-bl-2xl" @click="open_komen = ! open_komen">
+                            <i class="fas" :class="open_komen ? 'fa-eye-slash' : 'fa-eye'"></i>
+                        </button>
+                    </div>
 
+                    <div class="p-3 flex flex-row">
+                        
+                        <div :class="open_komen ? 'hidden': 'block'" class="w-full text-center">
+                            
+                        
+                                <div id="tele-ikon">
+
+                                
+                                </div>
+                               
+                            
+                        </div>
+
+                        <div class="w-full" x-show="open_komen">
+                            <div class="mb-3">
+                                <textarea class="text-sm p-3 mb-3 w-full block rounded-lg border-2 
+                                text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
+                            focus:ring-indigo-200 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
+                                    cols="30" rows="2" placeholder="Tulis komentar ...."
+                                    @keyup.enter="$nextTick(() => { document.getElementById('tombol-kirim-komentar').focus() })"></textarea>
+
+                                <button id="tombol-kirim-komentar" class="text-sm bg-indigo-500 text-white 
+                                    rounded-lg lg:px-2 lg:py-1 md:px-2 md:py-1 px-3 py-1    
+                                    hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                    dark:bg-indigo-400 dark:hover:bg-indigo-500">
+                                    Kirim
+                                </button>
+                            </div>
+
+                            <template x-for="[id, value] in Object.entries(komen)" :key="id">
+
+                                <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
+                                    <!-- PROFIL KOMENTAR -->
+                                    <div class=" flex-shrink-0 text-center">
+                                        <template x-teleport="#tele-ikon">
+                                            <div class="flex items-center mb-3">
+                                                <img class="flex-none lg:h-12 lg:w-12 md:w-12 md:h-12 w-10 h-10 rounded-full border-2 border-indigo-500"
+                                                :src="value.foto" alt="Foto">
+
+                                                <div class="flex-1 ml-2 text-xs">
+                                                    Berkomentar
+
+                                                </div>
+
+                                               
+
+                                            </div>
+                                        </template>
+                                        <img class="mb-3 lg:h-12 lg:w-12 md:w-12 md:h-12 w-10 h-10 rounded-full border-2 border-indigo-500"
+                                            :src="value.foto" alt="Foto">
+                                        <button
+                                            @click="open_balas = value.balas_komen;
+                                            $nextTick(() => { document.getElementById(`balas_` + id).focus() })"
+                                            class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white 
+                                            hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                            dark:bg-indigo-400 dark:hover:bg-indigo-500">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                    </div>
+                                    <!-- END PROFIL KOMENTAR -->
+                                    <!-- TEKS BALASAN KOMENTAR -->
+                                    <div class="ml-3 flex-grow" :id="value.balas_komen">
+
+                                        <div class="font-medium inline dark:text-white"
+                                            x-text="value.nama">
+
+                                        </div>
+                                        <div class="inline text-xs text-gray-500 dark:text-gray-400 "
+                                            x-text="`(`+value.username+`)`"></div>
+
+                                        <small class="text-gray-400 dark:text-gray-300 text-xs block"
+                                            x-text="value.tanggal"></small>
+                                        <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500"
+                                            x-text="value.komentar">
+                                        </div>
+
+
+                                        <!-- ISIAN BALASAN -->
+                                        <div class="mb-3" x-show="open_balas == value.balas_komen"
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="transform opacity-0 -translate-y-3"
+                                            x-transition:enter-end="transform opacity-100 translate-y-0">
+                                            <textarea @click.away="open_balas = false" :id="`balas_` + id"
+                                                @keyup.enter="$nextTick(() => { document.getElementById(`tombol-kirim-balasan-` + id).focus() })"
+                                                class="text-sm p-3 mb-3 w-full block rounded-lg border-2 
+                                            border-indigo-500 focus:outline-none focus:ring-2 
+                                            text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
+                                                rows="2" placeholder="Tulis balasan ...."></textarea>
+
+                                            <button @click="tekan()" class="bg-indigo-500 text-white rounded-lg 
+                                            lg:px-2 lg:py-1 md:px-2 md:py-1 px-3 py-1 text-sm 
+                                                hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                                dark:bg-indigo-400 dark:hover:bg-indigo-500"
+                                                :id="`tombol-kirim-balasan-` + id">
+                                                Kirim
+                                            </button>
+
+                                        </div>
+                                        <!-- END ISIAN BALASAN  -->
+
+                                        <!-- BALASAN -->
+                                        <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
+                                            <!-- PROFIL BALASAN -->
+                                            <div class="flex-shrink-0 text-center">
+
+                                                <img class="mb-3 lg:h-10 lg:w-10 md:w-10 md:h-10 w-9 h-9 rounded-full border-2 border-indigo-500"
+                                                    src="./assets/img/profile_me.png" alt="">
+                                            </div>
+                                            <!-- END PROFIL BALASAN -->
+                                            <!-- TEKS BALASAN -->
+                                            <div class="ml-3 flex-grow">
+                                                <div class="font-medium inline dark:text-white">
+                                                    Karol.Y
+
+                                                </div>
+                                                <div class="inline text-xs text-gray-500 dark:text-gray-400">
+                                                    (@Nc)</div>
+                                                <small
+                                                    class="text-gray-400 dark:text-gray-300 text-xs block">Baru
+                                                    saja</small>
+                                                <div
+                                                    class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
+                                                    <p class="text-sm dark:text-white">
+                                                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                        elit. Quidem, autem provident? Hic nostrum aliquid
+                                                        dolore eveniet voluptatum fugit commodi rerum sint
+                                                        blanditiis minima eaque nam, explicabo voluptatem earum
+                                                        quam sed.
+                                                    </p>
+                                                </div>
+                                                <!-- END TEKS BALASAN -->
+                                            </div>
+                                        </div>
+                                        <!-- END BALASAN -->
+
+                                    </div>
+                                    <!-- END TEKS BALASAN KOMENTAR -->
+
+                                </div>
+
+                            </template>
+                            
+
+
+                        </div>
+
+                    </div>
+    
+                </div>
 
 
             </div>
+            <!-- END KOMENTAR -->
 
 
 
-            <!--  -->
+            <!-- MENU BAB -->
+
+            <div class="lg:hidden block fixed bottom-6 inset-x-0 z-50 ">
+                <div class="flex justify-center">
+
+                    <div class="relative h-14 w-44 bg-transparent border-2 border-indigo-500 rounded-3xl">
+                        <div class="absolute w-full h-full opacity-80 bg-white rounded-3xl"></div>
+                        <div class="absolute flex justify-around items-center h-full w-full">
+
+                            <button class="">
+                                <i class="fas text-xl fa-list"></i>
+                            </button>
+
+                            <button>
+                                <i class="fas text-xl fa-comment"></i>
+                            </button>
+
+                            <button>
+                                <i class="fas text-xl fa-cog"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- END MENU BAB -->
 
 
 
 
             <!-- MENU BAWAH MOBILE -->
 
-            <div class="block lg:hidden md:hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: true}
+            <div class="hidden fixed inset-x-0 bottom-0 z-50" x-data="{menu_mobile: true}
         " @click.away="menu_mobile = false">
                 <div x-show="menu_mobile == 'buku'" id="mobile-menu-buku"
                     class="-mb-3 p-2 bg-white h-auto rounded-t-xl border-opacity-50 border-t-4 border-indigo-500 dark:bg-gray-800"
@@ -1134,7 +1348,7 @@
     </main>
 
 
-    <footer class="hidden md:block lg:block text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0">
+    <footer class="hidden lg:block text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0">
         <div class="container px-5 py-12 mx-auto flex md:items-center lg:items-start flex-row flex-nowrap">
             <!-- sm flex-wrap flex-col -->
             <div class="w-64 my-auto flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
@@ -1231,6 +1445,6 @@
 <script defer src="./assets/base/alpine/collapse.min.js"></script>
 <script defer src="./assets/base/alpine/alpine.min.js"></script>
 
-<script src="./assets/custom/script/cerita.js"></script>
+<script src="./assets/custom/script/bab.js"></script>
 
 </html>
