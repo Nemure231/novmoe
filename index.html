@@ -2283,15 +2283,15 @@
                             <!-- TEKS KOMENTAR PUBLIK -->
                             <div class="ml-3 flex-grow" :id="value.balas_komen">
 
-                                <div class="font-medium inline dark:text-white" x-text="value.nama">
+                                <div class="font-medium lg:text-base md:text-base text-sm inline dark:text-white" x-text="value.nama">
 
                                 </div>
-                                <div class="inline text-xs text-gray-500 dark:text-gray-400 "
+                                <div class="inline lg:text-sm lg:text-sm text-xs text-gray-500 dark:text-gray-400 "
                                     x-text="`(`+value.username+`)`"></div>
 
 
 
-                                <div class="text-gray-500 dark:text-gray-300 text-xs">
+                                <div class="text-gray-500 dark:text-gray-300 lg:text-sm lg:text-sm text-xs">
                                     Berkomentar
                                     <div class="inline" x-text="value.tanggal"></div>
                                     di
@@ -2299,7 +2299,7 @@
                                         x-text="value.cerita"></a>
 
                                 </div>
-                                <div class="mb-3 mt-3 text-xs text-gray-600 dark:text-gray-200 border-b border-indigo-500 border-opacity-75 dark:text-white dark:border-gray-500"
+                                <div class="mb-3 mt-3 lg:text-sm md:text-sm text-xs text-gray-600 dark:text-gray-200 border-b border-indigo-500 border-opacity-75 dark:text-white dark:border-gray-500"
                                     x-text="
                                     potong_komentar(value.komentar)
                                     ">
