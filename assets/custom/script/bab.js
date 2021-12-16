@@ -233,14 +233,14 @@ document.addEventListener('alpine:init', () => {
             var pesan = `
                 <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
                     <div class="flex-shrink-0 text-center">
-                        <img class="mb-3 lg:h-10 lg:w-10 md:w-10 md:h-10 w-9 h-9 rounded-full border-2 border-indigo-500"
+                        <img class="mb-3 lg:h-14 lg:w-14 md:w-14 md:h-14 sm:w-11 sm:h-11 w-11 h-11 rounded-full border-2 border-indigo-500"
                             src="./assets/img/profile_me.png" alt="">
                     </div>
                     <div class="ml-3 flex-grow">
                         <div class="font-medium text-base inline dark:text-white"> Karol.Y
 
                         </div>
-                        <div class="inline text-xs text-gray-500 dark:text-gray-400">(@Nc)</div>
+                        <div class="inline text-sm text-gray-500 dark:text-gray-400">(@Nc)</div>
                         <small class="text-gray-400 dark:text-gray-300 text-xs block">Baru saja</small>
                         <div class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
                             <p class="break-all text-sm dark:text-white">

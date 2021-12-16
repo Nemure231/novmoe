@@ -31,27 +31,28 @@
     lg:bg-gray-200 md:bg-white sm:bg-white bg-white 
     lg:dark:bg-gray-900 md:dark:bg-gray-900 sm:dark:bg-gray-800 dark:bg-gray-800">
 
-    
-    <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-[60]"> <!-- khusus untuk nav bab pakai z-index 60 -->
+
+    <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-[60]">
+        <!-- khusus untuk nav bab pakai z-index 60 -->
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center h-16">
 
                 <div class="flex-1 flex justify-between items-center">
                     <div class="flex-shrink-0 flex items-center" x-data="{nav_bab: false}">
-                        <button class="h-12 w-12 text-white rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-500" @click="nav_bab = ! nav_bab">
-                            <i class="fas text-2xl"
-                                :class="nav_bab ? 'fa-times' : 'fa-list'">
+                        <button id="tombol-list-bab" class="h-12 w-12 text-white rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-500"
+                            @click="nav_bab = ! nav_bab">
+                            <i class="fas text-2xl" :class="nav_bab ? 'fa-times' : 'fa-list'">
                             </i>
 
                         </button>
 
-                        <template x-teleport="#tele-layar-gelap">
+                        <template x-teleport="#tele-layar-gelap-aside">
                             <div class="fixed inset-0 bg-black opacity-50 z-40" x-show="nav_bab">
 
                             </div>
                         </template>
 
-                        <template x-teleport="#tele-daftar-bab">
+                        <template x-teleport="#tele-aside">
                             <div class="fixed inset-y-0 left-0 top-0 w-64 z-50 bg-white border-r-2 border-indigo-500"
                                 @click.away="nav_bab = false" x-show="nav_bab"
                                 x-transition:enter="transition ease-linear duration-300"
@@ -83,7 +84,8 @@
                                                         <div class="flex flex-col sm:flex-row items-center">
                                                             <div class="flex justify-start w-full mx-auto items-center">
                                                                 <div class="w-full sm:pl-8 pr-1 ">
-                                                                    <div class="p-3 bg-white rounded shadow-lg border border-gray-200">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
 
                                                                         <a :href="value.link" x-text="value.judul">
 
@@ -92,7 +94,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div x-text="value.id" :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
                                                                 class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
                                                             </div>
                                                         </div>
@@ -118,11 +121,186 @@
                     </div>
 
 
-                    <div class="flex-shrink-0 flex items-center">
-                        <button class=" h-8 w-auto text-white h-12 w-12 text-white rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-500">
-                            <i class="fas text-2xl fa-comments"></i>
+                    <div class="flex-shrink-0 flex items-center" x-data="{nav_bab: false}">
+                        <button class="h-12 w-12 text-white rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-500"
+                            @click="nav_bab = ! nav_bab;
+                            nav_bab ? document.getElementById('tombol-list-bab').classList.add('hidden') : 
+                            document.getElementById('tombol-list-bab').classList.remove('hidden') ">
+                            <i class="fas text-2xl" :class="nav_bab ? 'fa-times' : 'fa-comments'">
+                            </i>
 
                         </button>
+
+                        <template x-teleport="#tele-layar-gelap-aside">
+                            <div class="fixed inset-0 bg-white z-40" x-show="nav_bab">
+
+                            </div>
+                        </template>
+
+                        <template x-teleport="#tele-aside">
+                            <div class="absolute inset-0 z-50" x-show="nav_bab"
+                                x-transition:enter="transition ease-linear duration-300"
+                                x-transition:enter-start="transform translate-x-full"
+                                x-transition:enter-end="transform translate-x-0"
+                                x-transition:leave="transition ease-linear duration-300"
+                                x-transition:leave-start="transform  translate-x-0"
+                                x-transition:leave-end="transform translate-x-full">
+
+                                <!-- KOMENTAR -->
+                                <div class="mt-16" x-data="komen">
+                                    <div
+                                        class="pl-3 pr-6 py-3 bg-white rounded-xl h-fit w-fit relative mb-3 relative overflow-hidden">
+
+
+                                        <div class="flex flex-col">
+
+
+                                            <div class="w-full" x-show="open_komen">
+                                                <div class="mb-3">
+                                                    <textarea class="p-3 mb-3 w-full block rounded-lg border-2 
+                                        text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
+                                    focus:ring-indigo-200 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
+                                                        cols="30" rows="3" placeholder="Tulis komentar ...."
+                                                        @keyup.enter="$nextTick(() => { document.getElementById('tombol-kirim-komentar').focus() })"></textarea>
+
+                                                    <button id="tombol-kirim-komentar" class="bg-indigo-500 text-white lg:px-4 lg:py-2 
+                                            rounded-lg md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1    
+                                            hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                            dark:bg-indigo-400 dark:hover:bg-indigo-500">
+                                                        Kirim
+                                                    </button>
+                                                </div>
+
+                                                <template x-for="[id, value] in Object.entries(komen)" :key="id">
+
+                                                    <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
+                                                        <!-- PROFIL KOMENTAR -->
+                                                        <div class=" flex-shrink-0 text-center">
+                                                            <img class="mb-3 lg:h-16 lg:w-16 md:w-16 md:h-16 sm:w-12 sm:h-12 w-12 h-12 rounded-full border-2 border-indigo-500"
+                                                                :src="value.foto" alt="Foto">
+                                                            <button
+                                                                @click="open_balas = value.balas_komen;
+                                                                    $nextTick(() => { document.getElementById(`balas_` + id).focus() })"
+                                                                class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white 
+                                                                    hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                                                    dark:bg-indigo-400 dark:hover:bg-indigo-500">
+                                                                <i class="fas fa-reply"></i>
+                                                            </button>
+                                                        </div>
+                                                        <!-- END PROFIL KOMENTAR -->
+                                                        <!-- TEKS BALASAN KOMENTAR -->
+                                                        <div class="ml-3 flex-grow" :id="value.balas_komen">
+
+                                                            <div class="font-medium text-base inline dark:text-white"
+                                                                x-text="value.nama">
+
+                                                            </div>
+                                                            <div class="inline text-sm text-gray-500 dark:text-gray-400 "
+                                                                x-text="`(`+value.username+`)`"></div>
+
+                                                            <small
+                                                                class="text-gray-400 dark:text-gray-300 text-xs block"
+                                                                x-text="value.tanggal"></small>
+                                                            <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500"
+                                                                x-text="value.komentar">
+                                                            </div>
+
+
+                                                            <!-- ISIAN BALASAN -->
+                                                            <div class="mb-3" x-show="open_balas == value.balas_komen"
+                                                                x-transition:enter="transition ease-out duration-200"
+                                                                x-transition:enter-start="transform opacity-0 -translate-y-3"
+                                                                x-transition:enter-end="transform opacity-100 translate-y-0">
+                                                                <textarea @click.away="open_balas = false"
+                                                                    :id="`balas_` + id"
+                                                                    @keyup.enter="$nextTick(() => { document.getElementById(`tombol-kirim-balasan-` + id).focus() })"
+                                                                    class="p-3 mb-3 w-full block rounded-lg border-2 
+                                                                    border-indigo-500 focus:outline-none focus:ring-2 
+                                                                    text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
+                                                                    rows="2"
+                                                                    placeholder="Tulis balasan ...."></textarea>
+
+                                                                <button @click="tekan()" class="bg-indigo-500 text-white rounded-lg 
+                                                                    lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1 
+                                                                        hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500"
+                                                                    :id="`tombol-kirim-balasan-` + id">
+                                                                    Kirim
+                                                                </button>
+
+                                                            </div>
+                                                            <!-- END ISIAN BALASAN  -->
+
+                                                            <!-- BALASAN -->
+                                                            <div
+                                                                class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
+                                                                <!-- PROFIL BALASAN -->
+                                                                <div class="flex-shrink-0 text-center">
+                                                                    <img class="mb-3 lg:h-14 lg:w-14 md:w-14 md:h-14 sm:w-11 sm:h-11 w-11 h-11 rounded-full border-2 border-indigo-500"
+                                                                        src="./assets/img/profile_me.png" alt="">
+                                                                </div>
+                                                                <!-- END PROFIL BALASAN -->
+                                                                <!-- TEKS BALASAN -->
+                                                                <div class="ml-3 flex-grow">
+                                                                    <div
+                                                                        class="font-medium text-base inline dark:text-white">
+                                                                        Karol.Y
+
+                                                                    </div>
+                                                                    <div
+                                                                        class="inline text-sm text-gray-500 dark:text-gray-400">
+                                                                        (@Nc)</div>
+                                                                    <small
+                                                                        class="text-gray-400 dark:text-gray-300 text-xs block">Baru
+                                                                        saja</small>
+                                                                    <div
+                                                                        class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
+                                                                        <p class="text-sm dark:text-white">
+                                                                            Lorem ipsum, dolor sit amet consectetur
+                                                                            adipisicing
+                                                                            elit. Quidem, autem provident? Hic nostrum
+                                                                            aliquid
+                                                                            dolore eveniet voluptatum fugit commodi
+                                                                            rerum sint
+                                                                            blanditiis minima eaque nam, explicabo
+                                                                            voluptatem earum
+                                                                            quam sed.
+                                                                        </p>
+                                                                    </div>
+                                                                    <!-- END TEKS BALASAN -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- END BALASAN -->
+
+                                                        </div>
+                                                        <!-- END TEKS BALASAN KOMENTAR -->
+
+                                                    </div>
+
+                                                </template>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- END KOMENTAR -->
+
+
+
+
+                                </div>
+
+                                <!-- </div> -->
+
+
+                            </div>
+
+                        </template>
 
                     </div>
 
@@ -141,11 +319,11 @@
     <!-- SIDEBAR BAB -->
 
 
-    <aside id="tele-daftar-bab">
-    
+    <aside id="tele-aside">
+
     </aside>
 
-    <div id="tele-layar-gelap">
+    <div id="tele-layar-gelap-aside">
 
     </div>
 
