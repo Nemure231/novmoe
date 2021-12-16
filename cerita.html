@@ -1058,7 +1058,7 @@
                                                     @click="$refs.less.classList.add('hidden'); $refs.more.classList.remove('hidden');
                                                     $refs.teks_blurb.innerText = potong_komentar($refs.teks_blurb.dataset.blurb);"
                                                     :class="$refs.teks_blurb.dataset.blurb.split('').length > 50 ? '' : 'hidden'"
-                                                    class=" text-xs rounded-lg bg-indigo-500 p-1 text-white dark:bg-indigo-400">
+                                                    class="lg:hidden md:hidden block  text-xs rounded-lg bg-indigo-500 p-1 text-white dark:bg-indigo-400">
                                                     see less
                                                 </button>
 
