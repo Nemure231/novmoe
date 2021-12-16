@@ -34,867 +34,111 @@
 
     <nav class="bg-indigo-500 dark:bg-indigo-400 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16">
-                <div class="absolute inset-y-0 left-0 flex items-center block lg:hidden md:hidden">
-                    <!-- Mobile menu button-->
-                    <!-- <button type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span> -->
-                    <!--
-              Icon when menu is closed.
-  
-              Heroicon name: outline/menu
-  
-              Menu open: "hidden", Menu closed: "block"
-            -->
-                    <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg> -->
-                    <!--
-              Icon when menu is open.
-  
-              Heroicon name: outline/x
-  
-              Menu open: "block", Menu closed: "hidden"
-            -->
-                    <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg> -->
-                    <!-- </button> -->
-                </div>
-                <div class="flex-1 flex items-center justify-center lg:justify-start md:justify-start items-stretch">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img class="hidden lg:block h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                            alt="Workflow">
+            <div class="relative flex items-center h-16">
 
-                        <div class="block lg:hidden h-8 w-auto text-white">
-                            <i class="fas fa-2x fa-rainbow"></i>
-
-                        </div>
-
-                    </div>
-                    <div class="hidden lg:block md:ml-6 lg:ml-6">
-                        <div class="flex relative space-x-4">
-
-
-                            <!-- NAVBAR BERANDA-->
-                            <div class="hover:bg-indigo-700 dark:hover:bg-indigo-500 rounded-md">
-
-                                <div class="px-2 py-2">
-
-                                    <a href="./index.html" class="text-white text-sm font-medium"
-                                        aria-current="page">Beranda</a>
-
-                                </div>
-                            </div>
-                            <!-- END NAVBAR BERENADA -->
-
-                            <!-- NAVBAR GENRE -->
-                            <div @click.away="open = false"
-                                class=" relative hover:bg-indigo-700 dark:hover:bg-indigo-500 rounded-md px-2 py-2"
-                                x-data="navbar_genre">
-
-                                <button @click="pencet_navbar_genre" class="text-white text-sm font-medium">
-                                    <span>Genre</span>
-                                    <svg fill="currentColor" viewBox="0 0 20 20"
-                                        :class="{'rotate-180': open, 'rotate-0': !open}"
-                                        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <!-- DROPDOWN GENRE -->
-                                <div x-show="open" id="dropdown-navbar-genre"
-                                    x-transition:enter="transition ease-out duration-100 "
-                                    x-transition:enter-start="transform opacity-0 -translate-y-7"
-                                    x-transition:enter-end="transform opacity-100 translate-y-0"
-                                    x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 translate-y-0"
-                                    x-transition:leave-end="transform opacity-0 -translate-y-7"
-                                    class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
-
-                                    <div class="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
-                                        <div class="grid grid-cols-2 grid-rows-max gap-4">
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-hat-wizard"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Fantasy</div>
-
-                                                </div>
-                                            </a>
-
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-cog"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Sci-fi</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-grin-squint"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Comedy</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-heart"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Romance</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-ghost"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Supernatural</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-hand-rock"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Action</div>
-
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END DROPDOWN GENRE -->
-                            </div>
-                            <!-- END NAVBAR GENRE -->
-
-
-                            <!-- NAVBAR KATEGORI -->
-                            <div @click.away="open = false"
-                                class=" relative hover:bg-indigo-700 dark:hover:bg-indigo-500  rounded-md px-2 py-2"
-                                x-data="navbar_kategori">
-
-                                <button @click="pencet_navbar_kategori" class="text-white text-sm font-medium">
-                                    <span>Kategori</span>
-                                    <svg fill="currentColor" viewBox="0 0 20 20"
-                                        :class="{'rotate-180': open, 'rotate-0': !open}"
-                                        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <!-- DROPDOWN KATEGORI -->
-                                <div x-show="open" id="dropdown-navbar-kategori"
-                                    x-transition:enter="transition ease-out duration-100 "
-                                    x-transition:enter-start="transform opacity-0 -translate-y-7"
-                                    x-transition:enter-end="transform opacity-100 translate-y-0"
-                                    x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 translate-y-0"
-                                    x-transition:leave-end="transform opacity-0 -translate-y-7"
-                                    class="hidden absolute left-0 w-80 max-w-max mt-2 origin-top-left">
-
-                                    <div class="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
-                                        <div class="grid grid-cols-2 grid-rows-max gap-4">
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas fa-hourglass-half"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Berlangsung</div>
-
-                                                </div>
-                                            </a>
-
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas fa-hourglass-end"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Tamat</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-star"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Populer</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-fire"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Trending</div>
-
-                                                </div>
-                                            </a>
-                                            <a href=""
-                                                class="flex flex row items-center rounded-lg bg-transparent p-2 text-gray-900 hover:bg-indigo-200 dark:text-white dark:hover:bg-gray-700">
-                                                <div class="rounded-lg">
-                                                    <i class="fas  fa-arrow-up"></i>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <div class="font-semibold text-sm">Terbaru</div>
-
-                                                </div>
-                                            </a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END DROPDOWN KATEGORI -->
-                            </div>
-                            <!-- END NAVBAR KATEGORI -->
-
-                            <!-- <div class="hover:bg-indigo-700 rounded-md">
-
-                                <div class="px-3 py-2">
-
-                                    <a href="#" class="text-white text-sm font-medium">Calendar</a>
-                                </div>
-
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-
-                    <!-- NAVBAR WARNA -->
-                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div class=" ml-3 relative hidden lg:block md:block">
-                        <button class="js-change-theme focus:outline-none h-8 w-8" @click="darkMode = !darkMode">
-                            <i class="mr-3 text-2xl fas fa-moon text-yellow-200"
-                                :class="[darkMode ? 'fas fa-sun' : 'fas fa-moon',
-                               darkMode ? $el.classList.remove('fas', 'fa-moon', 'text-yellow-200') : $el.classList.remove('fas', 'fa-sun', 'text-yellow-500'),
-                               darkMode ? $el.classList.add('fas', 'fa-sun', 'text-yellow-500') : $el.classList.add('fas', 'fa-moon', 'text-yellow-200')]">
-                            </i>
-                        </button>
-
-
-                    </div>
-                    <!-- NAVBAR PROFIL -->
-
-
-
-
-
-                    <!-- NAVBAR NOTIF -->
-                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_notif" class="relative" @click.away="open = false" x-data="notif">
-                        <span class="flex h-3 w-3 absolute top-0 right-0">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-                        </span>
-                        <!-- TOMBOL NOTIF -->
-                        <button type="button" @click="pencet_notif"
-                            class="p-1 rounded-full text-white  focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white">
-                            <span class="sr-only">View notifications</span>
-
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                            </svg>
+                <div class="flex-1 flex justify-between items-center">
+                    <div class="flex-shrink-0 flex items-center" x-data="{nav_bab: false}">
+                        <button class="h-8 w-auto text-white" @click="nav_bab = ! nav_bab">
+                            <i class="fas text-2xl fa-list"></i>
 
                         </button>
-                        <!-- END TOMBOL NOTIF -->
-                        <!-- DROPDOWN NOTIF -->
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100 "
-                            x-transition:enter-start="transform opacity-0 -translate-y-7"
-                            x-transition:enter-end="transform opacity-100 translate-y-0"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 translate-y-0"
-                            x-transition:leave-end="transform opacity-0 -translate-y-7" id="dropdown-notif" class="hidden origin-top-right absolute right-0 mt-2 w-72 md:w-96 lg:w-96 rounded-lg 
-                            shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none
-                            dark:bg-gray-800 overflow-y-auto h-auto max-h-60 " role="menu" aria-orientation="vertical"
-                            aria-labelledby="user-menu-button" tabindex="-1">
+                        <template x-teleport="#tele-daftar-bab">
+                            <div class="fixed inset-y-0 left-0 top-0 w-64 z-40 bg-white border-r-2 border-indigo-500"
+                                @click.away="nav_bab = false" x-show="nav_bab"
+                                x-transition:enter="transition ease-linear duration-300"
+                                x-transition:enter-start="transform -translate-x-80"
+                                x-transition:enter-end="transform translate-x-0"
+                                x-transition:leave="transition ease-linear duration-300"
+                                x-transition:leave-start="transform  translate-x-0"
+                                x-transition:leave-end="transform -translate-x-80">
+                                <!-- <div class=" mt-16"> -->
+                                <div class="h-12 px-3 py-3 mt-16 text-center shadow-lg">
+                                    <a href="./cerita.html" class="font-bold text-indigo-500">Outcast Desire</a>
+                                </div>
 
+                                <div class="overflow-y-auto h-5/6 p-3 w-full" x-data="list_bab">
 
-                            <ul class="list-none ">
-                                <li
-                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:text-white rounded-t-lg hover:bg-indigo-200">
-                                    <div Class="m-1">
+                                    <div class="min-h-screen py-0 flex flex-col justify-start">
+                                        <div class="sm:max-w-xl sm:mx-auto w-full px-2 sm:px-0">
 
-                                        <div class="flex item-center max-w-max">
+                                            <div class="relative text-gray-700 antialiased text-sm font-semibold">
 
-
-                                            <img src="./assets/img/profile.png"
-                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
-
-
-                                            <p class="text-xs">
-                                                <b>Angelica </b>
-                                                Mengomentari "[2]" di<b> Outcast Desire </b>kamu.
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                        <!-- ikon -->
-                                    </div>
-
-                                    <a href="./bab.html"
-                                        class="ml-3 text-xs text-center text-gray-500 hover:text-indigo-500 dark:hover:text-indigo-400 dark:text-gray-400">
-                                        1 jam lalu
-
-                                    </a>
-                                </li>
-
-                                <li
-                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-none hover:bg-indigo-200">
-                                    <div Class="m-1">
-
-                                        <div class="flex item-center max-w-max">
-
-
-                                            <img src="./assets/img/profile.png"
-                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
-
-
-                                            <p class="text-xs">
-                                                <b>Angelica </b> Mengomentari "[1]" di<b> Outcast Desire </b>kamu.
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                        <i class="fas text-xl md:text-2xl lg:text-2xl fa-thumbs-up text-green-400">
-
-                                        </i>
-                                    </div>
-                                    <a href="./bab.html"
-                                        class="ml-3 text-xs text-center text-gray-500 hover:text-indigo-500 dark:hover:text-indigo-400 dark:text-gray-400">
-                                        Kemarin
-
-                                    </a>
-                                </li>
-
-                                <li
-                                    class="block flex justify-between px-3 py-2 text-sm text-gray-900 dark:text-white dark:hover:bg-gray-700 rounded-b-lg hover:bg-indigo-200">
-                                    <div Class="m-1">
-
-                                        <div class="flex item-center max-w-max">
-
-
-                                            <img src="./assets/img/profile.png"
-                                                class="mx-2 h-9 w-9 border-2 border-indigo-500 rounded-full" alt="">
-
-
-                                            <p class="text-xs">
-                                                <b>Angelica </b>
-                                                Mengomentari "[0]" di<b> Outcast Desire </b>kamu.
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                        <i class="fas text-xl md:text-2xl lg:text-2xl fa-thumbs-down text-red-400">
-
-                                        </i>
-                                    </div>
-                                    <a href="./bab.html"
-                                        class="ml-3 text-xs text-center text-gray-500 hover:text-indigo-500 dark:hover:text-indigo-400 dark:text-gray-400">
-                                        20 Des 2021
-
-                                    </a>
-                                </li>
-                            </ul>
-
-
-                        </div>
-                        <!-- END DROPDOWN NOTIF -->
-
-
-                    </div>
-                    <!-- END NAVBAR NOTIF -->
-
-
-                    <!-- NAVBAR PROFIL -->
-                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIN -->
-                    <div x-ref="tombol_profil" class="ml-3 relative" @click.away="open = false" x-data="profil">
-                        <div>
-                            <!-- TOMBOL PROFIL -->
-                            <button type="button" @click="pencet_profil"
-                                class="bg-blue-500 flex text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white"
-                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full" src="./assets/img/profile_me.png" alt="">
-
-                            </button>
-                            <!-- END TOMBOL PROFIL -->
-
-                        </div>
-                        <!-- DROPDOWN PROFIL -->
-                        <div id="dropdown-profil" x-show="open" x-transition:enter="transition ease-out duration-100 "
-                            x-transition:enter-start="transform opacity-0 -translate-y-7"
-                            x-transition:enter-end="transform opacity-100 translate-y-0"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 translate-y-0"
-                            x-transition:leave-end="transform opacity-0 -translate-y-7"
-                            class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none  dark:bg-gray-800 "
-                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-
-                            <a href="./profil.html"
-                                class="block px-4 py-2 text-sm dark:text-white hover:bg-indigo-200 rounded-t-lg dark:hover:bg-gray-700"
-                                role="menuitem" tabindex="-1" id="user-menu-item-0">@Nc</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm dark:text-white hover:bg-indigo-200 rounded-none dark:hover:bg-gray-700"
-                                role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard Author</a>
-
-
-                            <a href="#"
-                                class="block px-4 py-2 text-sm dark:text-white hover:bg-indigo-200 rounded-b-lg dark:hover:bg-gray-700"
-                                role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
-                        </div>
-                        <!-- END DROPDOWN PROFIL -->
-
-
-                    </div>
-                    <!-- END NAVBAR PROFIL -->
-
-                    <!-- NAVABR AUTH  -->
-                    <!-- PAKE CLASS HIDDEN BUAT NYEMBUNYIIAN -->
-                    <div class="hidden ml-3 relative" x-data="{modal_auth: false}">
-
-                        <!-- TOMBOL AUTH -->
-                        <button type="button" @click="modal_auth = !modal_auth; 
-                        $nextTick(() => { document.getElementById('surel-login').focus() })"
-                            class="bg-white hover:bg-gray-200 text-indigo-500 font-bold  lg:p-2.5 md:p-2.5 sm:p-2 p-2 flex text-sm rounded-lg "
-                            aria-expanded="false" aria-haspopup="true">
-                            Login/Regist
-                            <span class="sr-only">Open modal</span>
-                        </button>
-                        <!-- END TOMBOL AUTH -->
-
-
-                        <!-- MODAL AUTH  -->
-                        <template x-teleport="body">
-                            <div x-show="modal_auth" class="fixed z-10 inset-0 overflow-y-auto"
-                                aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                                <div
-                                    class="flex items-end justify-center min-h-screen pt-4 px-4 sm:pb-20 pb-40 text-center sm:block sm:p-0">
-
-                                    <div x-show="modal_auth"
-                                        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-                                        x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                                        aria-hidden="true"></div>
-
-                                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
-                                        aria-hidden="true">&#8203;</span>
-
-                                    <div x-show="modal_auth" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                                        x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                        class="overflow-visible inline-block align-bottom bg-white dark:bg-gray-800  rounded text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-
-
-                                        <div x-data="{auth_menu : true}">
-
-                                            <div class="dark:bg-gray-800 rounded">
-                                                <!-- TOMBOL TUTUP MODAL AUTH -->
-                                                <div class="relative">
-                                                    <div class="absolute -right-4 top-0">
-                                                        <button type="button"
-                                                            class="-mt-3 flex justify-center item-center text-white h-8 w-8 rounded-full bg-red-500 "
-                                                            @click="modal_auth = false">
-                                                            <i
-                                                                class=" fas fa-2x fa-times justify-center item-center"></i>
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-                                                <!-- END TOMBOL TUTUP MODAL AUTH -->
-                                                <ul class="flex">
-                                                    <!-- TOMBOL TAB LOGIN-->
-                                                    <li class="flex-1">
-                                                        <a @click="auth_menu = true,
-                                                            $refs.login.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
-                                                            'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
-                                                            $refs.login.classList.remove('hover:bg-gray-200', 'text-indigo-500', 'dark:hover:bg-gray-700'),
-                                                            $refs.regist.classList.add('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
-                                                            $refs.regist.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
-                                                            $nextTick(() => { document.getElementById('surel-login').focus() })
-                                                        " class="text-center block rounded-tl
-                                                        py-2 px-4 bg-indigo-500 font-semibold dark:bg-indigo-400 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white"
-                                                            x-ref="login" href="#">Login</a>
-                                                    </li>
-                                                    <!-- END TOMBOL TAB LOGIN -->
-                                                    <!-- TOMBOL TAB REGIST -->
-                                                    <li class="flex-1">
-                                                        <a @click="auth_menu = 'regist',
-                                                        $refs.login.classList.remove('bg-indigo-500', 'hover:bg-indigo-700', 'text-white',
-                                                        'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
-                                                        $refs.login.classList.add('hover:bg-gray-200', 'text-indigo-500', 'dark:text-white', 'dark:hover:bg-gray-700'),
-                                                        $refs.regist.classList.remove('text-indigo-500', 'hover:bg-gray-200', 'dark:text-white', 'dark:hover:bg-gray-700'),
-                                                        $refs.regist.classList.add('bg-indigo-500', 'hover:bg-indigo-700', 'text-white', 'dark:bg-indigo-400', 'dark:hover:bg-indigo-500'),
-                                                        $nextTick(() => { document.getElementById('surel-regist').focus() })
-                                                        " class="text-center block rounded-tr
-                                                    text-indigo-500 font-semibold dark:text-white  hover:bg-gray-200 dark:hover:bg-gray-700  py-2 px-4"
-                                                            x-ref="regist" href="#">Regist</a>
-                                                    </li>
-                                                    <!-- END TOMBOL TAB REGIST -->
-
-                                                </ul>
-                                            </div>
-
-                                            <!-- TAB LOGIN -->
-                                            <div x-show="auth_menu == true">
-
-                                                <div class="pt-5 pb-4 p-6 sm:pb-4">
-                                                    <!-- SUREL LOGIN -->
-                                                    <div class="mt-3 sm:ml-4 text-left">
-                                                        <label class="font-medium dark:text-white">Surel</label>
-                                                        <input id="surel-login" type="text"
-                                                            @keyup.enter="$nextTick(() => { document.getElementById('sandi-login').focus() })"
-                                                            class="block appearance-none border border-indigo-400 rounded-md w-full sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                                                        focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
-                                                    </div>
-                                                    <!-- END SUREL LOGIN -->
-
-                                                    <!-- SANDI LOGIN -->
-                                                    <div class="relative mt-3 sm:ml-4 text-left"
-                                                        x-data="{lihat_sandi: false}">
-                                                        <label class="font-medium dark:text-white">Sandi</label>
-                                                        <span
-                                                            class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
-                                                            <button @click="lihat_sandi = !lihat_sandi"
-                                                                class="p-1 focus:outline-none focus:shadow-outline">
-                                                                <i class="text-xl dark:text-white "
-                                                                    :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
-                                                            </button>
-                                                        </span>
-                                                        <input id="sandi-login"
-                                                            :type="lihat_sandi ? 'text' : 'password'"
-                                                            @keyup.enter="$nextTick(() => { document.getElementById('tombol-login').focus() })"
-                                                            class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                                                            border-indigo-400 rounded-md w-full sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                                                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
-                                                    </div>
-                                                    <!-- END SANDI LOGIN -->
-
-                                                </div>
+                                                <!-- Vertical bar running through middle -->
                                                 <div
-                                                    class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
-                                                    <!-- TOMBOL LUPA SANDI LOGIN -->
-                                                    <div
-                                                        class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
-                                                        <label class="inline-flex items-center mt-3">
-                                                            <a href="./lupa-sandi.html"
-                                                                class="sm:text-sm font-medium text-xs text-indigo-400 dark:font-semibold">Lupa
-                                                                sandi?</a>
-                                                        </label>
-                                                    </div>
-                                                    <!-- END TOMBOL LUPA SANDI LOGIN -->
-
-                                                    <!-- TOMBOL LOGIN -->
-                                                    <button id="tombol-login" type="button" class="justify-center rounded-md border border-transparent shadow-sm px-3 py-2 
-                            bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none 
-                            focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
-                            dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
-                                                        Login
-                                                    </button>
-                                                    <!-- END TOMBOL LOGIN -->
-
+                                                    class="hidden sm:block w-1 bg-indigo-300 absolute h-full left-5 transform -translate-x-1/2">
                                                 </div>
 
-                                            </div>
-                                            <!-- END TAB LOGIN -->
-                                            <!-- TAB REGIST -->
-                                            <div x-show="auth_menu == 'regist'">
 
-                                                <div x-data="{ketentuan: false}">
-                                                    <!-- TAB KETENTUAN -->
-                                                    <div x-show="ketentuan"
-                                                        class="pt-3 pb-4 p-6 bg-white w-full h-full dark:bg-gray-800">
-                                                        <div class="overflow-y-auto h-80">
-                                                            <div
-                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
-                                                                Contoh 1</div>
-                                                            <p class="p-1 dark:text-gray-200 ">
+                                                <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div class="p-3 bg-white rounded shadow-lg border border-gray-200">
 
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                                Consequuntur nostrum dignissimos explicabo numquam
-                                                                officia
-                                                                ullam nobis tempore placeat sequi repellat laboriosam
-                                                                ipsa
-                                                                ut quis quo deleniti, error quod id modi.
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                            </p>
-                                                            <div
-                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
-                                                                Contoh 2</div>
-                                                            <p class="p-1 dark:text-gray-200 ">
+                                                                        <a :href="value.link" x-text="value.judul">
 
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                                Consequuntur nostrum dignissimos explicabo numquam
-                                                                officia
-                                                                ullam nobis tempore placeat sequi repellat laboriosam
-                                                                ipsa
-                                                                ut quis quo deleniti, error quod id modi.
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                            </p>
-                                                            <div
-                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
-                                                                Contoh 3</div>
-                                                            <p class="p-1 dark:text-gray-200 ">
+                                                                        </a>
 
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                                Consequuntur nostrum dignissimos explicabo numquam
-                                                                officia
-                                                                ullam nobis tempore placeat sequi repellat laboriosam
-                                                                ipsa
-                                                                ut quis quo deleniti, error quod id modi.
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                            </p>
-                                                            <div
-                                                                class="sticky top-0 bg-indigo-500 text-center text-white rounded-lg font-bold dark:bg-indigo-400">
-                                                                Contoh 4</div>
-                                                            <p class="p-1 dark:text-gray-200 ">
-
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                                Consequuntur nostrum dignissimos explicabo numquam
-                                                                officia
-                                                                ullam nobis tempore placeat sequi repellat laboriosam
-                                                                ipsa
-                                                                ut quis quo deleniti, error quod id modi.
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                elit.
-                                                            </p>
-
-                                                        </div>
-                                                    </div>
-                                                    <!-- END TAB KETENTUAN -->
-
-
-
-                                                    <div x-ref="hidden_regist" class="pt-3 pb-4 p-6">
-                                                        <div class="sm:flex sm:mt-3">
-                                                            <!-- SUREL REGIST -->
-                                                            <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
-                                                                <label class="font-medium dark:text-white">Surel</label>
-                                                                <input id="surel-regist" type="text"
-                                                                    @keyup.enter="$nextTick(() => { document.getElementById('username-regist').focus() })"
-                                                                    class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border 
-                            border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900 dark:placeholder-gray-400"
-                                                                    placeholder="angelica@example.com">
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <!-- END SUREL REGIST -->
-
-                                                            <!-- USERNAME REGIST -->
-                                                            <div class="sm:flex-inline sm:ml-3 mt-3 text-left">
-                                                                <label
-                                                                    class="font-medium dark:text-white">Username</label>
-                                                                <input id="username-regist" type="text"
-                                                                    @keyup.enter="$nextTick(() => { document.getElementById('sandi-regist').focus() })"
-                                                                    class=" block appearance-none placeholder-gray-500 border 
-                            border-indigo-400 rounded-md w-full  sm:py-2 sm:px-3 p-2 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
+                                                            <div x-text="value.id" :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
                                                             </div>
-                                                            <!-- END USERNAME REGIST -->
-
                                                         </div>
-
-                                                        <!-- SANDI REGIST -->
-                                                        <div class="relative mt-3 sm:ml-3 text-left"
-                                                            x-data="{lihat_sandi: false}">
-                                                            <label class="font-medium dark:text-white">Sandi</label>
-                                                            <span
-                                                                class="absolute inset-y-0 right-2 top-6 flex items-center pl-2">
-                                                                <button @click="lihat_sandi = !lihat_sandi"
-                                                                    class="p-1 focus:outline-none focus:shadow-outline">
-                                                                    <i class="text-xl  dark:text-white"
-                                                                        :class="lihat_sandi ? 'far fa-eye-slash' : 'far fa-eye'"></i>
-                                                                </button>
-                                                            </span>
-                                                            <input :type="lihat_sandi ? 'text' : 'password'"
-                                                                id="sandi-regist"
-                                                                @keyup.enter="$nextTick(() => { document.getElementById('ketentuan-regist').focus() })"
-                                                                class="block appearance-none border 
-                            border-indigo-400 rounded-md w-full  sm:py-2 sm:pl-3 sm:pr-10 py-2 pl-2 pr-10 sm:text-base text-sm text-gray-700 leading-5 focus:outline-none 
-                            focus:ring-2 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900">
-                                                        </div>
-                                                        <!-- END SANDI REGIST -->
-
                                                     </div>
-                                                    <div
-                                                        class="rounded bg-gray-50 py-3 p-6 justify-between flex dark:bg-gray-700">
-
-                                                        <!-- TOMBOL SYARAT DAN KETENTUAN REGIST -->
-                                                        <div
-                                                            class="flex rounded-md border border-transparent text-xs font-base sm:ml-4 sm:w-auto sm:text-sm">
-                                                            <label class="inline-flex items-center mt-3">
-                                                                <input type="checkbox" id="ketentuan-regist"
-                                                                    @keyup.enter="$nextTick(() => { document.getElementById('tombol-regist').focus() });
-                                                            $el.checked = true;"
-                                                                    class="form-checkbox h-5 w-5 text-indigo-500">
-                                                                <a href="javascript:void(0)"
-                                                                    @click="ketentuan =! ketentuan; 
-                                                            
-                                                                $refs.hidden_regist.classList.contains('hidden') ? $refs.hidden_regist.classList.remove('hidden') : $refs.hidden_regist.classList.add('hidden');
-                                                                $refs.hidden_tombol_regist.classList.contains('hidden') ? $refs.hidden_tombol_regist.classList.remove('hidden') : $refs.hidden_tombol_regist.classList.add('hidden');
-                                                                $refs.hidden_tombol_kembali.classList.contains('hidden') ? $refs.hidden_tombol_kembali.classList.remove('hidden') : $refs.hidden_tombol_kembali.classList.add('hidden');"
-                                                                    class="ml-2 sm:text-sm text-xs text-indigo-500 dark:font-semibold">Syarat
-                                                                    dan
-                                                                    Ketentuan.</a>
-                                                            </label>
-                                                        </div>
-                                                        <!-- TOMBOL SYARAT DAN KETENTUAN REGIST -->
+                                                </template>
 
 
-                                                        <!-- TOMBOL REGIST -->
-                                                        <button id="tombol-regist" x-ref="hidden_tombol_regist"
-                                                            type="button"
-                                                            class="justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                                                        bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
-                                                        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
-                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
-                                                            Regist
-                                                        </button>
-                                                        <!-- END TOMBOL REGIST -->
-
-                                                        <!-- TOMBOL KEMBALI SYARAT DAN KETENTUAN REGIST -->
-                                                        <button x-ref="hidden_tombol_kembali" type="button" @click="ketentuan = false;
-                                                    $refs.hidden_regist.classList.contains('hidden') ? $refs.hidden_regist.classList.remove('hidden') : $refs.hidden_regist.classList.add('hidden');
-                                                    $refs.hidden_tombol_regist.classList.contains('hidden') ? $refs.hidden_tombol_regist.classList.remove('hidden') : $refs.hidden_tombol_regist.classList.add('hidden');
-                                                    $refs.hidden_tombol_kembali.classList.contains('hidden') ? $refs.hidden_tombol_kembali.classList.remove('hidden') : $refs.hidden_tombol_kembali.classList.add('hidden');
-                                                    " class="hidden justify-center rounded-md border border-transparent shadow-sm px-4 py-2 
-                                                        bg-indigo-500 sm:text-base text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none
-                                                        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-3 sm:w-auto sm:text-sm
-                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500 dark:focus:ring-indigo-400">
-                                                            Kembali
-                                                        </button>
-                                                        <!-- END TOMBOL KEMBALI KETENTUAN -->
-
-                                                    </div>
-                                                </div>
 
                                             </div>
-                                            <!-- END TAB REGIST -->
-
 
                                         </div>
-
-
-
-
-
                                     </div>
+
+
                                 </div>
+
+                                <!-- </div> -->
+
+
                             </div>
+
                         </template>
-                        <!-- END MODAL AUTH -->
+                    </div>
+
+
+                    <div class="flex-shrink-0 flex items-center">
+                        <button class=" h-8 w-auto text-white">
+                            <i class="fas text-2xl fa-comments"></i>
+
+                        </button>
 
                     </div>
-                    <!-- END NAVBAR AUTH -->
+
+
 
                 </div>
-            </div>
-        </div>
 
 
 
 
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <!-- Current: " bg-gray-900 text-white", Default: "text-gray-300 hover:bg-indigo-700" -->
-                <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                    aria-current="page">Dashboard</a>
-
-                <a href="#"
-                    class="text-gray-300 hover:bg-indigo-700  block px-3 py-2 rounded-md text-base font-medium">Team</a>
-
-                <a href="#"
-                    class="text-gray-300 hover:bg-indigo-700  block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-                <a href="#"
-                    class="text-gray-300 hover:bg-indigo-700  block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
             </div>
         </div>
     </nav>
 
 
-
-    <!-- <div class="absolute bg-indigo-500 h-1/2 w-full rounded-3xl dark:bg-indigo-400">
-
-    </div> -->
-    <div class="absolute h-5/6 w-full lg:mt-2.5 md:mt-8 sm:mt-8 mt-12">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6366f1" fill-opacity="1" d="M0,64L7.1,64C14.1,64,28,64,42,74.7C56.5,85,71,107,85,133.3C98.8,160,113,192,127,176C141.2,160,155,96,169,64C183.5,32,198,32,212,37.3C225.9,43,240,53,254,80C268.2,107,282,149,296,138.7C310.6,128,325,64,339,69.3C352.9,75,367,149,381,154.7C395.3,160,409,96,424,101.3C437.6,107,452,181,466,218.7C480,256,494,256,508,245.3C522.4,235,536,213,551,181.3C564.7,149,579,107,593,85.3C607.1,64,621,64,635,74.7C649.4,85,664,107,678,106.7C691.8,107,706,85,720,74.7C734.1,64,748,64,762,64C776.5,64,791,64,805,85.3C818.8,107,833,149,847,181.3C861.2,213,875,235,889,208C903.5,181,918,107,932,74.7C945.9,43,960,53,974,58.7C988.2,64,1002,64,1016,101.3C1030.6,139,1045,213,1059,234.7C1072.9,256,1087,224,1101,186.7C1115.3,149,1129,107,1144,122.7C1157.6,139,1172,213,1186,218.7C1200,224,1214,160,1228,160C1242.4,160,1256,224,1271,245.3C1284.7,267,1299,245,1313,218.7C1327.1,192,1341,160,1355,170.7C1369.4,181,1384,235,1398,266.7C1411.8,299,1426,309,1433,314.7L1440,320L1440,0L1432.9,0C1425.9,0,1412,0,1398,0C1383.5,0,1369,0,1355,0C1341.2,0,1327,0,1313,0C1298.8,0,1285,0,1271,0C1256.5,0,1242,0,1228,0C1214.1,0,1200,0,1186,0C1171.8,0,1158,0,1144,0C1129.4,0,1115,0,1101,0C1087.1,0,1073,0,1059,0C1044.7,0,1031,0,1016,0C1002.4,0,988,0,974,0C960,0,946,0,932,0C917.6,0,904,0,889,0C875.3,0,861,0,847,0C832.9,0,819,0,805,0C790.6,0,776,0,762,0C748.2,0,734,0,720,0C705.9,0,692,0,678,0C663.5,0,649,0,635,0C621.2,0,607,0,593,0C578.8,0,565,0,551,0C536.5,0,522,0,508,0C494.1,0,480,0,466,0C451.8,0,438,0,424,0C409.4,0,395,0,381,0C367.1,0,353,0,339,0C324.7,0,311,0,296,0C282.4,0,268,0,254,0C240,0,226,0,212,0C197.6,0,184,0,169,0C155.3,0,141,0,127,0C112.9,0,99,0,85,0C70.6,0,56,0,42,0C28.2,0,14,0,7,0L0,0Z"></path></svg> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6366f1" fill-opacity="1" d="M0,192L1440,32L1440,0L0,0Z"></path></svg> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6366f1" fill-opacity="1" d="M0,320L40,282.7C80,245,160,171,240,138.7C320,107,400,117,480,149.3C560,181,640,235,720,261.3C800,288,880,288,960,250.7C1040,213,1120,139,1200,106.7C1280,75,1360,85,1400,90.7L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> -->
-        <template x-if="darkMode == false">
+    <!-- SIDEBAR BAB -->
 
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#6366f1" fill-opacity="1"
-                    d="M0,96L40,112C80,128,160,160,240,154.7C320,149,400,107,480,96C560,85,640,107,720,133.3C800,160,880,192,960,170.7C1040,149,1120,75,1200,74.7C1280,75,1360,149,1400,186.7L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
-                </path>
-            </svg>
-        </template>
-        <template x-if="darkMode == true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#818cf8" fill-opacity="1"
-                    d="M0,96L40,112C80,128,160,160,240,154.7C320,149,400,107,480,96C560,85,640,107,720,133.3C800,160,880,192,960,170.7C1040,149,1120,75,1200,74.7C1280,75,1360,149,1400,186.7L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
-                </path>
-            </svg>
-        </template>
-    </div>
+    <aside id="tele-daftar-bab">
+    
+    </aside>
 
-    <!-- <div class="text-green-500 sm:text-red-500 md:text-blue-500 lg:text-black">
-        LAYAR MERAH: sm, BIRU: md, HITAM: lg, BIASA: hijau
-    </div> -->
+
+    <!-- END SIDEBAR BAB -->
+
 
     <div class="lg:blur-sm md:blur-sm blur-none absolute bg-center bg-cover w-full lg:h-1/2 md:h-1/2 h-2/5  bg-no-repeat"
         style="background-image: url(./assets/img/cover.png)">
@@ -906,13 +150,14 @@
     </div>
 
 
+
     <main
         class="lg:mt-16 md:mt-16 mt-32 lg:mb-16 md:mb-16 mb-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
         <div class="w-full lg:mx-auto md:mx-auto mx-3 h-auto flex flex-row justify-center">
-            <div class="lg:w-2/3 w-full lg:mr-2 md:mr-2 mr-0">
+            <div class="w-full lg:mr-2 md:mr-2 mr-0">
                 <div x-data="bab">
-                      <!-- JUDUL -->
+                    <!-- JUDUL -->
                     <div class="p-3 rounded-xl bg-white text-center relative mb-3 relative overflow-hidden shadow-xl">
                         <div class="text-xl font-bold" x-text="cerita.judul"></div>
                         <div class="inline mt-2 text-sm">
@@ -921,210 +166,45 @@
                         <div class="inline text-xs text-gray-500">
                             20-12-2021
                         </div>
-        
+
                     </div>
                     <!-- END JUDUL -->
                     <!-- ISI -->
                     <div class="rounded-xl bg-white relative mb-12 relative overflow-hidden">
-        
-                        <p class="py-6 px-14 break-words text-sm whitespace-pre-line" x-text="cerita.isi">
-                    
-                            
-        
-                        </p>
-        
-        
+
+                        <div class="py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3" x-html="cerita.isi">
+
+
+
+                        </div>
+
+
                     </div>
                     <!-- END ISI -->
                 </div>
             </div>
-            <!-- KOMENTAR -->
-            <div class="lg:block hidden w-1/3 ml-2" :class="open_komen ? '': 'w-1/6'" x-data="komen">
-                <div class="rounded-xl bg-white relative mb-3 relative overflow-hidden shadow-xl h-auto">
-                    <div class="flex justify-end">
-                        <!-- <div class="text-sm font-semibold">Komentar</div> -->
-                        <button class="text-white bg-indigo-500 p-1 rounded-bl-2xl" @click="open_komen = ! open_komen">
-                            <i class="fas" :class="open_komen ? 'fa-eye-slash' : 'fa-eye'"></i>
-                        </button>
-                    </div>
 
-                    <div class="p-3 flex flex-row">
-                        
-                        <div :class="open_komen ? 'hidden': 'block'" class="w-full text-center">
-                            
-                        
-                                <div id="tele-ikon">
-
-                                
-                                </div>
-                               
-                            
-                        </div>
-
-                        <div class="w-full" x-show="open_komen">
-                            <div class="mb-3">
-                                <textarea class="text-sm p-3 mb-3 w-full block rounded-lg border-2 
-                                text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
-                            focus:ring-indigo-200 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
-                                    cols="30" rows="2" placeholder="Tulis komentar ...."
-                                    @keyup.enter="$nextTick(() => { document.getElementById('tombol-kirim-komentar').focus() })"></textarea>
-
-                                <button id="tombol-kirim-komentar" class="text-sm bg-indigo-500 text-white 
-                                    rounded-lg lg:px-2 lg:py-1 md:px-2 md:py-1 px-3 py-1    
-                                    hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
-                                    dark:bg-indigo-400 dark:hover:bg-indigo-500">
-                                    Kirim
-                                </button>
-                            </div>
-
-                            <template x-for="[id, value] in Object.entries(komen)" :key="id">
-
-                                <div class="mb-3 h-auto dark:bg-gray-800 flex flex-row">
-                                    <!-- PROFIL KOMENTAR -->
-                                    <div class=" flex-shrink-0 text-center">
-                                        <template x-teleport="#tele-ikon">
-                                            <div class="flex items-center mb-3">
-                                                <img class="flex-none lg:h-12 lg:w-12 md:w-12 md:h-12 w-10 h-10 rounded-full border-2 border-indigo-500"
-                                                :src="value.foto" alt="Foto">
-
-                                                <div class="flex-1 ml-2 text-xs">
-                                                    Berkomentar
-
-                                                </div>
-
-                                               
-
-                                            </div>
-                                        </template>
-                                        <img class="mb-3 lg:h-12 lg:w-12 md:w-12 md:h-12 w-10 h-10 rounded-full border-2 border-indigo-500"
-                                            :src="value.foto" alt="Foto">
-                                        <button
-                                            @click="open_balas = value.balas_komen;
-                                            $nextTick(() => { document.getElementById(`balas_` + id).focus() })"
-                                            class="px-3 text-xs rounded-lg py-1 bg-indigo-500 text-white 
-                                            hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
-                                            dark:bg-indigo-400 dark:hover:bg-indigo-500">
-                                            <i class="fas fa-reply"></i>
-                                        </button>
-                                    </div>
-                                    <!-- END PROFIL KOMENTAR -->
-                                    <!-- TEKS BALASAN KOMENTAR -->
-                                    <div class="ml-3 flex-grow" :id="value.balas_komen">
-
-                                        <div class="font-medium inline dark:text-white"
-                                            x-text="value.nama">
-
-                                        </div>
-                                        <div class="inline text-xs text-gray-500 dark:text-gray-400 "
-                                            x-text="`(`+value.username+`)`"></div>
-
-                                        <small class="text-gray-400 dark:text-gray-300 text-xs block"
-                                            x-text="value.tanggal"></small>
-                                        <div class="mb-3 mt-3 text-sm border-b border-gray-400 border-opacity-75 dark:text-white dark:border-gray-500"
-                                            x-text="value.komentar">
-                                        </div>
-
-
-                                        <!-- ISIAN BALASAN -->
-                                        <div class="mb-3" x-show="open_balas == value.balas_komen"
-                                            x-transition:enter="transition ease-out duration-200"
-                                            x-transition:enter-start="transform opacity-0 -translate-y-3"
-                                            x-transition:enter-end="transform opacity-100 translate-y-0">
-                                            <textarea @click.away="open_balas = false" :id="`balas_` + id"
-                                                @keyup.enter="$nextTick(() => { document.getElementById(`tombol-kirim-balasan-` + id).focus() })"
-                                                class="text-sm p-3 mb-3 w-full block rounded-lg border-2 
-                                            border-indigo-500 focus:outline-none focus:ring-2 
-                                            text-gray-700 focus:ring-indigo-300 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
-                                                rows="2" placeholder="Tulis balasan ...."></textarea>
-
-                                            <button @click="tekan()" class="bg-indigo-500 text-white rounded-lg 
-                                            lg:px-2 lg:py-1 md:px-2 md:py-1 px-3 py-1 text-sm 
-                                                hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
-                                                dark:bg-indigo-400 dark:hover:bg-indigo-500"
-                                                :id="`tombol-kirim-balasan-` + id">
-                                                Kirim
-                                            </button>
-
-                                        </div>
-                                        <!-- END ISIAN BALASAN  -->
-
-                                        <!-- BALASAN -->
-                                        <div class="mb-3 w-auto h-auto dark:bg-gray-800 flex flex-row">
-                                            <!-- PROFIL BALASAN -->
-                                            <div class="flex-shrink-0 text-center">
-
-                                                <img class="mb-3 lg:h-10 lg:w-10 md:w-10 md:h-10 w-9 h-9 rounded-full border-2 border-indigo-500"
-                                                    src="./assets/img/profile_me.png" alt="">
-                                            </div>
-                                            <!-- END PROFIL BALASAN -->
-                                            <!-- TEKS BALASAN -->
-                                            <div class="ml-3 flex-grow">
-                                                <div class="font-medium inline dark:text-white">
-                                                    Karol.Y
-
-                                                </div>
-                                                <div class="inline text-xs text-gray-500 dark:text-gray-400">
-                                                    (@Nc)</div>
-                                                <small
-                                                    class="text-gray-400 dark:text-gray-300 text-xs block">Baru
-                                                    saja</small>
-                                                <div
-                                                    class="w-auto mt-3 border-b border-gray-400 border-opacity-75  dark:border-gray-500">
-                                                    <p class="text-sm dark:text-white">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                                                        elit. Quidem, autem provident? Hic nostrum aliquid
-                                                        dolore eveniet voluptatum fugit commodi rerum sint
-                                                        blanditiis minima eaque nam, explicabo voluptatem earum
-                                                        quam sed.
-                                                    </p>
-                                                </div>
-                                                <!-- END TEKS BALASAN -->
-                                            </div>
-                                        </div>
-                                        <!-- END BALASAN -->
-
-                                    </div>
-                                    <!-- END TEKS BALASAN KOMENTAR -->
-
-                                </div>
-
-                            </template>
-                            
-
-
-                        </div>
-
-                    </div>
-    
-                </div>
-
-
-            </div>
-            <!-- END KOMENTAR -->
 
 
 
             <!-- MENU BAB -->
 
-            <div class="lg:hidden block fixed bottom-6 inset-x-0 z-50 ">
+            <div class="lg:hidden block fixed bottom-6 inset-x-0 z-30 ">
                 <div class="flex justify-center">
 
                     <div class="relative h-14 w-44 bg-transparent border-2 border-indigo-500 rounded-3xl">
                         <div class="absolute w-full h-full opacity-80 bg-white rounded-3xl"></div>
                         <div class="absolute flex justify-around items-center h-full w-full">
-
                             <button class="">
-                                <i class="fas text-xl fa-list"></i>
-                            </button>
-
-                            <button>
-                                <i class="fas text-xl fa-comment"></i>
+                                <i class="fas text-xl fa-arrow-left"></i>
                             </button>
 
                             <button>
                                 <i class="fas text-xl fa-cog"></i>
                             </button>
-
+                            <button class="">
+                                <i class="fas text-xl fa-arrow-right"></i>
+                            </button>
                         </div>
 
                     </div>
@@ -1348,7 +428,7 @@
     </main>
 
 
-    <footer class="hidden lg:block text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0">
+    <footer class="hidden text-gray-600 body-font bg-indigo-500 bottom-0 inset-x-0 z-50">
         <div class="container px-5 py-12 mx-auto flex md:items-center lg:items-start flex-row flex-nowrap">
             <!-- sm flex-wrap flex-col -->
             <div class="w-64 my-auto flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">

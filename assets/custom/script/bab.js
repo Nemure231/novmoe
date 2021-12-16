@@ -60,105 +60,131 @@ document.addEventListener('alpine:init', () => {
 
 
 document.addEventListener('alpine:init', () => {
+    Alpine.data('list_bab', () => ({
+        list: {
+            1: {
+                id: 1,
+                judul: '[0] Caltanepent',
+                link: './bab.html',
+                status: '1'
+            },
+            2: {
+                id: 2,
+                judul: '[1] A02',
+                link: './bab.html',
+                status: '2',
+            },
+            3: {
+                id: 3,
+                judul: '[2] Welrod',
+                link: './bab.html',
+                status: '2',
+            },
+            
+
+        },
+    }));
+});
+
+
+
+document.addEventListener('alpine:init', () => {
     Alpine.data('bab', () => ({
 
         cerita:{
             judul: '[0] Caltanepent',
-            isi: `Hutan ini terletak di sebuah dataran rendah, sangat rimbun, hijau, dan gelap. Suasana lembap
-            tersebar melalui embun pagi yang datang setelah hujan turun.
+            isi: `<p>Hutan ini terletak di sebuah dataran rendah, sangat rimbun, hijau, dan gelap. Suasana lembap
+            tersebar melalui embun pagi yang datang setelah hujan turun.</p>
 
-            Akar Caltanepent mendapat sentuhan akar lain, yang memberitahu informasi tentang manusia.
+<p>Akar Caltanepent mendapat sentuhan akar lain, yang memberitahu informasi tentang manusia.
 
-            Dia pun segera mengangkat mulut besarnya yang berada di atas tanah, semua akarnya berpusat pada satu
-            tempat untuk membuat tangkainya berdiri.
+<p>Dia pun segera mengangkat mulut besarnya yang berada di atas tanah, semua akarnya berpusat pada satu
+tempat untuk membuat tangkainya berdiri.</p>
 
-            Ketika berhasil terangkat, dia meraung dengan suara basah. Sebuah raungan kemarahan yang tidak dapat
-            dijelaskan secara vokal.
+<p>Ketika berhasil terangkat, dia meraung dengan suara basah. Sebuah raungan kemarahan yang tidak dapat
+dijelaskan secara vokal.</p>
 
-            Di dalam tanah, akarnya mencoba mencari jalan menuju akar teman terdekat, untuk menyalurkan
-            informasi tentang manusia tersebut. Ketika berhasil menemukan satu, temannya akan menyalurkan lagi
-            informasi itu pada yang lain.
+<p>Di dalam tanah, akarnya mencoba mencari jalan menuju akar teman terdekat, untuk menyalurkan informasi tentang manusia tersebut. Ketika berhasil menemukan satu, temannya akan menyalurkan lagi informasi itu pada yang lain.</p>
 
-            Perlahan, mulutnya turun, membuka, lalu menutup. Kumpulan taring merah tajamnya berlumuran lendir.
-            Sebuah lengkungan yang kaku pada mulutnya terlihat seperti senyuman keji.
+<p>Perlahan, mulutnya turun, membuka, lalu menutup. Kumpulan taring merah tajamnya berlumuran lendir.
+Sebuah lengkungan yang kaku pada mulutnya terlihat seperti senyuman keji.</p>
 
-            Perasaan yang aneh antara marah dan gembira saat menemukan manusia, terasa menyenangkan.
+<p>Perasaan yang aneh antara marah dan gembira saat menemukan manusia, terasa menyenangkan.</p>
 
-            “Pergi?”
+<p>“Pergi?”</p>
 
-            Akarnya tidak sengaja menyentuh akar lain, sepertinya berasal dari salah satu pohon di sekitar sini
-            yang mencoba berkomunikasi dengannya.
+<p>Akarnya tidak sengaja menyentuh akar lain, sepertinya berasal dari salah satu pohon di sekitar sini
+yang mencoba berkomunikasi dengannya.</p>
 
-            “Ya.”
+<p>“Ya.”</p>
 
-            Mereka sebenarnya tidak benar-benar bicara, atau mungkin hal semacam ini hanyalah delusi Caltanepent
-            sebagai tumbuhan aneh di muka bumi.
+<p>Mereka sebenarnya tidak benar-benar bicara, atau mungkin hal semacam ini hanyalah delusi Caltanepent
+sebagai tumbuhan aneh di muka bumi.</p>
 
-            “Untuk?”
+<p>“Untuk?”</p>
 
-            Pohon terdengar sangat penasaran, dia kembali bertanya.
+<p>Pohon terdengar sangat penasaran, dia kembali bertanya.</p>
 
-            “Manusia.”
+<p>“Manusia.”</p>
 
-            Jawaban itu memberi jeda yang lama bagi pohon untuk menjawab.
+<p>Jawaban itu memberi jeda yang lama bagi pohon untuk menjawab.</p>
 
-            “Kenapa?”
+<p>“Kenapa?”</p>
 
-            “Manusia. Dosa. Kikir. Sombong. Serakah. Kotor.”
+<p>“Manusia. Dosa. Kikir. Sombong. Serakah. Kotor.”</p>
 
-            Sekali lagi, Caltanepent mengungkapkan pendapat bijaknya pada pohon.
+<p>Sekali lagi, Caltanepent mengungkapkan pendapat bijaknya pada pohon.</p>
 
-            Selain itu, tanpa manusia bumi akan tetap seimbang. pohon tidak membutuhkan manusia, hewan pun
-            demikian, begitu juga yang lainnya. Lantas, untuk apa makhluk itu hidup?
-            Tidak ada tanggapan dari pohon, maka Caltanepent menunggu dengan sabar.
+<p>Selain itu, tanpa manusia bumi akan tetap seimbang. pohon tidak membutuhkan manusia, hewan pun
+demikian, begitu juga yang lainnya. Lantas, untuk apa makhluk itu hidup?
+Tidak ada tanggapan dari pohon, maka Caltanepent menunggu dengan sabar.</p>
 
-            “Tidak. Semua.”
+<p>“Tidak. Semua.”</p>
 
-            Jawaban itu membuat Caltanepent terkejut. Dia menengadah, lalu meraung sekuat tenaga pada setiap
-            pohon di sini. Dia memajukan mulut, memperlihatkan taringnya sebagai tanda penolakan pendapat.
-            Dia tidak tahu pohon mana yang berani menentang pendapatnya.
+<p>Jawaban itu membuat Caltanepent terkejut. Dia menengadah, lalu meraung sekuat tenaga pada setiap
+pohon di sini. Dia memajukan mulut, memperlihatkan taringnya sebagai tanda penolakan pendapat.
+Dia tidak tahu pohon mana yang berani menentang pendapatnya.</p>
 
-            “Alasan?”
+<p>“Alasan?”</p>
 
-            Jika dipikir kembali, Caltanepent tidak berpengaruh banyak pada keseimbangan alam. Bukankah mereka
-            juga sama seperti manusia? Tidak dibutuhkan di dunia ini.
+<p>Jika dipikir kembali, Caltanepent tidak berpengaruh banyak pada keseimbangan alam. Bukankah mereka
+juga sama seperti manusia? Tidak dibutuhkan di dunia ini.</p>
 
-            Caltanepent berusaha keras untuk menjawab pertanyaan itu, tetapi dia memutuskan untuk menyerah
-            ketika tidak ada alasan yang logis.
+<p>Caltanepent berusaha keras untuk menjawab pertanyaan itu, tetapi dia memutuskan untuk menyerah
+ketika tidak ada alasan yang logis.</p>
 
-            “Perintah. Pencipta.”
+<p>“Perintah. Pencipta.”</p>
 
-            Dia sempat ragu, karena kata pencipta tiba-tiba ada dalam pikirannya. Padahal, dia sama sekali tidak
-            ingat pernah diciptakan oleh siapa.
+<p>Dia sempat ragu, karena kata pencipta tiba-tiba ada dalam pikirannya. Padahal, dia sama sekali tidak
+ingat pernah diciptakan oleh siapa.</p>
 
-            “Pencipta. Yang. Mana?”
+<p>“Pencipta. Yang. Mana?”</p>
 
-            Pohon kembali bertanya, maka Caltanepent mulai meragukan alasannya untuk diciptakan. Diciptakan
-            untuk membunuh manusia terdengar seperti pekerjaan besar di akhir dunia.
+<p>Pohon kembali bertanya, maka Caltanepent mulai meragukan alasannya untuk diciptakan. Diciptakan
+untuk membunuh manusia terdengar seperti pekerjaan besar di akhir dunia.</p>
 
-            Jika memang tugasnya adalah mengakhiri peradaban manusia, lantas mengapa dia tidak diberikan
-            kekuatan yang lebih besar? Dengan begitu, pekerjaannya akan lebih mudah.
+<p>Jika memang tugasnya adalah mengakhiri peradaban manusia, lantas mengapa dia tidak diberikan
+kekuatan yang lebih besar? Dengan begitu, pekerjaannya akan lebih mudah.</p>
 
-            “Pencipta. Yang. Mana?”
+<p>“Pencipta. Yang. Mana?”</p>
 
-            Pohon kembali mendesak dengan pertanyaan yang sama, hal itu makin membuat Caltanepent tidak suka
-            dengan makhluk yang bicara seolah-olah paling tahu segalanya.
+<p>Pohon kembali mendesak dengan pertanyaan yang sama, hal itu makin membuat Caltanepent tidak suka
+dengan makhluk yang bicara seolah-olah paling tahu segalanya.</p>
 
-            Dia tidak perlu berurusan dengan pohon lebih jauh dalam perdebatan tidak berguna, dia hanya harus
-            menunjukan kepada semua makhluk bahwa anggapannya benar.
+<p>Dia tidak perlu berurusan dengan pohon lebih jauh dalam perdebatan tidak berguna, dia hanya harus
+menunjukan kepada semua makhluk bahwa anggapannya benar.</p>
 
-            “Manusia. Butuh. Kami.”
+<p>“Manusia. Butuh. Kami.”</p>
 
-            Pohon mengucapkan itu untuk dirinya sendiri.
+<p>Pohon mengucapkan itu untuk dirinya sendiri.</p>
 
-            Caltanepent menganga. “Takdir. Yang. Aneh.”
+<p>Caltanepent menganga. “Takdir. Yang. Aneh.”</p>
 
-            Caltanepent bergerak ke aliran sungai, dia mengisi mulutnya dengan air sampai penuh.
+<p>Caltanepent bergerak ke aliran sungai, dia mengisi mulutnya dengan air sampai penuh.</p>
 
-            Bunyi akar-akar terdengar semakin dekat. Ratusan Caltanepent yang terpanggil telah berkumpul di satu
-            titik lokasi.
-            
-            Mereka bergerak perlahan, dari kegelapan hutan, untuk sebuah perintah yang tidak jelas asalnya.`
+<p>Bunyi akar-akar terdengar semakin dekat. Ratusan Caltanepent yang terpanggil telah berkumpul di satu
+titik lokasi.</p>
+<p>Mereka bergerak perlahan, dari kegelapan hutan, untuk sebuah perintah yang tidak jelas asalnya.</p>`
         }
      
 
