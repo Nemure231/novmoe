@@ -953,11 +953,14 @@
 
                             </div>
 
-                            <div class="flex-1">
-                                <div class="flex flex-col lg:px-0 md:px-0 px-3 text-black dark:text-gray-100">
+                            <div class="flex-1 relative">
+                                <!-- TAMBALAN DI LAYAR BLURB -->
+                                <div class="absolute bg-white w-full h-full mt-36"></div>
+                                <!-- END TAMBALAN DI LAYAR BLURB -->
+                                <div class="flex flex-col h-auto lg:px-0 md:px-0 px-3 text-black dark:text-gray-100">
                                     <!-- INFORASI DASAR CERITA -->
                                     <div
-                                        class="h-1/2 w-full rounded-t-xl bg-gradient-to-t lg:from-white md:from-white bg-transparent lg:dark:form-gray-800 md:dark:from-gray-800">
+                                        class="relative h-1/2 w-full rounded-t-xl bg-gradient-to-t lg:from-white md:from-white bg-transparent lg:dark:form-gray-800 md:dark:from-gray-800">
                                         <div
                                             class="lg:pl-3 md:pl-3 p-0 lg:text-3xl md:text-3xl sm:text-2xl text-xl mb-3 font-bold antialiased ">
                                             Outcast Desire</div>
@@ -982,7 +985,7 @@
                                             <div class="flex-1">
                                                 <!-- BINGUNG MAU ISI APAAN -->
 
-                                                
+
 
                                             </div>
 
@@ -1021,27 +1024,33 @@
                                                 Beberapa tim Aegis yang berhubungan proyek E.C.R dikirim ke markas Antartika, salah satunya adalah seorang prajurit bernama Welrod dan rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah penuh Caltanepent.">
 
                                             <div
-                                                class="lg:block md:block hidden relative  h-full w-full break-words space-y-3">
+                                                class="lg:block md:block hidden relative h-full w-full break-words space-y-3">
+                                                <!-- <div class="space-y-3 mb-au"> -->
                                                 <p>Caltanepent, monster tumbuhan yang merusak segala ekosistem makhluk
-                                                hidup di Jerman utara, selama 2 tahun lebih pemerintah melakukan
-                                                penyerangan hingga wilayah di sana rusak parah dan menjadi kota-kota
-                                                mati, tetapi monster itu tidak ada habisnya.</p>
+                                                    hidup di Jerman utara, selama 2 tahun lebih pemerintah melakukan
+                                                    penyerangan hingga wilayah di sana rusak parah dan menjadi kota-kota
+                                                    mati, tetapi monster itu tidak ada habisnya.</p>
 
                                                 <p>Sampai akhirnya muncul PMC (Private Military Company) bernama Aegis,
-                                                yang bekerja untuk mencegah penyebaran Caltanepent dan mengelola proyek
-                                                E.C.R (Experiment Of Caltanepent Resource) yang telah menghasilkan
-                                                sumber daya Caltanepent bernama Exceed. 7 tahun terlewat, sekarang
-                                                mereka telah membangun cabang di Antartika yang dikabarkan sebagai
-                                                markas khusus penelitian tersebut.</p>
+                                                    yang bekerja untuk mencegah penyebaran Caltanepent dan mengelola
+                                                    proyek
+                                                    E.C.R (Experiment Of Caltanepent Resource) yang telah menghasilkan
+                                                    sumber daya Caltanepent bernama Exceed. 7 tahun terlewat, sekarang
+                                                    mereka telah membangun cabang di Antartika yang dikabarkan sebagai
+                                                    markas khusus penelitian tersebut.</p>
 
                                                 <p>tim Aegis yang berhubungan proyek E.C.R dikirim ke markas
-                                                Antartika, salah satunya adalah seorang prajurit bernama Welrod dan
-                                                rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter
-                                                mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah lama
-                                                mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah
-                                                penuh Caltanepent.</p>
+                                                    Antartika, salah satunya adalah seorang prajurit bernama Welrod dan
+                                                    rekannya A02. Namun, di tengah perjalanan ke kapal besar, helikopter
+                                                    mereka diserang oleh Gaia, sebuah organisasi misterius yang sudah
+                                                    lama
+                                                    mengincar Exceed, mereka berdua pun terpaksa bertahan hidup di tanah
+                                                    penuh Caltanepent.</p>
 
-                                                </div>
+                                                <!-- </div> -->
+
+
+                                            </div>
                                             <div x-ref="less"
                                                 class="w-full flex justify-center hidden fixed z-50 bottom-24 left-16">
 
@@ -1071,7 +1080,7 @@
 
 
                 </div>
-                <div class="px-3 pb-3 lg:pt-0 md:pt-0 pt-3 bg-white dark:bg-gray-800 dark:text-gray-100">
+                <div class="relative px-3 pb-3 lg:pt-0 md:pt-0 pt-3 bg-white dark:bg-gray-800 dark:text-gray-100">
                     <!-- TAB CERITA -->
                     <div x-data="{tab_cerita: true}">
                         <ul class="flex border-b-2 border-gray-300 dark:border-gray-700 mb-3">
