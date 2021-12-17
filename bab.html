@@ -68,7 +68,7 @@
 
                                 <div class="overflow-y-auto h-5/6 p-3 w-full" x-data="list_bab">
 
-                                    <div class="min-h-screen py-0 flex flex-col justify-start">
+                                    <div class="h-fit py-0 flex flex-col justify-start">
                                         <div class="sm:max-w-xl sm:mx-auto w-full px-2 sm:px-0">
 
                                             <div class="relative text-gray-700 antialiased text-sm font-semibold">
@@ -80,6 +80,138 @@
 
 
                                                 <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
+
+                                                                        <a :href="value.link" x-text="value.judul">
+
+                                                                        </a>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
+
+                                                                        <a :href="value.link" x-text="value.judul">
+
+                                                                        </a>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                 <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
+
+                                                                        <a :href="value.link" x-text="value.judul">
+
+                                                                        </a>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                 <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
+
+                                                                        <a :href="value.link" x-text="value.judul">
+
+                                                                        </a>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
+
+                                                                        <a :href="value.link" x-text="value.judul">
+
+                                                                        </a>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                 <template x-for="[id, value] in Object.entries(list)" :key="id">
+                                                    <div class="mt-6 sm:mt-3">
+                                                        <div class="flex flex-col sm:flex-row items-center">
+                                                            <div class="flex justify-start w-full mx-auto items-center">
+                                                                <div class="w-full sm:pl-8 pr-1 ">
+                                                                    <div
+                                                                        class="p-3 bg-white rounded shadow-lg border border-gray-200">
+
+                                                                        <a :href="value.link" x-text="value.judul">
+
+                                                                        </a>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div x-text="value.id"
+                                                                :class="value.status == 1 ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500'"
+                                                                class="rounded-full  border border-gray-200 w-8 h-8 absolute left-5 -translate-y-5 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                 <template x-for="[id, value] in Object.entries(list)" :key="id">
                                                     <div class="mt-6 sm:mt-3">
                                                         <div class="flex flex-col sm:flex-row items-center">
                                                             <div class="flex justify-start w-full mx-auto items-center">
