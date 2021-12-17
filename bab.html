@@ -147,7 +147,7 @@
                                 x-transition:leave-end="transform translate-x-full">
 
                                 <!-- KOMENTAR -->
-                                <div class="mt-16" x-data="komen">
+                                <div class="mt-16 max-w-screen-md mx-auto" x-data="komen">
                                     <div
                                         class="pl-3 pr-6 py-3 bg-white rounded-xl h-fit w-fit relative mb-3 relative overflow-hidden">
 
@@ -156,20 +156,22 @@
 
 
                                             <div class="w-full" x-show="open_komen">
-                                                <div class="mb-3">
+                                                <template x-teleport="#tele-kolom-komen">
+                                                <div class="mb-3 p-3 bg-white">
                                                     <textarea class="p-3 mb-3 w-full block rounded-lg border-2 
-                                        text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
-                                    focus:ring-indigo-200 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
+                                                        text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
+                                                    focus:ring-indigo-200 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-900"
                                                         cols="30" rows="3" placeholder="Tulis komentar ...."
                                                         @keyup.enter="$nextTick(() => { document.getElementById('tombol-kirim-komentar').focus() })"></textarea>
 
                                                     <button id="tombol-kirim-komentar" class="bg-indigo-500 text-white lg:px-4 lg:py-2 
-                                            rounded-lg md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1    
-                                            hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
-                                            dark:bg-indigo-400 dark:hover:bg-indigo-500">
+                                                        rounded-lg md:px-4 md:py-2 sm:px-3 sm:py-1 px-3 py-1    
+                                                        hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-200
+                                                        dark:bg-indigo-400 dark:hover:bg-indigo-500">
                                                         Kirim
                                                     </button>
                                                 </div>
+                                            </template>
 
                                                 <template x-for="[id, value] in Object.entries(komen)" :key="id">
 
@@ -279,6 +281,10 @@
 
                                                 </template>
 
+                                                <div id="tele-kolom-komen" class="fixed inset-x-0 bottom-0 z-50 mx-auto max-w-screen-md">
+                                                    
+                                                </div>
+
 
 
                                             </div>
@@ -341,11 +347,10 @@
     </div>
 
 
-
     <main
         class="lg:mt-16 md:mt-16 mt-32 lg:mb-16 md:mb-16 mb-8 container flex flex-grow md:flex-col lg:flex-row mx-auto relative">
 
-        <div class="w-full lg:mx-auto md:mx-auto mx-3 h-auto flex flex-row justify-center">
+        <div class="w-full max-w-screen-md lg:mx-auto md:mx-auto mx-3 h-auto flex flex-row justify-center">
             <div class="w-full lg:mr-2 md:mr-2 mr-0">
                 <div x-data="bab">
                     <!-- JUDUL -->
