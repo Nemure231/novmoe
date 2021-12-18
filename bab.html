@@ -379,7 +379,7 @@
 
                     <div class="rounded-xl bg-white dark:bg-gray-800 dark:text-gray-200 relative mb-12 relative overflow-hidden">
                         <!-- ISI -->
-                        <div id="isi" class="py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3" x-html="cerita.isi">
+                        <div id="isi" class="text-left tracking-normal py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3" x-html="cerita.isi">
 
                         </div>
                         <!-- END ISI -->
@@ -457,41 +457,104 @@
                                     </div>
                                     <div class="flex-1 w-3/4">
                                         <div class="flex justify-around">
-                                            <button 
+                                            <button class="h-7 w-7 rounded-lg" x-ref="align_left"
+                                            :class="document.getElementById('isi').classList.contains('text-left') ? 
+                                            'bg-indigo-200' 
+                                            : ''"
                                             @click="document.getElementById('isi').classList.contains('text-right')
                                             || document.getElementById('isi').classList.contains('text-justify')
                                             || document.getElementById('isi').classList.contains('text-center') ? 
                                             document.getElementById('isi').classList.remove('text-right', 'text-justify', 'text-center') ||
                                             document.getElementById('isi').classList.add('text-left')  : 
-                                            document.getElementById('isi').classList.add('text-left')">
+                                            document.getElementById('isi').classList.add('text-left');
+                                            $el.classList.add('bg-indigo-200');
+                                            $refs.align_center.classList.remove('bg-indigo-200');
+                                            $refs.align_justify.classList.remove('bg-indigo-200');
+                                            $refs.align_right.classList.remove('bg-indigo-200');">
                                                 <i class="fas fa-align-left"></i>
                                             </button>
-                                            <button 
+                                            <button class="h-7 w-7 rounded-lg" x-ref="align_justify" 
+                                            x-on:focus="$el.classList.add('bg-indigo-200')"
+                                            :class="document.getElementById('isi').classList.contains('text-justify') ? 
+                                            'bg-indigo-200'
+                                            
+                                            : ''"
+
                                             @click="document.getElementById('isi').classList.contains('text-left')
                                             || document.getElementById('isi').classList.contains('text-right')
                                             || document.getElementById('isi').classList.contains('text-center') ? 
                                             document.getElementById('isi').classList.remove('text-left', 'text-right', 'text-center') ||
                                             document.getElementById('isi').classList.add('text-justify') : 
-                                            document.getElementById('isi').classList.add('text-justify')">
+                                            document.getElementById('isi').classList.add('text-justify'); 
+                                            $el.classList.add('bg-indigo-200');
+                                            $refs.align_left.classList.remove('bg-indigo-200');
+                                            $refs.align_center.classList.remove('bg-indigo-200');
+                                            $refs.align_right.classList.remove('bg-indigo-200');">
                                                 <i class="fas fa-align-justify"></i>
                                             </button>
-                                            <button 
+                                            <button class="h-7 w-7 rounded-lg" x-ref="align_center"
+                                            :class="document.getElementById('isi').classList.contains('text-center') ? 'bg-indigo-200' : ''"
                                             @click="document.getElementById('isi').classList.contains('text-left') 
                                             || document.getElementById('isi').classList.contains('text-justify')
                                             || document.getElementById('isi').classList.contains('text-right') ?
                                             document.getElementById('isi').classList.remove('text-left', 'text-right', 'text-justify') ||
                                             document.getElementById('isi').classList.add('text-center') : 
-                                            document.getElementById('isi').classList.add('text-center')">
+                                            document.getElementById('isi').classList.add('text-center'); 
+                                            $el.classList.add('bg-indigo-200');
+                                            $refs.align_left.classList.remove('bg-indigo-200');
+                                            $refs.align_justify.classList.remove('bg-indigo-200');
+                                            $refs.align_right.classList.remove('bg-indigo-200');">
                                                 <i class="fas fa-align-center"></i>
                                             </button>
-                                            <button 
+                                            <button class="h-7 w-7 rounded-lg" x-ref="align_right"
+                                            :class="document.getElementById('isi').classList.contains('text-right') ? 'bg-indigo-200' : ''"
                                             @click="document.getElementById('isi').classList.contains('text-left') 
                                             || document.getElementById('isi').classList.contains('text-center')
                                             || document.getElementById('isi').classList.contains('text-justify') ? 
                                             document.getElementById('isi').classList.remove('text-left', 'text-center', 'text-justify') ||
                                             document.getElementById('isi').classList.add('text-right') : 
-                                            document.getElementById('isi').classList.add('text-right')">
+                                            document.getElementById('isi').classList.add('text-right'); 
+                                            $el.classList.add('bg-indigo-200');
+                                            $refs.align_left.classList.remove('bg-indigo-200');
+                                            $refs.align_justify.classList.remove('bg-indigo-200');
+                                            $refs.align_center.classList.remove('bg-indigo-200');">
                                                 <i class="fas fa-align-right"></i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-full">
+                                    <div class="flex-none w-1/4">
+                                    Spasi
+                                    </div>
+                                    <div class="flex-1 w-3/4">
+                                        <div class="flex justify-around">
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('tracking-normal')
+                                            || document.getElementById('isi').classList.contains('tracking-wide') ?
+                                            document.getElementById('isi').classList.remove('tracking-normal', 'tracking-wide') ||
+                                            document.getElementById('isi').classList.add('tracking-tight')  : 
+                                            document.getElementById('isi').classList.add('tracking-tight')">
+                                            <i class="fas text-base fa-arrows-alt-h"></i>
+                                            </button>
+                                           
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('tracking-tight') 
+                                            || document.getElementById('isi').classList.contains('tracking-wide') ?
+                                            document.getElementById('isi').classList.remove('tracking-tight', 'tracking-wide') ||
+                                            document.getElementById('isi').classList.add('tracking-normal') : 
+                                            document.getElementById('isi').classList.add('tracking-normal')">
+                                            <i class="fas text-xl fa-arrows-alt-h"></i>
+                                            </button>
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('tracking-tight') 
+                                            || document.getElementById('isi').classList.contains('tracking-normal') ? 
+                                            document.getElementById('isi').classList.remove('tracking-normal', 'tracking-tight') ||
+                                            document.getElementById('isi').classList.add('tracking-wide') : 
+                                            document.getElementById('isi').classList.add('tracking-wide')">
+                                            <i class="fas text-2xl fa-arrows-alt-h"></i>
                                             </button>
 
                                         </div>
