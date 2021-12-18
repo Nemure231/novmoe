@@ -63,7 +63,8 @@
                                 x-transition:leave-end="transform -translate-x-80">
                                 <!-- <div class=" mt-16"> -->
                                 <div class="h-12 px-3 py-3 mt-16 text-center shadow-lg">
-                                    <a href="./cerita.html" class="font-bold text-indigo-500 dark:text-indigo-400">Outcast Desire</a>
+                                    <a href="./cerita.html"
+                                        class="font-bold text-indigo-500 dark:text-indigo-400">Outcast Desire</a>
                                 </div>
 
 
@@ -288,7 +289,7 @@
                                                     </div>
 
                                                 </template>
-                                                
+
 
 
                                                 <div id="tele-kolom-komen"
@@ -365,10 +366,12 @@
             <div class="w-full lg:mr-2 md:mr-2 mr-0">
                 <div x-data="bab">
                     <!-- JUDUL -->
-                    <div class="p-3 rounded-xl bg-white dark:bg-gray-800 dark:text-gray-200 text-center relative mb-3 relative overflow-hidden shadow-xl">
+                    <div
+                        class="p-3 rounded-xl bg-white dark:bg-gray-800 dark:text-gray-200 text-center relative mb-3 relative overflow-hidden shadow-xl">
                         <div class="text-xl font-bold" x-text="cerita.judul"></div>
                         <div class="inline mt-2 text-sm">
-                            By <a href="./profil.html" class="text-indigo-500 dark:text-indigo-400 font-semibold">Karol.Y</a>
+                            By <a href="./profil.html"
+                                class="text-indigo-500 dark:text-indigo-400 font-semibold">Karol.Y</a>
                         </div>
                         <div class="inline text-xs text-gray-500 dark:text-gray-400">
                             20-12-2021
@@ -377,9 +380,12 @@
                     </div>
                     <!-- END JUDUL -->
 
-                    <div class="rounded-xl bg-white dark:bg-gray-800 dark:text-gray-200 relative mb-12 relative overflow-hidden">
+                    <div
+                        class="rounded-xl bg-white dark:bg-gray-800 dark:text-gray-200 relative mb-12 relative overflow-hidden">
                         <!-- ISI -->
-                        <div id="isi" class="text-left tracking-normal py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3" x-html="cerita.isi">
+                        <div id="isi"
+                            class="leading-normal text-left tracking-normal py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3"
+                            x-html="cerita.isi">
 
                         </div>
                         <!-- END ISI -->
@@ -410,9 +416,9 @@
                 <div class="flex justify-center max-w-screen-md mx-auto relative" x-data="{menu_bab: false}">
 
                     <div id="mydiv" class="absolute h-14 w-52 bg-transparent flex justify-center">
-                        <div class="absolute bg-white rounded-3xl w-52 h-44 -mt-40 border-2 border-indigo-500 
-                        dark:bg-gray-800 dark:border-indigo-400 dark:text-gray-200"
-                            x-show="menu_bab" x-transition:enter="transition ease-linear duration-300"
+                        <div class="absolute bg-white rounded-3xl w-52 h-52 -mt-48 border-2 border-indigo-500 
+                        dark:bg-gray-800 dark:border-indigo-400 dark:text-gray-200" x-show="menu_bab"
+                            x-transition:enter="transition ease-linear duration-300"
                             x-transition:enter-start="transform opacity-0 translate-y-10"
                             x-transition:enter-end="transform translate-y-0"
                             x-transition:leave="transition ease-linear duration-300"
@@ -421,7 +427,7 @@
 
                             <div class="p-3 space-y-3">
                                 <div class="flex w-full">
-                                    <div class="flex-none w-1/4">
+                                    <div class="flex-none w-1/4 text-sm font-semibold">
                                         Mode
                                     </div>
                                     <div class="flex-1 w-3/4">
@@ -452,72 +458,66 @@
                                     </div>
                                 </div>
                                 <div class="flex w-full">
-                                    <div class="flex-none w-1/4">
-                                        Gaya
+                                    <div class="flex-none w-1/4 text-sm font-semibold">
+                                        Rata
                                     </div>
                                     <div class="flex-1 w-3/4">
                                         <div class="flex justify-around">
-                                            <button class="h-7 w-7 rounded-lg" x-ref="align_left"
-                                            :class="document.getElementById('isi').classList.contains('text-left') ? 
-                                            'bg-indigo-200' 
-                                            : ''"
-                                            @click="document.getElementById('isi').classList.contains('text-right')
+                                            <button class="h-7 w-7 rounded-lg" x-ref="align_left" :class="document.getElementById('isi').classList.contains('text-left') ? 
+                                            'bg-indigo-200 dark:bg-gray-700' 
+                                            : ''" @click="document.getElementById('isi').classList.contains('text-right')
                                             || document.getElementById('isi').classList.contains('text-justify')
                                             || document.getElementById('isi').classList.contains('text-center') ? 
                                             document.getElementById('isi').classList.remove('text-right', 'text-justify', 'text-center') ||
                                             document.getElementById('isi').classList.add('text-left')  : 
                                             document.getElementById('isi').classList.add('text-left');
-                                            $el.classList.add('bg-indigo-200');
-                                            $refs.align_center.classList.remove('bg-indigo-200');
-                                            $refs.align_justify.classList.remove('bg-indigo-200');
-                                            $refs.align_right.classList.remove('bg-indigo-200');">
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_center.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_justify.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_right.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
                                                 <i class="fas fa-align-left"></i>
                                             </button>
-                                            <button class="h-7 w-7 rounded-lg" x-ref="align_justify" 
-                                            x-on:focus="$el.classList.add('bg-indigo-200')"
-                                            :class="document.getElementById('isi').classList.contains('text-justify') ? 
-                                            'bg-indigo-200'
+                                            <button class="h-7 w-7 rounded-lg" x-ref="align_justify" :class="document.getElementById('isi').classList.contains('text-justify') ? 
+                                            'bg-indigo-200 dark:bg-gray-700'
                                             
-                                            : ''"
-
-                                            @click="document.getElementById('isi').classList.contains('text-left')
+                                            : ''" @click="document.getElementById('isi').classList.contains('text-left')
                                             || document.getElementById('isi').classList.contains('text-right')
                                             || document.getElementById('isi').classList.contains('text-center') ? 
                                             document.getElementById('isi').classList.remove('text-left', 'text-right', 'text-center') ||
                                             document.getElementById('isi').classList.add('text-justify') : 
                                             document.getElementById('isi').classList.add('text-justify'); 
-                                            $el.classList.add('bg-indigo-200');
-                                            $refs.align_left.classList.remove('bg-indigo-200');
-                                            $refs.align_center.classList.remove('bg-indigo-200');
-                                            $refs.align_right.classList.remove('bg-indigo-200');">
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_left.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_center.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_right.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
                                                 <i class="fas fa-align-justify"></i>
                                             </button>
                                             <button class="h-7 w-7 rounded-lg" x-ref="align_center"
-                                            :class="document.getElementById('isi').classList.contains('text-center') ? 'bg-indigo-200' : ''"
-                                            @click="document.getElementById('isi').classList.contains('text-left') 
+                                                :class="document.getElementById('isi').classList.contains('text-center') ? 'bg-indigo-200 dark:bg-gray-700' : ''"
+                                                @click="document.getElementById('isi').classList.contains('text-left') 
                                             || document.getElementById('isi').classList.contains('text-justify')
                                             || document.getElementById('isi').classList.contains('text-right') ?
                                             document.getElementById('isi').classList.remove('text-left', 'text-right', 'text-justify') ||
                                             document.getElementById('isi').classList.add('text-center') : 
                                             document.getElementById('isi').classList.add('text-center'); 
-                                            $el.classList.add('bg-indigo-200');
-                                            $refs.align_left.classList.remove('bg-indigo-200');
-                                            $refs.align_justify.classList.remove('bg-indigo-200');
-                                            $refs.align_right.classList.remove('bg-indigo-200');">
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_left.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_justify.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_right.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
                                                 <i class="fas fa-align-center"></i>
                                             </button>
                                             <button class="h-7 w-7 rounded-lg" x-ref="align_right"
-                                            :class="document.getElementById('isi').classList.contains('text-right') ? 'bg-indigo-200' : ''"
-                                            @click="document.getElementById('isi').classList.contains('text-left') 
+                                                :class="document.getElementById('isi').classList.contains('text-right') ? 'bg-indigo-200 dark:bg-gray-700' : ''"
+                                                @click="document.getElementById('isi').classList.contains('text-left') 
                                             || document.getElementById('isi').classList.contains('text-center')
                                             || document.getElementById('isi').classList.contains('text-justify') ? 
                                             document.getElementById('isi').classList.remove('text-left', 'text-center', 'text-justify') ||
                                             document.getElementById('isi').classList.add('text-right') : 
                                             document.getElementById('isi').classList.add('text-right'); 
-                                            $el.classList.add('bg-indigo-200');
-                                            $refs.align_left.classList.remove('bg-indigo-200');
-                                            $refs.align_justify.classList.remove('bg-indigo-200');
-                                            $refs.align_center.classList.remove('bg-indigo-200');">
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_left.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_justify.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.align_center.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
                                                 <i class="fas fa-align-right"></i>
                                             </button>
 
@@ -526,38 +526,150 @@
                                 </div>
 
                                 <div class="flex w-full">
-                                    <div class="flex-none w-1/4">
-                                    Spasi
+                                    <div class="flex-none w-1/4 text-sm font-semibold">
+                                        Spasi
                                     </div>
                                     <div class="flex-1 w-3/4">
                                         <div class="flex justify-around">
-                                            <button 
-                                            @click="document.getElementById('isi').classList.contains('tracking-normal')
+                                            <button class="h-7 w-7 rounded-lg" x-ref="spasi_kecil"
+                                                :class="document.getElementById('isi').classList.contains('tracking-tight') ? 'bg-indigo-200 dark:bg-gray-700' : ''"
+                                                @click="document.getElementById('isi').classList.contains('tracking-normal')
                                             || document.getElementById('isi').classList.contains('tracking-wide') ?
                                             document.getElementById('isi').classList.remove('tracking-normal', 'tracking-wide') ||
                                             document.getElementById('isi').classList.add('tracking-tight')  : 
-                                            document.getElementById('isi').classList.add('tracking-tight')">
-                                            <i class="fas text-base fa-arrows-alt-h"></i>
+                                            document.getElementById('isi').classList.add('tracking-tight');
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.spasi_normal.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.spasi_lebar.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
+                                                <i class="fas text-base fa-arrows-alt-h"></i>
                                             </button>
-                                           
-                                            <button 
-                                            @click="document.getElementById('isi').classList.contains('tracking-tight') 
+
+                                            <button class="h-7 w-7 rounded-lg" x-ref="spasi_normal"
+                                                :class="document.getElementById('isi').classList.contains('tracking-normal') ? 'bg-indigo-200 dark:bg-gray-700' : ''"
+                                                @click="document.getElementById('isi').classList.contains('tracking-tight') 
                                             || document.getElementById('isi').classList.contains('tracking-wide') ?
                                             document.getElementById('isi').classList.remove('tracking-tight', 'tracking-wide') ||
                                             document.getElementById('isi').classList.add('tracking-normal') : 
-                                            document.getElementById('isi').classList.add('tracking-normal')">
-                                            <i class="fas text-xl fa-arrows-alt-h"></i>
+                                            document.getElementById('isi').classList.add('tracking-normal');
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.spasi_kecil.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.spasi_lebar.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
+                                                <i class="fas text-xl fa-arrows-alt-h"></i>
                                             </button>
-                                            <button 
-                                            @click="document.getElementById('isi').classList.contains('tracking-tight') 
+                                            <button class="h-7 w-7 rounded-lg" x-ref="spasi_lebar"
+                                                :class="document.getElementById('isi').classList.contains('tracking-wide') ? 'bg-indigo-200 dark:bg-gray-700' : ''"
+                                                @click="document.getElementById('isi').classList.contains('tracking-tight') 
                                             || document.getElementById('isi').classList.contains('tracking-normal') ? 
                                             document.getElementById('isi').classList.remove('tracking-normal', 'tracking-tight') ||
                                             document.getElementById('isi').classList.add('tracking-wide') : 
-                                            document.getElementById('isi').classList.add('tracking-wide')">
-                                            <i class="fas text-2xl fa-arrows-alt-h"></i>
+                                            document.getElementById('isi').classList.add('tracking-wide');
+                                            $el.classList.add('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.spasi_normal.classList.remove('bg-indigo-200', 'dark:bg-gray-700');
+                                            $refs.spasi_kecil.classList.remove('bg-indigo-200', 'dark:bg-gray-700');">
+                                                <i class="fas text-2xl fa-arrows-alt-h"></i>
                                             </button>
 
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-full">
+                                    <div class="flex-none w-1/4 text-sm font-semibold">
+                                        Lead
+                                    </div>
+                                    <div class="flex-1 w-3/4">
+                                        <!-- <div class="flex"> -->
+                                        <select name="" id=""
+                                            class="outline-none text-sm  w-full 
+                                            bg-white p-1 rounded-lg border border-indigo-500 dark:border-indigo-400 dark:bg-gray-600"
+                                            @change="document.getElementById('isi').classList.add($el.value);
+                                           
+
+                                            $el.value == 'leading-none' ? 
+                                            document.getElementById('isi').classList.remove('leading-normal') 
+                                            || document.getElementById('isi').classList.remove('leading-tight')
+                                            || document.getElementById('isi').classList.remove('leading-snug')
+                                            || document.getElementById('isi').classList.remove('leading-relaxed')
+                                            || document.getElementById('isi').classList.remove('leading-loose')
+                                            : '';
+
+                                            $el.value == 'leading-normal' ? 
+                                            document.getElementById('isi').classList.remove('leading-none') 
+                                            || document.getElementById('isi').classList.remove('leading-tight')
+                                            || document.getElementById('isi').classList.remove('leading-snug')
+                                            || document.getElementById('isi').classList.remove('leading-relaxed')
+                                            || document.getElementById('isi').classList.remove('leading-loose')
+                                            : '';
+
+                                            $el.value == 'leading-tight' ? 
+                                            document.getElementById('isi').classList.remove('leading-none') 
+                                            || document.getElementById('isi').classList.remove('leading-normal')
+                                            || document.getElementById('isi').classList.remove('leading-snug')
+                                            || document.getElementById('isi').classList.remove('leading-relaxed')
+                                            || document.getElementById('isi').classList.remove('leading-loose')
+                                            : '';
+
+                                            $el.value == 'leading-snug' ? 
+                                            document.getElementById('isi').classList.remove('leading-none') 
+                                            || document.getElementById('isi').classList.remove('leading-normal')
+                                            || document.getElementById('isi').classList.remove('leading-tight')
+                                            || document.getElementById('isi').classList.remove('leading-relaxed')
+                                            || document.getElementById('isi').classList.remove('leading-loose')
+                                            : '';
+
+
+                                            $el.value == 'leading-relaxed' ? 
+                                            document.getElementById('isi').classList.remove('leading-none') 
+                                            || document.getElementById('isi').classList.remove('leading-normal')
+                                            || document.getElementById('isi').classList.remove('leading-tight')
+                                            || document.getElementById('isi').classList.remove('leading-snug')
+                                            || document.getElementById('isi').classList.remove('leading-loose')
+                                            : '';
+
+                                            $el.value == 'leading-loose' ? 
+                                            document.getElementById('isi').classList.remove('leading-none') 
+                                            || document.getElementById('isi').classList.remove('leading-normal')
+                                            || document.getElementById('isi').classList.remove('leading-tight')
+                                            || document.getElementById('isi').classList.remove('leading-snug')
+                                            || document.getElementById('isi').classList.remove('leading-relaxed')
+                                            : '';
+                                            
+
+
+
+
+                                            ">
+                                            <option value="leading-none"
+                                                class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-md dark:bg-gray-600">
+                                                None
+                                            </option>
+                                            <option value="leading-tight"
+                                                class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-md dark:bg-gray-600">
+                                                Tight
+                                            </option>
+                                            <option value="leading-snug"
+                                                class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-md dark:bg-gray-600">
+                                                Snug
+                                            </option>
+                                            <option value="leading-normal" selected
+                                                class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-md dark:bg-gray-600">
+                                                Normal
+                                            </option>
+                                            <option value="leading-relaxed"
+                                                class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-md dark:bg-gray-600">
+                                                Relaxed
+                                            </option>
+                                            <option value="leading-loose"
+                                                class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-md dark:bg-gray-600">
+                                                Loose
+                                            </option>
+
+
+
+
+                                        </select>
+
+                                        <!-- </div> -->
                                     </div>
                                 </div>
 
@@ -566,7 +678,7 @@
 
                         </div>
                         <!-- <div class="absolute w-full h-full opacity-80 bg-white rounded-3xl"></div> -->
-                        <div 
+                        <div id="mydivheader"
                             class="cursor-move absolute  flex flex-row  w-44  h-14 justify-around items-center 
                             border-2 border-indigo-500 rounded-3xl bg-transparent dark:border-indigo-400 dark:text-gray-200">
                             <div class="absolute bg-white rounded-3xl opacity-75 w-full h-full dark:bg-gray-800"></div>
