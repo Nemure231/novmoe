@@ -53,7 +53,7 @@
                         </template>
 
                         <template x-teleport="#tele-aside">
-                            <div class="fixed inset-y-0 left-0 top-0 bottom-0 w-64 z-50 bg-white dark:bg-gray-900 border-r-2 border-indigo-500 dark:border-indigo-400"
+                            <div class="fixed inset-y-0 left-0 top-0 w-64 z-50 bg-white dark:bg-gray-900 border-r-2 border-indigo-500 dark:border-indigo-400"
                                 @click.away="nav_bab = false" x-show="nav_bab"
                                 x-transition:enter="transition ease-linear duration-300"
                                 x-transition:enter-start="transform -translate-x-80"
@@ -126,20 +126,22 @@
                         <button class="h-12 w-12 text-white rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-500"
                             @click="nav_bab = ! nav_bab;
                             nav_bab ? document.getElementById('tombol-list-bab').classList.add('hidden') : 
-                            document.getElementById('tombol-list-bab').classList.remove('hidden') ">
+                            document.getElementById('tombol-list-bab').classList.remove('hidden');
+                            nav_bab ? document.getElementById('isi').classList.add('hidden') : 
+                            document.getElementById('isi').classList.remove('hidden') ">
                             <i class="fas text-2xl" :class="nav_bab ? 'fa-times' : 'fa-comments'">
                             </i>
 
                         </button>
 
                         <template x-teleport="#tele-layar-gelap-aside">
-                            <div class="fixed inset-0 bg-white z-40 dark:bg-gray-900" x-show="nav_bab">
+                            <div class="fixed inset-0 bg-white z-40 dark:bg-gray-800" x-show="nav_bab">
 
                             </div>
                         </template>
 
                         <template x-teleport="#tele-aside">
-                            <div class="absolute inset-0 z-50 dark:bg-gray-900" x-show="nav_bab"
+                            <div class="absolute inset-0 z-50 dark:bg-gray-800" x-show="nav_bab"
                                 x-transition:enter="transition ease-linear duration-300"
                                 x-transition:enter-start="transform translate-x-full"
                                 x-transition:enter-end="transform translate-x-0"
@@ -150,7 +152,7 @@
                                 <!-- KOMENTAR -->
                                 <div class="mt-16 max-w-screen-md mx-auto" x-data="komen">
                                     <div
-                                        class="pl-3 pr-6 py-3 bg-white dark:bg-gray-800 rounded-xl h-fit w-fit relative mb-3 relative overflow-hidden">
+                                        class=" pl-3 pr-6 py-3 bg-white dark:bg-gray-800 h-full w-fit relative mb-3 relative overflow-hidden">
 
 
                                         <div class="flex flex-col">
@@ -158,7 +160,7 @@
 
                                             <div class="w-full" x-show="open_komen">
                                                 <template x-teleport="#tele-kolom-komen">
-                                                    <div class=" p-3 bg-white dark:bg-gray-900">
+                                                    <div class=" p-3 bg-white dark:bg-gray-800">
                                                         <textarea
                                                             class="p-3 mb-3 w-full block rounded-lg border-2 
                                                         text-gray-700 border-indigo-500 focus:outline-none focus:ring-2 
@@ -286,6 +288,7 @@
                                                     </div>
 
                                                 </template>
+                                                
 
 
                                                 <div id="tele-kolom-komen"
@@ -376,12 +379,13 @@
 
                     <div class="rounded-xl bg-white dark:bg-gray-800 dark:text-gray-200 relative mb-12 relative overflow-hidden">
                         <!-- ISI -->
-                        <div class="py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3" x-html="cerita.isi">
+                        <div id="isi" class="py-6 lg:px-32 md:px-32 px-14 break-words text-sm space-y-3" x-html="cerita.isi">
 
                         </div>
                         <!-- END ISI -->
 
-                        <div class="py-6 bg-gray-100 rounded-t-3xl lg:px-32 md:px-32 px-14 break-words text-sm">
+                        <div class="py-6 bg-gray-100 rounded-t-3xl lg:px-32 md:px-32 px-14 break-words text-sm 
+                        dark:bg-gray-700 dark:text-gray-200">
                             <div class="font-semibold mb-3"> Catatan Kaki</div>
 
                             <div x-html="cerita.catatan" class="space-y-1">
@@ -406,7 +410,7 @@
                 <div class="flex justify-center max-w-screen-md mx-auto relative" x-data="{menu_bab: false}">
 
                     <div id="mydiv" class="absolute h-14 w-52 bg-transparent flex justify-center">
-                        <div class="absolute bg-white rounded-3xl w-52 h-44 -mt-40 border border-indigo-500 
+                        <div class="absolute bg-white rounded-3xl w-52 h-44 -mt-40 border-2 border-indigo-500 
                         dark:bg-gray-800 dark:border-indigo-400 dark:text-gray-200"
                             x-show="menu_bab" x-transition:enter="transition ease-linear duration-300"
                             x-transition:enter-start="transform opacity-0 translate-y-10"
@@ -417,14 +421,14 @@
 
                             <div class="p-3 space-y-3">
                                 <div class="flex w-full">
-                                    <div class="flex-1 w-1/4">
+                                    <div class="flex-none w-1/4">
                                         Mode
                                     </div>
                                     <div class="flex-1 w-3/4">
                                         <div x-data="{toggle: false}">
                                             <div class="flex items-center justify-center">
                                                 <i
-                                                    class="mr-3 text-2xl far fa-sun text-yellow-500 dark:text-gray-600"></i>
+                                                    class="mr-2 text-2xl far fa-sun text-yellow-500 dark:text-gray-600"></i>
                                                 <div class="relative w-12 h-6 transition duration-200 ease-linear rounded-full"
                                                     :class="[
                                         
@@ -442,17 +446,55 @@
                                                         @click="darkMode = !darkMode" />
                                                 </div>
                                                 <i
-                                                    class="ml-3 text-2xl far fa-moon text-gray-600 dark:text-yellow-200"></i>
+                                                    class="ml-2 text-2xl far fa-moon text-gray-600 dark:text-yellow-200"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex w-full">
-                                    <div class="flex-1 w-1/2">
+                                    <div class="flex-none w-1/4">
                                         Gaya
                                     </div>
-                                    <div class="flex-1 w-1/2">
-                                        11
+                                    <div class="flex-1 w-3/4">
+                                        <div class="flex justify-around">
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('text-right')
+                                            || document.getElementById('isi').classList.contains('text-justify')
+                                            || document.getElementById('isi').classList.contains('text-center') ? 
+                                            document.getElementById('isi').classList.remove('text-right', 'text-justify', 'text-center') ||
+                                            document.getElementById('isi').classList.add('text-left')  : 
+                                            document.getElementById('isi').classList.add('text-left')">
+                                                <i class="fas fa-align-left"></i>
+                                            </button>
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('text-left')
+                                            || document.getElementById('isi').classList.contains('text-right')
+                                            || document.getElementById('isi').classList.contains('text-center') ? 
+                                            document.getElementById('isi').classList.remove('text-left', 'text-right', 'text-center') ||
+                                            document.getElementById('isi').classList.add('text-justify') : 
+                                            document.getElementById('isi').classList.add('text-justify')">
+                                                <i class="fas fa-align-justify"></i>
+                                            </button>
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('text-left') 
+                                            || document.getElementById('isi').classList.contains('text-justify')
+                                            || document.getElementById('isi').classList.contains('text-right') ?
+                                            document.getElementById('isi').classList.remove('text-left', 'text-right', 'text-justify') ||
+                                            document.getElementById('isi').classList.add('text-center') : 
+                                            document.getElementById('isi').classList.add('text-center')">
+                                                <i class="fas fa-align-center"></i>
+                                            </button>
+                                            <button 
+                                            @click="document.getElementById('isi').classList.contains('text-left') 
+                                            || document.getElementById('isi').classList.contains('text-center')
+                                            || document.getElementById('isi').classList.contains('text-justify') ? 
+                                            document.getElementById('isi').classList.remove('text-left', 'text-center', 'text-justify') ||
+                                            document.getElementById('isi').classList.add('text-right') : 
+                                            document.getElementById('isi').classList.add('text-right')">
+                                                <i class="fas fa-align-right"></i>
+                                            </button>
+
+                                        </div>
                                     </div>
                                 </div>
 
@@ -463,15 +505,16 @@
                         <!-- <div class="absolute w-full h-full opacity-80 bg-white rounded-3xl"></div> -->
                         <div 
                             class="cursor-move absolute  flex flex-row  w-44  h-14 justify-around items-center 
-                            border-2 border-indigo-500 rounded-3xl bg-white dark:bg-gray-800 dark:border-indigo-400 dark:text-gray-200">
-                            <button class="">
+                            border-2 border-indigo-500 rounded-3xl bg-transparent dark:border-indigo-400 dark:text-gray-200">
+                            <div class="absolute bg-white rounded-3xl opacity-75 w-full h-full dark:bg-gray-800"></div>
+                            <button class="relative">
                                 <i class="fas text-xl fa-arrow-left"></i>
                             </button>
 
-                            <button @click="menu_bab = ! menu_bab">
+                            <button class="relative" @click="menu_bab = ! menu_bab">
                                 <i class="fas text-xl fa-cog"></i>
                             </button>
-                            <button class="">
+                            <button class="relative">
                                 <i class="fas text-xl fa-arrow-right"></i>
                             </button>
 
