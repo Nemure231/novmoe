@@ -134,10 +134,9 @@ document.addEventListener('alpine:init', () => {
 });
 
 
-
 function potong_komentar(komen) {
     if (komen.split(" ").length > 50) {
-        var mk = komen.split(" ").splice(0, 50).join(" ") + ' ....';
+        var mk = komen.split(" ").splice(0, 50).join(" ") + '....';
         return komen = mk;
     } else {
         return komen = komen;
