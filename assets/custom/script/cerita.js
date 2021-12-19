@@ -1,5 +1,5 @@
 
- 
+
 
 // Event dropdown profil
 const dropdownProfil = document.getElementById('dropdown-profil');
@@ -57,6 +57,54 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
+
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('cerita', () => ({
+        cerita: {
+            id: 1,
+            sampul: './assets/img/cover.png',
+            judul: ' Outcast Desire',
+            penulis: 'Karol.Y',
+            genre: 'Sci-Fi',
+            status: 'Tamat',
+            rating: '15+',
+            jumlah_arc: '2',
+            jumlah_bab: '3',
+            tags: {
+                1: {
+                    id: 1,
+                    nama: 'Petualangan',
+                    
+                },
+                2: {
+                    id: 2,
+                    nama: 'Senjata Api',
+                   
+                },
+                3: {
+                    id: 3,
+                    nama: 'Paramiliter',
+                   
+                },
+                4: {
+                    id: 4,
+                    nama: 'Kekerasan',
+                   
+                },
+                5: {
+                    id: 5,
+                    nama: 'Pasca Apokaliptik',
+                   
+                }
+            }
+
+        },
+
+
+    }));
+});
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('usulan', () => ({
         komentar: {
@@ -110,36 +158,36 @@ function ready(fn) {
 
 ready(function () {
 
-    // const slider = document.querySelector('.grab-scroll');
-    // let isDown = false;
-    // let startX;
-    // let scrollLeft;
-    
-    // slider.addEventListener('mousedown', (e) => {
-    //   isDown = true;
-    //   slider.classList.add('active');
-    //   startX = e.pageX - slider.offsetLeft;
-    //   scrollLeft = slider.scrollLeft;
-    // });
-    // slider.addEventListener('mouseleave', () => {
-    //   isDown = false;
-    //   slider.classList.remove('active');
-    // });
-    // slider.addEventListener('mouseup', () => {
-    //   isDown = false;
-    //   slider.classList.remove('active');
-    // });
-    // slider.addEventListener('mousemove', (e) => {
-    //   if(!isDown) return;
-    //   e.preventDefault();
-    //   const x = e.pageX - slider.offsetLeft;
-    //   const walk = (x - startX) * 3; //scroll-fast
-    //   slider.scrollLeft = scrollLeft - walk;
-    //   console.log(walk);
-    // });
+    const slider = document.querySelector('.grab-scroll');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        console.log(walk);
+    });
 
 
- 
+
 
     window.onload = (event) => {
 
